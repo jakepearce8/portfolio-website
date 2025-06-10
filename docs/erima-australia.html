@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+  />
+  <title>Erima Australia — Jake Pearce</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* ===== Font faces ===== */
+    
+    @font-face {
+  font-family: 'Geist';
+  src: url('Fonts/Geist[wght].woff2') format('woff2-variations');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Shippori-Antique';
+  src: url('Fonts/ShipporiAntiqueB1-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+* {
+  font-synthesis: none;
+}
+    /* ===== Global ===== */
+    body {
+      font-family: 'Geist', sans-serif;
+      font-weight: 440;
+      overflow-x: hidden;
+      color: #242424;
+      background-color: #F9F9F9;
+      letter-spacing: -0.035em;
+      line-height: 1.25;
+    }
+    /* ===== Typography & components ===== */
+    
+    .nav-button {
+  font-family: 'Geist', sans-serif;
+  font-weight: 440;
+  color: #5e5e5e;
+  background-color: #F9F9F9;
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+  word-spacing: 0.02em; 
+    }
+    .footer-button {
+  font-family: 'Geist', sans-serif;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: 0.00em;
+    }
+    .right-arrow {
+  font-family: 'Shippori-Antique', sans-serif;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: 0.00em;
+    }
+    .title {
+  font-family: 'Geist', sans-serif;
+  font-variation-settings: 'wght' 340;
+  color: #242424;
+  letter-spacing: -0.03em; 
+  line-height: 1.2;
+    }
+    .nav-button:hover {
+      color: #9d9d9d;
+      transition: opacity 0.4s ease-out;
+    }
+    .tag {
+  font-family: 'Geist', sans-serif;
+  font-weight: 450;
+  line-height: 1.55;
+  letter-spacing: -0.035em;
+    
+}
+.h1 {
+  font-family: 'Geist', sans-serif;
+  font-variation-settings: 'wght' 540;
+  color: #242424;
+  line-height: 1.03;
+  letter-spacing: -0.045em;
+
+}
+.h2 {
+  font-family: 'Geist', sans-serif;
+  font-variation-settings: 'wght' 540;
+  color: #242424;
+  line-height: 1.15;
+  letter-spacing: -0.045em;
+}
+.h3 {
+  font-family: 'Geist', sans-serif;
+  font-variation-settings: 'wght' 540;
+  color: #242424;
+  line-height: 1.15;
+  letter-spacing: -0.045em;
+}
+.quote {
+  font-family: 'Geist', sans-serif;
+  font-variation-settings: 'wght' 540;
+  color: #242424;
+  line-height: 1.3;
+  letter-spacing: -0.045em;
+}
+.email {
+  font-family: 'Geist', sans-serif;
+  font-variation-settings: 'wght' 440;
+  color: #242424;
+  line-height: 1.3;
+  letter-spacing: -0.045em;
+}
+.body-text-1 {
+  font-family: 'Geist', sans-serif;
+  font-variation-settings: 'wght' 360;
+  color: #242424;
+  letter-spacing: -0.02em; 
+  line-height: 1.4;
+}
+.body-text-2 {
+  font-family: 'Geist', sans-serif;
+  font-variation-settings: 'wght' 500;
+  color: #242424;
+  letter-spacing: -0.02em;
+    line-height: 1.4;
+ 
+}
+.body-text-3 {
+  font-family: 'Geist', sans-serif;
+  font-variation-settings: 'wght' 440;
+  color: #242424;
+  letter-spacing: -0.04em; 
+  line-height: 1.2;
+}
+.body-text-4 {
+  font-family: 'Geist', sans-serif;
+  font-variation-settings: 'wght' 360;
+  color: #242424;
+  letter-spacing: 0.02em; 
+  line-height: 1.2;
+}
+.andrew-text-1 {
+  font-family: 'Geist', sans-serif;
+  font-variation-settings: 'wght' 360;
+  color: #242424;
+  letter-spacing: -0.015em; 
+  line-height: 1.45;
+}
+.andrew-text-2 {
+  font-family: 'Geist', sans-serif;
+  font-variation-settings: 'wght' 540;
+  color: #242424;
+  letter-spacing: -0.015em;
+    line-height: 1.45;
+ 
+}
+
+.button-1 {
+  font-family: 'Geist', sans-serif;
+  font-variation-settings: 'wght' 360;
+  color: #242424;
+  letter-spacing: -0.035em;
+  text-decoration-line: underline;
+  text-decoration-color: currentColor;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+/* ===== Header & Toggle ===== */
+header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 50;
+  background-color: #F9F9F9;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6pt;
+  padding-top: 15pt;
+  padding-bottom: 15pt;
+}
+
+
+
+
+/* Desktop (≥745px): tighter padding */
+@media (min-width: 745px) {
+  header {
+    padding: 1pt;
+  }
+}
+
+    
+    /* your existing project tooltip */
+#project-tooltip {
+  position: fixed;
+  pointer-events: none;
+  background-color: #2B2B2D;
+  color: #F9F9F9;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 11pt;
+  z-index: 1000;
+  display: none;
+  white-space: nowrap;
+}
+
+/* the copy tooltip */
+#copy-tooltip {
+  position: fixed;
+  pointer-events: none;
+  background-color: #2B2B2D;
+  color: #F9F9F9;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 11pt;
+  z-index: 1000;
+  display: none;
+  white-space: nowrap;
+}
+    
+    /* Hide hamburger by default, show only on mobile ≤745px */
+    #mobileMenuBtn {
+      font-size: 10px;
+      background: transparent; border: none;
+      cursor: pointer; touch-action: manipulation;
+      line-height: 1; padding: 0; margin: 0;  padding-right: 8pt; padding-top: 2pt;
+      width: 40px; height: 40px;
+      display: none;
+      align-items: center; justify-content: center;
+      z-index: 51;
+    }
+    @media (max-width: 745px) {
+      #mobileMenuBtn {
+        display: flex;
+      }
+    }
+    .hamburger-icon {
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+html {
+  background-color: #F9F9F9; /* same as main */
+}
+.hamburger-icon {
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+html {
+  background-color: #F9F9F9; /* same as main */
+}
+.hamburger-icon span {
+  position: absolute;
+  left: 0;
+  top: 40%;
+  width: 130%;
+  height: 2.5px;
+  background-color: #2B2B2D;
+  transform-origin: center center;
+  transition: transform 0.3s ease;
+}
+.hamburger-icon span:nth-child(1) {
+  transform: translateY(-5px);
+}
+.hamburger-icon span:nth-child(2) {
+  transform: translateY(5px);
+}
+.hamburger-icon.open span:nth-child(1) {
+  transform: rotate(45deg);
+}
+.hamburger-icon.open span:nth-child(2) {
+  transform: rotate(-45deg);
+}
+    /* ===== Mobile Nav Overlay ===== */
+    #mobileNavOverlay {
+      position: fixed; top: 56px; left: 0; right: 0; bottom: 0;
+      z-index: 40; background-color: #F9F9F9;
+      display: none; flex-direction: column;
+      padding: 1rem; opacity: 0; transform: translateY(-10px);
+      transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+    }
+    #mobileNavOverlay.visible {
+      opacity: 1; transform: translateY(0);
+    }
+    
+    .nav-button:hover {
+      color: #bcbcbc;
+    }
+    /* ===== Mobile slide-up animation ===== */
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .mobile-anim {
+      animation: slideUp 0.4s ease-out both;
+    }
+    
+    .fade-in {
+      opacity: 0;
+      transform: translateY(-2px);
+      transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+    }
+    
+    .project {
+      position: relative;
+      transform-origin: center;
+      overflow: hidden;
+    }
+/* override all project-image-container to square on small screens */
+.project-image-container {
+  aspect-ratio: 1 / 1.06;
+  width: 100%;
+  overflow: hidden;
+  border-radius: inherit;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 48px;
+  column-gap: 28px;
+}
+
+
+@media (min-width: 745px) {
+  .projects-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+  }
+  .projects-grid > .project:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .projects-grid > .project:nth-child(2) {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .projects-grid > .project:nth-child(3) {
+    grid-column: 3;
+    grid-row: 1 ;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  .projects-grid > .project:nth-child(3) .project-image-container {
+    flex-grow: 1;
+    overflow: hidden;
+  }
+}
+    @media (min-width: 745px) {
+      .desktop     { display: block !important; }
+      .desktop-flex{ display: flex  !important; }
+      .mobile      { display: none  !important; }
+    }
+    @media (max-width: 745px) {
+      .header-nav  { display: none !important; }
+      }
+    
+    .email-phone {
+  /* default (mobile) */
+  font-size: 20pt;
+}
+@media (min-width: 745px) {
+  /* desktop (or whatever px you prefer) */
+  .email-phone {
+    font-size: 38px;
+  }
+}
+main {
+  position: relative;
+  z-index: 2;
+  background: #F9F9F9;
+  margin-bottom: o; 
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%; 
+  max-height: 80vh;
+  overflow-y: auto; /* footer scrolls internally when content exceeds */
+  background: #000;
+}
+/* 3) For mobile, use shorter footer */
+@media (max-width: 745px) {
+  main {
+    margin-bottom: 450px;
+  }
+  
+}
+footer button[aria-label="Scroll to top"] {
+  font-family: Geist;
+}
+/* Prevent background scroll when mobile nav is open */
+body.nav-open {
+  overflow: hidden !important;
+}
+#mobileMenuBtn {
+  margin-right: -12px;
+}
+/* mobile-only social icons in footer */
+.mobile-social {
+  display: none;
+}
+@media (max-width: 745px) {
+  footer {
+    /* ensure footer is flex-column */
+    display: flex;
+    flex-direction: column;
+  }
+  .mobile-social {
+    display: flex;
+    justify-content: left;
+    gap: 12px;
+    margin-top: -66px;      /* push to bottom */
+    margin-bottom: 40px;   /* 25px above bottom */
+  }
+}
+@media (max-width: 745px) {
+  .mobile-social img {
+    /* invert black ↔ white */
+    filter: invert(1);
+  }
+}
+@media (min-width:818px) {
+  .max-web {
+    margin: 0 auto;
+    max-width: 1650px;
+  }
+}
+#navContainer {
+    margin-top: 2.5rem;   /* mt-10 */
+    margin-bottom: 1rem;  /* mb-4 */
+    transition: margin-top .2s ease-out;
+  }
+
+
+/* 1) Always collapse every .service-content by default */
+.service .service-content {
+  max-height: 0;
+  overflow: hidden; /* make sure hidden */
+}
+
+/* 2) If a service has the “open” class, expand its content */
+.service.open .service-content {
+  max-height: 256px; /* adjust if you need more or less vertical space */
+}
+
+/* 3) On desktop (≥768px), hovering any .service temporarily expands it */
+@media (min-width: 768px) {
+  .service:hover .service-content {
+    max-height: 256px;
+  }
+}
+
+
+  </style>
+  
+  <link rel="icon" href="images/logo-04.svg" type="image/svg+xml">
+</head>
+<body>
+  <main>
+  <!-- Project tooltip -->
+  <div id="project-tooltip"></div>
+  <!-- ===== Header & Toggle ===== -->
+  <header class="max-web fade-in fixed top-0 left-0 right-0 z-50 ">
+    <div id="navContainer" class="bg-[#f9f9f9] flex justify-between items-center w-full  py-0 md:py-0 px-4 md:px-8">
+      <!-- Header Title -->
+      <a href="/" class="mt-0 mb-0 transition-colors duration-150 -ml-[0px] !text-[14pt] md:!text-[14pt] md:-ml-[0.2em]">
+  <img src="images/logo-new-circle-02.svg" alt="Jake Pearce logo" class="h-8 w-auto">
+</a>
+
+  
+      <!-- Desktop Nav -->
+      <nav class="header-nav hidden md:flex" style="margin: 0pt;">
+        <ul class="flex space-x-7 mr-0 mt-0 mb-0">
+          <li><a href="/" class="!text-[20pt] md:!text-[14pt] nav-button text-[#000000] transition-colors duration-150">Work</a></li>
+          <li><a href="visual-feed" class="!text-[20pt] md:!text-[14pt] text-[#000000] nav-button transition-colors duration-150">Visual feed</a></li>
+          <li><a href="#contact" class="!text-[20pt] md:!text-[14pt] text-[#000000] nav-button transition-colors duration-150">Contact</a></li>
+        </ul>
+      </nav>
+      <!-- Mobile Menu Button (now hidden except ≤745pxx) -->
+      <button id="mobileMenuBtn" aria-label="Open Menu">
+        <div class="hamburger-icon">
+          <span></span>
+          <span></span>
+        </div>
+      </button>
+    </div>
+  </header>
+  <!-- ===== Mobile Overlay ===== -->
+<div id="mobileNavOverlay"
+class="fixed inset-0 z-40 bg-[#F9F9F9] flex flex-col px-4 md:px-8
+       opacity-0 -translate-y-2 transition-opacity transition-transform duration-400"
+aria-hidden="true">
+
+<!-- center section: Work & Visual feed -->
+<div class="flex-1 flex flex-col justify-center space-y-3">
+<a href="/"       class="h2 !text-[32pt] md:!text-[13pt]">Work</a>
+<a href="visual-feed" class="h2 !text-[32pt] md:!text-[13pt]">Visual feed</a>
+</div>
+
+<!-- bottom section, pinned 25px above bottom -->
+<div class="flex flex-col items-start mb-[35px] space-y-3">
+<a class="body-text-1 !text-[12pt]  text-[#8e8e8e]">Contact</a>
+<a href="mailto:hello@jakepearce.com.au"
+  class="body-text-1 !text-[12pt] md:!text-[13pt] !mt-[0.2em]">
+ hello@jakepearce.com.au
+</a>
+<span class="body-text-1 !text-[12pt]  !mt-[0.2em]">
+ +61 422 911 799
+</span>
+
+<!-- social icons side-by-side -->
+<div class="flex items-center space-x-2 !mt-[0.5em]">
+ <a href="https://instagram.com/jake.r.pearce"
+    target="_blank" rel="noopener noreferrer">
+   <img src="images/instagram-black.svg" alt="Instagram" class="w-7 h-7"/>
+ </a>
+ <a href="https://behance.net/jake.r.pearce"
+    target="_blank" rel="noopener noreferrer">
+   <img src="images/behance.svg" alt="Behance" class="w-7 h-7"/>
+ </a>
+</div>
+</div>
+</div>
+  </div>
+
+
+
+
+<!-- ===== Hero Section ===== -->
+  
+  <section
+    id="hero"
+    class="hidden md:block max-web mx-auto w-full px-4 md:px-8 py-12 md:mt-44 md:mb-44 mt-44 mb-44 bg-[#F9F9F9] fade-in">
+    <div class="flex flex-col-reverse md:flex-row md:items-end gap-12">
+      <div class="w-full">
+      
+      <p class="  h1 
+      !text-[clamp(22pt,6vw,72pt)] 
+        mb-4 md:mb-0 mt-2 md:mt-0
+      "> <span class="text-black"></span>
+        Erima Australia<br>
+         </span>
+         <span class="text-[#d3d3d3]">
+         building a visual identity<br>
+        fit for the Australian market
+        </span>
+      </p>
+      </div>
+    </div>
+  </section>
+<section
+    id="hero"
+    class="block md:hidden max-web mx-auto w-full px-4 md:px-8 py-12 md:mt-44 md:mb-44 mt-24 mb-44 bg-[#F9F9F9] fade-in">
+    <div class="flex flex-col-reverse md:flex-row md:items-end gap-12">
+      <div class="w-full">
+      
+      <p class=" h1  
+      !text-[42pt] 
+        mb-4 md:mb-0 mt-2 md:mt-0
+      "> <span class="text-black"></span>
+        Erima Australia<br>
+         </span>
+         <span class="  text-[#d3d3d3]">
+          building a visual identity
+        fit for the Australian market
+        </span>
+      </p>
+      </div>
+    </div>
+  </section>
+
+  
+  <!-- ===== Recent Projects ===== -->
+  <div class="max-web mx-auto px-4 md:px-8 z-20 bg-[#F9F9F9] fade-in">    
+  </div>
+  
+  <section
+  
+    id="work"
+    class="max-web mx-auto z-40 w-full px-4 md:px-8 bg-[#F9F9F9] fade-in">
+    <div class=" ">
+      <div class="project bg-[#F9F9F9] flex flex-col fade-in order-2 md:order-1">
+        <p class="body-text-2 leading-[1.32]  !text-[14pt] md:!text-[14pt] 2xl:!text-[14pt] mb-[12.5px] min-[1200px]:mb-[20px] min-[1599px]:mb-[20px] fade-in">
+  With a heritage of quality German apparel, the brand sought to <br class="hidden md:block ">
+  connect with clubs and communities in Australia. I was brought on <br class="hidden md:block ">
+  to create social content and promotional graphics that introduced <br class="hidden md:block ">
+  Erima’s legacy to new audiences with clarity and energy.
+</p>
+<div class="flex flex-wrap gap-x-[6px] gap-y-[5px] mb-16  fade-in">
+  <span class="text-[11pt] xl:text-[11pt] 2xl:text-[11pt] text-[#141414]/50 inline-block bg-[#E3E4E8]/50  tag rounded-full px-[6pt] py-[1px]">
+    Branding
+  </span>
+  <span class="text-[11pt] xl:text-[11pt] 2xl:text-[11pt] text-[#141414]/50 inline-block bg-[#E3E4E8]/50  tag rounded-full px-[6pt] py-[1px]">
+    Digital
+  </span>
+  
+  
+</div>
+      
+      
+      
+  </section> 
+  
+ 
+<section id="Project-images" class="fade-in max-web mx-auto px-4 md:px-8 ">
+  <div class="content-column space-y-4   
+  ">
+    
+
+    <section id="project-gallery" class="fade-in">
+      <div class="  aspect-[7/6] sm:aspect-auto  overflow-hidden">
+        <img src="images/erima-img1.jpg" alt="Gallery Image 1" class="object-cover w-full h-full " />
+      </div>
+    </section>
+
+    <section id="project-gallery" class="fade-in">
+      <div class="  aspect-[7/6] sm:aspect-auto overflow-hidden">
+        <img src="images/erima-img2.jpg" alt="Gallery Image 2" class="object-cover w-full h-full " />
+      </div>
+    </section>
+
+    <section id="project-gallery" class="fade-in">
+      <div class="  aspect-[7/6] sm:aspect-auto overflow-hidden">
+        <img src="images/erima-img5.jpg" alt="Gallery Image 3" class="object-cover w-full h-full " />
+      </div>
+    </section>
+
+    <section id="project-gallery" class="fade-in">
+      <div class="  aspect-[7/6] sm:aspect-auto overflow-hidden">
+        <img src="images/erima-img4.jpg" alt="Gallery Image 4" class="object-cover w-full h-full " />
+      </div>
+    </section>
+
+    <div class="mt-0 text-right lg:hidden">
+  
+  
+  </div>
+
+    
+
+
+
+
+
+  
+   
+<div class="h-10 md:h-[6em]"></div>
+<h2 class="h1 text-[16pt] md:text-[20pt]  ">Similar projects</h2>
+<div class="h-10 md:h-[1em]"></div>
+<section
+  
+    id="work"
+    class="max-web mx-auto z-40 w-full mt-32 bg-[#F9F9F9] fade-in">
+    <div class="projects-grid">
+      <div class="project bg-[#F9F9F9] flex flex-col fade-in order-2 md:order-1">
+        <div class="project-image-container">
+          <a href="bmp-sports" class="w-full h-full block">
+            <img
+              src="images/bmp-image-1.jpg"
+              alt="Braves Cricket"
+              class="w-full h-full object-cover rounded-[0.6em]"
+            />
+          </a>
+        </div>
+        <div class="mt-4 flex flex-col items-start">
+          <a href="bmp-sports" class="block body-text-2  !text-[14pt] mt-[0.3em] mb-[0.3em]">
+            BMP Sports
+          </a>
+          <a href="bmp-sports" class="text-[#686868]/80 body-text-1  block !text-[14pt] mb-[0.4em]">
+            Cricket event and team managers
+          </a>
+          <a href="bmp-sports" class="flex flex-wrap gap-x-[6px] gap-y-[5px] block ">
+ 
+            
+          </a>
+        </div>
+      </div>
+      <div class="project bg-[#F9F9F9] flex flex-col fade-in order-2 md:order-1">
+        <div class="project-image-container">
+          <a href="braves-cricket" class="w-full h-full block">
+            <img
+              src="images/players-(Project-Thumbnails).jpg"
+              alt="Braves Cricket"
+              class="w-full h-full object-cover rounded-[0.6em]"
+            />
+          </a>
+        </div>
+        <div class="mt-4 flex flex-col items-start">
+          <a href="braves-cricket" class="block body-text-2  !text-[14pt] mt-[0.3em] mb-[0.3em]">
+            Braves Cricket
+          </a>
+          <a href="braves-cricket" class="text-[#686868]/80 body-text-1  block !text-[14pt] mb-[0.4em]">
+            Independent team in T10 league
+          </a>
+          <a href="braves-cricket" class="flex flex-wrap gap-x-[6px] gap-y-[5px] block ">
+  
+            
+          </a>
+        </div>
+      </div>
+      <div class="project bg-[#F9F9F9] flex flex-col fade-in order-2 md:order-1">
+        <div class="project-image-container">
+          <a href="mmt" class="w-full h-full block">
+            <img
+              src="images/mmt1.png"
+              alt="Braves Cricket"
+              class="w-full h-full object-cover rounded-[0.6em]"
+            />
+          </a>
+        </div>
+        <div class="mt-4 flex flex-col items-start">
+          <a href="mmt" class="block body-text-2  !text-[14pt] mt-[0.3em] mb-[0.3em]">
+            Music Metaverse Token
+          </a>
+          <a href="mmt" class="text-[#686868]/80 body-text-1  block !text-[14pt] mb-[0.4em]">
+            Crypto meets music concert promotion
+          </a>
+          <a href="mmt" class="flex flex-wrap gap-x-[6px] gap-y-[5px] block ">
+  
+            
+          </a>
+        </div>
+      </div>
+      
+      
+  </section>
+      
+
+<div class="h-10 md:h-[6em]"></div>
+
+</main>
+<footer
+  id="contact"
+  class="bg-[#000000] text-[#FAFAFA] py-8"
+  style="font-family:'Geist',sans-serif"
+>
+  <div class="max-web mx-auto w-full px-4 md:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-20">
+      <!-- links -->
+      <div class="body-text-1 flex justify-left gap-3 flex-wrap text-[13pt] md:text-[11pt] order-4 md:order-none">
+        <a href="#" id="backToTop" class="text-[#686868] hover:text-[#f9f9f9] whitespace-nowrap">
+          Back to top
+        </a>
+        <a href="/work" class="text-[#686868] hover:text-[#f9f9f9] whitespace-nowrap">
+          Work
+        </a>
+        <a href="/visual-feed" class="text-[#686868] hover:text-[#f9f9f9] whitespace-nowrap">
+          Visual Feed
+        </a>
+        <a href="/privacy-policy" class="text-[#686868] hover:text-[#f9f9f9] whitespace-nowrap">
+          Privacy Policy
+        </a>
+      </div>
+
+      <!-- mobile-only copyright under nav -->
+      <div class="order-5 text-[13pt] text-[#686868] md:hidden">
+        © 2025
+      </div>
+
+      <!-- chat prompt -->
+      <div
+        class="andrew-text-1 text-[#f9f9f9] -mb-6 md:-mb-0 md:col-span-2 text-[16pt] order-1 md:order-none"
+      >
+        Want to work together? Let’s have a chat.
+      </div>
+
+      <!-- acknowledgement -->
+      <div
+        class="body-text-1 text-[#686868] text-[13pt] md:text-[11pt] leading-relaxed flex flex-col mt-4 md:mt-0 justify-end order-3 md:order-none"
+      >
+        I acknowledge the Wurundjeri people as the traditional custodians of this land, pay respect to elders past, present and emerging, and honour their enduring connection to country.
+      </div>
+
+      <!-- contact details -->
+      <div class="mt-4 md:mt-6 md:col-span-2 space-y-3 order-2 md:order-none">
+        <div class="border-b border-1 border-[#333333]"></div>
+
+        <div class="copy-target">
+          <a
+            href="#"
+            data-copy="hello@jakepearce.com.au"
+            class="email text-[#f9f9f9] block md:text-[38pt] text-[28pt] hover:text-[#f9f9f9]/60"
+          >
+            hello@jakepearce.com.au
+          </a>
+        </div>
+        <div class="border-b border-1 border-[#333333]"></div>
+        <div class="copy-target">
+          <a
+            href="#"
+            data-copy="+614229117799"
+            class="email text-[#f9f9f9] block md:text-[38pt] text-[28pt] hover:text-[#f9f9f9]/60"
+          >
+            +61 422 911 799
+          </a>
+        </div>
+        <div class="border-b border-1 border-[#333333]"></div>
+
+        <div class="flex justify-between items-center">
+          <div class="mt-5 flex space-x-3">
+            <a
+              href="https://behance.net/jake.r.pearce"
+              target="_blank"
+              rel="noopener"
+            >
+              <img
+                src="images/behance.svg"
+                alt="Behance"
+                class="w-8 h-8 filter invert hover:opacity-60"
+              />
+            </a>
+            <a
+              href="https://instagram.com/jake.r.pearce"
+              target="_blank"
+              rel="noopener"
+            >
+              <img
+                src="images/instagram-black.svg"
+                alt="Instagram"
+                class="w-8 h-8 filter invert hover:opacity-60"
+              />
+            </a>
+          </div>
+
+          <!-- desktop-only copyright -->
+          <div class="mt-10 text-[13pt] text-[#686868] hidden md:block">
+            © 2025
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+<script>
+
+ // Tooltip for project images
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.innerWidth <= 745) return; // Disable tooltip on mobile
+      const tooltip = document.createElement('div');
+      tooltip.id = 'project-tooltip';
+      document.body.appendChild(tooltip);
+      document.querySelectorAll(".project-image-container").forEach(container => {
+        container.addEventListener("mouseenter", () => {
+          const anchor = container.querySelector("a");
+          tooltip.textContent = anchor ? "View Project" : "Coming Soon";
+          tooltip.style.display = "block";
+        });
+        container.addEventListener("mousemove", e => {
+          tooltip.style.top = e.clientY + 15 + "px";
+          tooltip.style.left = e.clientX + 15 + "px";
+        });
+        container.addEventListener("mouseleave", () => {
+          tooltip.style.display = "none";
+        });
+      });
+    });
+
+
+    
+
+document.addEventListener('DOMContentLoaded', () => {
+  // create floating copy-tooltip
+  const copyTip = document.createElement('div');
+  copyTip.id = 'copy-tooltip';
+  document.body.appendChild(copyTip);
+
+  document.querySelectorAll('.copy-target a').forEach(link => {
+    link.addEventListener('mouseenter', () => {
+      copyTip.textContent = 'Click to copy';
+      copyTip.style.display = 'block';
+    });
+    link.addEventListener('mousemove', e => {
+      copyTip.style.top  = (e.clientY + 15) + 'px';
+      copyTip.style.left = (e.clientX + 15) + 'px';
+    });
+    link.addEventListener('mouseleave', () => {
+      copyTip.style.display = 'none';
+    });
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const text = link.getAttribute('data-copy');
+      navigator.clipboard.writeText(text).then(() => {
+        copyTip.textContent = 'Copied to clipboard';
+      });
+    });
+  });
+});
+</script>
+
+
+  <!-- ===== Scripts ===== -->
+<script>
+
+
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const main = document.querySelector('main');
+    const footer = document.querySelector('footer');
+
+    function adjustMainMargin() {
+      const h = footer.offsetHeight;
+      main.style.marginBottom = h + 'px';
+    }
+
+    adjustMainMargin();
+    window.addEventListener('resize', adjustMainMargin);
+  });
+</script>
+
+   <script>
+    
+  const nav = document.getElementById('navContainer');
+  const INIT = 40; // px
+  const MIN  = 16; // px
+
+  window.addEventListener('scroll', () => {
+    const s = window.scrollY;
+    nav.style.marginTop = Math.max(INIT - s, MIN) + 'px';
+  });
+</script>
+  <script>
+    
+    // Scroll-to-bottom for Contact links
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('a[href="#contact"]').forEach(link => {
+        link.addEventListener('click', e => {
+          e.preventDefault();
+          window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+        });
+      });
+    });
+    
+     
+    
+    document.addEventListener('DOMContentLoaded', () => {
+  const MOBILE_BREAKPOINT = 745;
+
+  function swapImages() {
+    const isMobile = window.innerWidth <= MOBILE_BREAKPOINT;
+    document.querySelectorAll('.project-image-container img').forEach(img => {
+      const src = img.getAttribute('src');
+      const dot = src.lastIndexOf('.');
+      if (dot === -1) return;
+
+      const base = src.slice(0, dot);
+      const ext  = src.slice(dot);
+      const mobileSrc = `${base}-mobile${ext}`;
+
+      // only swap if on mobile and not already swapped
+      if (isMobile && !src.endsWith(`-mobile${ext}`)) {
+        img.src = mobileSrc;
+      }
+      // optional: swap back on desktop
+      else if (!isMobile && src.endsWith(`-mobile${ext}`)) {
+        img.src = `${base.replace(/-mobile$/, '')}${ext}`;
+      }
+    });
+  }
+
+  // initial swap
+  swapImages();
+  // also update on resize
+  window.addEventListener('resize', swapImages);
+});
+    // Mobile menu toggle with improved hamburger icon
+    document.addEventListener('DOMContentLoaded', () => {
+      const btn = document.getElementById('mobileMenuBtn');
+      const icon = btn.querySelector('.hamburger-icon');
+      const overlay = document.getElementById('mobileNavOverlay');
+      let isOpen = false;
+      // Initialize tooltip if it wasn't created above
+      if (!document.getElementById('project-tooltip')) {
+        const tooltip = document.createElement('div');
+        tooltip.id = 'project-tooltip';
+        document.body.appendChild(tooltip);
+      }
+      btn.addEventListener('click', () => {
+        isOpen = !isOpen;
+        if (isOpen) {
+          // Open menu
+          
+          overlay.style.display = 'flex';
+          setTimeout(() => {
+            overlay.classList.add('visible');
+          }, 10);
+          icon.classList.add('open');
+          document.body.classList.add('nav-open');
+        } else {
+          // Close menu
+          overlay.classList.remove('visible');
+          setTimeout(() => {
+            overlay.style.display = 'none';
+          }, 400); // Match transition duration
+          icon.classList.remove('open');
+          document.body.classList.remove('nav-open');
+        }
+      });
+    });
+    // Intersection Observer for fade-in
+    document.addEventListener("DOMContentLoaded", () => {
+  const observer = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = "1";
+          entry.target.style.transform = "translateY(0)";
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      root: null, // observes viewport
+      rootMargin: "0px 0px -0px 0px", // optional: tweak trigger buffer
+      threshold: 0 // 20% of the element must be visible to trigger
+    }
+  );
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+});
+    // Alt-image injection
+    document.addEventListener("DOMContentLoaded", () => {
+  if (window.innerWidth <= 745) return; // Skip on mobile
+
+  function tryAltSrc(img, candidates) {
+    if (!candidates.length) return;
+    img.src = candidates.shift();
+    img.onerror = () => tryAltSrc(img, candidates);
+  }
+
+  document.querySelectorAll('.project-image-container').forEach(container => {
+    const img = container.querySelector('img');
+    if (!img) return;
+    const src = img.src;
+    const dot = src.lastIndexOf('.');
+    if (dot === -1) return;
+    const base = src.slice(0, dot), ext = src.slice(dot);
+    const alts = (ext.match(/jpe?g/i) ? [base+'-alt.gif', base+'-alt.png', base+'-alt'+ext] : [base+'-alt'+ext]);
+    const altImg = document.createElement('img');
+    altImg.alt = img.alt + ' alt';
+    altImg.className = img.className;
+    Object.assign(altImg.style, {
+      position:'absolute', top:0, left:0, width:'100%', height:'100%', objectFit:'cover', zIndex:1
+    });
+    container.style.position = 'relative';
+    container.appendChild(altImg);
+    img.style.position = 'relative'; 
+    img.style.zIndex = 2; 
+    img.style.transition = 'opacity 0.4s ease';
+    tryAltSrc(altImg, alts);
+    container.addEventListener('mouseenter', () => img.style.opacity = 0);
+    container.addEventListener('mouseleave', () => img.style.opacity = 1);
+  });
+}); 
+    // Smooth-scroll for Work link
+    document.addEventListener("DOMContentLoaded", () => {
+      const workLink = document.querySelector('a.nav-button[href="/"]');
+      if (workLink && window.location.pathname.endsWith('/')) {
+        workLink.addEventListener('click', e => {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+    });
+    // smooth scroll for “Back to top”
+document.addEventListener('DOMContentLoaded', () => {
+  const back = document.getElementById('backToTop');
+  if (!back) return;
+  back.addEventListener('click', e => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+    document.addEventListener('DOMContentLoaded', () => {
+  if (window.innerWidth <= 745) {
+    const grid = document.querySelector('.projects-grid');
+    const bravesProject = grid.children[2]; // assuming Braves is 3rd project
+    if (grid && bravesProject) {
+      grid.insertBefore(bravesProject, grid.firstChild);
+    }
+  }
+});
+
+  </script>
+  <!-- Subtle Dev Ribbon — bottom-right -->
+<div id="devNotice" class="fixed bottom-4 right-4 z-[60] bg-[#141414]/80 text-white text-[12px] px-3 py-[6px] rounded-full flex items-center gap-2 shadow-md">
+  <span>Portfolio in development</span>
+  <button onclick="this.parentElement.remove()" aria-label="Close" class="text-white text-[13px] leading-none font-bold hover:text-gray-300">&times;</button>
+</div>
+</body>
+</html>
