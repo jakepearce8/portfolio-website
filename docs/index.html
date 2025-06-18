@@ -615,26 +615,33 @@ aria-hidden="true">
     <div class="projects-grid">
       <div class="project bg-[#F9F9F9] flex flex-col fade-in order-2 md:order-1">
         <div class="project-image-container">
-          <a href="mmt" class="w-full h-full block">
-            <img
-              src="images/MMT-2025-02.jpg"
-              alt="Music Metaverse Token"
-              class="w-full h-full object-cover rounded-[0.6em]"
-            />
-          </a>
-        </div>
-        <div class="mt-4 flex flex-col items-start">
-          <a href="mmt" class="block body-text-2  !text-[14pt] mt-[0.3em] mb-[0.3em]">
-            Music Metaverse Token
-          </a>
-          <a href="mmt" class="text-[#686868]/80 body-text-1  block !text-[14pt] mb-[0.4em]">
-            Crypto meets music concert promotion
-          </a>
-          <a href="mmt" class="flex flex-wrap gap-x-[6px] gap-y-[5px] block ">
- 
-            
-          </a>
-        </div>
+  <a href="mmt" class="w-full h-full block">
+    <video
+      class="w-full h-full object-cover rounded-[0.6em]"
+      loop
+      autoplay
+      muted
+      playsinline
+                  
+      preload="metadata"  
+      poster="images/MMT-2025-02.jpg"
+    >
+      <source src="/videos/MMT-2025-02.mp4" type="video/mp4">
+       
+    </video>
+  </a>
+</div>
+<div class="mt-4 flex flex-col items-start">
+  <a href="mmt" class="block body-text-2 !text-[14pt] mt-[0.3em] mb-[0.3em]">
+    Music Metaverse Token
+  </a>
+  <a href="mmt" class="text-[#686868]/80 body-text-1 block !text-[14pt] mb-[0.4em]">
+    Crypto meets music concert promotion
+  </a>
+  <a href="mmt" class="flex flex-wrap gap-x-[6px] gap-y-[5px] block">
+    <!-- tags here -->
+  </a>
+</div>
       </div>
       <div class="project bg-[#F9F9F9] flex flex-col fade-in order-2 md:order-1">
         <div class="project-image-container">
@@ -1262,7 +1269,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 });
-    // Alt-image injection
     document.addEventListener("DOMContentLoaded", () => {
   if (window.innerWidth <= 745) return; // Skip on mobile
 
@@ -1274,28 +1280,60 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll('.project-image-container').forEach(container => {
     const img = container.querySelector('img');
-    if (!img) return;
-    const src = img.src;
-    const dot = src.lastIndexOf('.');
-    if (dot === -1) return;
-    const base = src.slice(0, dot), ext = src.slice(dot);
+    const video = container.querySelector('video');
+
+    let base, ext, original, altImg;
+
+    if (img) {
+      const src = img.src;
+      const dot = src.lastIndexOf('.');
+      if (dot === -1) return;
+      base = src.slice(0, dot);
+      ext = src.slice(dot);
+      original = img;
+    } else if (video && video.poster) {
+      const poster = video.poster;
+      const dot = poster.lastIndexOf('.');
+      if (dot === -1) return;
+      base = poster.slice(0, dot);
+      ext = poster.slice(dot);
+      original = video;
+    } else {
+      return;
+    }
+
     const alts = (ext.match(/jpe?g/i) ? [base+'-alt.gif', base+'-alt.png', base+'-alt'+ext] : [base+'-alt'+ext]);
-    const altImg = document.createElement('img');
-    altImg.alt = img.alt + ' alt';
-    altImg.className = img.className;
+
+    altImg = document.createElement('img');
+    altImg.alt = (original.alt || 'Project') + ' alt';
+    altImg.className = original.className;
     Object.assign(altImg.style, {
-      position:'absolute', top:0, left:0, width:'100%', height:'100%', objectFit:'cover', zIndex:1
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      width: '100%',
+      height: '100%',
+      objectFit: 'cover',
+      zIndex: 1
     });
+
     container.style.position = 'relative';
     container.appendChild(altImg);
-    img.style.position = 'relative'; 
-    img.style.zIndex = 2; 
-    img.style.transition = 'opacity 0.4s ease';
+    original.style.position = 'relative';
+    original.style.zIndex = 2;
+    original.style.transition = 'opacity 0.4s ease';
+
     tryAltSrc(altImg, alts);
-    container.addEventListener('mouseenter', () => img.style.opacity = 0);
-    container.addEventListener('mouseleave', () => img.style.opacity = 1);
+
+    container.addEventListener('mouseenter', () => {
+      original.style.opacity = 0;
+    });
+    container.addEventListener('mouseleave', () => {
+      original.style.opacity = 1;
+    });
   });
 });
+
     // Smooth-scroll for Work link
     document.addEventListener("DOMContentLoaded", () => {
       const workLink = document.querySelector('a.nav-button[href="/"]');
