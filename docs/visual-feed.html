@@ -755,6 +755,32 @@ aria-hidden="true">
 
 
 <script>
+
+ // Tooltip for project images
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.innerWidth <= 745) return; // Disable tooltip on mobile
+      const tooltip = document.createElement('div');
+      tooltip.id = 'project-tooltip';
+      document.body.appendChild(tooltip);
+      document.querySelectorAll(".project-image-container").forEach(container => {
+        container.addEventListener("mouseenter", () => {
+          const anchor = container.querySelector("a");
+          tooltip.textContent = anchor ? "View Project" : "Coming Soon";
+          tooltip.style.display = "block";
+        });
+        container.addEventListener("mousemove", e => {
+          tooltip.style.top = e.clientY + 15 + "px";
+          tooltip.style.left = e.clientX + 15 + "px";
+        });
+        container.addEventListener("mouseleave", () => {
+          tooltip.style.display = "none";
+        });
+      });
+    });
+
+
+    
+
 document.addEventListener('DOMContentLoaded', () => {
   // create floating copy-tooltip
   const copyTip = document.createElement('div');
@@ -787,6 +813,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   <!-- ===== Scripts ===== -->
 <script>
+
+
+
   document.addEventListener('DOMContentLoaded', () => {
     const main = document.querySelector('main');
     const footer = document.querySelector('footer');
@@ -801,17 +830,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 </script>
 
-   <script>
     
-  const nav = document.getElementById('navContainer');
-  const INIT = 40; // px
-  const MIN  = 16; // px
-
-  window.addEventListener('scroll', () => {
-    const s = window.scrollY;
-    nav.style.marginTop = Math.max(INIT - s, MIN) + 'px';
-  });
-</script>
   <script>
     
     // Scroll-to-bottom for Contact links
@@ -824,27 +843,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
     
-    // Tooltip for project images
-    document.addEventListener('DOMContentLoaded', () => {
-      if (window.innerWidth <= 745) return; // Disable tooltip on mobile
-      const tooltip = document.createElement('div');
-      tooltip.id = 'project-tooltip';
-      document.body.appendChild(tooltip);
-      document.querySelectorAll(".project-image-container").forEach(container => {
-        container.addEventListener("mouseenter", () => {
-          const anchor = container.querySelector("a");
-          tooltip.textContent = anchor ? "View Project" : "Coming Soon";
-          tooltip.style.display = "block";
-        });
-        container.addEventListener("mousemove", e => {
-          tooltip.style.top = e.clientY + 15 + "px";
-          tooltip.style.left = e.clientX + 15 + "px";
-        });
-        container.addEventListener("mouseleave", () => {
-          tooltip.style.display = "none";
-        });
-      });
-    });
+     
     
     document.addEventListener('DOMContentLoaded', () => {
   const MOBILE_BREAKPOINT = 745;
@@ -925,46 +924,69 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       root: null, // observes viewport
       rootMargin: "0px 0px -0px 0px", // optional: tweak trigger buffer
-      threshold: 0.1 // 20% of the element must be visible to trigger
+      threshold: 0 // 20% of the element must be visible to trigger
     }
   );
 
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 });
-    // Alt-image injection
-    document.addEventListener("DOMContentLoaded", () => {
-  if (window.innerWidth <= 745) return; // Skip on mobile
+   document.querySelectorAll('.project-image-container').forEach(container => {
+  const img   = container.querySelector('img');
+  const video = container.querySelector('video');
+  let original, src, base, ext;
 
-  function tryAltSrc(img, candidates) {
-    if (!candidates.length) return;
-    img.src = candidates.shift();
-    img.onerror = () => tryAltSrc(img, candidates);
-  }
+  if (img) {
+    original = img;
+    src      = img.src;
+  } else if (video && video.poster) {
+    original = video;
+    src      = video.poster;
+  } else return;
 
-  document.querySelectorAll('.project-image-container').forEach(container => {
-    const img = container.querySelector('img');
-    if (!img) return;
-    const src = img.src;
-    const dot = src.lastIndexOf('.');
-    if (dot === -1) return;
-    const base = src.slice(0, dot), ext = src.slice(dot);
-    const alts = (ext.match(/jpe?g/i) ? [base+'-alt.gif', base+'-alt.png', base+'-alt'+ext] : [base+'-alt'+ext]);
-    const altImg = document.createElement('img');
-    altImg.alt = img.alt + ' alt';
-    altImg.className = img.className;
-    Object.assign(altImg.style, {
-      position:'absolute', top:0, left:0, width:'100%', height:'100%', objectFit:'cover', zIndex:1
-    });
-    container.style.position = 'relative';
-    container.appendChild(altImg);
-    img.style.position = 'relative'; 
-    img.style.zIndex = 2; 
-    img.style.transition = 'opacity 0.4s ease';
-    tryAltSrc(altImg, alts);
-    container.addEventListener('mouseenter', () => img.style.opacity = 0);
-    container.addEventListener('mouseleave', () => img.style.opacity = 1);
+  // split src into base + extension
+  const dot = src.lastIndexOf('.');
+  if (dot === -1) return;
+  base = src.slice(0, dot);
+  ext  = src.slice(dot);
+
+  // list of alt candidates
+  const alts = ext.match(/jpe?g/i)
+    ? [base + '-alt.gif', base + '-alt.png', base + '-alt' + ext]
+    : [base + '-alt' + ext];
+
+  // create and style the alt-image <img>
+  const altImg = document.createElement('img');
+  altImg.alt       = (original.alt || '') + ' alt';
+  altImg.className = original.className;
+  Object.assign(altImg.style, {
+    position:  'absolute',
+    top:       0,
+    left:      0,
+    width:     '100%',
+    height:    '100%',
+    objectFit: 'cover',
+    zIndex:    1
   });
+
+  container.style.position = 'relative';
+  container.appendChild(altImg);
+
+  original.style.position   = 'relative';
+  original.style.zIndex     = 2;
+  original.style.transition = 'opacity 0.4s ease';
+
+  // try to load each alt until one works
+  (function tryAlt(cands) {
+    if (!cands.length) return;
+    altImg.src = cands.shift();
+    altImg.onerror = () => tryAlt(cands);
+  })([...alts]);
+
+  // swap on hover
+  container.addEventListener('mouseenter', () => original.style.opacity = 0);
+  container.addEventListener('mouseleave', () => original.style.opacity = 1);
 });
+
     // Smooth-scroll for Work link
     document.addEventListener("DOMContentLoaded", () => {
       const workLink = document.querySelector('a.nav-button[href="/"]');
@@ -993,7 +1015,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 });
-
 
   </script>
   

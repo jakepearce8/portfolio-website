@@ -28,22 +28,25 @@
 }
 
 
+
+
+
 * {
   font-synthesis: none;
 }
     /* ===== Global ===== */
     body {
       font-family: 'Geist', sans-serif;
-  font-variation-settings: 'wght' 300;
+  font-variation-settings: 'wght' 320;
   color: #242424;
-  letter-spacing: -0.00em; 
-  line-height: 1.4;
+  letter-spacing: -0.0em; 
+  line-height: 1.35;
     }
     /* ===== Typography & components ===== */
     
     .nav-button {
   font-family: 'Geist', sans-serif;
-  font-weight: 400;
+  font-weight: 320;
   color: #5e5e5e;
   background-color: #F9F9F9;
   line-height: 1.0;
@@ -52,7 +55,7 @@
     }
     .footer-button {
   font-family: 'Geist', sans-serif;
-  font-weight: 400;
+  font-weight: 320;
   line-height: 1.4;
   letter-spacing: 0.00em;
     }
@@ -64,7 +67,7 @@
     }
     .title {
   font-family: 'Geist', sans-serif;
-  font-variation-settings: 'wght' 340;
+  font-variation-settings: 'wght' 320;
   color: #242424;
   letter-spacing: -0.0em; 
   line-height: 1.2;
@@ -79,7 +82,7 @@
 }
 .h1 {
   font-family: 'Geist', sans-serif;
-  font-variation-settings: 'wght' 540;
+  font-variation-settings: 'wght' 480;
   color: #242424;
   line-height: 1.03;
   letter-spacing: -0.04em;
@@ -87,73 +90,67 @@
 }
 .h2 {
   font-family: 'Geist', sans-serif;
-  font-variation-settings: 'wght' 540;
-  color: #242424;
-  line-height: 1.15;
-  letter-spacing: -0.03em;
-}
-.h3 {
-  font-family: 'Geist', sans-serif;
-  font-variation-settings: 'wght' 540;
+  font-variation-settings: 'wght' 480;
   color: #242424;
   line-height: 1.15;
   letter-spacing: -0.025em;
 }
+.h3 {
+  font-family: 'Geist', sans-serif;
+  font-variation-settings: 'wght' 480;
+  color: #242424;
+  line-height: 1.35;
+  letter-spacing: -0.015em;
+}
 .quote {
   font-family: 'Geist', sans-serif;
-  font-variation-settings: 'wght' 540;
+  font-variation-settings: 'wght' 500;
   color: #242424;
-  line-height: 1.3;
+  line-height: 1.35;
   letter-spacing: -0.025em;
 }
 .email {
   font-family: 'Geist', sans-serif;
-  font-variation-settings: 'wght' 440;
+  font-variation-settings: 'wght' 480;
   color: #242424;
-  line-height: 1.3;
+  line-height: 1.35;
   letter-spacing: -0.025em;
 }
 .body-text-1 {
   font-family: 'Geist', sans-serif;
-  font-variation-settings: 'wght' 300;
+  font-variation-settings: 'wght' 340;
   color: #242424;
-  letter-spacing: -0.00em; 
-  line-height: 1.4;
+  letter-spacing: -0.0em; 
+  line-height: 1.35;
 }
 .body-text-2 {
-  font-family: 'Geist', sans-serif;
-  font-variation-settings: 'wght' 480;
+ font-family: 'Geist', sans-serif;
+  font-variation-settings: 'wght' 460;
   color: #242424;
-  letter-spacing: 0.00em;
-    line-height: 1.4;
+  line-height: 1.35;
+  letter-spacing: -0.025em;
  
 }
 .body-text-3 {
   font-family: 'Geist', sans-serif;
-  font-variation-settings: 'wght' 540;
+  font-variation-settings: 'wght' 480;
   color: #242424;
   line-height: 1.03;
   letter-spacing: -0.04em;
 }
-.body-text-4 {
-  font-family: 'Geist', sans-serif;
-  font-variation-settings: 'wght' 360;
-  color: #242424;
-  letter-spacing: 0.0em; 
-  line-height: 1.2;
-}
+ 
 .andrew-text-1 {
   font-family: 'Geist', sans-serif;
-  font-variation-settings: 'wght' 360;
+  font-variation-settings: 'wght' 320;
   color: #242424;
-  letter-spacing: -0.0em; 
+  letter-spacing: -0.01em; 
   line-height: 1.45;
 }
 .andrew-text-2 {
   font-family: 'Geist', sans-serif;
   font-variation-settings: 'wght' 480;
   color: #242424;
-  letter-spacing: -0.0em;
+  letter-spacing: -0.01em;
     line-height: 1.45;
  
 }
@@ -323,7 +320,7 @@ html {
 /* restore your original 16:10 ratio once 745px */
 @media (min-width: 745px) {
   .project-image-container {
-    aspect-ratio: 10 / 9;
+    aspect-ratio: 11 / 9;
   }
 }
 
@@ -334,7 +331,7 @@ html {
       display: grid;
       grid-template-columns: 1fr;
       row-gap: 48px;
-      column-gap: 28px;
+      column-gap: 22px;
     }
     @media (min-width: 745px) {
       .projects-grid {
@@ -447,13 +444,14 @@ body.nav-open {
 @media (min-width:818px) {
   .max-web {
     margin: 0 auto;
-    max-width: 1650px;
+    max-width: 1500px;
   }
 }
 #navContainer {
-    margin-top: 2.5rem;   /* mt-10 */
-    margin-bottom: 1rem;  /* mb-4 */
-    transition: margin-top .2s ease-out;
+    margin-top: 0.8rem;  
+    margin-bottom: 0.8rem;  
+    
+    
   }
 .external-link::after {
   display: inline-block;
@@ -509,9 +507,9 @@ body.nav-open {
       <!-- Desktop Nav -->
       <nav class="header-nav hidden md:flex" style="margin: 0pt;">
         <ul class="flex space-x-7 mr-0 mt-0 mb-0">
-          <li><a href="work" class="!text-[20pt] md:!text-[14pt] nav-button text-[#000000] transition-colors  ">Work</a></li>
-          <li><a href="visual-feed" class="!text-[20pt] md:!text-[14pt] text-[#000000] nav-button transition-colors  ">Visual feed</a></li>
-          <li><a href="#contact" class="!text-[20pt] md:!text-[14pt] text-[#000000] nav-button transition-colors  ">Contact</a></li>
+          <li><a href="work" class="!text-[20pt] md:!text-[13pt] body-text-2 text-[#000000] transition-colors  ">Work</a></li>
+          <li><a href="visual-feed" class="!text-[20pt] md:!text-[13pt] text-[#000000] body-text-2 transition-colors  ">Visual feed</a></li>
+          <li><a href="#contact" class="!text-[20pt] md:!text-[13pt] text-[#000000] body-text-2 transition-colors  ">Contact</a></li>
         </ul>
       </nav>
       <!-- Mobile Menu Button (now hidden except ≤745pxx) -->
@@ -525,7 +523,7 @@ body.nav-open {
   </header>
   <!-- ===== Mobile Overlay ===== -->
 <div id="mobileNavOverlay"
-class="fixed inset-0 z-40 bg-[#F9F9F9] flex flex-col px-4 md:px-8
+class="fixed inset-0 z-40 bg-[#F9F9F9] flex flex-col px-4 md:px-5
        opacity-0 -translate-y-2 transition-opacity transition-transform duration-400"
 aria-hidden="true">
 
@@ -565,51 +563,38 @@ aria-hidden="true">
   
   <section
     id="hero"
-    class="hidden md:block max-web mx-auto w-full px-4 md:px-8 py-12 md:mt-44 md:mb-44 mt-44 mb-44 bg-[#F9F9F9] fade-in">
-    <div class="flex flex-col-reverse md:flex-row md:items-end gap-12">
-      <div class="w-full">
-      
-      <p class="  h1 
-      !text-[clamp(22pt,6vw,72pt)] 
-        mb-4 md:mb-0 mt-2 md:mt-0
-      "> <span class="text-black"></span>
-        Jake Pearce<br>
-         </span>
-         <span class="text-[#d3d3d3]">
-         Graphic designer based in <br>
-        Naarm / Melbourne, Australia 
-        </span>
-      </p>
-      </div>
+    class="hidden md:block max-web mx-auto w-full z-40 px-4 md:px-8  md:mt-32  mt-24   bg-[#F9F9F9] fade-in">
+  
+  <div class="grid grid-cols-1  lg:grid-cols-2 gap-12 items-start">
+    <!-- Left Column: Project Title -->
+    <div>
+      <h2 class="h1 !text-[32pt] md:!text-[42pt]  text-black   fade-in">
+        G'day! <br>I'm Jake.
+      </h2>
+       
     </div>
-  </section>
-<section
-    id="hero"
-    class="block md:hidden max-web mx-auto w-full px-4 md:px-8 py-12 md:mt-44 md:mb-44 mt-24 mb-44 bg-[#F9F9F9] fade-in">
-    <div class="flex flex-col-reverse md:flex-row md:items-end gap-12">
-      <div class="w-full">
-      
-      <p class=" h1  
-      !text-[42pt] 
-        mb-4 md:mb-0 mt-2 md:mt-0
-      "> <span class="text-black"></span>
-        Jake Pearce<br>
-         </span>
-         <span class="  text-[#d3d3d3]">
-         Graphic designer based in
-        Naarm / Melbourne, Australia 
-        </span>
+
+    <!-- Right Column: Project Description + Tags -->
+    <div>
+      <p class="body-text-2 text-[#575757] !text-[13pt] md:!text-[13pt]   fade-in">
+       Multidisciplinary Graphic Designer with a focus on brand development, digital 
+assets, and marketing communications. Experienced in shaping visual identity 
+systems, designing promotional content, and producing platform-ready graphics 
+across print and web.  
       </p>
-      </div>
+
+       
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- ===== Recent Projects ===== -->
-  <div class="max-web mx-auto px-4 md:px-8 z-20 bg-[#F9F9F9] fade-in">    
-  </div>
-  
-   <section
-  
+  <div class="max-web mx-auto px-4 md:px-8 z-20 bg-[#F9F9F9] fade-in  ">    
+      <div class="service border-b border-[#d3d3d3] mt-10 mb-4 "></div>
+
+    <h2 class="body-text-2 text-[16pt] md:text-[14pt] mb-10">Selected projects ↘</h2>
+  </div> 
+   <section 
     id="work"
     class="max-web mx-auto z-40 w-full px-4 md:px-8 bg-[#F9F9F9] fade-in">
     <div class="projects-grid">
@@ -617,25 +602,23 @@ aria-hidden="true">
         <div class="project-image-container">
   <a href="mmt" class="w-full h-full block">
     <video
-      class="w-full h-full object-cover rounded-[0.6em]"
+      class="w-full h-full object-cover rounded-[0.5em]"
       loop
       autoplay
       muted
-      playsinline
-                  
+      playsinline   
       preload="metadata"  
       poster="images/MMT-2025-02.jpg"
     >
-      <source src="/videos/MMT-2025-02.mp4" type="video/mp4">
-       
+      <source src="/videos/MMT-2025-02.mp4" type="video/mp4"> 
     </video>
   </a>
 </div>
 <div class="mt-4 flex flex-col items-start">
-  <a href="mmt" class="block body-text-2 !text-[14pt] mt-[0.3em] mb-[0.3em]">
+  <a href="mmt" class="block body-text-2 !text-[13pt] mt-[0.15em] mb-[0.25em]">
     Music Metaverse Token
   </a>
-  <a href="mmt" class="text-[#686868]/80 body-text-1 block !text-[14pt] mb-[0.4em]">
+  <a href="mmt" class="text-[#686868]/80 body-text-1 block !text-[13pt] mb-[0.4em]">
     Crypto meets music concert promotion
   </a>
   <a href="mmt" class="flex flex-wrap gap-x-[6px] gap-y-[5px] block">
@@ -649,15 +632,15 @@ aria-hidden="true">
             <img
               src="images/players-(Project-Thumbnails).jpg"
               alt="Braves Cricket"
-              class="w-full h-full object-cover rounded-[0.6em]"
+              class="w-full h-full object-cover rounded-[0.5em]"
             />
           </a>
         </div>
         <div class="mt-4 flex flex-col items-start">
-          <a href="braves-cricket" class="block body-text-2  !text-[14pt] mt-[0.3em] mb-[0.3em]">
+          <a href="braves-cricket" class="block body-text-2 !text-[13pt] mt-[0.15em] mb-[0.25em]">
             Braves Cricket
           </a>
-          <a href="braves-cricket" class="text-[#686868]/80 body-text-1  block !text-[14pt] mb-[0.4em]">
+          <a href="braves-cricket" class="text-[#686868]/80 body-text-1  block !text-[13pt] mb-[0.4em]">
             Independent team in T10 league
           </a>
           <a href="braves-cricket" class="flex flex-wrap gap-x-[6px] gap-y-[5px] block ">
@@ -672,15 +655,15 @@ aria-hidden="true">
             <img
               src="images/erima.jpg"
               alt="Erima Australia"
-              class="w-full h-full object-cover rounded-[0.6em]"
+              class="w-full h-full object-cover rounded-[0.5em]"
             />
           </a>
         </div>
         <div class="mt-4 flex flex-col items-start">
-          <a href="erima-australia" class="block body-text-2  !text-[14pt] mt-[0.3em] mb-[0.3em]">
+          <a href="erima-australia" class="block body-text-2 !text-[13pt] mt-[0.15em] mb-[0.25em]">
             Erima Australia
           </a>
-          <a href="erima-australia" class="text-[#686868]/80 body-text-1  block !text-[14pt] mb-[0.4em]">
+          <a href="erima-australia" class="text-[#686868]/80 body-text-1  block !text-[13pt] mb-[0.4em]">
             German sportswear brand in Australia
           </a>
           <a href="erima-australia" class="flex flex-wrap gap-x-[6px] gap-y-[5px] block ">
@@ -696,15 +679,15 @@ aria-hidden="true">
             <img
               src="images/bmp-image-1.jpg"
               alt="BMP Sports"
-              class="w-full h-full object-cover rounded-[0.6em]"
+              class="w-full h-full object-cover rounded-[0.5em]"
             />
           </a>
         </div>
         <div class="mt-4 flex flex-col items-start">
-          <a href="bmp-sports" class="block body-text-2  !text-[14pt] mt-[0.3em] mb-[0.3em]">
+          <a href="bmp-sports" class="block body-text-2 !text-[13pt] mt-[0.15em] mb-[0.25em]">
             BMP Sports
           </a>
-          <a href="bmp-sports" class="text-[#686868]/80 body-text-1  block !text-[14pt] mb-[0.4em]">
+          <a href="bmp-sports" class="text-[#686868]/80 body-text-1  block !text-[13pt] mb-[0.4em]">
             Cricket event and team managers
           </a>
           <a href="bmp-sports" class="flex flex-wrap gap-x-[6px] gap-y-[5px] block ">
@@ -718,27 +701,28 @@ aria-hidden="true">
       
       
   </section>  
-  <div class="fade-in max-web mx-auto w-full px-4 md:px-8 mt-12 mb-28  flex justify-end">
-  <a href="work" class="button-1 !text-[14pt] !text-[#000000] md:!text-[14pt] hover:opacity-50">
+  <div class="fade-in max-web mx-auto w-full px-4 md:px-8 mt-6 mb-12  flex justify-end">
+  <a href="work" class="button-1 !text-[13pt] !text-[#000000] md:!text-[13pt] hover:opacity-50">
     See more work
   </a>
 </div>   
   </div>
  
 <section id="services" class="fade-in max-web mx-auto px-4 md:px-8 mb-10">
-  <h2 class="body-text-3 text-[16pt] md:text-[20pt] md:mb-12 mb-6">Services</h2>
+  <div class="service border-b border-[#d3d3d3]  mb-4"></div>
+    <h2 class="h3 text-[16pt] md:text-[14pt] md:mb-10 mb-6">Services</h2>
   <div>
     <!-- 01 Brand Identity -->
     <div class="service border-b border-gray-300 group">
       <div class="service-header grid grid-cols-[auto,1fr,auto] items-center py-3 cursor-pointer">
-        <div class="h2 text-[23pt] md:text-[42pt] lg:text-[42pt] text-[#d3d3d3]">01/</div>
-        <div class="h2 text-[23pt] md:text-[42pt] lg:text-[42pt] text-black ml-[0.72em]">Brand Identity</div>
+        <div class="h1 text-[23pt] md:text-[42pt] lg:text-[34pt] text-[#d3d3d3]">01/</div>
+        <div class="h1 text-[23pt] md:text-[42pt] lg:text-[34pt] text-black ml-[0.72em]">Brand Identity</div>
         <span class="ml-auto inline-block text-[20pt] font-black transform transition-transform duration-200 group-hover:rotate-180">&#x2335;</span>
       </div>
       <div class="service-content max-h-0 overflow-hidden transition-all duration-700 group-hover:max-h-[500px]">
         <div class="grid grid-cols-[auto,1fr]">
           <div></div>
-          <ul class="body-text-1 text-[14pt] md:ml-[6.9em] ml-[3.76em] py-3 list-none mb-5 space-y-2">
+          <ul class="body-text-1 text-[13pt] md:ml-[6em] ml-[3.76em] py-3 list-none mb-5 space-y-2">
             <li>Logos</li>
             <li>Type systems</li>
             <li>Brand assets</li>
@@ -752,14 +736,14 @@ aria-hidden="true">
     <!-- 02 Content Design -->
     <div class="service border-b border-gray-300 group">
       <div class="service-header grid grid-cols-[auto,1fr,auto] items-center py-3 cursor-pointer">
-        <div class="h2 text-[23pt] md:text-[42pt] lg:text-[42pt] text-[#d3d3d3]">02/</div>
-        <div class="h2 text-[23pt] md:text-[42pt] lg:text-[42pt] text-black ml-[0.52em]">Content Design</div>
+        <div class="h1 text-[23pt] md:text-[42pt] lg:text-[34pt] text-[#d3d3d3]">02/</div>
+        <div class="h1 text-[23pt] md:text-[42pt] lg:text-[34pt] text-black ml-[0.52em]">Content Design</div>
         <span class="ml-auto inline-block text-[20pt] font-black transform transition-transform duration-200 group-hover:rotate-180">&#x2335;</span>
       </div>
       <div class="service-content max-h-0 overflow-hidden transition-all duration-700 group-hover:max-h-[500px]">
         <div class="grid grid-cols-[auto,1fr]">
           <div></div>
-          <ul class="body-text-1 text-[14pt] md:ml-[6.9em] ml-[3.76em] py-3 list-none mb-5 space-y-2">
+          <ul class="body-text-1 text-[13pt] md:ml-[6em] ml-[3.76em] py-3 list-none mb-5 space-y-2">
             <li>Social posts</li>
             <li>Ad creative</li>
             <li>Campaign graphics</li>
@@ -772,14 +756,14 @@ aria-hidden="true">
     <!-- 03 Presentation Design -->
     <div class="service border-b border-gray-300 group">
       <div class="service-header grid grid-cols-[auto,1fr,auto] items-center py-3 cursor-pointer">
-        <div class="h2 text-[23pt] md:text-[42pt] lg:text-[42pt] text-[#d3d3d3]">03/</div>
-        <div class="h2 text-[23pt] md:text-[42pt] lg:text-[42pt] text-black ml-[0.53em]">Presentation Design</div>
+        <div class="h1 text-[23pt] md:text-[42pt] lg:text-[34pt] text-[#d3d3d3]">03/</div>
+        <div class="h1 text-[23pt] md:text-[42pt] lg:text-[34pt] text-black ml-[0.53em]">Presentation Design</div>
         <span class="ml-auto inline-block text-[20pt] font-black transform transition-transform duration-200 group-hover:rotate-180">&#x2335;</span>
       </div>
       <div class="service-content max-h-0 overflow-hidden transition-all duration-700 group-hover:max-h-[500px]">
         <div class="grid grid-cols-[auto,1fr]">
           <div></div>
-          <ul class="body-text-1 text-[14pt] md:ml-[6.9em] ml-[3.76em] py-3 list-none mb-5 space-y-2">
+          <ul class="body-text-1 text-[13pt] md:ml-[6em] ml-[3.76em] py-3 list-none mb-5 space-y-2">
             <li>Pitch decks</li>
             <li>Sales presentations</li>
             <li>Internal reports</li>
@@ -791,14 +775,14 @@ aria-hidden="true">
     <!-- 04 Digital Design -->
     <div class="service border-b border-gray-300 group">
       <div class="service-header grid grid-cols-[auto,1fr,auto] items-center py-3 cursor-pointer">
-        <div class="h2 text-[23pt] md:text-[42pt] lg:text-[42pt] text-[#d3d3d3]">04/</div>
-        <div class="h2 text-[23pt] md:text-[42pt] lg:text-[42pt] text-black ml-[0.49em]">Digital Design</div>
+        <div class="h1 text-[23pt] md:text-[42pt] lg:text-[34pt] text-[#d3d3d3]">04/</div>
+        <div class="h1 text-[23pt] md:text-[42pt] lg:text-[34pt] text-black ml-[0.49em]">Digital Design</div>
         <span class="ml-auto inline-block text-[20pt] font-black transform transition-transform duration-200 group-hover:rotate-180">&#x2335;</span>
       </div>
       <div class="service-content max-h-0 overflow-hidden transition-all duration-700 group-hover:max-h-[500px]">
         <div class="grid grid-cols-[auto,1fr]">
           <div></div>
-          <ul class="body-text-1 text-[14pt] md:ml-[6.9em] ml-[3.76em] py-3 list-none mb-5 space-y-2">
+          <ul class="body-text-1 text-[13pt] md:ml-[6em] ml-[3.76em] py-3 list-none mb-5 space-y-2">
             <li>Web visuals</li>
             <li>Landing pages</li>
             <li>UI mockups</li>
@@ -811,14 +795,14 @@ aria-hidden="true">
     <!-- 05 Print & Production -->
     <div class="service border-b border-gray-300 group">
       <div class="service-header grid grid-cols-[auto,1fr,auto] items-center py-3 cursor-pointer">
-        <div class="h2 text-[23pt] md:text-[42pt] lg:text-[42pt] text-[#d3d3d3]">05/</div>
-        <div class="h2 text-[23pt] md:text-[42pt] lg:text-[42pt] text-black ml-[0.47em]">Print &amp; Production</div>
+        <div class="h1 text-[23pt] md:text-[42pt] lg:text-[34pt] text-[#d3d3d3]">05/</div>
+        <div class="h1 text-[23pt] md:text-[42pt] lg:text-[34pt] text-black ml-[0.47em]">Print &amp; Production</div>
         <span class="ml-auto inline-block text-[20pt] font-black transform transition-transform duration-200 group-hover:rotate-180">&#x2335;</span>
       </div>
       <div class="service-content max-h-0 overflow-hidden transition-all duration-700 group-hover:max-h-[500px]">
         <div class="grid grid-cols-[auto,1fr]">
           <div></div>
-          <ul class="body-text-1 text-[14pt] md:ml-[6.9em] ml-[3.76em] py-3 list-none mb-5 space-y-2">
+          <ul class="body-text-1 text-[13pt] md:ml-[6em] ml-[3.76em] py-3 list-none mb-5 space-y-2">
             <li>Flyers</li>
             <li>Signage</li>
             <li>Merchandise</li>
@@ -831,14 +815,14 @@ aria-hidden="true">
     <!-- 06 Creative Support -->
     <div class="service border-b border-gray-300 group">
       <div class="service-header grid grid-cols-[auto,1fr,auto] items-center py-3 cursor-pointer">
-        <div class="h2 text-[23pt] md:text-[42pt] lg:text-[42pt] text-[#d3d3d3]">06/</div>
-        <div class="h2 text-[23pt] md:text-[42pt] lg:text-[42pt] text-black ml-[0.51em]">Creative Support</div>
+        <div class="h1 text-[23pt] md:text-[42pt] lg:text-[34pt] text-[#d3d3d3]">06/</div>
+        <div class="h1 text-[23pt] md:text-[42pt] lg:text-[34pt] text-black ml-[0.51em]">Creative Support</div>
         <span class="ml-auto inline-block text-[20pt] font-black transform transition-transform duration-200 group-hover:rotate-180">&#x2335;</span>
       </div>
       <div class="service-content max-h-0 overflow-hidden transition-all duration-700 group-hover:max-h-[500px]">
         <div class="grid grid-cols-[auto,1fr]">
           <div></div>
-          <ul class="body-text-1 text-[14pt] md:ml-[6.9em] ml-[3.76em] py-3 list-none mb-5 space-y-2">
+          <ul class="body-text-1 text-[13pt] md:ml-[6em] ml-[3.76em] py-3 list-none mb-5 space-y-2">
             <li>Asset resizing</li>
             <li>Formatting</li>
             <li>File exports</li>
@@ -848,13 +832,7 @@ aria-hidden="true">
       </div>
     </div>
   </div>
-</section>
-
-
-
-
-
-
+</section>  
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
@@ -877,63 +855,53 @@ aria-hidden="true">
     });
   });
 </script>
-<div class="fade-in max-web mx-auto px-4 md:px-8 mb-40 body-text-1 text-[#2b2b2b] !text-[14pt] md:!text-[18pt]">
+<div class="fade-in max-web mx-auto px-4 md:px-8 mb-24 body-text-1 text-[#2b2b2b] !text-[13pt] md:!text-[13pt]">
             I work with clients to create clear and reliable design outcomes across <br class="hidden lg:block">
              brand identity, content, and digital assets, delivered on time and on spec.
   </div>
-<section id="testimonial" class="fade-in max-web mx-auto mb-40 px-4 md:px-8">
-  <div class="bg-[#efefef] py-8 md:py-16 lg:py-24 rounded-[0.6em]">
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-2 items-start">
-      <div class="lg:col-span-2">
-        <h2 class="px-4 ml-4 mr-4 md:mr-6 md:ml-16 h3 text-[#2b2b2b] text-[23pt] md:text-[24pt] lg:text-[32pt]">
-          “Jake’s creativity, attention to detail, and ability to bring ideas to life consistently exceed our expectations.”
-        </h2>
-      </div>
-      <div class="lg:ml-8 ml-4 mr-0 md:mr-8 2xl:mr-16 mt-4 md:mt-12 lg:mt-2 flex flex-row  items-center lg:flex-col xl:flex-row ">
-        <img
-          src="images/andrew1.jpg"
-          alt="Andrew Novaro"
-          class="hidden md:block w-24 h-24 rounded-full object-cover ml-2 md:ml-16 lg:ml-10 "
-        />
-        <div class="text-[12pt] md:text-[14pt] text-left ml-6 md:ml-10 mt-0 lg:mt-4 md:mt-0 xl:mt-0 ">
-          <p class="andrew-text-2 text-[#2b2b2b]">Andrew Novaro</p>
-          <p class="andrew-text-1 text-[#2b2b2b]">
-            Managing Director</p>
-            <p class="andrew-text-1 text-[#2b2b2b]">
-            Renaissance Sport </p>
-            
-        </div>
+<section id="testimonial" class="fade-in max-web mx-auto mb-24 px-4 md:px-8">
+  <div class="bg-[#efefef] py-8 md:py-16 lg:py-24 rounded-[0.5em]">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="h2 text-[#2b2b2b] text-[23pt] md:text-[34pt] lg:text-[34pt] px-4">
+        “Jake’s creativity, attention to detail, and ability to bring ideas to life consistently exceed our expectations.”
+      </h2>
+      <div class="mt-6 md:mt-16">
+        <p class="text-[12pt] md:text-[13pt] text-[#2b2b2b] body-text-2">Andrew Novaro</p>
+        <p class="text-[12pt] md:text-[13pt] text-[#2b2b2b] body-text-1">Managing Director</p>
+        <p class="text-[12pt] md:text-[13pt] text-[#2b2b2b] body-text-1">Renaissance Sport</p>
       </div>
     </div>
   </div>
 </section>
+
 <div class="fade-in max-web mx-auto w-full px-4 md:px-8 ">
-  
+  <div class="service border-b border-[#d3d3d3]  mb-4"></div>
+    <h2 class="h2 text-[16pt] md:text-[14pt] md:mb-10 mb-6">About me</h2>
   <!-- First row: image + heading -->
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 ">
     <!-- Image (full width on mobile; first of three cols on md+) -->
     <div class="flex justify-center md:justify-start">
       <img
         src="images/jake-image-square.jpg"
         alt="Jake Pearce"
-        class="w-48 h-48 rounded-full object-cover mx-auto md:mx-0"
+        class="w-40 h-40 rounded-full object-cover mx-auto md:mx-0 ml-0 lg:ml-8"
       />
     </div>
 
     <!-- Heading: spans two columns on md+ -->
-    <h2 class="h3 text-[#2b2b2b] text-[23pt] md:col-span-2 md:text-[32pt] lg:text-[42pt]">
-      Hi, I'm Jake, an independent creative, focused on delivering strategic and
-      creative solutions, designed to last.<br>
+    <h2 class="h2 text-[#2b2b2b] text-[23pt] md:col-span-2 md:text-[34pt] lg:text-[34pt]">
+      Multidisciplinary Graphic Designer with a focus on brand development, digital 
+assets, and marketing communications. 
     </h2>
   </div>
 
   <!-- Second row: Experience / Education -->
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-16 mt-24">
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-16 mt-14">
     <!-- Empty placeholder (hidden on mobile) -->
     <div class="hidden md:block"></div>
 
     <!-- Experience column -->
-    <div class="text-[14pt] md:text-[14pt]">
+    <div class="text-[13pt] md:text-[13pt]">
       <p class="body-text-2 text-[#2b2b2b]">Experience</p>
       <p class="body-text-2 text-[#2b2b2b] mt-8">
         Independent Freelance — Graphic Designer (2024–Present)
@@ -953,7 +921,7 @@ aria-hidden="true">
     </div>
 
     <!-- Education column -->
-    <div class="text-[14pt] md:text-[14pt]">
+    <div class="text-[13pt] md:text-[13pt]">
       <p class="body-text-2 text-[#2b2b2b]">Education</p>
       <p class="body-text-2 text-[#2b2b2b] mt-8">
         Diploma of Graphic Design — Completed 2024
@@ -970,7 +938,7 @@ aria-hidden="true">
     href="https://www.dropbox.com/scl/fi/481xw7po47hzgynl2wmt6/Jake-Pearce-CV.pdf?rlkey=ctmxg1p7w580q2fa03re7hws0&st=kz5l8e4f&dl=0"
     target="_blank"
     rel="noopener noreferrer"
-    class="button-1 inline-flex items-center gap-1 underline  text-[14pt] !text-[#000000] md:!text-[14pt] hover:underline rounded-md hover:opacity-50"
+    class="button-1 inline-flex items-center gap-1 underline  text-[13pt] !text-[#000000] md:!text-[13pt] hover:underline rounded-md hover:opacity-50"
   >
     View resume
     <svg aria-hidden="true" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
@@ -985,14 +953,14 @@ aria-hidden="true">
 
 
   
-  <div class="h-24"></div>
+  <div class="h-14"></div>
 </main>
 <footer
   id="contact"
   class="bg-[#000000] text-[#FAFAFA] py-8"
   style="font-family:'Geist',sans-serif"
 >
-  <div class="max-web mx-auto w-full px-4 md:px-8">
+  <div class="max-web mx-auto w-full px-4 md:px-10">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-20">
       <!-- links -->
       <div class="body-text-1 flex justify-left gap-3 flex-wrap text-[13pt] md:text-[11pt] order-4 md:order-none">
@@ -1017,9 +985,9 @@ aria-hidden="true">
 
       <!-- chat prompt -->
       <div
-        class="andrew-text-1 text-[#f9f9f9] -mb-6 md:-mb-0 md:col-span-2 text-[16pt] order-1 md:order-none"
+        class="andrew-text-1 text-[#f9f9f9] -mb-6 md:-mb-0 md:col-span-2 text-[15pt] order-1 md:order-none"
       >
-        Want to work together? Let’s have a chat.
+        Want to work together? Let’s have a chat!
       </div>
 
       <!-- acknowledgement -->
@@ -1030,14 +998,14 @@ aria-hidden="true">
       </div>
 
       <!-- contact details -->
-      <div class="mt-4 md:mt-6 md:col-span-2 space-y-3 order-2 md:order-none">
+      <div class="mt-4 md:mt-6 md:col-span-2 space-y-2 order-2 md:order-none">
         <div class="border-b border-1 border-[#333333]"></div>
 
         <div class="copy-target">
           <a
             href="#"
             data-copy="hello@jakepearce.com.au"
-            class="email text-[#f9f9f9] block md:text-[38pt] text-[28pt] hover:text-[#f9f9f9]/60"
+            class="email text-[#f9f9f9] block md:text-[34pt]  text-[28pt] hover:text-[#f9f9f9]/60"
           >
             hello@jakepearce.com.au
           </a>
@@ -1047,7 +1015,7 @@ aria-hidden="true">
           <a
             href="#"
             data-copy="+614229117799"
-            class="email text-[#f9f9f9] block md:text-[38pt] text-[28pt] hover:text-[#f9f9f9]/60"
+            class="email text-[#f9f9f9] block md:text-[34pt]  text-[28pt] hover:text-[#f9f9f9]/60"
           >
             +61 422 911 799
           </a>
@@ -1055,7 +1023,7 @@ aria-hidden="true">
         <div class="border-b border-1 border-[#333333]"></div>
 
         <div class="flex justify-between items-center">
-          <div class="mt-5 flex space-x-3">
+          <div class="mt-7 flex space-x-2">
             <a
               href="https://behance.net/jake.r.pearce"
               target="_blank"
@@ -1064,7 +1032,7 @@ aria-hidden="true">
               <img
                 src="images/behance.svg"
                 alt="Behance"
-                class="w-8 h-8 filter invert hover:opacity-60"
+                class="w-6 h-6 filter invert hover:opacity-60"
               />
             </a>
             <a
@@ -1075,7 +1043,7 @@ aria-hidden="true">
               <img
                 src="images/instagram-black.svg"
                 alt="Instagram"
-                class="w-8 h-8 filter invert hover:opacity-60"
+                class="w-6 h-6 filter invert hover:opacity-60"
               />
             </a>
           </div>
@@ -1141,14 +1109,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
    <script>
     
-  const nav = document.getElementById('navContainer');
-  const INIT = 40; // px
-  const MIN  = 16; // px
+  
 
-  window.addEventListener('scroll', () => {
-    const s = window.scrollY;
-    nav.style.marginTop = Math.max(INIT - s, MIN) + 'px';
-  });
+   
 </script>
   <script>
     
