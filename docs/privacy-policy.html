@@ -7,7 +7,6 @@
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    
     /* ===== Font faces ===== */
     
     @font-face {
@@ -26,22 +25,25 @@
 }
 
 
+
+
+
 * {
   font-synthesis: none;
 }
     /* ===== Global ===== */
     body {
       font-family: 'Geist', sans-serif;
-  font-variation-settings: 'wght' 300;
+  font-variation-settings: 'wght' 390;
   color: #242424;
-  letter-spacing: -0.00em; 
-  line-height: 1.4;
+  letter-spacing: -0.005em; 
+  line-height: 1.35;
     }
     /* ===== Typography & components ===== */
     
     .nav-button {
   font-family: 'Geist', sans-serif;
-  font-weight: 400;
+  font-weight: 390;
   color: #5e5e5e;
   background-color: #F9F9F9;
   line-height: 1.0;
@@ -50,7 +52,7 @@
     }
     .footer-button {
   font-family: 'Geist', sans-serif;
-  font-weight: 400;
+  font-weight: 320;
   line-height: 1.4;
   letter-spacing: 0.00em;
     }
@@ -62,7 +64,7 @@
     }
     .title {
   font-family: 'Geist', sans-serif;
-  font-variation-settings: 'wght' 340;
+  font-variation-settings: 'wght' 320;
   color: #242424;
   letter-spacing: -0.0em; 
   line-height: 1.2;
@@ -77,7 +79,7 @@
 }
 .h1 {
   font-family: 'Geist', sans-serif;
-  font-variation-settings: 'wght' 540;
+  font-variation-settings: 'wght' 480;
   color: #242424;
   line-height: 1.03;
   letter-spacing: -0.04em;
@@ -85,73 +87,73 @@
 }
 .h2 {
   font-family: 'Geist', sans-serif;
-  font-variation-settings: 'wght' 540;
-  color: #242424;
-  line-height: 1.15;
-  letter-spacing: -0.03em;
-}
-.h3 {
-  font-family: 'Geist', sans-serif;
-  font-variation-settings: 'wght' 540;
+  font-variation-settings: 'wght' 460;
   color: #242424;
   line-height: 1.15;
   letter-spacing: -0.025em;
 }
+.h3 {
+  font-family: 'Geist', sans-serif;
+  font-variation-settings: 'wght' 480;
+  color: #242424;
+  line-height: 1.35;
+  letter-spacing: -0.015em;
+}
 .quote {
   font-family: 'Geist', sans-serif;
-  font-variation-settings: 'wght' 540;
+  font-variation-settings: 'wght' 500;
   color: #242424;
-  line-height: 1.3;
+  line-height: 1.35;
   letter-spacing: -0.025em;
 }
 .email {
   font-family: 'Geist', sans-serif;
-  font-variation-settings: 'wght' 440;
+  font-variation-settings: 'wght' 480;
   color: #242424;
-  line-height: 1.3;
+  line-height: 1.35;
   letter-spacing: -0.025em;
 }
 .body-text-1 {
   font-family: 'Geist', sans-serif;
-  font-variation-settings: 'wght' 300;
+  font-variation-settings: 'wght' 390;
   color: #242424;
-  letter-spacing: -0.00em; 
-  line-height: 1.4;
+  letter-spacing: -0.009em; 
+  line-height: 1.35;
 }
 .body-text-2 {
-  font-family: 'Geist', sans-serif;
-  font-variation-settings: 'wght' 480;
+ font-family: 'Geist', sans-serif;
+  font-variation-settings: 'wght' 460;
   color: #242424;
-  letter-spacing: 0.00em;
-    line-height: 1.4;
+  line-height: 1.35;
+  letter-spacing: -0.009em;
  
 }
 .body-text-3 {
   font-family: 'Geist', sans-serif;
-  font-variation-settings: 'wght' 540;
+  font-variation-settings: 'wght' 460;
   color: #242424;
   line-height: 1.03;
   letter-spacing: -0.04em;
 }
 .body-text-4 {
   font-family: 'Geist', sans-serif;
-  font-variation-settings: 'wght' 360;
+  font-variation-settings: 'wght' 460;
   color: #242424;
   letter-spacing: 0.0em; 
   line-height: 1.2;
 }
 .andrew-text-1 {
   font-family: 'Geist', sans-serif;
-  font-variation-settings: 'wght' 360;
+  font-variation-settings: 'wght' 320;
   color: #242424;
-  letter-spacing: -0.0em; 
+  letter-spacing: -0.01em; 
   line-height: 1.45;
 }
 .andrew-text-2 {
   font-family: 'Geist', sans-serif;
-  font-variation-settings: 'wght' 480;
+  font-variation-settings: 'wght' 460;
   color: #242424;
-  letter-spacing: -0.0em;
+  letter-spacing: -0.01em;
     line-height: 1.45;
  
 }
@@ -312,47 +314,53 @@ html {
     }
 /* override all project-image-container to square on small screens */
 .project-image-container {
-  aspect-ratio: 1 / 1.06;
+  aspect-ratio: 11 / 9;
   width: 100%;
   overflow: hidden;
   border-radius: inherit;
 }
 
-/* restore your original 16:10 ratio once 745px */
-@media (min-width: 745px) {
-  .project-image-container {
-    aspect-ratio: 10 / 9;
-  }
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 48px;
+  column-gap: 22px;
 }
 
-    .project-image-container:hover {
-      cursor: default;
+
+@media (min-width: 745px) {
+  .projects-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+  }
+  .projects-grid > .project:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .projects-grid > .project:nth-child(2) {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .projects-grid > .project:nth-child(3) {
+    grid-column: 3;
+    grid-row: 1 ;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  .projects-grid > .project:nth-child(3) .project-image-container {
+    flex-grow: 1;
+    overflow: hidden;
+  }
 }
-    .projects-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      row-gap: 48px;
-      column-gap: 28px;
-    }
     @media (min-width: 745px) {
-      .projects-grid {
-        grid-template-columns: 1fr 2fr;
-        grid-template-rows: auto auto;
-      }
-      .projects-grid > .project:nth-child(1) {
-        grid-column: 1; grid-row: 1;
-      }
-      .projects-grid > .project:nth-child(2) {
-        grid-column: 1; grid-row: 2;
-      }
-      .projects-grid > .project:nth-child(3) {
-        grid-column: 2; grid-row: 1 / span 2;
-        display: flex; flex-direction: column; height:100%;
-      }
-      .projects-grid > .project:nth-child(3) .project-image-container {
-        flex-grow:1; overflow:hidden;
-      }
+      .desktop     { display: block !important; }
+      .desktop-flex{ display: flex  !important; }
+      .mobile      { display: none  !important; }
     }
+    @media (max-width: 745px) {
+      .header-nav  { display: none !important; }
+      }
     @media (min-width: 745px) {
       .desktop     { display: block !important; }
       .desktop-flex{ display: flex  !important; }
@@ -432,14 +440,24 @@ body.nav-open {
 @media (min-width:818px) {
   .max-web {
     margin: 0 auto;
-    max-width: 1650px;
+    max-width: 1500px;
   }
 }
+/* desktop / tablet */
 #navContainer {
-    margin-top: 2.5rem;   /* mt-10 */
-    margin-bottom: 1rem;  /* mb-4 */
-    transition: margin-top .2s ease-out;
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+/* mobile only */
+@media (max-width: 745px) {
+  #navContainer {
+    margin-top: -0.4rem;
+  margin-bottom: -0.4rem;
   }
+}
+    
+    
 .external-link::after {
   display: inline-block;
   font-family: bootstrap-icons !important;
@@ -473,26 +491,38 @@ body.nav-open {
     max-height: 256px;
   }
 }
+@media (max-width: 745px) {
+  footer {
+    /* ditch the fixed-height, internal-scrolling */
+    position: relative !important;
+    max-height: none !important;
+    overflow: visible !important;
+    bottom: auto !important;
+  }
+  main {
+    /* you no longer need all that bottom-margin hack */
+    margin-bottom: 0 !important;
+  }
+}
+@media (max-width: 745px) {
+  /* 1) hide the arrows */
+  .service-header span {
+    display: none;
+  }
 
+  /* 2) expand all panels */
+  .service-content {
+    max-height: none !important;
+    overflow: visible !important;
+  }
 
-    .masonry {
-      column-count: 3;
-      column-gap: 28px;
-    }
-    @media (max-width: 1024px) {
-      .masonry {
-        column-count: 2;
-      }
-    }
-    @media (max-width: 768px) {
-      .masonry {
-        column-count: 1;
-      }
-    }
-    .masonry-item {
-      break-inside: avoid;
-      margin-bottom: 2rem;
-    }
+  /* 3) optionally disable the animation on mobile */
+  .service-content,
+  .service-content * {
+    transition: none !important;
+  }
+}
+
 
   </style>
   <link rel="icon" href="images/logo-04.svg" type="image/svg+xml">
@@ -503,9 +533,9 @@ body.nav-open {
   <div id="project-tooltip"></div>
   <!-- ===== Header & Toggle ===== -->
   <header class="max-web fade-in fixed top-0 left-0 right-0 z-50 ">
-    <div id="navContainer" class="bg-[#f9f9f9] flex justify-between items-center w-full  py-0 md:py-0 px-4 md:px-8">
+    <div id="navContainer" class="bg-[#f9f9f9] flex justify-between items-center w-full  py-0 md:py-0 px-4 md:px-8 lg:px-16">
       <!-- Header Title -->
-      <a href="/" class="mt-0 mb-0 transition-colors   -ml-[0px] !text-[14pt] md:!text-[14pt] md:-ml-[0.2em]">
+      <a href="/" class="mt-0 mb-0 transition-colors -ml-[0.2em] !text-[14pt] md:!text-[14pt] md:-ml-[0.2em]">
   <img src="images/logo-new-circle-02.svg" alt="Jake Pearce logo" class="h-8 w-auto hover:opacity-50">
 </a>
 
@@ -513,9 +543,9 @@ body.nav-open {
       <!-- Desktop Nav -->
       <nav class="header-nav hidden md:flex" style="margin: 0pt;">
         <ul class="flex space-x-7 mr-0 mt-0 mb-0">
-          <li><a href="work" class="!text-[20pt] md:!text-[14pt] nav-button text-[#000000] transition-colors  ">Work</a></li>
-          <li><a href="visual-feed" class="!text-[20pt] md:!text-[14pt] text-[#000000] nav-button transition-colors  ">Visual feed</a></li>
-          <li><a href="#contact" class="!text-[20pt] md:!text-[14pt] text-[#000000] nav-button transition-colors  ">Contact</a></li>
+          <li><a href="work" class="!text-[20pt] md:!text-[13pt] body-text-1 text-[#000000] transition-colors hover:opacity-50 ">Work</a></li>
+          <li><a href="archive" class="!text-[20pt] md:!text-[13pt] text-[#000000] body-text-1 transition-colors hover:opacity-50 ">Archive</a></li>
+          <li><a href="#contact" class="!text-[20pt] md:!text-[13pt] text-[#000000] body-text-1 transition-colors hover:opacity-50 ">Contact</a></li>
         </ul>
       </nav>
       <!-- Mobile Menu Button (now hidden except ≤745pxx) -->
@@ -529,25 +559,28 @@ body.nav-open {
   </header>
   <!-- ===== Mobile Overlay ===== -->
 <div id="mobileNavOverlay"
-class="fixed inset-0 z-40 bg-[#F9F9F9] flex flex-col px-4 md:px-8
+class="fixed inset-0 z-40 bg-[#F9F9F9] flex flex-col px-4
        opacity-0 -translate-y-2 transition-opacity transition-transform duration-400"
 aria-hidden="true">
 
 <!-- center section: Work & Visual feed -->
 <div class="flex-1 flex flex-col justify-center space-y-3">
-<a href="/"       class="h2 !text-[32pt] md:!text-[13pt]">Work</a>
-<a href="visual-feed" class="h2 !text-[32pt] md:!text-[13pt]">Visual feed</a>
+  <a href="/"       class="h1 !text-[32pt] md:!text-[13pt]">Home</a>
+<a href="work"       class="h1 !text-[32pt] md:!text-[13pt]">Work</a>
+<a href="Archive" class="h1 !text-[32pt] md:!text-[13pt]">Archive</a>
 </div>
 
 
 <!-- bottom section, pinned 25px above bottom -->
-<div class="flex flex-col items-start mb-[35px] space-y-3">
-<a class="body-text-1 !text-[12pt]  text-[#8e8e8e]">Contact</a>
+<div class="flex flex-col items-start mb-[35px]  ">
+<div class="service border-b border-[#d3d3d3] mt-10 md:mt-10 mb-4 "></div>
+
+    <h2 class="body-text-2 text-[12pt] md:text-[14pt] mb-4 md:mb-10">Contact ↘</h2>
 <a href="mailto:hello@jakepearce.com.au"
-  class="body-text-1 !text-[12pt] md:!text-[13pt] !mt-[0.2em]">
+  class="body-text-2  !text-[12pt] md:!text-[13pt] !mt-[0.2em]">
  hello@jakepearce.com.au
 </a>
-<span class="body-text-1 !text-[12pt]  !mt-[0.2em]">
+<span class="body-text-2  !text-[12pt]  !mt-[0.2em]">
  +61 422 911 799
 </span>
 
@@ -566,54 +599,43 @@ aria-hidden="true">
 </div>
   </div>
 
-<!-- ===== Hero Section ===== -->
-  
-  <section
-    id="hero"
-    class="hidden md:block max-web mx-auto w-full px-4 md:px-8 py-12 md:mt-44 md:mb-44 mt-44 mb-44 bg-[#F9F9F9] fade-in">
-    <div class="flex flex-col-reverse md:flex-row md:items-end gap-12">
-      <div class="w-full">
-      
-      <p class="  h1 
-      !text-[clamp(22pt,6vw,72pt)] 
-        mb-4 md:mb-0 mt-2 md:mt-0
-      "> <span class="text-black"></span>
-        Privacy policy<br>
-         </span>
-         <span class="text-[#cccccc]">
-           2025 
-        </span>
-      </p>
-      </div>
-    </div>
-  </section>
 <section
     id="hero"
-    class="block md:hidden max-web mx-auto w-full px-4 md:px-8 py-12 md:mt-44 md:mb-44 mt-44 mb-44 bg-[#F9F9F9] fade-in">
-    <div class="flex flex-col-reverse md:flex-row md:items-end gap-12">
-      <div class="w-full">
-      
-      <p class=" h1  
-      !text-[42pt] 
-        mb-4 md:mb-0 mt-2 md:mt-0
-      "> <span class="text-black"></span>
-        Privacy policy<br>
-         </span>
-         <span class="  text-[#cccccc]">
-            2025 
-        </span>
-      </p>
-      </div>
+    class="  max-web mx-auto w-full z-40 px-4 md:px-8 lg:px-16  md:mt-32  mt-24   bg-[#F9F9F9] fade-in">
+  
+  <div class="grid grid-cols-1  lg:grid-cols-2 gap-8 items-start">
+    <!-- Left Column: Project Title -->
+    <div>
+      <h2 class="h1 !text-[42pt] md:!text-[48pt]  text-black   fade-in">
+        Privacy policy
+      </h2>
+       
     </div>
-  </section>
+
+    <!-- Right Column: Project Description + Tags -->
+    <div>
+       
+    </div>
+  </div>
+</section>
+
+  <!-- ===== Recent Projects ===== -->
+  <div class="max-web mx-auto px-4 md:px-8 lg:px-16 z-20 bg-[#F9F9F9] fade-in  ">    
+      <div class="service border-b border-[#d3d3d3] mt-10 md:mt-10 mb-4 "></div>
+
+    <h2 class="body-text-2 text-[14pt] md:text-[14pt] mb-8 md:mb-10">
+  <span class="text-gray-500 mr-1">[23/06/2025]</span>
+  Last updated
+</h2>
+  </div> 
   
   <!-- ===== Hero Section ===== -->
-  <div class="fade-in max-web mx-auto w-full px-4 md:px-8 ">
+  <div class="fade-in max-web mx-auto w-full px-4 md:px-8 lg:px-16 ">
   
    
-  <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-20">
+  <div class="grid grid-cols-1 xl:grid-cols-3 gap-8 xl:gap-20">
     
-    <div class="text-[14pt] md:text-[14pt]">
+    <div class="!text-[12pt] md:!text-[13pt]">
       
       
       <p class="body-text-1 ">
@@ -626,7 +648,7 @@ aria-hidden="true">
 
 
      
-    <div class="text-[14pt] md:text-[14pt]"> 
+    <div class="!text-[12pt] md:!text-[13pt]"> 
       <p class="body-text-2 text-[#2b2b2b] ">
         Information We Collect 
       </p>
@@ -652,7 +674,7 @@ We may update this Privacy Policy from time to time. Any changes will be posted 
     </div>
 
      
-    <div class="text-[14pt] md:text-[14pt]"> 
+    <div class="!text-[12pt] md:!text-[13pt]"> 
       <p class="body-text-2 text-[#2b2b2b] ">
         Disclosure to Third Parties 
       </p>
@@ -689,52 +711,60 @@ hello@jakepearce.com.au      </p>
   class="bg-[#000000] text-[#FAFAFA] py-8"
   style="font-family:'Geist',sans-serif"
 >
-  <div class="max-web mx-auto w-full px-4 md:px-8">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-20">
+  <div class="max-web mx-auto w-full px-4 md:px-8 lg:px-16">
+    <div class="grid grid-cols-1 md:grid-cols-3 
+            gap-y-8 gap-x-8 
+            md:gap-y-10 md:gap-x-20">
       <!-- links -->
-      <div class="body-text-1 flex justify-left gap-3 flex-wrap text-[13pt] md:text-[11pt] order-4 md:order-none">
-        <a href="#" id="backToTop" class="text-[#686868] hover:text-[#f9f9f9] whitespace-nowrap">
-          Back to top
-        </a>
-        <a href="/work" class="text-[#686868] hover:text-[#f9f9f9] whitespace-nowrap">
-          Work
-        </a>
-        <a href="/visual-feed" class="text-[#686868] hover:text-[#f9f9f9] whitespace-nowrap">
-          Visual Feed
-        </a>
-        <a href="/privacy-policy" class="text-[#686868] hover:text-[#f9f9f9] whitespace-nowrap">
-          Privacy Policy
-        </a>
+      <div class="body-text-1 order-3 md:order-none  
+            flex flex-col space-y-2 
+            md:flex-row md:space-y-0 md:space-x-3">
+        <a href="#" id="backToTop"
+   class="block text-[#686868] text-[11pt] md:text-[11pt] hover:text-[#f9f9f9] whitespace-nowrap">
+  <span class="sm:hidden inline">↑ </span>Back to top
+</a>
+        <a href="work" id="backToTop"
+   class="block text-[#686868] text-[11pt] md:text-[11pt] hover:text-[#f9f9f9] whitespace-nowrap">
+  <span class="sm:hidden inline">→ </span>Work
+</a>
+        <a href="archive" id="backToTop"
+   class="block text-[#686868] text-[11pt] md:text-[11pt] hover:text-[#f9f9f9] whitespace-nowrap">
+  <span class="sm:hidden inline">→ </span>Archive
+</a>
+       <a href="privacy-policy" id="backToTop"
+   class="block text-[#686868] text-[11pt] md:text-[11pt] hover:text-[#f9f9f9] whitespace-nowrap">
+  <span class="sm:hidden inline">→ </span>Privacy Policy
+</a>
       </div>
 
       <!-- mobile-only copyright under nav -->
-      <div class="order-5 text-[13pt] text-[#686868] md:hidden">
+      <div class="order-5 text-[11pt] md:text-[13pt] text-[#686868] md:hidden">
         © 2025
       </div>
 
       <!-- chat prompt -->
       <div
-        class="andrew-text-1 text-[#f9f9f9] -mb-6 md:-mb-0 md:col-span-2 text-[16pt] order-1 md:order-none"
+        class="andrew-text-1 text-[#f9f9f9] -mb-6 md:-mb-0 md:col-span-2 text-[12pt] md:text-[12pt] order-1 md:order-none"
       >
-        Want to work together? Let’s have a chat.
+        Want to work together? Let’s have a chat!
       </div>
 
       <!-- acknowledgement -->
       <div
-        class="body-text-1 text-[#686868] text-[13pt] md:text-[11pt] leading-relaxed flex flex-col mt-4 md:mt-0 justify-end order-3 md:order-none"
+        class="body-text-1 text-[#686868] text-[11pt] md:text-[11pt] flex flex-col md:mr-0 mr-16 md:mt-7  justify-end order-4 md:order-none "
       >
         I acknowledge the Wurundjeri people as the traditional custodians of this land, pay respect to elders past, present and emerging, and honour their enduring connection to country.
       </div>
 
       <!-- contact details -->
-      <div class="mt-4 md:mt-6 md:col-span-2 space-y-3 order-2 md:order-none">
+      <div class="mt-5 md:mt-6 md:col-span-2 space-y-2 order-2 md:order-none">
         <div class="border-b border-1 border-[#333333]"></div>
 
         <div class="copy-target">
           <a
             href="#"
             data-copy="hello@jakepearce.com.au"
-            class="email text-[#f9f9f9] block md:text-[38pt] text-[28pt] hover:text-[#f9f9f9]/60"
+            class="email text-[#f9f9f9] block md:text-[28pt]  text-[19pt] hover:text-[#f9f9f9]/60"
           >
             hello@jakepearce.com.au
           </a>
@@ -744,7 +774,7 @@ hello@jakepearce.com.au      </p>
           <a
             href="#"
             data-copy="+614229117799"
-            class="email text-[#f9f9f9] block md:text-[38pt] text-[28pt] hover:text-[#f9f9f9]/60"
+            class="email text-[#f9f9f9] block md:text-[28pt]  text-[19pt] hover:text-[#f9f9f9]/60"
           >
             +61 422 911 799
           </a>
@@ -752,7 +782,7 @@ hello@jakepearce.com.au      </p>
         <div class="border-b border-1 border-[#333333]"></div>
 
         <div class="flex justify-between items-center">
-          <div class="mt-5 flex space-x-3">
+          <div class="mt-5 md:mt-7 flex space-x-2.5">
             <a
               href="https://behance.net/jake.r.pearce"
               target="_blank"
@@ -761,7 +791,7 @@ hello@jakepearce.com.au      </p>
               <img
                 src="images/behance.svg"
                 alt="Behance"
-                class="w-8 h-8 filter invert hover:opacity-60"
+                class="w-6 h-6 filter invert hover:opacity-60"
               />
             </a>
             <a
@@ -772,13 +802,13 @@ hello@jakepearce.com.au      </p>
               <img
                 src="images/instagram-black.svg"
                 alt="Instagram"
-                class="w-8 h-8 filter invert hover:opacity-60"
+                class="w-6 h-6 filter invert hover:opacity-60"
               />
             </a>
           </div>
 
           <!-- desktop-only copyright -->
-          <div class="mt-10 text-[13pt] text-[#686868] hidden md:block">
+          <div class="mt-5 md:mt-7  text-[13pt] text-[#686868] hidden md:block">
             © 2025
           </div>
         </div>
@@ -788,9 +818,8 @@ hello@jakepearce.com.au      </p>
 </footer>
 
 
-
-
 <script>
+  
 document.addEventListener('DOMContentLoaded', () => {
   // create floating copy-tooltip
   const copyTip = document.createElement('div');
@@ -839,14 +868,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
    <script>
     
-  const nav = document.getElementById('navContainer');
-  const INIT = 40; // px
-  const MIN  = 16; // px
+  
 
-  window.addEventListener('scroll', () => {
-    const s = window.scrollY;
-    nav.style.marginTop = Math.max(INIT - s, MIN) + 'px';
-  });
+   
 </script>
   <script>
     
@@ -932,7 +956,7 @@ document.addEventListener('DOMContentLoaded', () => {
           overlay.style.display = 'flex';
           setTimeout(() => {
             overlay.classList.add('visible');
-          }, 10);
+          }, );
           icon.classList.add('open');
           document.body.classList.add('nav-open');
         } else {
@@ -961,13 +985,12 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       root: null, // observes viewport
       rootMargin: "0px 0px -0px 0px", // optional: tweak trigger buffer
-      threshold: 0.1 // 20% of the element must be visible to trigger
+      threshold: 0.0 // 20% of the element must be visible to trigger
     }
   );
 
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 });
-    // Alt-image injection
     document.addEventListener("DOMContentLoaded", () => {
   if (window.innerWidth <= 745) return; // Skip on mobile
 
@@ -979,28 +1002,60 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll('.project-image-container').forEach(container => {
     const img = container.querySelector('img');
-    if (!img) return;
-    const src = img.src;
-    const dot = src.lastIndexOf('.');
-    if (dot === -1) return;
-    const base = src.slice(0, dot), ext = src.slice(dot);
+    const video = container.querySelector('video');
+
+    let base, ext, original, altImg;
+
+    if (img) {
+      const src = img.src;
+      const dot = src.lastIndexOf('.');
+      if (dot === -1) return;
+      base = src.slice(0, dot);
+      ext = src.slice(dot);
+      original = img;
+    } else if (video && video.poster) {
+      const poster = video.poster;
+      const dot = poster.lastIndexOf('.');
+      if (dot === -1) return;
+      base = poster.slice(0, dot);
+      ext = poster.slice(dot);
+      original = video;
+    } else {
+      return;
+    }
+
     const alts = (ext.match(/jpe?g/i) ? [base+'-alt.gif', base+'-alt.png', base+'-alt'+ext] : [base+'-alt'+ext]);
-    const altImg = document.createElement('img');
-    altImg.alt = img.alt + ' alt';
-    altImg.className = img.className;
+
+    altImg = document.createElement('img');
+    altImg.alt = (original.alt || 'Project') + ' alt';
+    altImg.className = original.className;
     Object.assign(altImg.style, {
-      position:'absolute', top:0, left:0, width:'100%', height:'100%', objectFit:'cover', zIndex:1
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      width: '100%',
+      height: '100%',
+      objectFit: 'cover',
+      zIndex: 1
     });
+
     container.style.position = 'relative';
     container.appendChild(altImg);
-    img.style.position = 'relative'; 
-    img.style.zIndex = 2; 
-    img.style.transition = 'opacity 0.4s ease';
+    original.style.position = 'relative';
+    original.style.zIndex = 2;
+    original.style.transition = 'opacity 0.4s ease';
+
     tryAltSrc(altImg, alts);
-    container.addEventListener('mouseenter', () => img.style.opacity = 0);
-    container.addEventListener('mouseleave', () => img.style.opacity = 1);
+
+    container.addEventListener('mouseenter', () => {
+      original.style.opacity = 0;
+    });
+    container.addEventListener('mouseleave', () => {
+      original.style.opacity = 1;
+    });
   });
 });
+
     // Smooth-scroll for Work link
     document.addEventListener("DOMContentLoaded", () => {
       const workLink = document.querySelector('a.nav-button[href="/"]');

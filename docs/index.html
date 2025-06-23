@@ -46,7 +46,7 @@
     
     .nav-button {
   font-family: 'Geist', sans-serif;
-  font-weight: 320;
+  font-weight: 390;
   color: #5e5e5e;
   background-color: #F9F9F9;
   line-height: 1.0;
@@ -90,9 +90,9 @@
 }
 .h2 {
   font-family: 'Geist', sans-serif;
-  font-variation-settings: 'wght' 480;
+  font-variation-settings: 'wght' 460;
   color: #242424;
-  line-height: 1.15;
+  line-height: 1.2;
   letter-spacing: -0.025em;
 }
 .h3 {
@@ -118,9 +118,9 @@
 }
 .body-text-1 {
   font-family: 'Geist', sans-serif;
-  font-variation-settings: 'wght' 340;
+  font-variation-settings: 'wght' 390;
   color: #242424;
-  letter-spacing: -0.0em; 
+  letter-spacing: -0.009em; 
   line-height: 1.35;
 }
 .body-text-2 {
@@ -128,17 +128,23 @@
   font-variation-settings: 'wght' 460;
   color: #242424;
   line-height: 1.35;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.009em;
  
 }
 .body-text-3 {
   font-family: 'Geist', sans-serif;
-  font-variation-settings: 'wght' 480;
+  font-variation-settings: 'wght' 460;
   color: #242424;
   line-height: 1.03;
   letter-spacing: -0.04em;
 }
- 
+.body-text-4 {
+  font-family: 'Geist', sans-serif;
+  font-variation-settings: 'wght' 460;
+  color: #242424;
+  letter-spacing: 0.0em; 
+  line-height: 1.2;
+}
 .andrew-text-1 {
   font-family: 'Geist', sans-serif;
   font-variation-settings: 'wght' 320;
@@ -148,7 +154,7 @@
 }
 .andrew-text-2 {
   font-family: 'Geist', sans-serif;
-  font-variation-settings: 'wght' 480;
+  font-variation-settings: 'wght' 460;
   color: #242424;
   letter-spacing: -0.01em;
     line-height: 1.45;
@@ -447,12 +453,21 @@ body.nav-open {
     max-width: 1500px;
   }
 }
+/* desktop / tablet */
 #navContainer {
-    margin-top: 0.8rem;  
-    margin-bottom: 0.8rem;  
-    
-    
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+/* mobile only */
+@media (max-width: 745px) {
+  #navContainer {
+    margin-top: -0.4rem;
+  margin-bottom: -0.4rem;
   }
+}
+    
+    
 .external-link::after {
   display: inline-block;
   font-family: bootstrap-icons !important;
@@ -486,8 +501,37 @@ body.nav-open {
     max-height: 256px;
   }
 }
+@media (max-width: 745px) {
+  footer {
+    /* ditch the fixed-height, internal-scrolling */
+    position: relative !important;
+    max-height: none !important;
+    overflow: visible !important;
+    bottom: auto !important;
+  }
+  main {
+    /* you no longer need all that bottom-margin hack */
+    margin-bottom: 0 !important;
+  }
+}
+@media (max-width: 745px) {
+  /* 1) hide the arrows */
+  .service-header span {
+    display: none;
+  }
 
+  /* 2) expand all panels */
+  .service-content {
+    max-height: none !important;
+    overflow: visible !important;
+  }
 
+  /* 3) optionally disable the animation on mobile */
+  .service-content,
+  .service-content * {
+    transition: none !important;
+  }
+}
   </style>
   <link rel="icon" href="images/logo-04.svg" type="image/svg+xml">
 </head>
@@ -497,9 +541,9 @@ body.nav-open {
   <div id="project-tooltip"></div>
   <!-- ===== Header & Toggle ===== -->
   <header class="max-web fade-in fixed top-0 left-0 right-0 z-50 ">
-    <div id="navContainer" class="bg-[#f9f9f9] flex justify-between items-center w-full  py-0 md:py-0 px-4 md:px-8">
+    <div id="navContainer" class="bg-[#f9f9f9] flex justify-between items-center w-full  py-0 md:py-0 px-4 md:px-8 lg:px-8">
       <!-- Header Title -->
-      <a href="/" class="mt-0 mb-0 transition-colors   -ml-[0px] !text-[14pt] md:!text-[14pt] md:-ml-[0.2em]">
+      <a href="/" class="mt-0 mb-0 transition-colors -ml-[0.2em] !text-[14pt] md:!text-[14pt] md:-ml-[0.2em]">
   <img src="images/logo-new-circle-02.svg" alt="Jake Pearce logo" class="h-8 w-auto hover:opacity-50">
 </a>
 
@@ -507,9 +551,9 @@ body.nav-open {
       <!-- Desktop Nav -->
       <nav class="header-nav hidden md:flex" style="margin: 0pt;">
         <ul class="flex space-x-7 mr-0 mt-0 mb-0">
-          <li><a href="work" class="!text-[20pt] md:!text-[13pt] body-text-2 text-[#000000] transition-colors  ">Work</a></li>
-          <li><a href="visual-feed" class="!text-[20pt] md:!text-[13pt] text-[#000000] body-text-2 transition-colors  ">Visual feed</a></li>
-          <li><a href="#contact" class="!text-[20pt] md:!text-[13pt] text-[#000000] body-text-2 transition-colors  ">Contact</a></li>
+          <li><a href="work" class="!text-[20pt] md:!text-[13pt] body-text-1 text-[#000000] transition-colors hover:opacity-50 ">Work</a></li>
+          <li><a href="archive" class="!text-[20pt] md:!text-[13pt] text-[#000000] body-text-1 transition-colors hover:opacity-50 ">Archive</a></li>
+          <li><a href="#contact" class="!text-[20pt] md:!text-[13pt] text-[#000000] body-text-1 transition-colors hover:opacity-50 ">Contact</a></li>
         </ul>
       </nav>
       <!-- Mobile Menu Button (now hidden except ≤745pxx) -->
@@ -523,39 +567,39 @@ body.nav-open {
   </header>
   <!-- ===== Mobile Overlay ===== -->
 <div id="mobileNavOverlay"
-class="fixed inset-0 z-40 bg-[#F9F9F9] flex flex-col px-4 md:px-5
+class="fixed inset-0 z-40 bg-[#F9F9F9] flex flex-col px-4
        opacity-0 -translate-y-2 transition-opacity transition-transform duration-400"
 aria-hidden="true">
 
 <!-- center section: Work & Visual feed -->
-<div class="flex-1 flex flex-col justify-center space-y-3">
-<a href="/"       class="h2 !text-[32pt] md:!text-[13pt]">Work</a>
-<a href="visual-feed" class="h2 !text-[32pt] md:!text-[13pt]">Visual feed</a>
+<div class="flex-1 flex flex-col justify-center space-y-3.5">
+  <a href="/"       class="h1 !text-[36pt] md:!text-[13pt]">Home</a>
+<a href="work"       class="h1 !text-[36pt] md:!text-[13pt]">Work</a>
+<a href="Archive" class="h1 !text-[36pt] md:!text-[13pt]">Archive</a>
 </div>
 
 
 <!-- bottom section, pinned 25px above bottom -->
-<div class="flex flex-col items-start mb-[35px] space-y-3">
-<a class="body-text-1 !text-[12pt]  text-[#8e8e8e]">Contact</a>
+<div class="flex flex-col items-start mb-[10px]  ">
+<div class="service border-b border-[#d3d3d3] mt-10 md:mt-10 mb-4 "></div>
+
+    <h2 class="body-text-2 text-[12pt] md:text-[14pt] mb-4 md:mb-10">Contact</h2>
 <a href="mailto:hello@jakepearce.com.au"
-  class="body-text-1 !text-[12pt] md:!text-[13pt] !mt-[0.2em]">
+  class="body-text-2  !text-[12pt] md:!text-[13pt] !mt-[0.2em]">
  hello@jakepearce.com.au
 </a>
-<span class="body-text-1 !text-[12pt]  !mt-[0.2em]">
+<span class="body-text-2  !text-[12pt]  !mt-[0.2em]">
  +61 422 911 799
 </span>
+<a href="https://www.linkedin.com/in/jake-pearce-076b772b5/"
+  class="body-text-2  !text-[12pt] md:!text-[13pt] !mt-[0.2em]">
+ → Linkedin
+</a>
+<a href="https://instagram.com/jake.r.pearce"
+  class="body-text-2  !text-[12pt] md:!text-[13pt] !mt-[0.2em]">
+ → Instagram
+</a>
 
-<!-- social icons side-by-side -->
-<div class="flex items-center space-x-2 !mt-[0.5em]">
- <a href="https://instagram.com/jake.r.pearce"
-    target="_blank" rel="noopener noreferrer">
-   <img src="images/instagram-black.svg" alt="Instagram" class="w-7 h-7"/>
- </a>
- <a href="https://behance.net/jake.r.pearce"
-    target="_blank" rel="noopener noreferrer">
-   <img src="images/behance.svg" alt="Behance" class="w-7 h-7"/>
- </a>
-</div>
 </div>
 </div>
   </div>
@@ -563,44 +607,43 @@ aria-hidden="true">
   
   <section
     id="hero"
-    class="hidden md:block max-web mx-auto w-full z-40 px-4 md:px-8  md:mt-32  mt-24   bg-[#F9F9F9] fade-in">
+    class="  max-web mx-auto w-full z-40 px-4 md:px-8 lg:px-8  md:mt-36  mt-24   bg-[#F9F9F9] fade-in">
   
-  <div class="grid grid-cols-1  lg:grid-cols-2 gap-12 items-start">
+  <div class="grid grid-cols-1  md:grid-cols-2 md:gap-12 gap-6 items-start">
     <!-- Left Column: Project Title -->
     <div>
-      <h2 class="h1 !text-[32pt] md:!text-[42pt]  text-black   fade-in">
-        G'day! <br>I'm Jake.
+      <h2 class="h1 !text-[36pt] md:!text-[48pt] md:mr-6 mr-0 text-black   fade-in">
+        Hello! <br> I'm Jake.
       </h2>
        
     </div>
 
     <!-- Right Column: Project Description + Tags -->
     <div>
-      <p class="body-text-2 text-[#575757] !text-[13pt] md:!text-[13pt]   fade-in">
-       Multidisciplinary Graphic Designer with a focus on brand development, digital 
-assets, and marketing communications. Experienced in shaping visual identity 
-systems, designing promotional content, and producing platform-ready graphics 
-across print and web.  
-      </p>
-
-       
+      <p class="body-text-1  !text-[12pt] md:!text-[13pt] md:mt-0 mb-0 md:mr-0 mr-10 md:ml-6 ml-0 fade-in">
+       I'm a graphic designer specialising in brand identity, digital design, and marketing communications. I help businesses shape strong visual narratives across platforms — from print and web to social and campaign design.
+      </p> 
+        
     </div>
   </div>
 </section>
 
   <!-- ===== Recent Projects ===== -->
-  <div class="max-web mx-auto px-4 md:px-8 z-20 bg-[#F9F9F9] fade-in  ">    
-      <div class="service border-b border-[#d3d3d3] mt-10 mb-4 "></div>
+<div class="max-web mx-auto px-4 md:px-8 lg:px-8 z-20 bg-[#F9F9F9] fade-in  ">    
+      <div class="service border-b border-[#d3d3d3] mt-10 md:mt-10 mb-4 "></div>
 
-    <h2 class="body-text-2 text-[16pt] md:text-[14pt] mb-10">Selected projects ↘</h2>
+    <h2 class="body-text-2 text-[14pt] md:text-[14pt] mb-8 md:mb-10">
+  <span class="text-gray-500 mr-1">[01]</span>
+  Selected works
+</h2>
   </div> 
    <section 
     id="work"
-    class="max-web mx-auto z-40 w-full px-4 md:px-8 bg-[#F9F9F9] fade-in">
+    class="max-web mx-auto z-40 w-full px-4 md:px-8 lg:px-8 bg-[#F9F9F9] fade-in">
     <div class="projects-grid">
       <div class="project bg-[#F9F9F9] flex flex-col fade-in order-2 md:order-1">
         <div class="project-image-container">
-  <a href="mmt" class="w-full h-full block">
+  <a href="mmt" class="w-full h-full ">
     <video
       class="w-full h-full object-cover rounded-[0.5em]"
       loop
@@ -608,42 +651,42 @@ across print and web.
       muted
       playsinline   
       preload="metadata"  
-      poster="images/MMT-2025-02.jpg"
+      poster="images/MMT-2025-02.avif"
     >
       <source src="/videos/MMT-2025-02.mp4" type="video/mp4"> 
     </video>
   </a>
 </div>
 <div class="mt-4 flex flex-col items-start">
-  <a href="mmt" class="block body-text-2 !text-[13pt] mt-[0.15em] mb-[0.25em]">
+  <a href="mmt" class=" body-text-2 !text-[12pt] md:!text-[13pt] mt-[0.15em] mb-[0.25em]">
     Music Metaverse Token
   </a>
-  <a href="mmt" class="text-[#686868]/80 body-text-1 block !text-[13pt] mb-[0.4em]">
+  <a href="mmt" class="text-[#686868]/80 body-text-1  !text-[12pt] md:!text-[13pt] mb-[0.4em]">
     Crypto meets music concert promotion
   </a>
-  <a href="mmt" class="flex flex-wrap gap-x-[6px] gap-y-[5px] block">
+  <a href="mmt" class="flex flex-wrap gap-x-[6px] gap-y-[5px] ">
     <!-- tags here -->
   </a>
 </div>
       </div>
       <div class="project bg-[#F9F9F9] flex flex-col fade-in order-2 md:order-1">
         <div class="project-image-container">
-          <a href="braves-cricket" class="w-full h-full block">
+          <a href="braves-cricket" class="w-full h-full ">
             <img
-              src="images/players-(Project-Thumbnails).jpg"
+              src="images/players-(Project-Thumbnails).avif"
               alt="Braves Cricket"
               class="w-full h-full object-cover rounded-[0.5em]"
             />
           </a>
         </div>
         <div class="mt-4 flex flex-col items-start">
-          <a href="braves-cricket" class="block body-text-2 !text-[13pt] mt-[0.15em] mb-[0.25em]">
+          <a href="braves-cricket" class=" body-text-2 !text-[12pt] md:!text-[13pt] mt-[0.15em] mb-[0.25em]">
             Braves Cricket
           </a>
-          <a href="braves-cricket" class="text-[#686868]/80 body-text-1  block !text-[13pt] mb-[0.4em]">
+          <a href="braves-cricket" class="text-[#686868]/80 body-text-1   !text-[12pt] md:!text-[13pt] mb-[0.4em]">
             Independent team in T10 league
           </a>
-          <a href="braves-cricket" class="flex flex-wrap gap-x-[6px] gap-y-[5px] block ">
+          <a href="braves-cricket" class="flex flex-wrap gap-x-[6px] gap-y-[5px]  ">
   
             
           </a>
@@ -651,22 +694,22 @@ across print and web.
       </div>
       <div class="project bg-[#F9F9F9] flex flex-col fade-in order-2 md:order-1">
         <div class="project-image-container">
-          <a href="erima-australia" class="w-full h-full block">
+          <a href="erima-australia" class="w-full h-full ">
             <img
-              src="images/erima.jpg"
+              src="images/erima.avif"
               alt="Erima Australia"
               class="w-full h-full object-cover rounded-[0.5em]"
             />
           </a>
         </div>
         <div class="mt-4 flex flex-col items-start">
-          <a href="erima-australia" class="block body-text-2 !text-[13pt] mt-[0.15em] mb-[0.25em]">
+          <a href="erima-australia" class=" body-text-2 !text-[12pt] md:!text-[13pt] mt-[0.15em] mb-[0.25em]">
             Erima Australia
           </a>
-          <a href="erima-australia" class="text-[#686868]/80 body-text-1  block !text-[13pt] mb-[0.4em]">
+          <a href="erima-australia" class="text-[#686868]/80 body-text-1  !text-[12pt] md:!text-[13pt] mb-[0.4em]">
             German sportswear brand in Australia
           </a>
-          <a href="erima-australia" class="flex flex-wrap gap-x-[6px] gap-y-[5px] block ">
+          <a href="erima-australia" class="flex flex-wrap gap-x-[6px] gap-y-[5px]  ">
   
             
           </a>
@@ -675,22 +718,22 @@ across print and web.
       
       <div class="project bg-[#F9F9F9] flex flex-col fade-in order-2 md:order-1">
         <div class="project-image-container">
-          <a href="bmp-sports" class="w-full h-full block">
+          <a href="bmp-sports" class="w-full h-full  ">
             <img
-              src="images/bmp-image-1.jpg"
+              src="images/bmp-image-1.avif"
               alt="BMP Sports"
               class="w-full h-full object-cover rounded-[0.5em]"
             />
           </a>
         </div>
         <div class="mt-4 flex flex-col items-start">
-          <a href="bmp-sports" class="block body-text-2 !text-[13pt] mt-[0.15em] mb-[0.25em]">
+          <a href="bmp-sports" class=" body-text-2 !text-[12pt] md:!text-[13pt] mt-[0.15em] mb-[0.25em]">
             BMP Sports
           </a>
-          <a href="bmp-sports" class="text-[#686868]/80 body-text-1  block !text-[13pt] mb-[0.4em]">
+          <a href="bmp-sports" class="text-[#686868]/80 body-text-1  !text-[12pt] md:!text-[13pt] mb-[0.4em]">
             Cricket event and team managers
           </a>
-          <a href="bmp-sports" class="flex flex-wrap gap-x-[6px] gap-y-[5px] block ">
+          <a href="bmp-sports" class="flex flex-wrap gap-x-[6px] gap-y-[5px]   ">
  
             
           </a>
@@ -701,28 +744,30 @@ across print and web.
       
       
   </section>  
-  <div class="fade-in max-web mx-auto w-full px-4 md:px-8 mt-6 mb-12  flex justify-end">
-  <a href="work" class="button-1 !text-[13pt] !text-[#000000] md:!text-[13pt] hover:opacity-50">
+  <div class="fade-in max-web mx-auto w-full px-4 md:px-8 lg:px-8 md:mt-6 mt-16 md:mb-4 mb-8  flex justify-end">
+  <a href="work" class="button-1  !text-[#000000] !text-[12pt] md:!text-[13pt] hover:opacity-50">
     See more work
   </a>
 </div>   
   </div>
  
-<section id="services" class="fade-in max-web mx-auto px-4 md:px-8 mb-10">
-  <div class="service border-b border-[#d3d3d3]  mb-4"></div>
-    <h2 class="h3 text-[16pt] md:text-[14pt] md:mb-10 mb-6">Services</h2>
+<section id="services" class="fade-in max-web mx-auto px-4 md:px-8 lg:px-8 mb-10">
+  <div class="service border-b border-[#d3d3d3] mt-6 md:mt-6 mb-4 "></div> 
+    <h2 class="body-text-2 text-[14pt] md:text-[14pt] mb-12 md:mb-10">
+  <span class="text-gray-500 text-[13.5pt] md:text-[13.5pt] mr-1">[02]</span>
+  Services
+</h2>
   <div>
     <!-- 01 Brand Identity -->
     <div class="service border-b border-gray-300 group">
-      <div class="service-header grid grid-cols-[auto,1fr,auto] items-center py-3 cursor-pointer">
-        <div class="h1 text-[23pt] md:text-[42pt] lg:text-[34pt] text-[#d3d3d3]">01/</div>
-        <div class="h1 text-[23pt] md:text-[42pt] lg:text-[34pt] text-black ml-[0.72em]">Brand Identity</div>
+      <div class="service-header grid grid-cols-[auto,1fr,auto] items-center py-4 cursor-pointer"> 
+        <div class="h1 !text-[26pt] md:!text-[36pt] text-black  ">Brand Identity</div>
         <span class="ml-auto inline-block text-[20pt] font-black transform transition-transform duration-200 group-hover:rotate-180">&#x2335;</span>
       </div>
       <div class="service-content max-h-0 overflow-hidden transition-all duration-700 group-hover:max-h-[500px]">
         <div class="grid grid-cols-[auto,1fr]">
           <div></div>
-          <ul class="body-text-1 text-[13pt] md:ml-[6em] ml-[3.76em] py-3 list-none mb-5 space-y-2">
+          <ul class="body-text-1 !text-[12pt] md:!text-[13pt] ml-1 py-3 list-none mb-5 space-y-1.5">
             <li>Logos</li>
             <li>Type systems</li>
             <li>Brand assets</li>
@@ -735,15 +780,14 @@ across print and web.
 
     <!-- 02 Content Design -->
     <div class="service border-b border-gray-300 group">
-      <div class="service-header grid grid-cols-[auto,1fr,auto] items-center py-3 cursor-pointer">
-        <div class="h1 text-[23pt] md:text-[42pt] lg:text-[34pt] text-[#d3d3d3]">02/</div>
-        <div class="h1 text-[23pt] md:text-[42pt] lg:text-[34pt] text-black ml-[0.52em]">Content Design</div>
+      <div class="service-header grid grid-cols-[auto,1fr,auto] items-center py-4 cursor-pointer">
+        <div class="h1 !text-[26pt] md:!text-[36pt] text-black  ">Content Design</div>
         <span class="ml-auto inline-block text-[20pt] font-black transform transition-transform duration-200 group-hover:rotate-180">&#x2335;</span>
       </div>
       <div class="service-content max-h-0 overflow-hidden transition-all duration-700 group-hover:max-h-[500px]">
         <div class="grid grid-cols-[auto,1fr]">
           <div></div>
-          <ul class="body-text-1 text-[13pt] md:ml-[6em] ml-[3.76em] py-3 list-none mb-5 space-y-2">
+          <ul class="body-text-1 !text-[12pt] md:!text-[13pt] ml-1 py-3 list-none mb-5 space-y-1.5">
             <li>Social posts</li>
             <li>Ad creative</li>
             <li>Campaign graphics</li>
@@ -755,15 +799,14 @@ across print and web.
 
     <!-- 03 Presentation Design -->
     <div class="service border-b border-gray-300 group">
-      <div class="service-header grid grid-cols-[auto,1fr,auto] items-center py-3 cursor-pointer">
-        <div class="h1 text-[23pt] md:text-[42pt] lg:text-[34pt] text-[#d3d3d3]">03/</div>
-        <div class="h1 text-[23pt] md:text-[42pt] lg:text-[34pt] text-black ml-[0.53em]">Presentation Design</div>
+      <div class="service-header grid grid-cols-[auto,1fr,auto] items-center py-4 cursor-pointer">
+        <div class="h1 !text-[26pt] md:!text-[36pt] text-black  ">Presentation Design</div>
         <span class="ml-auto inline-block text-[20pt] font-black transform transition-transform duration-200 group-hover:rotate-180">&#x2335;</span>
       </div>
       <div class="service-content max-h-0 overflow-hidden transition-all duration-700 group-hover:max-h-[500px]">
         <div class="grid grid-cols-[auto,1fr]">
           <div></div>
-          <ul class="body-text-1 text-[13pt] md:ml-[6em] ml-[3.76em] py-3 list-none mb-5 space-y-2">
+          <ul class="body-text-1 !text-[12pt] md:!text-[13pt] ml-1 py-3 list-none mb-5 space-y-1.5">
             <li>Pitch decks</li>
             <li>Sales presentations</li>
             <li>Internal reports</li>
@@ -774,15 +817,14 @@ across print and web.
 
     <!-- 04 Digital Design -->
     <div class="service border-b border-gray-300 group">
-      <div class="service-header grid grid-cols-[auto,1fr,auto] items-center py-3 cursor-pointer">
-        <div class="h1 text-[23pt] md:text-[42pt] lg:text-[34pt] text-[#d3d3d3]">04/</div>
-        <div class="h1 text-[23pt] md:text-[42pt] lg:text-[34pt] text-black ml-[0.49em]">Digital Design</div>
+      <div class="service-header grid grid-cols-[auto,1fr,auto] items-center py-4 cursor-pointer">
+        <div class="h1 !text-[26pt] md:!text-[36pt] text-black  ">Digital Design</div>
         <span class="ml-auto inline-block text-[20pt] font-black transform transition-transform duration-200 group-hover:rotate-180">&#x2335;</span>
       </div>
       <div class="service-content max-h-0 overflow-hidden transition-all duration-700 group-hover:max-h-[500px]">
         <div class="grid grid-cols-[auto,1fr]">
           <div></div>
-          <ul class="body-text-1 text-[13pt] md:ml-[6em] ml-[3.76em] py-3 list-none mb-5 space-y-2">
+          <ul class="body-text-1 !text-[12pt] md:!text-[13pt] ml-1 py-3 list-none mb-5 space-y-1.5">
             <li>Web visuals</li>
             <li>Landing pages</li>
             <li>UI mockups</li>
@@ -794,15 +836,14 @@ across print and web.
 
     <!-- 05 Print & Production -->
     <div class="service border-b border-gray-300 group">
-      <div class="service-header grid grid-cols-[auto,1fr,auto] items-center py-3 cursor-pointer">
-        <div class="h1 text-[23pt] md:text-[42pt] lg:text-[34pt] text-[#d3d3d3]">05/</div>
-        <div class="h1 text-[23pt] md:text-[42pt] lg:text-[34pt] text-black ml-[0.47em]">Print &amp; Production</div>
+      <div class="service-header grid grid-cols-[auto,1fr,auto] items-center py-4 cursor-pointer">
+        <div class="h1 !text-[26pt] md:!text-[36pt] text-black  ">Print &amp; Production</div>
         <span class="ml-auto inline-block text-[20pt] font-black transform transition-transform duration-200 group-hover:rotate-180">&#x2335;</span>
       </div>
       <div class="service-content max-h-0 overflow-hidden transition-all duration-700 group-hover:max-h-[500px]">
         <div class="grid grid-cols-[auto,1fr]">
           <div></div>
-          <ul class="body-text-1 text-[13pt] md:ml-[6em] ml-[3.76em] py-3 list-none mb-5 space-y-2">
+          <ul class="body-text-1 !text-[12pt] md:!text-[13pt] ml-1 py-3 list-none mb-5 space-y-1.5">
             <li>Flyers</li>
             <li>Signage</li>
             <li>Merchandise</li>
@@ -814,15 +855,14 @@ across print and web.
 
     <!-- 06 Creative Support -->
     <div class="service border-b border-gray-300 group">
-      <div class="service-header grid grid-cols-[auto,1fr,auto] items-center py-3 cursor-pointer">
-        <div class="h1 text-[23pt] md:text-[42pt] lg:text-[34pt] text-[#d3d3d3]">06/</div>
-        <div class="h1 text-[23pt] md:text-[42pt] lg:text-[34pt] text-black ml-[0.51em]">Creative Support</div>
+      <div class="service-header grid grid-cols-[auto,1fr,auto] items-center py-4 cursor-pointer">
+        <div class="h1 !text-[26pt] md:!text-[36pt] text-black  ">Creative Support</div>
         <span class="ml-auto inline-block text-[20pt] font-black transform transition-transform duration-200 group-hover:rotate-180">&#x2335;</span>
       </div>
       <div class="service-content max-h-0 overflow-hidden transition-all duration-700 group-hover:max-h-[500px]">
         <div class="grid grid-cols-[auto,1fr]">
           <div></div>
-          <ul class="body-text-1 text-[13pt] md:ml-[6em] ml-[3.76em] py-3 list-none mb-5 space-y-2">
+          <ul class="body-text-1 !text-[12pt] md:!text-[13pt] ml-1 py-3 list-none mb-5 space-y-1.5">
             <li>Asset resizing</li>
             <li>Formatting</li>
             <li>File exports</li>
@@ -855,65 +895,67 @@ across print and web.
     });
   });
 </script>
-<div class="fade-in max-web mx-auto px-4 md:px-8 mb-24 body-text-1 text-[#2b2b2b] !text-[13pt] md:!text-[13pt]">
+<div class="fade-in max-web mx-auto px-4 md:px-8 lg:px-8 mb-10 md:mb-16 md:mt-0 -mt-2 body-text-1 text-[#2b2b2b] !text-[12pt] md:!text-[13pt]">
             I work with clients to create clear and reliable design outcomes across <br class="hidden lg:block">
              brand identity, content, and digital assets, delivered on time and on spec.
   </div>
-<section id="testimonial" class="fade-in max-web mx-auto mb-24 px-4 md:px-8">
+<section id="testimonial" class="fade-in max-web mx-auto  px-4 md:px-8 lg:px-8 mb-12 md:mb-6">
   <div class="bg-[#efefef] py-8 md:py-16 lg:py-24 rounded-[0.5em]">
-    <div class="max-w-4xl mx-auto text-center">
-      <h2 class="h2 text-[#2b2b2b] text-[23pt] md:text-[34pt] lg:text-[34pt] px-4">
+    <div class="max-w-4xl mx-auto md:text-center text-left">
+      <h2 class="h2 text-[#2b2b2b] text-[18pt] md:text-[28pt] lg:text-[28pt] px-4">
         “Jake’s creativity, attention to detail, and ability to bring ideas to life consistently exceed our expectations.”
       </h2>
-      <div class="mt-6 md:mt-16">
-        <p class="text-[12pt] md:text-[13pt] text-[#2b2b2b] body-text-2">Andrew Novaro</p>
-        <p class="text-[12pt] md:text-[13pt] text-[#2b2b2b] body-text-1">Managing Director</p>
-        <p class="text-[12pt] md:text-[13pt] text-[#2b2b2b] body-text-1">Renaissance Sport</p>
+      <div class="mt-6 md:mt-16 px-4 md:px-8 lg:px-8">
+        <p class="!text-[12pt] md:!text-[13pt] text-[#2b2b2b] body-text-2">Andrew Novaro</p>
+        <p class="!text-[12pt] md:!text-[13pt] text-[#2b2b2b]/70 body-text-1">Managing Director</p>
+        <p class="!text-[12pt] md:!text-[13pt] text-[#2b2b2b]/70 body-text-1">Renaissance Sport</p>
       </div>
     </div>
   </div>
 </section>
 
-<div class="fade-in max-web mx-auto w-full px-4 md:px-8 ">
-  <div class="service border-b border-[#d3d3d3]  mb-4"></div>
-    <h2 class="h2 text-[16pt] md:text-[14pt] md:mb-10 mb-6">About me</h2>
-  <!-- First row: image + heading -->
-  <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 ">
-    <!-- Image (full width on mobile; first of three cols on md+) -->
-    <div class="flex justify-center md:justify-start">
-      <img
-        src="images/jake-image-square.jpg"
-        alt="Jake Pearce"
-        class="w-40 h-40 rounded-full object-cover mx-auto md:mx-0 ml-0 lg:ml-8"
-      />
-    </div>
-
-    <!-- Heading: spans two columns on md+ -->
-    <h2 class="h2 text-[#2b2b2b] text-[23pt] md:col-span-2 md:text-[34pt] lg:text-[34pt]">
-      Multidisciplinary Graphic Designer with a focus on brand development, digital 
-assets, and marketing communications. 
-    </h2>
+<div class="fade-in max-web mx-auto w-full px-4 md:px-8 lg:px-8 ">
+  <div class="service border-b border-[#d3d3d3] mt-6 md:mt-6 mb-4 "></div> 
+    <h2 class="body-text-2 text-[14pt] md:text-[14pt] mb-12 md:mb-10">
+  <span class="text-gray-500 text-[13.5pt] md:text-[13.5pt] mr-1">[03]</span>
+  About me
+</h2>  <!-- First row: image + heading -->
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+  <!-- Image (left-aligned on mobile, centered on lg+) -->
+  <div class="flex justify-start md:justify-start">
+    <img
+      src="images/jake-image-square.avif"
+      alt="Jake Pearce"
+      class="w-32 h-32 md:w-36 md:h-36 rounded-full object-cover lg:ml-4 ml-0 mb-0 md:-mb-2 "
+    />
   </div>
 
+  <!-- Heading: spans two columns on lg+ -->
+  <h2 class="h2 text-[#2b2b2b] text-[18pt] lg:col-span-2 md:text-[28pt]">
+    I’m a multidisciplinary graphic designer focusing on branding, digital design, and marketing communications.
+  </h2>
+  
+</div>
+
   <!-- Second row: Experience / Education -->
-  <div class="grid grid-cols-1 lg:grid-cols-3 gap-16 mt-14">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 mt-8">
     <!-- Empty placeholder (hidden on mobile) -->
-    <div class="hidden md:block"></div>
+    <div class="hidden lg:block"></div>
 
     <!-- Experience column -->
-    <div class="text-[13pt] md:text-[13pt]">
+    <div class="!text-[12pt] md:!text-[13pt]">
       <p class="body-text-2 text-[#2b2b2b]">Experience</p>
       <p class="body-text-2 text-[#2b2b2b] mt-8">
         Independent Freelance — Graphic Designer (2024–Present)
       </p>
-      <p class="body-text-1 mt-3">
+      <p class="body-text-1 mt-2">
         I create branded content and digital assets for local markets, including
         campaign visuals for Erima and sales materials for Renaissance Sports.
       </p>
       <p class="body-text-2 text-[#2b2b2b] mt-8">
         BMP Sports &amp; Partner Companies — Junior Graphic Designer (2023–2024)
       </p>
-      <p class="body-text-1 mt-3">
+      <p class="body-text-1 mt-2">
         I designed and maintained brand identities for ventures including Braves
         Cricket and $MMT, producing logos, print media, social graphics, and
         marketing emails.
@@ -921,24 +963,24 @@ assets, and marketing communications.
     </div>
 
     <!-- Education column -->
-    <div class="text-[13pt] md:text-[13pt]">
+    <div class="!text-[12pt] md:!text-[13pt] -mt-8 md:mt-0">
       <p class="body-text-2 text-[#2b2b2b]">Education</p>
       <p class="body-text-2 text-[#2b2b2b] mt-8">
         Diploma of Graphic Design — Completed 2024
       </p>
-      <p class="body-text-1 mt-3">
+      <p class="body-text-1 mt-2">
         Royal Melbourne Institute of Technology
       </p>
     </div>
   </div>
 </div>
 
-<div class="fade-in max-web mx-auto w-full px-4 md:px-8 mt-12 flex justify-end">
+<div class="fade-in max-web mx-auto w-full px-4 md:px-8 lg:px-8 md:mt-10 mt-16 md:mb-4 mb-8  flex justify-end">
   <a
     href="https://www.dropbox.com/scl/fi/481xw7po47hzgynl2wmt6/Jake-Pearce-CV.pdf?rlkey=ctmxg1p7w580q2fa03re7hws0&st=kz5l8e4f&dl=0"
     target="_blank"
     rel="noopener noreferrer"
-    class="button-1 inline-flex items-center gap-1 underline  text-[13pt] !text-[#000000] md:!text-[13pt] hover:underline rounded-md hover:opacity-50"
+    class="button-1 inline-flex items-center gap-1 underline  !text-[#000000] !text-[12pt] md:!text-[13pt] hover:underline rounded-md hover:opacity-50     "
   >
     View resume
     <svg aria-hidden="true" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
@@ -953,59 +995,63 @@ assets, and marketing communications.
 
 
   
-  <div class="h-14"></div>
+<div class="h-10 md:h-[1.5em]"></div>
 </main>
 <footer
   id="contact"
-  class="bg-[#000000] text-[#FAFAFA] py-8"
+  class="bg-[#000000] text-[#FAFAFA] py-7 md:py-7"
   style="font-family:'Geist',sans-serif"
 >
-  <div class="max-web mx-auto w-full px-4 md:px-10">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-20">
+  <div class="max-web mx-auto w-full px-4 md:px-8 lg:px-8 ">
+    <div class="grid grid-cols-1 md:grid-cols-3 
+            gap-y-8 gap-x-8 
+            md:gap-y-10 md:gap-x-8">
       <!-- links -->
-      <div class="body-text-1 flex justify-left gap-3 flex-wrap text-[13pt] md:text-[11pt] order-4 md:order-none">
-        <a href="#" id="backToTop" class="text-[#686868] hover:text-[#f9f9f9] whitespace-nowrap">
-          Back to top
-        </a>
-        <a href="/work" class="text-[#686868] hover:text-[#f9f9f9] whitespace-nowrap">
-          Work
-        </a>
-        <a href="/visual-feed" class="text-[#686868] hover:text-[#f9f9f9] whitespace-nowrap">
-          Visual Feed
-        </a>
-        <a href="/privacy-policy" class="text-[#686868] hover:text-[#f9f9f9] whitespace-nowrap">
-          Privacy Policy
-        </a>
+      <div class="md:mt-0 mt-4 md:mb-0 -mb-4 body-text-1 flex justify-left md:gap-y-1.5 md:gap-x-2  gap-y-2  gap-x-2 flex-wrap text-[13pt] md:text-[10pt] order-4 md:order-none">
+        <a href="work" id="Work"
+   class="block text-[#686868] text-[11pt] md:text-[10pt] hover:text-[#f9f9f9] whitespace-nowrap">
+  <span class="  inline">→ </span>Work
+</a>
+        <a href="archive" id="Archive"
+   class="block text-[#686868] text-[11pt] md:text-[10pt] hover:text-[#f9f9f9] whitespace-nowrap">
+  <span class="  inline">→ </span>Archive
+</a>
+       
+<a href="privacy-policy" id="backToTop"
+   class="block text-[#686868] text-[11pt] md:text-[10pt] hover:text-[#f9f9f9] whitespace-nowrap">
+  <span class="  inline">→ </span>Privacy Policy
+</a>
       </div>
 
       <!-- mobile-only copyright under nav -->
-      <div class="order-5 text-[13pt] text-[#686868] md:hidden">
+      <div class="order-5 text-[11pt] md:text-[10pt] text-[#686868] md:hidden">
         © 2025
       </div>
+      
 
       <!-- chat prompt -->
       <div
-        class="andrew-text-1 text-[#f9f9f9] -mb-6 md:-mb-0 md:col-span-2 text-[15pt] order-1 md:order-none"
+        class="andrew-text-1 text-[#f9f9f9] -mb-6 md:-mb-0 md:col-span-2 text-[12pt] md:text-[12pt] order-1 md:order-none"
       >
-        Want to work together? Let’s have a chat!
+        Got a project in mind? Let's have a chat
       </div>
 
       <!-- acknowledgement -->
       <div
-        class="body-text-1 text-[#686868] text-[13pt] md:text-[11pt] leading-relaxed flex flex-col mt-4 md:mt-0 justify-end order-3 md:order-none"
+        class="body-text-1 text-[#686868] text-[11pt] md:text-[10pt] flex flex-col md:mb-0 -mb-4  md:mt-7  justify-end order-4 md:order-none "
       >
         I acknowledge the Wurundjeri people as the traditional custodians of this land, pay respect to elders past, present and emerging, and honour their enduring connection to country.
       </div>
 
       <!-- contact details -->
-      <div class="mt-4 md:mt-6 md:col-span-2 space-y-2 order-2 md:order-none">
+      <div class="mt-2 md:mt-6 md:col-span-2 space-y-2 order-2 md:order-none">
         <div class="border-b border-1 border-[#333333]"></div>
 
         <div class="copy-target">
           <a
             href="#"
             data-copy="hello@jakepearce.com.au"
-            class="email text-[#f9f9f9] block md:text-[34pt]  text-[28pt] hover:text-[#f9f9f9]/60"
+            class="email text-[#f9f9f9] block md:text-[30pt]  text-[20pt] hover:text-[#f9f9f9]/60"
           >
             hello@jakepearce.com.au
           </a>
@@ -1015,43 +1061,45 @@ assets, and marketing communications.
           <a
             href="#"
             data-copy="+614229117799"
-            class="email text-[#f9f9f9] block md:text-[34pt]  text-[28pt] hover:text-[#f9f9f9]/60"
+            class="email text-[#f9f9f9] block md:text-[30pt]  text-[20pt] hover:text-[#f9f9f9]/60"
           >
             +61 422 911 799
           </a>
         </div>
-        <div class="border-b border-1 border-[#333333]"></div>
+        <div class="border-b border-1 border-[#333333] "></div>
 
-        <div class="flex justify-between items-center">
-          <div class="mt-7 flex space-x-2">
-            <a
-              href="https://behance.net/jake.r.pearce"
-              target="_blank"
-              rel="noopener"
-            >
-              <img
-                src="images/behance.svg"
-                alt="Behance"
-                class="w-6 h-6 filter invert hover:opacity-60"
-              />
-            </a>
-            <a
-              href="https://instagram.com/jake.r.pearce"
-              target="_blank"
-              rel="noopener"
-            >
-              <img
-                src="images/instagram-black.svg"
-                alt="Instagram"
-                class="w-6 h-6 filter invert hover:opacity-60"
-              />
-            </a>
-          </div>
+        <div class="flex items-center ">
+  <!-- 1) Back to top goes here -->
+  <a href="#" id="backToTop"
+     class="body-text-1 block text-[#686868] text-[11pt] md:text-[10pt]
+            hover:text-[#f9f9f9] whitespace-nowrap md:mt-4 mt-0 hidden md:block">
+    <span class="inline">↑ </span>Scroll to top
+  </a>
+  
+  <!-- 2) Everything else in its own flex, pushed right by ml-auto -->
+  <div class="ml-auto body-text-1 flex flex-wrap gap-x-2 gap-y-2
+               text-[13pt] md:text-[10pt]">
+   
+    <a href="https://www.linkedin.com/in/jake-pearce-076b772b5/"
+       class="block text-[#686868] text-[11pt] md:text-[10pt]
+              hover:text-[#f9f9f9] whitespace-nowrap md:mt-4 mt-0 hidden md:block">
+      <span class="inline">→ </span>LinkedIn
+    </a>
+    <a href="https://instagram.com/jake.r.pearce"
+       class="block text-[#686868] text-[11pt] md:text-[10pt]
+              hover:text-[#f9f9f9] whitespace-nowrap md:mt-4 mt-0 hidden md:block">
+      <span class="inline">→ </span>Instagram
+    </a>
+    <a   class="block text-[#686868] text-[11pt] md:text-[10pt]
+                        whitespace-nowrap md:mt-4 mt-0 hidden md:block">
+      <span class="inline">© 2025</span>
+    </a>
+  </div>
+</div>
 
-          <!-- desktop-only copyright -->
-          <div class="mt-10 text-[13pt] text-[#686868] hidden md:block">
-            © 2025
-          </div>
+
+
+      
         </div>
       </div>
     </div>
@@ -1059,8 +1107,8 @@ assets, and marketing communications.
 </footer>
 
 
-
 <script>
+  
 document.addEventListener('DOMContentLoaded', () => {
   // create floating copy-tooltip
   const copyTip = document.createElement('div');
@@ -1226,7 +1274,7 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       root: null, // observes viewport
       rootMargin: "0px 0px -0px 0px", // optional: tweak trigger buffer
-      threshold: 0.1 // 20% of the element must be visible to trigger
+      threshold: 0.0 // 20% of the element must be visible to trigger
     }
   );
 
