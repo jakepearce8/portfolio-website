@@ -390,6 +390,16 @@ html {
     font-size: 38px;
   }
 }
+.projects-grid-3 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16pt;
+}
+@media (min-width: 745px) {
+  .projects-grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 main {
   position: relative;
   z-index: 2;
@@ -451,6 +461,11 @@ body.nav-open {
   .max-web {
     margin: 0 auto;
     max-width: 1500px;
+  }
+}@media (min-width:818px) {
+  .handshake {
+    margin: 0 auto;  
+    max-width: 2600px;
   }
 }
 /* desktop / tablet */
@@ -532,39 +547,126 @@ body.nav-open {
     transition: none !important;
   }
 }
+.image-flex-row {
+  display: flex;
+  gap: 12pt;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: nowrap;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.flex-image {
+  height: auto;
+  max-height: 622px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  flex-shrink: 1;
+}
+/* fluid base font-size for all three skills grids */
+.tools-grid,
+.expertise-grid,
+.soft-skills-grid {
+  /* 
+    Minimum 11px, maximum 16px, scaling at 1.2vw in between
+  */
+  font-size: clamp(11px, 0.9vw, 14px);
+}
+
+/* pills inherit that font‐size automatically */
+.pill {
+  font-size: inherit;
+  
+  /* fluid padding too, if you like */
+  padding: clamp(0.15em, 0.4vw, 0.25em) clamp(0.6em, 1vw, 1em);
+}
+/* Hide everything except the warning on small screens */
+@media (max-width: 900px) {
+  /* Show the warning overlay */
+  .mobile-warning {
+    display: flex !important;
+  }
+  /* Hide all other content */
+  body > *:not(.mobile-warning) {
+    display: none !important;
+  }
+}
+
   </style>
   <link rel="icon" href="images/logo-04.svg" type="image/svg+xml">
 </head>
 <body>
+  <!-- Mobile-only warning -->
+<div
+  class="mobile-warning fixed inset-0 flex flex-col items-center justify-center gap-6 bg-[#000] text-[#f9f9f9] p-4 text-center hidden"
+>
+  <p class="text-lg">
+    This page is only available on larger screens.<br>
+    Please visit from a tablet or desktop device.
+  </p>
+
+  <a
+    href="/"
+    class="inline-flex items-center border border-[#f9f9f9] px-8 py-2 text-[#f9f9f9] text-[12pt] md:text-[13pt] hover:bg-[#f9f9f9] hover:text-[#000]"
+  >
+    Go to portfolio
+  </a>
+</div>
+
   <main>
   <!-- Project tooltip -->
   <div id="project-tooltip"></div>
   <!-- ===== Header & Toggle ===== -->
-  <header class="max-web fade-in fixed top-0 left-0 right-0 z-50 ">
-    <div id="navContainer" class="bg-[#f9f9f9] flex justify-between items-center w-full  py-0 md:py-0 px-4 md:px-8 lg:px-8">
-      <!-- Header Title -->
-      <a href="/" class="mt-0 mb-0 transition-colors -ml-[0.2em] !text-[14pt] md:!text-[14pt] md:-ml-[0.2em]">
-  <img src="images/logo-new-circle-02.svg" alt="Jake Pearce logo" class="h-8 w-auto hover:opacity-50">
-</a>
+  <header class="fade-in fixed top-0 left-0 right-0 z-50 bg-[#f9f9f9]">
+  <!-- Full-width background -->
 
-  
-      <!-- Desktop Nav -->
-      <nav class="header-nav hidden md:flex" style="margin: 0pt;">
-        <ul class="flex space-x-7 mr-0 mt-0 mb-0">
-          <li><a href="work" class="!text-[20pt] md:!text-[13pt] body-text-1 text-[#000000] transition-colors hover:opacity-50 ">Work</a></li>
-          <li><a href="archive" class="!text-[20pt] md:!text-[13pt] text-[#000000] body-text-1 transition-colors hover:opacity-50 ">Archive</a></li>
-          <li><a href="#contact" class="!text-[20pt] md:!text-[13pt] text-[#000000] body-text-1 transition-colors hover:opacity-50 ">Contact</a></li>
-        </ul>
-      </nav>
-      <!-- Mobile Menu Button (now hidden except ≤745pxx) -->
-      <button id="mobileMenuBtn" aria-label="Open Menu">
-        <div class="hamburger-icon">
-          <span></span>
-          <span></span>
-        </div>
-      </button>
-    </div>
-  </header>
+  <!-- Move the id here so your CSS margins apply -->
+  <div
+    id="navContainer"
+    class="max-web w-full px-4 md:px-8 lg:px-8 flex justify-between items-center py-0"
+  >
+    <!-- Logo -->
+    <a href="/" class="mt-0 mb-0 transition-colors -ml-[0.2em] !text-[14pt] md:!text-[14pt]">
+      <img
+        src="images/logo-new-circle-02.svg"
+        alt="Jake Pearce logo"
+        class="h-8 w-auto hover:opacity-50"
+      />
+    </a>
+
+    <!-- Desktop Nav -->
+    <nav class="header-nav hidden md:flex">
+      <ul class="flex space-x-7">
+        <li>
+          <a href="work" class="!text-[20pt] md:!text-[13pt] body-text-1 text-[#000] hover:opacity-50">
+            Work
+          </a>
+        </li>
+        <li>
+          <a href="archive" class="!text-[20pt] md:!text-[13pt] body-text-1 text-[#000] hover:opacity-50">
+            Archive
+          </a>
+        </li>
+        <li>
+          <a href="#contact" class="!text-[20pt] md:!text-[13pt] body-text-1 text-[#000] hover:opacity-50">
+            Contact
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Mobile Menu Button -->
+    <button id="mobileMenuBtn" aria-label="Open Menu">
+      <div class="hamburger-icon">
+        <span></span>
+        <span></span>
+      </div>
+    </button>
+  </div>
+</header>
+
   <!-- ===== Mobile Overlay ===== -->
 <div id="mobileNavOverlay"
 class="fixed inset-0 z-40 bg-[#F9F9F9] flex flex-col px-4
@@ -605,106 +707,222 @@ aria-hidden="true">
   </div>
 
 
-  <div class="max-web mx-auto w-full z-40 px-4 md:px-8 lg:px-8  md:mt-[3.7em]  mt-16   bg-[#F9F9F9] fade-in z-20 bg-[#F9F9F9] fade-in  ">    
-      
-   <section 
-    id="art"
-    class="max-web mx-auto z-40 w-full  bg-[#F9F9F9] fade-in">
-    <div class="">
-      <div class="project bg-[#F9F9F9] flex flex-col fade-in order-2 md:order-1">
-        <div class="overflow-hidden">
-        <img src="images/erima-img1.avif" alt="Gallery Image 4" class="object-cover w-full h-full rounded-[0.5em]" />
-      </div>
-
-  </section> 
-  </div>
+ 
   <!-- ===== Hero Section ===== -->
   
-  <section
-    id="hero"
-    class="  max-web mx-auto w-full z-40 px-4 md:px-8 lg:px-8  md:mt-24  mt-16 mb-24  bg-[#F9F9F9] fade-in">
-  
-  <div class="grid grid-cols-1  md:grid-cols-2 md:gap-12 gap-6 items-start">
-    <!-- Left Column: Project Title -->
+  <!-- Hero (text on top) -->
+<section
+  id="hero"
+  class="relative z-40 max-web mx-auto w-full px-4 md:px-8 lg:px-8 mt-24 md:mt-36 bg-transparent fade-in"
+>
+  <div class="grid grid-cols-1 md:grid-cols-2 md:gap-12 gap-6 px-4 md:px-8 items-start">
     <div>
-      <h2 class="h1 !text-[36pt] md:!text-[48pt] md:mr-6 mr-0 text-black   fade-in">
-        It's nice to <br> meet you!
+      <h2 class="h1 !text-[36pt] md:!text-[48pt] text-black fade-in">
+        It's nice to <br /> meet you!
       </h2>
-       
     </div>
 
-    <!-- Right Column: Project Description + Tags -->
     <div>
-      <p class="body-text-1  !text-[12pt] md:!text-[13pt] md:mt-0 mb-0 md:mr-0 mr-10 md:ml-6 ml-0 fade-in">
-Hi! I'm Jake Pearce.<br>
-An inventive graphic designer with a love for illustration, layouts, and smart visuals.
-Here’s why I’d make a great Junior Marketing Designer at Octopus Deploy.       
-    </div>
-  </div>
-</section>
-<section id="testimonial" class="fade-in max-web mx-auto  px-4 md:px-8 lg:px-8 mb-12 md:mb-6">
-  <div class="bg-[#efefef] py-8 md:py-16 lg:py-24 rounded-[0.5em]">
-    <div class="max-w-4xl mx-auto md:text-center text-left">
-      <h2 class="h2 text-[#2b2b2b] text-[18pt] md:text-[28pt] lg:text-[28pt] px-4">
-        “Jake’s creativity, attention to detail, and ability to bring ideas to life consistently exceed our expectations.”
-      </h2>
-      <div class="mt-6 md:mt-16 px-4 md:px-8 lg:px-8">
-        <p class="!text-[12pt] md:!text-[13pt] text-[#2b2b2b] body-text-2">Andrew Novaro</p>
-        <p class="!text-[12pt] md:!text-[13pt] text-[#2b2b2b]/70 body-text-1">Managing Director</p>
-        <p class="!text-[12pt] md:!text-[13pt] text-[#2b2b2b]/70 body-text-1">Renaissance Sport</p>
-      </div>
+      <p class="body-text-1 !text-[12pt] md:!text-[13pt] md:mr-0 mr-10 fade-in">
+  Hi! I'm Jake Pearce.<br/>
+  An inventive graphic designer with a knack for illustration, layouts, and clever visuals. 
+  Here’s why I’d make a great Junior Marketing Designer at Octopus Deploy.<br/><br/>
+  <span class="hidden md:inline">↓ This way</span>
+</p>
+
     </div>
   </div>
 </section>
 
-<div class="fade-in max-web mx-auto w-full px-4 md:px-8 lg:px-8 ">
-  <div class="service border-b border-[#d3d3d3] mt-6 md:mt-6 mb-4 "></div> 
-    <h2 class="body-text-2 text-[14pt] md:text-[14pt] mb-12 md:mb-10">
-  <span class="text-gray-500 text-[13.5pt] md:text-[13.5pt] mr-1">[03]</span>
-  About me
-</h2>
- 
-
+<!-- Art  --> 
+<section
+  id="art"
+  class="relative z-20 -mt-14 handshake mx-auto w-full   overflow-visible fade-in"
+>
+  <div class="rounded-[0.5em]   overflow-hidden">
+    <img
+      src="images/octopus/Octopus-1.avif"
+      alt="Handshake"
+      class="object-cover w-full h-full"
+    />
+  </div>
+</section>
+   
  <section
     id="hero"
-    class="  max-web mx-auto w-full z-40 px-4 md:px-8 lg:px-8  md:mt-20  mt-16 mb-80  bg-[#F9F9F9] fade-in">
+      class="relative z-40 max-web mx-auto w-full px-4 md:px-8 lg:px-8 mt-24 md:mt-36 bg-[#F9F9F9] fade-in"
+>
   
-  <div class="grid grid-cols-1  md:grid-cols-2 md:gap-12 gap-6 items-start">
+  <div class="grid grid-cols-1  md:grid-cols-2 md:gap-12 gap-6 px-4 md:px-8 items-start">
     <!-- Left Column: Project Title -->
     <div>
       <h2 class="h1 !text-[36pt] md:!text-[48pt] md:mr-6 mr-0 text-black   fade-in">
-         
+        A little bit<br> about me
       </h2>
        
     </div>
 
     <!-- Right Column: Project Description + Tags -->
     <div>
-      <p class="body-text-1  !text-[12pt] md:!text-[13pt] md:mt-0 mb-0 md:mr-0 mr-10 md:ml-6 ml-0 fade-in">
-Hello! I'm Jake - a graphic designer based in Melbourne, and I made this page to show how I’d fit right into Octopus Deploy’s marketing team.</p> 
-        
+      <p class="body-text-1  !text-[12pt] md:!text-[13pt] md:mt-1 mb-0 md:mr-0 mr-10 md:ml-6 ml-0 fade-in">
+  I grew up in Mildura before moving to Melbourne in 2019 to follow my passion for the creative arts. I quickly discovered that graphic design’s blend of creativity and practical problem-solving was exactly what I’d been looking for and landed my first role as a junior designer with a sports-tech collective. After completing a Diploma of Graphic Design, I developed a newfound love of illustration. Now I freelance from home but still crave the camaraderie of a creative team.
+      <p class="body-text-1  !text-[12pt] md:!text-[13pt] md:mt-3 mb-0 md:mr-0 mr-10 md:ml-6 ml-0 fade-in">
+   When I’m off the clock, you’ll often find me sketching ideas or tweaking my website over a bowl of cereal. On weekends I’m happiest trail-running, road-tripping, camping riverside, or at the pub with my mates.
     </div>
   </div>
 </section>
+<div class=" fade-in max-web mx-auto w-full px-4 md:px-8 lg:px-8 mt-12 mb-[10em]">
+  <img src="images/octopus/about-me.avif" alt="About me illustrations" /> 
+</div>
+
+
+
+
+<section class="fade-in max-web-2 mx-auto  md:px-2  mb-12 md:mb-6">
+  <div class="bg-[#000000] py-8 md:py-16 lg:py-24 rounded-[1em]">
+    <section
+      id="hero"
+      class="relative z-40 max-web mx-auto w-full px-4 md:px-8 lg:px-8 bg-transparent fade-in"
+    >
+      <div class="grid grid-cols-1 md:grid-cols-2 md:gap-12 gap-6 px-4 md:px-8 items-start ">
+        <div>
+          <h2 class="h1 !text-[36pt] md:!text-[48pt] text-[#f9f9f9] fade-in">
+            Skills I bring<br />to this role
+          </h2>
+        </div>
+        <div>
+          <p class="body-text-1 !text-[12pt] md:!text-[13pt] text-[#f9f9f9] fade-in">
+            As an emerging graphic designer, I’m constantly sharpening my craft and adding new tools to my toolkit.
+            Here are some of the capabilities I’ve developed thus far:
+          </p>
+
+          <!-- Tools grid -->
+          <div class="tools-grid   mt-[3em] grid grid-cols-[auto_1fr] items-center gap-4">
+            <div class="text-[#f9f9f9] mr-[2.7em] ">Tools</div>
+            <div class="tools-list flex flex-wrap gap-[5pt]">
+              <span class="pill border border-[1px] border-[#f9f9f9] text-[#f9f9f9] px-[0.8em] py-[0.15em] rounded-full">Illustrator</span>
+              <span class="pill border border-[1px] border-[#f9f9f9] text-[#f9f9f9] px-[0.8em] py-[0.15em] rounded-full">InDesign</span>
+              <span class="pill border border-[1px] border-[#f9f9f9] text-[#f9f9f9] px-[0.8em] py-[0.15em] rounded-full">Photoshop</span>
+              <span class="pill border border-[1px] border-[#f9f9f9] text-[#f9f9f9] px-[0.8em] py-[0.15em] rounded-full">Canva</span>
+              <span class="pill border border-[1px] border-[#f9f9f9] text-[#f9f9f9] px-[0.8em] py-[0.15em] rounded-full">Google Slides</span>
+              <span class="pill border border-[1px] border-[#f9f9f9] text-[#f9f9f9] px-[0.8em] py-[0.15em] rounded-full">Vision 6</span>
+            </div>
+          </div> 
+          <!-- Tools grid -->
+          <div class="tools-grid   mt-[0.9em] grid grid-cols-[auto_1fr] items-center gap-4">
+            <div class="text-[#f9f9f9] mr-[0.9em] ">Expertise</div>
+            <div class="tools-list flex flex-wrap gap-[5pt]"> 
+              <span class="pill border border-[1px] border-[#f9f9f9] text-[#f9f9f9] px-[0.8em] py-[0.15em] rounded-full">Branding/Identity</span>
+              <span class="pill border border-[1px] border-[#f9f9f9] text-[#f9f9f9] px-[0.8em] py-[0.15em] rounded-full">Illustration</span>
+              <span class="pill border border-[1px] border-[#f9f9f9] text-[#f9f9f9] px-[0.8em] py-[0.15em] rounded-full">Brief Execution</span>
+              <span class="pill border border-[1px] border-[#f9f9f9] text-[#f9f9f9] px-[0.8em] py-[0.15em] rounded-full">Layout</span>
+              <span class="pill border border-[1px] border-[#f9f9f9] text-[#f9f9f9] px-[0.8em] py-[0.15em] rounded-full">Apparel</span> 
+            </div>
+          </div> 
+          <!-- Tools grid -->
+          <div class="tools-grid   mt-[0.9em] grid grid-cols-[auto_1fr] items-center gap-4  ">
+            <div class="text-[#f9f9f9] mr-[0.7em] ">Soft skills</div>
+            <div class="tools-list flex flex-wrap gap-[5pt]"> 
+              <span class="pill border border-[1px] border-[#f9f9f9] text-[#f9f9f9] px-[0.8em] py-[0.15em] rounded-full">Problem Solving</span>
+              <span class="pill border border-[1px] border-[#f9f9f9] text-[#f9f9f9] px-[0.8em] py-[0.15em] rounded-full">Collaboration</span>
+              <span class="pill border border-[1px] border-[#f9f9f9] text-[#f9f9f9] px-[0.8em] py-[0.15em] rounded-full">Time Management</span>
+              <span class="pill border border-[1px] border-[#f9f9f9] text-[#f9f9f9] px-[0.8em] py-[0.15em] rounded-full ">Adaptability</span>
+            </div>
+          </div> 
+
+        </div>
+      </div>
+    </section>
+    <section class="fade-in max-web mx-auto px-4 md:px-16 lg:px-16 mb-12 md:mb-6">
+    <div class="service border-b border-[#333333] mt-[6em] mb-4 "></div>
+
+    <h2 class="body-text-1 text-[#f9f9f9]  !text-[12pt] md:!text-[13pt] !mb-12 md:!mb-16 ">
+  <span class="text-[#f9f9f9]/50 text-[13.5pt] md:text-[13.5pt] mr-1">↓</span>
+  Illustration
+</h2>
+<div class=" fade-in max-web mx-auto w-full   mt-[0.5em] ">
+  <img src="images/octopus/illustration.avif" alt="About me illustrations" /> 
+</div>
+<div class="service border-b border-[#333333] mt-[1em] mb-[0.4em] "></div>
+
+    <h2 class="body-text-1 text-[#f9f9f9]  !text-[12pt] md:!text-[13pt] !mb-12 md:!mb-16 ">
+  <span class="text-[#f9f9f9]/50 text-[13.5pt] md:text-[13.5pt] mr-1">↓</span>
+  Layout
+</h2>
+<div class=" fade-in max-web mx-auto w-full   mt-12 ">
+  <img src="images/octopus/layout-example.avif" alt="About me illustrations" /> 
+</div>
+  <div class="service border-b border-[#333333] mt-[1em] mb-[0.4em] "></div>
+
+    <h2 class="body-text-1 text-[#f9f9f9]  !text-[12pt] md:!text-[13pt] !mb-12 md:!mb-16 ">
+  <span class="text-[#f9f9f9]/50 text-[13.5pt] md:text-[13.5pt] mr-1">↓</span>
+  Apparel
+</h2>
+<div class=" fade-in max-web mx-auto w-full   mt-12  ">
+  <img src="images/octopus/apparel.avif" alt="About me illustrations" /> 
+</div>
+  </div>
   
- 
+  </div>
+  </div>
+  <section
+    id="hero"
+      class="relative z-40 max-web mx-auto w-full px-4 md:px-8 lg:px-8  md:mt-[10em] bg-[#F9F9F9] fade-in"
+>
+  
+  <div class="grid grid-cols-1  md:grid-cols-2 md:gap-12 gap-6 px-4 md:px-8 items-start">
+    <!-- Left Column: Project Title -->
+    <div>
+      <h2 class="h1 !text-[36pt] md:!text-[48pt] md:mr-6 mr-0 text-black   fade-in">
+        Resume<br> & portfolio
+      </h2>
+       
+    </div>
 
+    <!-- Right Column: Project Description + Tags -->
+    <div>
+      <div>
+  <p class="body-text-1 !text-[12pt] md:!text-[13pt] md:mt-1 mb-0 md:mr-0 mr-10 md:ml-6 ml-0 fade-in">
+    Thanks for taking the time to check out my work.<br>
+    I’m very excited about this opportunity to contribute to the Octopus Deploy team. <br>If you think I could be a good fit, I’d love to talk further.
+  </p>
 
+  <p class="body-text-1 !text-[12pt] md:!text-[13pt] md:mt-8 mb-4 md:mr-0 mr-10 md:ml-6 ml-0 fade-in">
+   What would you like to see next?
+</p>
 
-
-<div class="fade-in max-web mx-auto w-full px-4 md:px-8 lg:px-8 md:mt-10 mt-16 md:mb-4 mb-8  flex justify-end">
+<div class="flex flex-wrap gap-[0.6em] ml-0 md:ml-6 fade-in">
   <a
     href="https://www.dropbox.com/scl/fi/481xw7po47hzgynl2wmt6/Jake-Pearce-CV.pdf?rlkey=ctmxg1p7w580q2fa03re7hws0&st=kz5l8e4f&dl=0"
     target="_blank"
     rel="noopener noreferrer"
-    class="button-1 inline-flex items-center gap-1 underline  !text-[#000000] !text-[12pt] md:!text-[13pt] hover:underline rounded-md hover:opacity-50     "
+    class="inline-flex items-center border border-[#000000] px-[2em] py-[0.45em] text-[#000000] text-[12pt] md:text-[13pt] hover:bg-[#000000] hover:text-[#f9f9f9]"
   >
-    View resume
-    <svg aria-hidden="true" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
-      <path d="M10 6V8H5V19H16V14H18V20C18 20.5523 17.5523 21 17 21H4C3.4477 21 3 20.5523 3 20V7C3 6.4477 3.4477 6 4 6H10ZM21 3V11H19L18.9999 6.413L11.2071 14.2071L9.7929 12.7929L17.5849 5H13V3H21Z"/>
-    </svg>
+    Resume
+  </a>
+  <a
+    href="/"
+    class="inline-flex items-center border border-[#000000] px-[2em] py-[0.45em] text-[#000000] text-[12pt] md:text-[13pt] hover:bg-[#000000] hover:text-[#f9f9f9]"
+  >
+    Portfolio
   </a>
 </div>
+
+
+</div>
+
+    
+  </div>
+</section>
+  </section>
+</section>
+
+
+
+
+ 
+
+   
 
 
 
@@ -712,117 +930,53 @@ Hello! I'm Jake - a graphic designer based in Melbourne, and I made this page to
 
 
   
-<div class="h-10 md:h-[1.5em]"></div>
+<div class="h-10 md:h-[10em]"></div>
 <div id=""></div>
 </main>
 <footer
   id="contact"
-  class="bg-[#000000] text-[#FAFAFA] py-7 md:py-7"
+  class="bg-[#000000]/5 text-[#FAFAFA] py-7 md:py-7"
   style="font-family:'Geist',sans-serif"
 >
-  <div class="max-web mx-auto w-full px-4 md:px-8 lg:px-8 ">
-    <div class="grid grid-cols-1 md:grid-cols-3 
-            gap-y-8 gap-x-8 
-            md:gap-y-10 md:gap-x-8">
-      <!-- links -->
-      <div class="md:mt-0 mt-4 md:mb-0 -mb-4 body-text-1 flex justify-left md:gap-y-1.5 md:gap-x-2  gap-y-2  gap-x-2 flex-wrap text-[13pt] md:text-[10pt] order-4 md:order-none">
-        <a href="work" id="Work"
-   class="block text-[#686868] text-[11pt] md:text-[10pt] hover:text-[#f9f9f9] whitespace-nowrap">
-  <span class="  inline">→ </span>Work
-</a>
-        <a href="archive" id="archive"
-   class="block text-[#686868] text-[11pt] md:text-[10pt] hover:text-[#f9f9f9] whitespace-nowrap">
-  <span class="  inline">→ </span>Archive
-</a>
-       
-<a href="privacy-policy" id="privacy policy"
-   class="block text-[#686868] text-[11pt] md:text-[10pt] hover:text-[#f9f9f9] whitespace-nowrap">
-  <span class="  inline">→ </span>Privacy Policy
-</a>
-      </div>
-
-      <!-- mobile-only copyright under nav -->
-      <div class="order-5 text-[11pt] md:text-[10pt] text-[#686868] md:hidden">
-        © 2025
+  <div class="max-web mx-auto w-full px-4 md:px-8 lg:px-8">
+    <div class="flex items-center">
+      
+      <!-- Left: social links -->
+      <div class="flex flex-wrap gap-x-4 gap-y-2">
+        <a
+          href="https://www.linkedin.com/in/jake-pearce-076b772b5/"
+          class="text-[#686868] text-[11pt] md:text-[10pt] hover:text-[#000000] whitespace-nowrap"
+        >
+          → LinkedIn
+        </a>
+        <a
+          href="https://instagram.com/jake.r.pearce"
+          class="text-[#686868] text-[11pt] md:text-[10pt] hover:text-[#000000] whitespace-nowrap"
+        >
+          → Instagram
+        </a>
       </div>
       
-
-      <!-- chat prompt -->
-      <div
-        class="andrew-text-1 text-[#f9f9f9] -mb-6 md:-mb-0 md:col-span-2 text-[12pt] md:text-[12pt] order-1 md:order-none"
-      >
-        Got a project in mind? Let's have a chat
+      <!-- Center: back to top -->
+      <div class="flex-1 flex justify-center">
+        <a
+          href="#"
+          id="backToTop"
+          class="text-[#686868] text-[11pt] md:text-[10pt] hover:text-[#000000] whitespace-nowrap"
+        >
+          ↑ Scroll to top
+        </a>
       </div>
-
-      <!-- acknowledgement -->
-      <div
-        class="body-text-1 text-[#686868] text-[11pt] md:text-[10pt] flex flex-col md:mb-0 -mb-4  md:mt-7  justify-end order-4 md:order-none "
-      >
-        I acknowledge the Wurundjeri people as the traditional custodians of this land, pay respect to elders past, present and emerging, and honour their enduring connection to country.
-      </div>
-
-      <!-- contact details -->
-      <div class="mt-2 md:mt-6 md:col-span-2 space-y-2 order-2 md:order-none">
-        <div class="border-b border-1 border-[#333333]"></div>
-
-        <div class="copy-target">
-          <a
-            href="#"
-            data-copy="hello@jakepearce.com.au"
-            class="email text-[#f9f9f9] block md:text-[30pt]  text-[20pt] hover:text-[#f9f9f9]/60"
-          >
-            hello@jakepearce.com.au
-          </a>
-        </div>
-        <div class="border-b border-1 border-[#333333]"></div>
-        <div class="copy-target">
-          <a
-            href="#"
-            data-copy="+614229117799"
-            class="email text-[#f9f9f9] block md:text-[30pt]  text-[20pt] hover:text-[#f9f9f9]/60"
-          >
-            +61 422 911 799
-          </a>
-        </div>
-        <div class="border-b border-1 border-[#333333] "></div>
-
-        <div class="flex items-center ">
-  <!-- 1) Back to top goes here -->
-  <a href="#" id="backToTop"
-     class="body-text-1 block text-[#686868] text-[11pt] md:text-[10pt]
-            hover:text-[#f9f9f9] whitespace-nowrap md:mt-4 mt-0 hidden md:block">
-    <span class="inline">↑ </span>Scroll to top
-  </a>
-  
-  <!-- 2) Everything else in its own flex, pushed right by ml-auto -->
-  <div class="ml-auto body-text-1 flex flex-wrap gap-x-2 gap-y-2
-               text-[13pt] md:text-[10pt]">
-   
-    <a href="https://www.linkedin.com/in/jake-pearce-076b772b5/"
-       class="block text-[#686868] text-[11pt] md:text-[10pt]
-              hover:text-[#f9f9f9] whitespace-nowrap md:mt-4 mt-0 hidden md:block">
-      <span class="inline">→ </span>LinkedIn
-    </a>
-    <a href="https://instagram.com/jake.r.pearce"
-       class="block text-[#686868] text-[11pt] md:text-[10pt]
-              hover:text-[#f9f9f9] whitespace-nowrap md:mt-4 mt-0 hidden md:block">
-      <span class="inline">→ </span>Instagram
-    </a>
-    <a   class="block text-[#686868] text-[11pt] md:text-[10pt]
-                        whitespace-nowrap md:mt-4 mt-0 hidden md:block">
-      <span class="inline">© 2025</span>
-    </a>
-  </div>
-</div>
-
-
-
       
-        </div>
+      <!-- Right: copyright -->
+      <div class="flex justify-end">
+        <span class="text-[#686868] text-[11pt] md:text-[10pt]">&copy; 2025</span>
       </div>
+      
     </div>
   </div>
 </footer>
+
 
 
 <script>
