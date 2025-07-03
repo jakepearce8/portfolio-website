@@ -593,11 +593,29 @@ body.nav-open {
     display: none !important;
   }
 }
+#scroll-pill {
+  bottom: -3em;              /* sits 3em below the paragraph block */
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  animation: float 2.5s ease-in-out infinite;
+  z-index: 10;               /* just above your text */
+}
+
+/* float animation */
+@keyframes float {
+  0%, 100%   { transform: translate(-50%, 0) }
+  50%        { transform: translate(-50%, -8px) }
+}
+
 
   </style>
   <link rel="icon" href="images/logo-new-circle-02.svg" type="image/svg+xml">
 </head>
 <body>
+  <div id="scroll-pill" class="fixed left-1/2 transform -translate-x-1/2 bg-white text-black px-4 py-2 rounded-full shadow-lg opacity-1 pointer-events-none">
+  ↓ This way
+</div>
+
   <!-- Mobile-only warning -->
 <div
   class="mobile-warning fixed inset-0 flex flex-col items-center justify-center gap-6 bg-[#000] text-[#f9f9f9] p-4 text-center hidden"
@@ -724,13 +742,16 @@ aria-hidden="true">
     </div>
 
     <div>
-      <p class="body-text-1 !text-[12pt] md:!text-[13pt] md:mr-0 mr-10 fade-in">
+      <p class="body-text-1 !text-[12pt] md:!text-[13pt] md:mr-0 mr-10 !mb-4 fade-in">
   Hi! I'm Jake Pearce.<br/>
   An inventive graphic designer with a knack for illustration, layouts, and clever visuals. 
   Here’s why I’d make a great Junior Marketing Designer at Octopus Deploy.<br/><br/>
-  <span class="hidden md:inline">↓ This way</span>
+   
 </p>
-
+ <!-- your floating pill -->
+      <div id="scroll-pill" class="absolute left-1/2 ml-[4.8em] !mt-[4em]   -translate-x-1/2 bg-white/30 text-black px-4 py-2 rounded-full shadow-lg pointer-events-none">
+        ↓ This way
+      </div>
     </div>
   </div>
 </section>
@@ -738,7 +759,7 @@ aria-hidden="true">
 <!-- Art  --> 
 <section
   id="art"
-  class="relative z-20 -mt-14 handshake mx-auto w-full   overflow-visible fade-in"
+  class="relative z-20 -mt-16 handshake mx-auto w-full   overflow-visible fade-in"
 >
   <div class="rounded-[0.5em]   overflow-hidden">
     <img
@@ -751,7 +772,7 @@ aria-hidden="true">
    
  <section
     id="hero"
-      class="relative z-40 max-web mx-auto w-full px-4 md:px-8 lg:px-8 mt-24 md:mt-36 bg-[#F9F9F9] fade-in"
+      class="relative z-40 max-web mx-auto w-full px-4 md:px-8 lg:px-8 mt-10 md:mt-36 bg-[#F9F9F9] fade-in"
 >
   
   <div class="grid grid-cols-1  md:grid-cols-2 md:gap-12 gap-6 px-4 md:px-8 items-start">
@@ -766,13 +787,12 @@ aria-hidden="true">
     <!-- Right Column: Project Description + Tags -->
     <div>
       <p class="body-text-1  !text-[12pt] md:!text-[13pt] md:mt-1 mb-0 md:mr-0 mr-10 md:ml-6 ml-0 fade-in">
-  I grew up in Mildura before moving to Melbourne in 2019 to follow my passion for the creative arts. I quickly discovered that graphic design’s blend of creativity and practical problem-solving was exactly what I’d been looking for and landed my first role as a junior designer with a sports-tech collective. After completing a Diploma of Graphic Design, I developed a newfound love of illustration. Now I freelance from home but still crave the camaraderie of a creative team.
-      <p class="body-text-1  !text-[12pt] md:!text-[13pt] md:mt-3 mb-0 md:mr-0 mr-10 md:ml-6 ml-0 fade-in">
-   When I’m off the clock, you’ll often find me sketching ideas or tweaking my website over a bowl of cereal. On weekends I’m happiest trail-running, road-tripping, camping riverside, or at the pub with my mates.
+Originally from Mildura, I moved to Melbourne in 2019 to pursue a career in the creative industries. I soon found that graphic design’s mix of creativity and problem-solving was the right fit, and landed my first role as a junior designer at a sports-tech collective. Since then, I’ve completed a Diploma of Graphic Design, developed a strong interest in illustration, and now freelance across branding, digital, and marketing design. I'm currently looking to rejoin a creative team where I can keep learning and contribute in a more collaborative setting.      <p class="body-text-1  !text-[12pt] md:!text-[13pt] md:mt-3 mb-0 md:mr-0 mr-10 md:ml-6 ml-0 fade-in">
+   Outside of work, I’m often sketching ideas, refining my website, or enjoying time outdoors—whether that’s trail running, camping by the river, or catching up with friends at the pub.
     </div>
   </div>
 </section>
-<div class=" fade-in max-web mx-auto w-full px-4 md:px-8 lg:px-8 mt-12 mb-[10em]">
+<div class=" fade-in max-web-2 mx-auto w-full px-4 md:px-8 lg:px-8 mt-10 mb-[4em]">
   <img src="images/octopus/about-me.avif" alt="About me illustrations" /> 
 </div>
 
@@ -780,7 +800,7 @@ aria-hidden="true">
 
 
 <section class="fade-in max-web-2 mx-auto  md:px-2  mb-12 md:mb-6">
-  <div class="bg-[#000000] py-8 md:py-16 lg:py-24 rounded-[1em]">
+  <div class="bg-[#000000]  py-24 rounded-[1em]">
     <section
       id="hero"
       class="relative z-40 max-web mx-auto w-full px-4 md:px-8 lg:px-8 bg-transparent fade-in "
@@ -798,8 +818,8 @@ aria-hidden="true">
           </p>
 
           <!-- Tools grid -->
-          <div class="tools-grid   mt-[3em] grid grid-cols-[auto_1fr] items-center gap-4">
-            <div class="text-[#f9f9f9] mr-[2.7em] ">Tools</div>
+          <div class="tools-grid   mt-[2.5em] grid grid-cols-[auto_1fr] items-center gap-4">
+            <div class="text-[#f9f9f9] body-text-2 mr-[2.7em] ">Tools</div>
             <div class="tools-list flex flex-wrap gap-[5pt]">
               <span class="pill border border-[1px] border-[#f9f9f9] text-[#f9f9f9] px-[0.8em] py-[0.15em] rounded-full">Illustrator</span>
               <span class="pill border border-[1px] border-[#f9f9f9] text-[#f9f9f9] px-[0.8em] py-[0.15em] rounded-full">InDesign</span>
@@ -811,7 +831,7 @@ aria-hidden="true">
           </div> 
           <!-- Tools grid -->
           <div class="tools-grid   mt-[0.9em] grid grid-cols-[auto_1fr] items-center gap-4">
-            <div class="text-[#f9f9f9] mr-[0.9em] ">Expertise</div>
+            <div class="text-[#f9f9f9] body-text-2 mr-[0.9em] ">Expertise</div>
             <div class="tools-list flex flex-wrap gap-[5pt]"> 
               <span class="pill border border-[1px] border-[#f9f9f9] text-[#f9f9f9] px-[0.8em] py-[0.15em] rounded-full">Branding/Identity</span>
               <span class="pill border border-[1px] border-[#f9f9f9] text-[#f9f9f9] px-[0.8em] py-[0.15em] rounded-full">Illustration</span>
@@ -822,7 +842,7 @@ aria-hidden="true">
           </div> 
           <!-- Tools grid -->
           <div class="tools-grid   mt-[0.9em] grid grid-cols-[auto_1fr] items-center gap-4  ">
-            <div class="text-[#f9f9f9] mr-[0.7em] ">Soft skills</div>
+            <div class="text-[#f9f9f9] body-text-2 mr-[0.7em] ">Soft skills</div>
             <div class="tools-list flex flex-wrap gap-[5pt]"> 
               <span class="pill border border-[1px] border-[#f9f9f9] text-[#f9f9f9] px-[0.8em] py-[0.15em] rounded-full">Problem Solving</span>
               <span class="pill border border-[1px] border-[#f9f9f9] text-[#f9f9f9] px-[0.8em] py-[0.15em] rounded-full">Collaboration</span>
@@ -835,7 +855,7 @@ aria-hidden="true">
       </div>
     </section>
     <section class="fade-in max-web mx-auto px-4 md:px-16 lg:px-16 mb-12 md:mb-6">
-    <div class="service border-b border-[#333333] mt-[6em] mb-4 "></div>
+    <div class="service border-b border-[#333333] mt-[3em] mb-4 "></div>
 
     <h2 class="body-text-1 text-[#f9f9f9]  !text-[12pt] md:!text-[13pt] !mb-12 md:!mb-16 ">
   <span class="text-[#f9f9f9]/50 text-[13.5pt] md:text-[13.5pt] mr-1">↓</span>
@@ -1029,13 +1049,26 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 
    <script>
-    
+    document.addEventListener('DOMContentLoaded', () => {
+  const pill = document.getElementById('scroll-pill');
+  window.addEventListener('scroll', () => {
+    pill.style.opacity = window.scrollY > 0 ? '0' : '1';
+  }, { passive: true });
+});
+
   
 
    
 </script>
   <script>
-    
+    document.addEventListener('DOMContentLoaded', () => {
+  const pill = document.getElementById('scroll-pill');
+  // hide once user scrolls any amount
+  window.addEventListener('scroll', () => {
+    pill.style.opacity = window.scrollY > 0 ? '0' : '1';
+  }, { passive: true });
+});
+
     // Scroll-to-bottom for Contact links
     document.addEventListener('DOMContentLoaded', () => {
       document.querySelectorAll('a[href="#contact"]').forEach(link => {
