@@ -344,7 +344,7 @@ main {
   position: relative;
   z-index: 2;
   background: #F1F0EE;
-  margin-bottom: o; 
+  margin-bottom: 0; 
 }
 
 footer {
@@ -1493,16 +1493,39 @@ document.addEventListener('DOMContentLoaded', () => {
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    const main = document.querySelector('main');
-    const footer = document.querySelector('footer');
+  const main = document.querySelector('main');
+  const footer = document.querySelector('footer');
+  if (!main || !footer) return;
 
-    function adjustMainMargin() {
-      const h = footer.offsetHeight;
-      main.style.marginBottom = h + 'px';
+  // Don’t do the fixed-footer hack on mobile where your CSS makes footer relative
+  const MOBILE_BREAKPOINT = 745;
+
+  const setMargin = () => {
+    if (window.innerWidth <= MOBILE_BREAKPOINT) {
+      main.style.marginBottom = '0px';
+      return;
     }
+    const h = Math.ceil(footer.getBoundingClientRect().height);
+    main.style.marginBottom = h + 'px';
+  };
 
-    adjustMainMargin();
-    window.addEventListener('resize', adjustMainMargin);
+  // 1) Run immediately
+  setMargin();
+
+  // 2) Run after everything (images, fonts, etc.) has a chance to affect layout
+  window.addEventListener('load', setMargin);
+
+  // 3) Run after fonts finish loading (prevents reflow surprises)
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(setMargin).catch(() => {});
+  }
+
+  // 4) React to footer height changes automatically
+  const ro = new ResizeObserver(() => setMargin());
+  ro.observe(footer);
+
+  // 5) Also on viewport changes
+  window.addEventListener('resize', setMargin);
   });
 </script>
 
