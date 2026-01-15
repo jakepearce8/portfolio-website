@@ -7,11 +7,9 @@
     content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
   />
   <title>Braves Cricket — Jake Pearce</title>
-    <!-- Tailwind CSS -->
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    /* ===== Font faces ===== */
-    
     /* ===== Font faces ===== */
     
     @font-face {
@@ -84,26 +82,20 @@
 }
 .h1 {
   font-family: 'SansFlex', sans-serif;
-  font-variation-settings: 'wght' 420;
+  font-variation-settings: 'wght' 430;
   color: #2b2b2b;
-  letter-spacing: 0.0em; 
-  line-height: 1.05;
+  letter-spacing: -0.006em; 
+  line-height: 1.15;
 
 }
 .h2 {
   font-family: 'SansFlex', sans-serif;
-  font-variation-settings: 'wght' 320;
+  font-variation-settings: 'wght' 280;
   color: #2b2b2b;
-  letter-spacing: 0.0em; 
-  line-height: 1.35;
+  letter-spacing: -0.006em; 
+  line-height: 1.3;
 }
-.h3 {
-  font-family: 'SansFlex', sans-serif;
-  font-variation-settings: 'wght' 320;
-  color: #2b2b2b;
-  letter-spacing: 0.0em; 
-  line-height: 1.35;
-}
+ 
 .quote {
   font-family: 'SansFlex', sans-serif;
   font-variation-settings: 'wght' 320;
@@ -123,43 +115,57 @@
   font-variation-settings: 'wght' 320;
   color: #2b2b2b;
   letter-spacing: 0.0em; 
-  line-height: 1.55;
+  line-height: 1.65;
+}
+.acknowledgment {
+  font-family: 'SansFlex', sans-serif;
+  font-variation-settings: 'wght' 280;
+  color: #2b2b2b;
+  letter-spacing: 0.0em; 
+  line-height: 1.45;
 }
 .body-text-2 {
  font-family: 'SansFlex', sans-serif;
-  font-variation-settings: 'wght' 320;
+  font-variation-settings: 'wght' 340;
   color: #2b2b2b;
   letter-spacing: 0.0em; 
-  line-height: 1.15;
+  line-height: 1.65;
  
-}
-.body-text-6 {
- font-family: 'SansFlex', sans-serif;
-  font-variation-settings: 'wght' 320;
-  color: #2b2b2b;
-  letter-spacing: 0.0em; 
-  line-height: 1.35;
- 
-}
+} 
 .body-text-3 {
   font-family: 'SansFlex', sans-serif;
-  font-variation-settings: 'wght' 320;
+  font-variation-settings: 'wght' 400;
   color: #2b2b2b;
   letter-spacing: 0.0em; 
-  line-height: 1.35;
+  line-height: 1.45;
 }
 .body-text-4 {
   font-family: 'SansFlex', sans-serif;
-  font-variation-settings: 'wght' 320;
+  font-variation-settings: 'wght' 520;
   color: #2b2b2b;
   letter-spacing: 0.0em; 
-  line-height: 1.35;
+  line-height: 1.45;
 }
+.nav-h2 {
+  font-family: 'SansFlex', sans-serif;
+  font-variation-settings: 'wght' 520;
+  color: #2b2b2b;
+  letter-spacing: 0.0em; 
+  line-height: 1.65;
+}
+.h3 {
+  font-family: 'SansFlex', sans-serif;
+  font-variation-settings: 'wght' 520;
+  color: #2b2b2b;
+  letter-spacing: 0.0em; 
+  line-height: 1.15;
+}
+
  
 
 .button-1 {
   font-family: 'SansFlex', sans-serif;
-  font-variation-settings: 'wght' 320;
+  font-variation-settings: 'wght' 280;
   color: #2b2b2b;
   letter-spacing: 0.0em; 
   line-height: 1.35;
@@ -179,18 +185,14 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 6pt;
-  padding-top: 15pt;
-  padding-bottom: 15pt;
+  padding-top: 0pt;
+  padding-bottom: 0pt;
 }
 
 
 
-/* Desktop (≥745px): tighter padding */
-@media (min-width: 745px) {
-  header {
-    padding: 1pt;
-  }
-}
+
+ 
 
     
     /* your existing project tooltip */
@@ -220,8 +222,8 @@ header {
   display: none;
   white-space: nowrap;
 }
-    
-    /* Hide hamburger by default, show only on mobile ≤745px */
+
+    /* Hide hamburger by default, show only on mobile ≤768px */
     #mobileMenuBtn {
       font-size: 10px;
       background: transparent; border: none;
@@ -232,7 +234,7 @@ header {
       align-items: center; justify-content: center;
       z-index: 51;
     }
-    @media (max-width: 745px) {
+    @media (max-width: 768px) {
       #mobileMenuBtn {
         display: flex;
       }
@@ -242,9 +244,7 @@ header {
   width: 24px;
   height: 24px;
 }
-html {
-  background-color: #F1F0EE; /* same as main */
-}
+ 
 .hamburger-icon {
   position: relative;
   width: 24px;
@@ -275,97 +275,58 @@ html {
 .hamburger-icon.open span:nth-child(2) {
   transform: rotate(-45deg);
 }
-    /* ===== Mobile Nav Overlay ===== */
-    #mobileNavOverlay {
-      position: fixed; top: 56px; left: 0; right: 0; bottom: 0;
-      z-index: 40; background-color: #F9F9F9;
-      display: none; flex-direction: column;
-      padding: 1rem; opacity: 0; transform: translateY(-10px);
-      transition: opacity 0.4s ease-out, transform 0.4s ease-out;
-    }
-    #mobileNavOverlay.visible {
-      opacity: 1; transform: translateY(0);
-    }
     
-    .nav-button:hover {
-      color: #9d9d9d;
-      transition: opacity 0.4s ease-out;
-    }
-    /* ===== Mobile slide-up animation ===== */
-    @keyframes slideUp {
-      from { opacity: 0; transform: translateY(10px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    .mobile-anim {
-      animation: slideUp 0.4s ease-out both;
-    }
-    
-    .fade-in {
-      opacity: 0;
-      transform: translateY(-2px);
-      transition: opacity 0.4s ease-out, transform 0.4s ease-out;
-    }
-    
-    .project {
-      position: relative;
-      transform-origin: center;
-      overflow: hidden;
-    }
 /* override all project-image-container to square on small screens */
 .project-image-container {
-  aspect-ratio: 11 / 9;
+  aspect-ratio: 1 / 1;
   width: 100%;
   overflow: hidden;
   border-radius: inherit;
 }
 
-.projects-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  row-gap: 48px;
-  column-gap: 22px;
-}
-
-
-@media (min-width: 745px) {
-  .projects-grid {
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto auto;
-  }
-  .projects-grid > .project:nth-child(1) {
-    grid-column: 1;
-    grid-row: 1;
-  }
-  .projects-grid > .project:nth-child(2) {
-    grid-column: 2;
-    grid-row: 1;
-  }
-  .projects-grid > .project:nth-child(3) {
-    grid-column: 3;
-    grid-row: 1 ;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-  }
-  .projects-grid > .project:nth-child(3) .project-image-container {
-    flex-grow: 1;
-    overflow: hidden;
+/* restore your original 16:10 ratio once 768px */
+@media (min-width: 1280px) {
+  .project-image-container {
+    aspect-ratio: 11 / 10;
   }
 }
-    @media (min-width: 745px) {
+
+    .project-image-container:hover {
+      cursor: default;
+}
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      row-gap: 36px;
+      column-gap: 20px;
+    }
+    @media (min-width: 768px) {
+      .projects-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+      }
+      .projects-grid > .project:nth-child(1) {
+        grid-column: 1; grid-row: 1;
+      }
+      .projects-grid > .project:nth-child(2) {
+        grid-column: 2; grid-row: 1;
+      }
+    
+    }
+    @media (min-width: 768px) {
       .desktop     { display: block !important; }
       .desktop-flex{ display: flex  !important; }
       .mobile      { display: none  !important; }
     }
-    @media (max-width: 745px) {
+    @media (max-width: 768px) {
       .header-nav  { display: none !important; }
       }
-    @media (min-width: 745px) {
+    @media (min-width: 768px) {
       .desktop     { display: block !important; }
       .desktop-flex{ display: flex  !important; }
       .mobile      { display: none  !important; }
     }
-    @media (max-width: 745px) {
+    @media (max-width: 768px) {
       .header-nav  { display: none !important; }
       }
     
@@ -373,7 +334,7 @@ html {
   /* default (mobile) */
   font-size: 20pt;
 }
-@media (min-width: 745px) {
+@media (min-width: 768px) {
   /* desktop (or whatever px you prefer) */
   .email-phone {
     font-size: 38px;
@@ -396,7 +357,7 @@ footer {
   background: #000;
 }
 /* 3) For mobile, use shorter footer */
-@media (max-width: 745px) {
+@media (max-width: 818px) {
   main {
     margin-bottom: 450px;
   }
@@ -439,20 +400,20 @@ body.nav-open {
 @media (min-width:818px) {
   .max-web {
     margin: 0 auto;
-    max-width: 1600px;
+    max-width: 1640px;
   }
 }
 /* desktop / tablet */
 #navContainer {
-  margin-top: 0.8rem;
-  margin-bottom: 0.8rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 /* mobile only */
 @media (max-width: 745px) {
   #navContainer {
-    margin-top: -0.4rem;
-  margin-bottom: -0.4rem;
+    margin-top: 0.4rem;
+  margin-bottom: 0.4rem;
   }
 }
     
@@ -484,12 +445,12 @@ body.nav-open {
   max-height: 256px; /* adjust if you need more or less vertical space */
 }
 
-/* 3) On desktop (≥768px), hovering any .service temporarily expands it */
 @media (min-width: 768px) {
-  .service:hover .service-content {
-    max-height: 256px;
+  .service:hover {
+    border-color: #2b2b2b;
   }
 }
+
 @media (max-width: 745px) {
   footer {
     /* ditch the fixed-height, internal-scrolling */
@@ -503,24 +464,8 @@ body.nav-open {
     margin-bottom: 0 !important;
   }
 }
-@media (max-width: 745px) {
-  /* 1) hide the arrows */
-  .service-header span {
-    display: none;
-  }
-
-  /* 2) expand all panels */
-  .service-content {
-    max-height: none !important;
-    overflow: visible !important;
-  }
-
-  /* 3) optionally disable the animation on mobile */
-  .service-content,
-  .service-content * {
-    transition: none !important;
-  }
-}
+ 
+ 
 :root { --header-h: 0px; }
 
 /* Viewport-safe height minus fixed header */
@@ -536,6 +481,217 @@ body.nav-open {
   .autoplay-video { animation: none !important; }
 }
 
+/* ===== Modern Mobile Nav Overlay ===== */
+#mobileNavOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  background-color: #F1F0EE;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+
+  /* closed state */
+  transform: translateY(100%);
+  transition: transform 540ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* open state */
+#mobileNavOverlay.is-open {
+  transform: translateY(0);
+}
+
+/* prevent interaction when closed */
+#mobileNavOverlay:not(.is-open) {
+  pointer-events: none;
+}
+
+/* lock page scroll */
+body.nav-open {
+  overflow: hidden;
+  touch-action: none;
+}
+ 
+
+
+#mobileNavOverlay.is-open .nav-link {
+  transform: translateY(0);
+}
+
+#mobileNavOverlay .nav-link:nth-child(1) { transition-delay: 80ms; }
+#mobileNavOverlay .nav-link:nth-child(2) { transition-delay: 120ms; }
+#mobileNavOverlay .nav-link:nth-child(3) { transition-delay: 160ms; }
+
+/* panel slides up (your current behaviour stays) */
+#mobileNavOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  background-color: #F1F0EE;
+  padding: 24px;
+
+  transform: translateY(100%);
+  transition: transform var(--panelDur) var(--ease);
+}
+
+#mobileNavOverlay.is-open {
+  transform: translateY(0);
+}
+
+/* CONTENT REVEAL LAYER (separate from the panel) */
+#mobileNavOverlay .mobileNavInner{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+ 
+}
+#mobileNavOverlay .mobile-reveal-item{
+  transform: translateY(var(--itemMove));
+  opacity: 0;
+  transition:
+    transform var(--itemDur) var(--ease),
+    opacity   var(--itemDur) var(--ease);
+  transition-delay: var(--itemBaseDelay);
+  will-change: transform, opacity;
+}
+
+#mobileNavOverlay.is-open .mobile-reveal-item{
+  transform: translateY(0);
+  opacity: 1;
+}
+
+
+/* OPTIONAL: "text slides up in place" feel */
+#mobileNavOverlay .nav-link,
+ 
+
+#mobileNavOverlay.is-open .nav-link,
+#mobileNavOverlay.is-open .mobileNavInner .body-text-2,
+#mobileNavOverlay.is-open .mobileNavInner h2,
+#mobileNavOverlay.is-open .mobileNavInner span,
+#mobileNavOverlay.is-open .mobileNavInner a {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* stagger only the big nav links */
+#mobileNavOverlay .nav-link:nth-child(1) { transition-delay: 220ms; }
+#mobileNavOverlay .nav-link:nth-child(2) { transition-delay: 260ms; }
+#mobileNavOverlay .nav-link:nth-child(3) { transition-delay: 300ms; }
+
+:root{
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* panel (background) */
+  --panelDur: 700ms;
+
+  /* masked content reveal */
+  --contentDur: 520ms;
+  --contentDelay: 260ms; /* starts after panel begins */
+
+  /* item slide/fade */
+  --itemDur: 720ms;
+  --itemBaseDelay: 440ms; /* starts after mask begins */
+  --itemMove: 30px;
+
+  /* stagger step between items */
+  --stagger: 60ms;
+}
+/* NAV links */
+#mobileNavOverlay .nav-link:nth-child(1){ transition-delay: calc(var(--itemBaseDelay) + 0 * var(--stagger)); }
+#mobileNavOverlay .nav-link:nth-child(2){ transition-delay: calc(var(--itemBaseDelay) + 1 * var(--stagger)); }
+#mobileNavOverlay .nav-link:nth-child(3){ transition-delay: calc(var(--itemBaseDelay) + 2 * var(--stagger)); }
+
+/* CONTACT block items (target only the contact container’s children) */
+#mobileNavOverlay .mobile-contact .mobile-reveal-item:nth-child(1){ transition-delay: calc(var(--itemBaseDelay) + 4 * var(--stagger)); }
+#mobileNavOverlay .mobile-contact .mobile-reveal-item:nth-child(2){ transition-delay: calc(var(--itemBaseDelay) + 5 * var(--stagger)); }
+#mobileNavOverlay .mobile-contact .mobile-reveal-item:nth-child(3){ transition-delay: calc(var(--itemBaseDelay) + 6 * var(--stagger)); }
+#mobileNavOverlay .mobile-contact .mobile-reveal-item:nth-child(4){ transition-delay: calc(var(--itemBaseDelay) + 7 * var(--stagger)); }
+#mobileNavOverlay .mobile-contact .mobile-reveal-item:nth-child(5){ transition-delay: calc(var(--itemBaseDelay) + 8 * var(--stagger)); }
+#mobileNavOverlay .mobile-contact .mobile-reveal-item:nth-child(6){ transition-delay: calc(var(--itemBaseDelay) + 9 * var(--stagger)); }
+#mobileNavOverlay .mobile-contact .mobile-reveal-item:nth-child(7){ transition-delay: calc(var(--itemBaseDelay) + 10 * var(--stagger)); }
+
+:root{
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --panelDur: 720ms;
+
+  --curtainDur: 520ms;
+  --curtainDelay: 80ms;
+
+  --itemDur: 520ms;
+  --itemBaseDelay: 220ms;
+  --itemMove: 14px;
+  --stagger: 45ms;
+}
+
+/* PANEL */
+#mobileNavOverlay{
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  background: #F1F0EE;
+  padding: 24px;
+
+  transform: translate3d(0,100%,0);
+  transition: transform var(--panelDur) var(--ease);
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+#mobileNavOverlay.is-open{
+  transform: translate3d(0,0,0);
+}
+
+#mobileNavOverlay:not(.is-open){
+  pointer-events: none;
+}
+
+/* CONTENT LAYER */
+#mobileNavOverlay .mobileNavInner{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* CURTAIN MASK (transform-only) */
+#mobileNavOverlay .mobileNavInner::before{
+  content:"";
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  transform: translate3d(0,0,0);
+  transition: transform var(--curtainDur) var(--ease);
+  transition-delay: var(--curtainDelay);
+  will-change: transform;
+  z-index: 5;
+}
+
+#mobileNavOverlay.is-open .mobileNavInner::before{
+  transform: translate3d(0,-100%,0); /* reveals bottom→top */
+}
+
+/* ITEMS */
+#mobileNavOverlay .mobile-reveal-item{
+  transform: translate3d(0,var(--itemMove),0);
+  opacity: 0;
+  transition:
+    transform var(--itemDur) var(--ease),
+    opacity   var(--itemDur) var(--ease);
+  transition-delay: var(--itemBaseDelay);
+  will-change: transform, opacity;
+}
+
+#mobileNavOverlay.is-open .mobile-reveal-item{
+  transform: translate3d(0,0,0);
+  opacity: 1;
+}
+
+/* STAGGER big links */
+#mobileNavOverlay .nav-link:nth-child(1){ transition-delay: calc(var(--itemBaseDelay) + 0 * var(--stagger)); }
+#mobileNavOverlay .nav-link:nth-child(2){ transition-delay: calc(var(--itemBaseDelay) + 1 * var(--stagger)); }
+#mobileNavOverlay .nav-link:nth-child(3){ transition-delay: calc(var(--itemBaseDelay) + 2 * var(--stagger)); }
 
 
   </style>
@@ -547,22 +703,23 @@ body.nav-open {
   <div id="project-tooltip"></div>
   <!-- ===== Header & Toggle ===== -->
   <header class="max-web fade-in fixed top-0 left-0 right-0 z-50 ">
-    <div id="navContainer" class="bg-[#F1F0EE] flex justify-between items-center w-full  py-0 md:py-0 px-4 md:px-8 lg:px-8">
+    <div id="navContainer" class="bg-[#F1F0EE] flex justify-between items-center w-full md:py-0 py-1 md:py-0 px-4  xl:px-10   ">
       <!-- Header Title -->
-      <a href="/" class=" mt-0 mb-0 transition-colors -ml-[0.2em] !text-[14pt] md:!text-[14pt] md:-ml-[0.2em]">
-  <img src="images/logo-new-circle-02.svg" alt="Jake Pearce logo" class=" h-8 w-auto hover:opacity-50">
+      <a href="/" class=" mt-0 mb-0 transition-colors -ml-[0.4em] !text-[14pt] md:!text-[14pt] md:-ml-[0.4em]">
+  <img src="images/logo-new-circle-02.svg" alt="Jake Pearce logo" class=" h-[1.9em] w-auto duration-200 hover:opacity-50">
 </a>
 
   
       <!-- Desktop Nav -->
       <nav class="header-nav hidden md:flex " style="margin: 0pt;">
-        <ul class="flex space-x-7 mr-0 mt-0 mb-0">
-          <li><a href="work" class="!text-[20pt] md:!text-[12pt] body-text-1   transition-colors hover:opacity-50 ">Work</a></li>
-          <li><a href="archive" class="!text-[20pt] md:!text-[12pt]   body-text-1 transition-colors hover:opacity-50 ">Archive</a></li>
-          <li><a href="#contact" class="!text-[20pt] md:!text-[12pt]   body-text-1 transition-colors hover:opacity-50 ">Contact</a></li>
+        <ul class="flex space-x-4 mr-0 mt-0 mb-0">
+          <li><a href="work" class="!text-[20pt] md:!text-[11pt] body-text-1    hover:opacity-50 ">Work</a></li>
+          <li><a href="archive" class="!text-[20pt] md:!text-[11pt]   body-text-1   hover:opacity-50 ">Archive</a></li>
+          <li><a href="#contact" class="!text-[20pt] md:!text-[11pt]   body-text-1   hover:opacity-50 ">Contact</a></li>
         </ul>
       </nav>
       <!-- Mobile Menu Button (now hidden except ≤745pxx) -->
+      
       <button id="mobileMenuBtn" aria-label="Open Menu">
         <div class="hamburger-icon">
           <span></span>
@@ -572,440 +729,753 @@ body.nav-open {
     </div>
   </header>
   <!-- ===== Mobile Overlay ===== -->
-<div id="mobileNavOverlay"
-class="fixed inset-0 z-40 bg-[#F1F0EE] flex flex-col px-4
-       opacity-0 -translate-y-2 transition-opacity transition-transform duration-400"
-aria-hidden="true">
+<div id="mobileNavOverlay" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="mobileNavInner">
+    <!-- CENTER NAV -->
+    <div class="flex-1 flex flex-col justify-center space-y-3.5 ">
+      <a href="/"       class="nav-link mobile-reveal-item  h3 text-[#2b2b2b] text-[28pt]">Home</a>
+      <a href="work"    class="nav-link mobile-reveal-item  h3 text-[#2b2b2b] text-[28pt]">Work</a>
+      <a href="archive" class="nav-link mobile-reveal-item  h3 text-[#2b2b2b] text-[28pt]">Archive</a>
+    </div>
 
-<!-- center section: Work & Visual feed -->
-<div class="flex-1 flex flex-col justify-center space-y-3.5">
-  <a href="/"       class="h1 !text-[36pt] md:!text-[13pt]">Home</a>
-<a href="work"       class="h1 !text-[36pt] md:!text-[13pt]">Work</a>
-<a href="archive" class="h1 !text-[36pt] md:!text-[13pt]">Archive</a>
-</div>
+  <!-- BOTTOM CONTACT -->
+  <div class="mobile-contact flex flex-col items-start space-y-[4px] !mb-7">
+    <div class="service border-b border-[#d3d3d3] "></div>
 
+   <h2 class="mobile-reveal-item body-text-4  text-[10pt] !mb-4">
+          Contact  
+        </h2>
 
-<!-- bottom section, pinned 25px above bottom -->
-<div class="flex flex-col items-start mb-[10px]  ">
-<div class="service border-b border-[#d3d3d3] mt-10 md:mt-10 mb-4 "></div>
-
-    <h2 class="body-text-2 text-[12pt] md:text-[14pt] mb-4 md:mb-10">Contact</h2>
-<a href="mailto:hello@jakepearce.com.au"
-  class="body-text-2  !text-[12pt] md:!text-[13pt] !mt-[0.2em]">
- hello@jakepearce.com.au
-</a>
-<span class="body-text-2  !text-[12pt]  !mt-[0.2em]">
- +61 422 911 799
-</span>
-<a href="https://www.linkedin.com/in/jake-pearce-076b772b5/"
-  class="body-text-2  !text-[12pt] md:!text-[13pt] !mt-[0.2em]">
- → Linkedin
-</a>
-<a href="https://instagram.com/jake.r.pearce"
-  class="body-text-2  !text-[12pt] md:!text-[13pt] !mt-[0.2em]">
- → Instagram
+   <a
+  href="mailto:hello@jakepearce.com.au"
+  data-copy="hello@jakepearce.com.au"
+  class="mobile-reveal-item body-text-3 text-[#2b2b2b]  text-[10pt] hover:text-[#000000]"
+>
+  hello@jakepearce.com.au
 </a>
 
-</div>
-</div>
+    <span class="mobile-reveal-item body-text-3 text-[#2b2b2b]  text-[10pt] hover:text-[#000000]">
+      +61 422 911 799
+    </span>
+    
   </div>
+</div>
+
+  </div>
+  <script>
+    
+document.addEventListener('DOMContentLoaded', () => {
+  const btn = document.getElementById('mobileMenuBtn');
+  const icon = btn.querySelector('.hamburger-icon');
+  const overlay = document.getElementById('mobileNavOverlay');
+
+  let isOpen = false; 
+
+  function openNav() {
+    if (isOpen) return;
+    isOpen = true;
+
+    lastFocused = document.activeElement;
+
+    overlay.classList.add('is-open');
+    overlay.setAttribute('aria-hidden', 'false');
+    icon.classList.add('open');
+    document.body.classList.add('nav-open');
+
+    const firstLink = overlay.querySelector('.nav-link'); 
+  }
+
+  function closeNav() {
+    if (!isOpen) return;
+    isOpen = false;
+
+    overlay.classList.remove('is-open');
+    overlay.setAttribute('aria-hidden', 'true');
+    icon.classList.remove('open');
+    document.body.classList.remove('nav-open');
+
+    if (lastFocused) lastFocused.focus();
+  }
+
+  btn.addEventListener('click', () => {
+    isOpen ? closeNav() : openNav();
+  });
+
+  // close when clicking any nav link
+  overlay.addEventListener('click', e => {
+    if (e.target.closest('a')) closeNav();
+  });
+
+  // close on ESC
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeNav();
+  });
+});
+
+
+</script>
   <!-- ===== Hero Section ===== -->
   
   <section
-    id="hero"
-    class="  max-web mx-auto w-full z-40 px-7 xl:px-12  md:mt-36  mt-24   bg-[#F1F0EE] fade-in">
-  
-  <div class="grid grid-cols-1  md:grid-cols-2 gap-8 lg:gap-5 items-start">
+  id="hero"
+  class="max-web mx-auto w-full z-40 px-5 xl:px-10 md:mt-36 mt-24 bg-[#F1F0EE] fade-in"
+>
+
+  <!-- TITLE + DESCRIPTION -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-5 items-start">
     <!-- Left Column: Project Title -->
     <div>
-      <h2 class="h1 !text-[36pt] md:!text-[42pt]   md:mr-6 mr-0     fade-in">
-        Braves Cricket 
+      <a
+  href="/"
+  class="flex md:hidden inline-flex items-center whitespace-nowrap mb-6 fade-in
+         bg-white !text-[10pt] text-[#2b2b2b]
+         px-2.5 py-2
+         hover:bg-[#2b2b2b]/10
+         transition-colors duration-0 rounded-[0.4em]"
+>
+  🡨 Back
+</a>
+      <h2 class="hidden md:block h1 !text-[42pt] md:mr-6 mr-0 fade-in">
+        Braves <br> Cricket
       </h2>
-       
+      <h2 class="block md:hidden h3 !text-[28pt] md:mr-6 mr-0 fade-in">
+        Braves <br> Cricket
+      </h2>
     </div>
 
-    <!-- Right Column: Project Description + Tags -->
+    <!-- Right Column: Project Description -->
     <div>
-      <h2 class="h2 text-[#2b2b2b] text-[18pt] lg:col-span-2 md:text-[24pt]   mb-10 md:mb-24">
-    In preparation for major international exposure, the team needed a bold, unified identity to stand out in the T10 league. I helped bring the new brand to life through uniforms, a team bus wrap, and social graphics.
+      <h2 class="hidden md:block h2 text-[#2b2b2b] text-[18pt] md:text-[24pt] mb-6 md:mb-12 fade-in">
+        In preparation for international exposure, the team needed a bold, unified identity to stand out in the T10 league. I helped bring the new brand to life.
+      <h2 class="block md:hidden text-[#2b2b2b] body-text-3 !text-[10pt] md:!text-[11pt] mb-6 md:mb-20 fade-in">
+        In preparation for international exposure, the team needed a bold, unified identity to stand out in the T10 league. I helped bring the new brand to life.
+      </h2>
+      
+    <!-- mobile only -->
+       <h2 class="block md:hidden text-[#2b2b2b] body-text-4 !text-[10pt] md:!text-[11pt] mb-[0.5em] md:mb-20 fade-in">
+         Team
+      </h2>
+      <h2 class="block md:hidden text-[#2b2b2b] body-text-3 !text-[10pt] md:!text-[11pt]  mb-[0.5em] md:mb-20 fade-in">
+         Corban K. - Lead Designer
+      </h2>
+       <h2 class="block md:hidden text-[#2b2b2b] body-text-3 !text-[10pt] md:!text-[11pt] mb-6 md:mb-20 fade-in">
+         Jake Pearce - Junior Designer
+      </h2>
+      <h2 class="block md:hidden text-[#2b2b2b] body-text-4 !text-[10pt] md:!text-[11pt] mb-[0.5em] md:mb-20 fade-in">
+         What I did
+      </h2>
+      <h2 class="block md:hidden text-[#2b2b2b] body-text-3 !text-[10pt] md:!text-[11pt] mb-[0.5em] md:mb-20 fade-in">
+         Uniform
+      </h2>
+      <h2 class="block md:hidden text-[#2b2b2b] body-text-3 !text-[10pt] md:!text-[11pt] mb-[0.5em] md:mb-20 fade-in">
+         Bus wrap
+      </h2>
+      <h2 class="block md:hidden text-[#2b2b2b] body-text-3 !text-[10pt] md:!text-[11pt] mb-[0.5em] md:mb-20 fade-in">
+         Social posts
+      </h2>
+      <h2 class="block md:hidden text-[#2b2b2b] body-text-3 !text-[10pt] md:!text-[11pt] mb-6 md:mb-20 fade-in">
+         Digital assets
+      </h2>
+      <h2 class="block md:hidden text-[#2b2b2b] body-text-4 !text-[10pt] md:!text-[11pt] mb-[0.5em] md:mb-20 fade-in">
+         Year
+      </h2>
+      <h2 class="block md:hidden text-[#2b2b2b] body-text-3 !text-[10pt] md:!text-[11pt] mb-14 md:mb-20 fade-in">
+         2023
+      </h2>
 
-  
-  </h2>
+
+
+
+      
+    </div>
+  </div>
+
+  <!-- NEW INFO ROW (2 main columns to match hero layout, footer-style micro columns inside) -->
+<div class="hidden md:grid grid-cols-2 gap-6 md:gap-5 items-start w-full mt-0 fade-in body-text-1 text-[12pt] md:text-[11pt] mb-6 md:mb-24">
+
+  <!-- LEFT MAIN COLUMN: Back button (no heading, bordered) -->
+  <div class="flex items-start">
+   <a
+  href="/"
+  class="inline-flex items-center whitespace-nowrap
+         bg-white text-[#2b2b2b]
+         px-3 py-2
+         hover:bg-[#2b2b2b]/10
+         transition-colors duration-0 rounded-[0.4em]
+         group"
+>
+  <span
+    class="inline-block mr-1 transition-[margin] duration-200 ease-out
+           group-hover:mr-2"
+  >
+    🡨
+  </span>
+  Back
+</a>
+
+
+  </div>
+
+  <!-- RIGHT MAIN COLUMN: Micro columns (aligned with hero description column above) -->
+  <div class="flex w-full justify-between items-stretch ">
+
+    <!-- MICRO COL: CLIENT -->
+    <div class="flex flex-col items-start min-w-[50px]">
+      <div class="nav-h2 text-[12pt] md:text-[11pt] mb-[0.5em]">Team</div>
+      <div class="flex flex-col items-start space-y-[0.5em]">
+        <span class="whitespace-nowrap">Corban K. — Lead Designer</span>
+        <span class="whitespace-nowrap">Jake Pearce — Junior Designer</span>
+      </div>
+    </div> 
+
+    <!-- MICRO COL: SERVICES -->
+    <div class="flex flex-col items-start min-w-[50px]">
+      <div class="nav-h2 text-[12pt] md:text-[11pt] mb-[0.5em]">What I did</div>
+      <div class="flex flex-col items-start space-y-[0.5em]">
+        <span class="whitespace-nowrap">Uniform</span> 
+        <span class="whitespace-nowrap">Bus wrap</span> 
+        <span class="whitespace-nowrap">Social posts</span>
+        <span class="whitespace-nowrap">Digital assets</span>
+      </div>
+    </div> 
+
+    <!-- MICRO COL: YEAR -->
+    <div class="flex flex-col items-start md:min-w-[0px] lg:min-w-[100px]">
+      <div class="nav-h2 text-[12pt] md:text-[11pt] mb-[0.5em]">Year</div>
+      <div class="flex flex-col items-start space-y-[0.5em]">
+        <span class="whitespace-nowrap">2023</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
 </section>
+
   
  
-<section id="Project-images" class="fade-in max-web mx-auto px-7 xl:px-12 ">
-  <div class="service border-b border-[#d3d3d3] mt-10 md:mt-10 mb-4 "></div>
-
-      <h2 class="body-text-1 text-[12pt] md:text-[12pt] mb-10 md:mb-10"> 
-
-  Uniform
-</h2>
-  <div class="content-column md:space-y-6  space-y-4 
+<section id="Project-images" class="fade-in max-web mx-auto px-0 md:px-5 xl:px-10  ">
+       
+  <div class="content-column md:space-y-2.5 space-y-2.5  
   ">
-    <section id="project-gallery" class="fade-in">
-      <div class="  aspect-[1/1] sm:aspect-auto overflow-hidden">
-        <img src="images/jersey2.avif" alt="Gallery Image 4" class="object-cover w-full h-full rounded-[0.5em]" />
-      </div>
-    </section>
+    
 
     <section id="project-gallery" class="fade-in">
       <!-- Stacked Vertically -->
-      <div class="overflow-hidden md:mt-2 -mt-0">
-        <!-- mobile only -->
-        <img
-          src="images/players-(Project-Thumbnails)-mobile.avif"
-          alt="Players"
-          class="block md:hidden object-cover w-full h-full  rounded-[0.5em] "
-        />
-        <!-- desktop/tablet -->
-        <img
-          src="images/braves-4.avif"
-          alt="Players"
-          class="hidden md:block object-cover w-full h-full  rounded-[0.5em]"
-        />
+      <div class="  aspect-[7/6] sm:aspect-auto overflow-hidden">
+        <img src="images/braves-4.avif" alt="Gallery Image 4" class="object-cover w-full h-full  md:rounded-[0.6em] rounded-[0em]" />
       </div>
+       
     </section>
     <section id="project-info" class=" fade-in">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-       
-      <!-- Image Column (occupies 2/3 columns) -->
-      <div class="md:col-span-2 md:col-span-1  ">
-        <div class="space-y-5">
-          <div class="flex flex-col md:flex-row gap-6">
-            <div class="  flex-1">
-              <img src="images/pattern-1.avif" alt="Gallery Image 1" class=" w-full  rounded-[0.5em]" />
-            </div>
-            <div class=" flex-1">
-              <img src="images/pattern-2.avif" alt="Gallery Image 2" class="hidden md:block w-full  rounded-[0.5em]" />
-            </div>
-          </div>
-        </div>
+    <div class="  aspect-[7/6] sm:aspect-auto overflow-hidden">
+        <img src="images/braves-6.avif" alt="Gallery Image 4" class="object-cover w-full h-full md:rounded-[0.6em] rounded-[0em]" />
       </div>
-    </div> 
-  </section>
-  <section id="Project-images" class="fade-in max-web mx-auto   ">
-
-  <div class="service border-b border-[#d3d3d3] mt-0 md:mt-6 mb-4 "></div>
-
-    <h2 class="body-text-1 text-[12pt] md:text-[12pt] mb-10 md:mb-10"> 
-
-  Bus wrap
-</h2>
-    <section id="project-gallery" class="fade-in">
-      <div class="   overflow-hidden">
-        <img src="images/braves-14.avif" alt="Gallery Image 2" class="object-cover w-full h-full rounded-[0.5em]" />
-      </div>
-     </section> 
-  <section id="Project-images" class="fade-in max-web mx-auto  ">
-
-  <div class="service border-b border-[#d3d3d3] mt-5 md:mt-4 mb-4 "></div>
-
-    <h2 class="body-text-1 text-[12pt] md:text-[12pt] mb-10 md:mb-10"> 
-
-  Social media
-</h2>
+  </section> 
  <section id="project-info" class=" fade-in">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-       
+    <div class="grid grid-cols-1 md:grid-cols-1 "> 
       <!-- Image Column (occupies 2/3 columns) -->
-      <div class="md:col-span-2 md:col-span-1 md:mt-0 -mt-8">
-        <div class="space-y-5">
-          <div class="flex flex-col md:flex-row gap-6">
+      <div class="md:col-span-2 md:col-span-1 ">
+        <div class="space-y-2.5">
+          <div class="flex flex-col md:flex-row gap-2.5 md:gap-y-2.5">
             <div class="  flex-1">
-              <img src="images/braves-13.avif" alt="Gallery Image 1" class=" w-full  rounded-[0.5em]" />
+              <img src="images/Braves -05-05_resultb.avif" alt="Gallery Image 1" class=" w-full  md:rounded-[0.6em] rounded-[0em]" />
             </div>
             <div class=" flex-1">
-              <img src="images/braves-11.avif" alt="Gallery Image 2" class="hidden md:block w-full  rounded-[0.5em]" />
+              <img src="images/Braves -05-06_resultb.avif" alt="Gallery Image 2" class=" w-full   md:rounded-[0.6em] rounded-[0em] " />
             </div>
+            
           </div>
         </div>
       </div>
     </div>
-  </section>
-       
-<section id="Project-images" class="fade-in max-web mx-auto   ">
-
-  <div class="service border-b border-[#d3d3d3] mt-0 md:mt-6 mb-4 "></div>
-
-    <h2 class="body-text-1 text-[12pt] md:text-[12pt] mb-10 md:mb-10"> 
-
-  More projects
-</h2>
-<section
-  
-    id="work"
-    class="max-web mx-auto z-40 w-full  fade-in">
-    <div class="projects-grid">
-      <div class="project   flex flex-col fade-in order-2 md:order-1">
-        <div class="project-image-container">
-          <a href="bmp-sports" class="w-full h-full block">
-            <img
-              src="images/bmp-image-1.avif"
-              alt="BMP Sports"
-              class="w-full h-full object-cover rounded-[0.5em]"
-            />
-          </a>
-        </div>
-        <div class="mt-4 flex flex-col items-start">
-          <a href="bmp-sports" class="block body-text-2 !text-[12pt] md:!text-[12pt] mt-[0.15em] mb-[0.25em]">
-            BMP Sports
-          </a>
-          <a href="bmp-sports" class="text-[#686868]/80 body-text-1  block !text-[12pt] md:!text-[12pt] mb-[0.4em]">
-            Cricket event and team managers
-          </a>
-          <a href="bmp-sports" class="flex flex-wrap gap-x-[6px] gap-y-[5px] block ">
+  </section> 
  
+   
+    <section id="project-gallery" class="fade-in">
+      <div class="  aspect-[7/6] sm:aspect-auto overflow-hidden">
+        <img src="images/braves-2.avif" alt="Gallery Image 4" class="object-cover w-full h-full md:rounded-[0.6em] rounded-[0em] " />
+      </div>
+    </section> 
+
+    <section id="project-info" class=" fade-in">
+    <div class="grid grid-cols-1 md:grid-cols-1 ">
+       
+       
+      <!-- Image Column (occupies 2/3 columns) -->
+      <div class="md:col-span-2 md:col-span-1 ">
+        <div class="space-y-2.5">
+          <div class="flex flex-col md:flex-row gap-2.5">
+            <div class="  flex-1">
+              <img src="images/braves-11.avif" alt="Gallery Image 1" class=" w-full  md:rounded-[0.6em] rounded-[0em] " />
+            </div>
+            <div class=" flex-1">
+              <img src="images/braves-13.avif" alt="Gallery Image 2" class=" w-full  md:rounded-[0.6em] rounded-[0em] " />
+            </div>
             
-          </a>
+          </div>
         </div>
       </div>
+    </div>
+  </section> 
+     
+    <section id="project-gallery" class="fade-in">
+      <div class="  aspect-[7/6] sm:aspect-auto overflow-hidden">
+        <img src="images/braves-8.avif" alt="Gallery Image 4" class="object-cover w-full h-full md:rounded-[0.6em] rounded-[0em]" />
+      </div>
+    </section> 
+    
       
-      <div class="project  flex flex-col fade-in order-2 md:order-1">
-        <div class="project-image-container">
-          <a href="erima-australia" class="w-full h-full block">
-            <img
-              src="images/erima.avif"
-              alt="Erima Australia"
-              class="w-full h-full object-cover  rounded-[0.5em]"
-            />
-          </a>
-        </div>
-        <div class="mt-4 flex flex-col items-start">
-          <a href="erima-australia" class="block body-text-2 !text-[12pt] md:!text-[12pt] mt-[0.15em] mb-[0.25em]">
-            Erima Australia
-          </a>
-          <a href="erima-australia" class="text-[#686868]/80 body-text-1  block !text-[12pt] md:!text-[12pt] mb-[0.4em]">
-            German sportswear brand in Australia
-          </a>
-          <a href="erima-australia" class="flex flex-wrap gap-x-[6px] gap-y-[5px] block ">
-  
-            
-          </a>
-        </div>
-      </div>
+
+
+
+      
+   <section id="Project-images" class="hidden md:block "> 
+
+   <div class="fade-in max-web mx-auto w-full  md:grid grid-cols-[1fr_auto] items-end md:mt-24 mb-6">
+
+  <!-- LEFT: HEADING -->
+  <h2 class=" h1  !text-[10pt] md:!text-[42pt]   md:mb-0 mb-1 fade-in">
+    Related work
+  </h2>
+
+  <!-- RIGHT: BUTTON -->
+  <a
+  href="work"
+  class="body-text-1 md:!mb-[0.7em]
+         !text-[#2b2b2b] !text-[12pt] md:!text-[11pt]
+         hover:opacity-50 whitespace-nowrap 
+         group"
+>
+  View all projects
+  <span
+    class="inline-block ml-1 transition-[margin] duration-200 ease-out
+           group-hover:ml-2"
+  >
+    🡪
+  </span>
+</a>
+
+
+</div>
+
+<section 
+    id="work"
+    class="max-web mx-auto z-40    fade-in">
+    <div class="projects-grid">
+       
        <div class="project   flex flex-col fade-in order-2 md:order-1">
         <div class="project-image-container">
-          <a href="mmt" class="w-full h-full block">
+  <a href="bmp-sports" class="w-full h-full ">
     <video
-      class="w-full h-full object-cover rounded-[0.5em]"
+      class="w-full h-full object-cover rounded-[0.6em]"
       loop
       autoplay
       muted
       playsinline   
       preload="metadata"  
-      poster="images/MMT-2025-02.avif"
+      poster="images/bmp-image-1.avif"
     >
-      <source src="videos/MMT-2025-02.mp4" type="video/mp4"> 
+      <source src="videos/bmp-email.mp4" type="video/mp4"> 
     </video>
   </a>
         </div>
         <div class="mt-4 flex flex-col items-start">
-          <a href="braves-cricket" class="block body-text-2 !text-[12pt] mt-[0.15em] mb-[0.25em]">
-            Music Metaverse Token
+          <a href="bmp-sports" class=" body-text-2 !text-[10pt] md:!text-[11pt] mt-[0em] mb-[0.1em]">
+            BMP Sports
           </a>
-          <a href="braves-cricket" class="text-[#686868]/80 body-text-1  block !text-[12pt] mb-[0.4em]">
-            Crypto meets music concert promotion
+          <a href="bmp-sports" class="text-[#686868]/80 body-text-1  !text-[10pt] md:!text-[11pt] mb-[0.4em]">
+            Branding / Digital assets
           </a>
-          <a href="braves-cricket" class="flex flex-wrap gap-x-[6px] gap-y-[5px] block ">
+          <a href="bmp-sports" class="flex flex-wrap gap-x-[6px] gap-y-[5px]   ">
+ 
+            
+          </a>
+        </div>
+      </div>
+      <div class="project   flex flex-col fade-in order-2 md:order-1">
+        <div class="project-image-container">
+          <a href="erima-australia" class="w-full h-full ">
+            <img
+              src="images/erima.avif"
+              alt="Erima Australia"
+              class="w-full h-full object-cover rounded-[0.8em]"
+            />
+          </a>
+        </div>
+        <div class="mt-4 flex flex-col items-start">
+          <a href="erima-australia" class=" body-text-2 !text-[10pt] md:!text-[11pt] mt-[0em] mb-[0.1em]">
+            Erima Australia
+          </a>
+          <a href="erima-australia" class="text-[#686868]/80 body-text-1  !text-[10pt] md:!text-[11pt] ">
+            Social media / Tender documents
+          </a>
+          <a href="erima-australia" class="flex flex-wrap gap-x-[6px] gap-y-[5px]  ">
   
             
           </a>
         </div>
       </div>
       
-  </section>
       
-</section>
-<div class="fade-in max-web mx-auto w-full   hidden lg:flex justify-end">
-  <a href="work" class="button-1  !text-[#2b2b2b] !text-[12pt] md:!text-[12pt] hover:opacity-50">
-        See more work
+      
 
+      
+      
+  </section>  
+      
+</section>  
+
+
+<div class="md:hidden border-y border-[#2b2b2b]/20 hover:border-[#2b2b2b] text-center justify-center !mt-14 !-mb-2 fade-in">
+  <a 
+    href="work"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="service-header grid items-center py-6 w-full cursor-pointer 
+             transition-colors"
+  >
+    <span
+      class="text-[#2b2b2b]/55 hover:text-[#2b2b2b] body-text-1 !text-[12pt] md:!text-[11pt] "
+      
+    >
+      See more work
+    </span>
   </a>
-</div>  
-<div class="h-10 md:h-[2.5em]"></div>
+</div>
+
+
+
+<div class="h-0 md:h-[1em]"></div>
 <div id=""></div>
 </main>
 <footer
   id="contact"
-  class="bg-[#bbbbbb]/10 text-[#2b2b2b] py-5 md:py-12"
+  class="bg-[#dfdedd]/30 text-[#2b2b2b] py-5 md:py-10"
 >
-  <div class="max-web mx-auto w-full px-7 xl:px-12">
+  <div class="max-web mx-auto w-full px-5 xl:px-10    ">
 
     <!-- TOP SECTION (unchanged) -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-5">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-5 ">
       
       <!-- LEFT COLUMN -->
-      <div class="flex flex-col justify-between h-full mt-8  mb-10 md:mb:0 ">
-        <h2 class="h1 !text-[36pt] md:!text-[42pt] text-[#2b2b2b]  fade-in">Contact  </h2>
+      <div class="flex flex-col items-start h-full mt-4 md:mt-8   mb-6 md:mb:0 fade-in">
+        <img class="hidden md:flex max-h-[13.5em]" src="images/Asset 3.svg" alt="logo">
+        <img class="block md:hidden !width-[20em] mt-5 -ml-0.5" src="images/Asset 3.svg" alt="logo">
+      
       </div>
 
-      <!-- RIGHT COLUMN -->
-      <div class="flex flex-col gap-y-4 lg:gap-y-4  mt-8  mb-6   ">
-        
-        <h2 class="body-text-1 md:text-[24pt]   text-[20pt] fade-in">
+     <!-- RIGHT COLUMN -->
+      <div class="flex flex-col md:gap-y-5 gap-y-5   mt-6 md:mt-5  mb-6 md:mb-0  fade-in ">
+        <h2 class="hidden md:block body-text-1 md:text-[23pt]   text-[12pt] ">
           Got a project in mind? 
+        </h2>
+        <h2 class="flex md:hidden body-text-4 md:text-[23pt]   text-[10pt] ">
+          Contact  
         </h2>
 
         <!-- Contact details -->
-        <div class="space-y-[4px] md:space-y-[8px]"> 
-          <div class="copy-target">
+        <div class="-space-y-[2px] md:space-y-[4px]"> 
+          <div class="email">
+            <a
+  href="mailto:hello@jakepearce.com.au"
+  data-copy="hello@jakepearce.com.au"
+  class="block md:hidden body-text-3 text-[#2b2b2b] md:text-[23pt] text-[10pt] hover:text-[#000000]"
+>
+  hello@jakepearce.com.au
+</a>
+
             <a
               href="#"
               data-copy="hello@jakepearce.com.au"
-              class="email text-[#2b2b2b]/50 block md:text-[24pt]   text-[20pt] hover:text-[#000000]"
+              class="copy-target hidden md:flex body-text-1 text-[#2b2b2b]/50 block md:text-[23pt]   text-[20pt] hover:text-[#000000]"
             >
               hello@jakepearce.com.au
             </a>
           </div>
 
-          <div class="border-b border-1 border-[#2b2b2b]/50 "></div>
+          <div class="block md:hidden border-b border-1 border-[#2b2b2b]/0 "></div>
+          <div class="hidden md:flex border-b border-1 border-[#2b2b2b]/15 "></div>
 
-          <div class="copy-target">
+          <div class="phone">
+            <a
+  href="sms:+614229117799"
+  data-copy="+614229117799"
+  class="mt-2 block md:hidden body-text-3 text-[#2b2b2b] md:text-[23pt] text-[10pt] hover:text-[#000000]"
+>
+  +61 422 911 799
+</a>
+
             <a
               href="#"
               data-copy="+614229117799"
-              class="email text-[#2b2b2b]/50 block md:text-[24pt]   text-[20pt] hover:text-[#000000]"
+              class="copy-target hidden md:flex body-text-1 text-[#2b2b2b]/50 block md:text-[23pt]   text-[20pt] hover:text-[#000000]"
             >
               +61 422 911 799
             </a>
           </div>
         </div>
+        
       </div>
 
        
     </div>
- 
+ <div class="block md:hidden border-b border-1 border-[#2b2b2b]/15 mb-6 mt-1 "></div>
    <!-- NEW BOTTOM NAV AREA -->
-<div class="lg:mt-4 mt-2 grid grid-cols-1 md:grid-cols-2 gap-5 text-[#2b2b2b]/50 text-[11pt] md:text-[9pt]">
+<div class="md:mt-6 -mt-6   grid grid-cols-1 md:grid-cols-2 gap-5 text-[#2b2b2b] ">
 
   <!-- LEFT BIG COLUMN (unchanged, with shock absorbers) -->
-  <div class="w-full footer-left-grid hidden md:grid "
-       style="grid-template-columns: minmax(360px,360px) repeat(4, minmax(0,1fr)); gap:0;">
+<div class="w-full footer-left-grid hidden md:grid"
+     style="grid-template-columns: minmax(360px,360px) repeat(4, minmax(0,1fr)); gap:0;">
 
-    <div class="flex flex-col items-start space-y-6 px-0">
-      <img src="images/AGDA_result.avif" alt="Agda Logo" class="h-[31px] object-contain" />
-      <p class="leading-snug max-w-full">
+  <div class="flex flex-col items-start justify-end space-y-0 px-0">
+    <div class="nav-h2 text-[12pt] md:text-[10pt] mb-2">
+      Acknowledgement of Country
+    </div>
+
+    <p class="acknowledgment md:max-w-[28em] text-[12pt] md:text-[10pt]">
+      I acknowledge Aboriginal and Torres Strait Islander peoples as the Traditional Owners of the lands I work on. I pay respect to elders past, present and emerging, and honour their enduring connection to country.
+    </p>
+  </div>
+
+  <div class="min-w-0"></div>
+  <div class="min-w-0"></div>
+  <div class="min-w-0"></div>
+  <div class="min-w-0"></div>
+</div>
+
+<!-- RIGHT BIG COLUMN (lg+ version) -->
+<div class="hidden md:flex w-full justify-between items-stretch body-text-1 text-[12pt] md:text-[9pt]">
+
+  <!-- COLUMN 2: LINKS -->
+  <div class="flex flex-col items-start min-w-[50px]">
+    <div class="nav-h2 text-[10pt] md:text-[10pt] mb-[0.5em]">Links</div>
+    <div class="flex flex-col items-start space-y-[0.5em] text-[10pt] md:text-[10pt]">
+      <a href="/" class="hover:text-[#000000]/50 whitespace-nowrap">Home</a>
+      <a href="work" class="hover:text-[#000000]/50 whitespace-nowrap">Work</a>
+      <a href="archive" class="hover:text-[#000000]/50 whitespace-nowrap">Archive</a>
+    </div>
+  </div>
+
+  <!-- COLUMN 1: SOCIALS -->
+  <div class="flex flex-col items-start min-w-[50px]">
+    <div class="nav-h2 text-[10pt] md:text-[10pt] mb-[0.5em]">Socials</div>
+    <div class="flex flex-col items-start space-y-[0.5em] text-[10pt] md:text-[10pt]">
+      <a href="https://instagram.com/jake.r.pearce" class="hover:text-[#000000]/50 whitespace-nowrap">Instagram</a>
+      <a href="https://www.linkedin.com/in/jake-pearce-076b772b5/" class="hover:text-[#000000]/50 whitespace-nowrap">LinkedIn</a>
+    </div>
+  </div>
+
+
+ 
+<div></div>
+<div></div> 
+
+  <!-- COLUMN 3: COPYRIGHT -->
+  <div class="flex flex-col items-end text-right min-w-[20px] text-[10pt] md:text-[10pt] h-full">
+    <span class="whitespace-nowrap mt-auto">© Jake Pearce 2026</span>
+  </div>
+
+</div>
+
+
+<!-- 🔥 md and BELOW version (4-column mobile footer layout) -->
+<div class="md:hidden flex flex-col text-[#2b2b2b]  xl:mt-0 mt-8 xl:mb-0 mb-0">
+
+  <div class="flex flex-col text-[#2b2b2b] lg:text-[12pt] text-[10pt] space-y-4 xl:mt-0 mt-0">
+
+    <div class="flex flex-col items-start px-0 mt-0 mb-4 fade-in ">
+      <h2 class="flex md:hidden body-text-4 md:text-[23pt]  mb-6 text-[10pt] ">
+          Acknowledgement of Country  
+        </h2>
+      <p class="body-text-3 max-w-[23em] lg:text-[12pt] text-[10pt] md:body-text-1 body-text-2  text-[#2b2b2b]">
         I acknowledge Aboriginal and Torres Strait Islander peoples as the Traditional Owners of the lands I work on. I pay respect to elders past, present and emerging, and honour their enduring connection to country.
       </p>
+       
     </div>
+<div class="block md:hidden border-b border-1 border-[#2b2b2b]/15 !mb-4 "></div>
+    <!-- 4-column link/copyright grid -->
+    <div class="body-text-3 leading-snug grid grid-cols-4 gap-x-4  w-full text-[#2b2b2b]  items-end">
+      <!-- Column 1: Home/Work/Archive -->
+      <div class=" flex flex-col items-start space-y-2">
+        <a href="/" class="hover:text-[#000000]">Home</a>
+        <a href="work" class="hover:text-[#000000]">Work</a>
+        <a href="archive" class="hover:text-[#000000]">Archive</a>
+      </div>
 
-    <div class="min-w-0"></div>
-    <div class="min-w-0"></div>
-    <div class="min-w-0"></div>
-    <div class="min-w-0"></div>
-  </div>
+      <!-- Column 2: Instagram/LinkedIn -->
+      <div class=" flex flex-col items-start space-y-2">
+        <a href="https://instagram.com/jake.r.pearce" class="hover:text-[#000000]">Instagram</a>
+        <a href="https://www.linkedin.com/in/jake-pearce-076b772b5/" class="hover:text-[#000000]">LinkedIn</a>
+      </div>
 
-  <!-- RIGHT BIG COLUMN (lg+ version) -->
-  <div class="hidden md:flex justify-between items-end w-full">
-
-    <!-- COLUMN 1 -->
-    <div class="flex flex-col items-start justify-end space-y-0.5 min-w-[20px]">
-      <a href="/" class="hover:text-[#000000] whitespace-nowrap">Home</a>
-      <a href="work" class="hover:text-[#000000] whitespace-nowrap">Work</a>
-      <a href="archive" class="hover:text-[#000000] whitespace-nowrap">Archive</a> 
-    </div>
-
-    <!-- COLUMN 2 -->
-    <div class="flex flex-col items-start justify-end space-y-0.5 min-w-[20px]">
-      <a href="https://instagram.com/jake.r.pearce" class="hover:text-[#000000] whitespace-nowrap">Instagram</a>
-      <a href="https://www.linkedin.com/in/jake-pearce-076b772b5/" class="hover:text-[#000000] whitespace-nowrap">LinkedIn</a>
+      <div></div>
+      <div class="  flex justify-end items-end text-right mt-4">
+        <span class="whitespace-nowrap">© Jake Pearce 2025</span>
+      </div>
+      
+ 
+  <!-- Column 4: Copyright (right aligned) -->
       
     </div>
-<div class="min-w-0"></div>
-<div class="min-w-0"></div>
-<div class="min-w-0"></div>
-<div class="min-w-0"></div>
-<div class="min-w-0"></div>
-    <!-- COLUMN 3 -->
-    <div class="flex items-end justify-end min-w-[20px] text-right">
-      
-      <span class="whitespace-nowrap">© Jake Pearce 2025</span>
-    </div>
-
-  </div>
-
-  <!-- 🔥 md and BELOW version (simple mobile footer layout) -->
-<div class="md:hidden flex flex-col text-[#686868]    xl:mt-0 mt-8 xl:mb-0 mb-0">
-
-  
-<div class="md:hidden flex flex-col text-[#686868] lg:text-[12pt] text-[10pt] space-y-2 xl:mt-0 mt-0  ">
-  
-<!-- SITE LINKS (left aligned, gap-6, auto-wrap) -->
-  <div class="w-full flex flex-wrap gap-3">
-    <a href="/" class="hover:text-[#000000]">Home</a>
-    <a href="work" class="hover:text-[#000000]">Work</a>
-    <a href="archive" class="hover:text-[#000000]">Archive</a> 
-  </div>
-  </div></div>
-  <div class="md:hidden flex flex-col items-start space-y-6 px-0 mt-0 lg:mt-6">
-      <img src="images/AGDA_result.avif" alt="Agda Logo" class="h-[40px] object-contain" />
-      <p class="leading-snug max-w-full lg:text-[12pt] text-[10pt] text-[#686868]">
-        I acknowledge Aboriginal and Torres Strait Islander peoples as the Traditional Owners of the lands I work on. I pay respect to elders past, present and emerging, and honour their enduring connection to country.
-      </p>
-    </div>
-  
-
-  <!-- SOCIAL LINKS (left aligned, gap-6, auto-wrap) -->
-  <div class="w-full md:hidden  flex flex-wrap gap-3 lg:text-[12pt] text-[10pt] text-[#686868] ">
-    <a href="https://instagram.com/jake.r.pearce" class="hover:text-[#000000]">Instagram</a>
-    <a href="https://www.linkedin.com/in/jake-pearce-076b772b5/" class="hover:text-[#000000]">LinkedIn</a>
-    <h2 class="text-left ">
-    © Jake Pearce 2025
-  </h2>
-  </div>
-    <!-- COPYRIGHT -->
-  
-</div>
 </div>
 
-
-</div>
 
 
   </div>
 </footer>
-
-
-
-
-
-
-
-
 <script>
-  
-document.addEventListener('DOMContentLoaded', () => {
-  // create floating copy-tooltip
-  const copyTip = document.createElement('div');
-  copyTip.id = 'copy-tooltip';
-  document.body.appendChild(copyTip);
+document.addEventListener("DOMContentLoaded", () => {
+  if (window.innerWidth <= 745) return;
 
-  document.querySelectorAll('.copy-target a').forEach(link => {
-    link.addEventListener('mouseenter', () => {
-      copyTip.textContent = 'Click to copy';
-      copyTip.style.display = 'block';
+  function tryAltSrc(img, candidates) {
+    if (!candidates.length) return;
+    const next = candidates.shift();
+
+    const pre = new Image();
+    pre.onload = () => { img.src = next; };
+    pre.onerror = () => tryAltSrc(img, candidates);
+    pre.src = next;
+  }
+
+  document.querySelectorAll('.project-image-container').forEach(container => {
+    const img = container.querySelector('img');
+    const video = container.querySelector('video');
+
+    let base, ext, original;
+
+    if (img) {
+      const src = img.getAttribute('src');
+      const dot = src.lastIndexOf('.');
+      if (dot === -1) return;
+      base = src.slice(0, dot).replace(/-mobile$/, '');
+      ext = src.slice(dot);
+      original = img;
+    } else if (video && video.poster) {
+      const poster = video.poster;
+      const dot = poster.lastIndexOf('.');
+      if (dot === -1) return;
+      base = poster.slice(0, dot).replace(/-mobile$/, '');
+      ext = poster.slice(dot);
+      original = video;
+    } else return;
+
+    const alts = [
+      base + '-alt.avif',
+      base + '-alt.gif',
+      base + '-alt.png',
+      base + '-alt' + ext
+    ];
+
+    const altImg = document.createElement('img');
+    altImg.alt = (original.alt || 'Project') + ' alt';
+    altImg.className = original.className;
+
+    Object.assign(altImg.style, {
+      position: 'absolute',
+      inset: 0,
+      width: '100%',
+      height: '100%',
+      objectFit: 'cover',
+      zIndex: 1,
+      opacity: 0,
+      transition: 'opacity 0.4s ease'
     });
-    link.addEventListener('mousemove', e => {
-      copyTip.style.top  = (e.clientY + 15) + 'px';
-      copyTip.style.left = (e.clientX + 15) + 'px';
+
+    container.style.position = 'relative';
+    container.appendChild(altImg);
+
+    Object.assign(original.style, {
+      position: 'relative',
+      zIndex: 2,
+      transition: 'opacity 0.4s ease'
     });
-    link.addEventListener('mouseleave', () => {
-      copyTip.style.display = 'none';
+
+    tryAltSrc(altImg, alts);
+
+    container.addEventListener('mouseenter', () => {
+      original.style.opacity = 0;
+      altImg.style.opacity = 1;
     });
-    link.addEventListener('click', e => {
-      e.preventDefault();
-      const text = link.getAttribute('data-copy');
-      navigator.clipboard.writeText(text).then(() => {
-        copyTip.textContent = 'Copied to clipboard';
-      });
+
+    container.addEventListener('mouseleave', () => {
+      original.style.opacity = 1;
+      altImg.style.opacity = 0;
     });
   });
 });
 </script>
 
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  if (window.innerWidth > 745) return;
 
-  <!-- ===== Scripts ===== -->
+  // iOS Safari: prevent double-tap zoom
+  let lastTouchEnd = 0;
+  document.addEventListener('touchend', (e) => {
+    const now = Date.now();
+    if (now - lastTouchEnd <= 300) e.preventDefault();
+    lastTouchEnd = now;
+  }, { passive: false });
+
+  // Also prevent gesture zoom (some iOS versions)
+  document.addEventListener('gesturestart', (e) => e.preventDefault(), { passive: false });
+});
+</script> 
+ 
+<script> 
+</script>
+<script>
+(() => {
+  function initFadeIns() {
+    const els = Array.from(document.querySelectorAll('.fade-in'));
+    if (!els.length) return;
+
+    // Respect reduced motion
+    const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Ensure a consistent starting state (so it works even if CSS is missing)
+    els.forEach(el => {
+      el.style.willChange = 'opacity, transform';
+      el.style.transition = reduceMotion ? 'none' : 'opacity 700ms ease, transform 700ms ease';
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(14px)';
+    });
+
+    // Fallback if IntersectionObserver isn't available
+    if (!('IntersectionObserver' in window) || reduceMotion) {
+      els.forEach(el => {
+        el.style.opacity = '1';
+        el.style.transform = 'translateY(0)';
+      });
+      return;
+    }
+
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        el.style.opacity = '1';
+        el.style.transform = 'translateY(0)';
+        obs.unobserve(el);
+      });
+    }, {
+      root: null,
+      rootMargin: '0px 0px -10% 0px', // triggers a bit before fully in view
+      threshold: 0.01
+    });
+
+    els.forEach(el => observer.observe(el));
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initFadeIns, { once: true });
+  } else {
+    initFadeIns();
+  }
+})();
+</script> 
+
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const main = document.querySelector('main');
@@ -1091,12 +1561,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // also update on resize
   window.addEventListener('resize', swapImages);
 });
-    // Mobile menu toggle with improved hamburger icon
-    document.addEventListener('DOMContentLoaded', () => {
-      const btn = document.getElementById('mobileMenuBtn');
-      const icon = btn.querySelector('.hamburger-icon');
-      const overlay = document.getElementById('mobileNavOverlay');
-      let isOpen = false;
+     
       // Initialize tooltip if it wasn't created above
       if (!document.getElementById('project-tooltip')) {
         const tooltip = document.createElement('div');
@@ -1108,12 +1573,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (isOpen) {
           // Open menu
           
-          overlay.style.display = 'flex';
-          setTimeout(() => {
-            overlay.classList.add('visible');
-          }, 10);
-          icon.classList.add('open');
-          document.body.classList.add('nav-open');
+          
         } else {
           // Close menu
           overlay.classList.remove('visible');
@@ -1123,38 +1583,8 @@ document.addEventListener('DOMContentLoaded', () => {
           icon.classList.remove('open');
           document.body.classList.remove('nav-open');
         }
-      });
-    });
-    // Intersection Observer for fade-in
-    document.addEventListener("DOMContentLoaded", () => {
-  const observer = new IntersectionObserver(
-    (entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = "1";
-          entry.target.style.transform = "translateY(0)";
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    {
-      root: null, // observes viewport
-      rootMargin: "0px 0px -0px 0px", // optional: tweak trigger buffer
-      threshold: 0.0 // 20% of the element must be visible to trigger
-    }
-  );
-
-  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-});
-    document.addEventListener("DOMContentLoaded", () => {
-  if (window.innerWidth <= 745) return; // Skip on mobile
-
-  function tryAltSrc(img, candidates) {
-    if (!candidates.length) return;
-    img.src = candidates.shift();
-    img.onerror = () => tryAltSrc(img, candidates);
-  }
-
+      }); 
+     
   document.querySelectorAll('.project-image-container').forEach(container => {
     const img = container.querySelector('img');
     const video = container.querySelector('video');
@@ -1208,8 +1638,7 @@ document.addEventListener('DOMContentLoaded', () => {
     container.addEventListener('mouseleave', () => {
       original.style.opacity = 1;
     });
-  });
-});
+  }); 
 
     // Smooth-scroll for Work link
     document.addEventListener("DOMContentLoaded", () => {
@@ -1241,6 +1670,62 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
   </script>
-  
+  <script>
+document.addEventListener('DOMContentLoaded', () => {
+  // create floating copy-tooltip
+  const copyTip = document.createElement('div');
+  copyTip.id = 'copy-tooltip';
+  document.body.appendChild(copyTip);
+
+  document.querySelectorAll('.copy-target').forEach(link => {
+    link.addEventListener('mouseenter', () => {
+      copyTip.textContent = 'Click to copy';
+      copyTip.style.display = 'block';
+    });
+    link.addEventListener('mousemove', e => {
+      copyTip.style.top  = (e.clientY + 15) + 'px';
+      copyTip.style.left = (e.clientX + 15) + 'px';
+    });
+    link.addEventListener('mouseleave', () => {
+      copyTip.style.display = 'none';
+    });
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const text = link.getAttribute('data-copy');
+      navigator.clipboard.writeText(text).then(() => {
+        copyTip.textContent = 'Coppied ✓';
+      });
+    });
+  });
+});
+document.addEventListener('DOMContentLoaded', () => {
+  const services = document.querySelectorAll('[data-service]');
+
+  services.forEach(service => {
+    const btn = service.querySelector('[data-toggle]');
+    const content = service.querySelector('[data-content]');
+
+    btn.addEventListener('click', () => {
+      const isOpen = service.classList.contains('open');
+
+      // close all
+      services.forEach(s => {
+        s.classList.remove('open');
+        s.style.removeProperty('--content-h');
+        s.querySelector('[data-toggle]').setAttribute('aria-expanded', 'false');
+      });
+
+      // open clicked one
+      if (!isOpen) {
+        service.classList.add('open');
+        service.style.setProperty('--content-h', content.scrollHeight + 'px');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+});
+
+</script>
+
 </body>
 </html>
