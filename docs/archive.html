@@ -705,6 +705,16 @@ body.nav-open {
   }
 }
 
+/* ===== Mobile image spacing ===== */
+@media (max-width: 745px) {
+  .projects-grid {
+    column-gap: 6px;      /* space between columns */
+  }
+
+  .project {
+    margin-bottom: 6px;   /* space between stacked images */
+  }
+}
 
 
 /* ===== Clickable hover affordance (desktop only) ===== */
@@ -838,6 +848,26 @@ body.nav-open {
   }
 }
 
+/* Make the modal image its own swipe layer */
+#modal-img{
+  transform: translate3d(0,0,0);
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+
+/* Helps iOS feel more “native” during swipe */
+#image-modal .modal-inner {
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-y; /* allow vertical scroll naturally; we’ll handle horizontal */
+}
+
+/* Prevent selection/ghosting while dragging */
+#modal-img {
+  user-select: none;
+  -webkit-user-drag: none;
+}
 
   </style>
   <link rel="icon" href="images/logo-new-circle-02.svg" type="image/svg+xml">
@@ -2079,7 +2109,8 @@ document.addEventListener('DOMContentLoaded', () => {
       modal.classList.remove('is-switching');
       modalImg.onload = null;
     };
-    modalImg.src = thumb.src;
+    modalImg.src = thumb.currentSrc || thumb.src;
+
   }, 80);
 }
 
@@ -2116,43 +2147,84 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
   // 8) Swipe‐to‐slide
-  let startX=0;
-  modalInner.addEventListener('touchstart',e=>{
-    startX = e.touches[0].clientX;
-    // disable any ongoing transition
-    modalInner.style.transition = 'none';
-  }, {passive:true});
+  let startX = 0;
+let dragging = false;
 
-  modalInner.addEventListener('touchmove',e=>{
-    const dx = e.touches[0].clientX - startX;
-    modalInner.style.transform = `translateX(${dx}px)`;
-  }, {passive:true});
+function setImgTransform(x, opacity = 1) {
+  modalImg.style.transform = `translate3d(${x}px,0,0)`;
+  modalImg.style.opacity = opacity;
+}
 
-  modalInner.addEventListener('touchend',e=>{
-    const dx = e.changedTouches[0].clientX - startX;
-    const absX = Math.abs(dx);
-    const threshold = modal.clientWidth * 0.2; // 20% width
-    // re‐enable smooth transition
-    modalInner.style.transition = 'transform 0.3s ease-out';
+function preload(src) {
+  return new Promise((resolve) => {
+    const im = new Image();
+    im.onload = () => resolve(true);
+    im.onerror = () => resolve(false);
+    im.src = src;
+  });
+}
 
-    if(absX > threshold){
-      // slide completely off
-      const dir = dx>0 ? 1 : -1;
-      modalInner.style.transform = `translateX(${dir * modal.clientWidth}px)`;
-      setTimeout(()=>{
-        // show next/prev
-        showAt(currentIndex + (dir>0 ? -1 : 1));
-        // reset position instantly
-        modalInner.style.transition = 'none';
-        modalInner.style.transform = 'translateX(0)';
-      }, 300);
-    } else {
-      // not far enough → spring back
-      modalInner.style.transform = 'translateX(0)';
-    }
-    
+modalInner.addEventListener('touchstart', (e) => {
+  startX = e.touches[0].clientX;
+  dragging = true;
+
+  // kill transitions while dragging
+  modalImg.style.transition = 'none';
+}, { passive: true });
+
+modalInner.addEventListener('touchmove', (e) => {
+  if (!dragging) return;
+  const dx = e.touches[0].clientX - startX;
+
+  // follow finger, tiny opacity drop as feedback
+  const o = 1 - Math.min(Math.abs(dx) / (modal.clientWidth * 1.2), 0.25);
+  setImgTransform(dx, o);
+}, { passive: true });
+
+modalInner.addEventListener('touchend', async (e) => {
+  if (!dragging) return;
+  dragging = false;
+
+  const dx = e.changedTouches[0].clientX - startX;
+  const absX = Math.abs(dx);
+  const w = modal.clientWidth;
+  const threshold = w * 0.18; // slightly earlier feels better on mobile
+
+  // restore transitions for the settle animation
+  modalImg.style.transition = 'transform 220ms ease, opacity 180ms ease';
+
+  if (absX <= threshold) {
+    // spring back
+    setImgTransform(0, 1);
+    return;
+  }
+
+  const dir = dx > 0 ? 1 : -1;
+  const nextIndex = currentIndex + (dir > 0 ? -1 : 1);
+  const nextThumb = gallery[(nextIndex + gallery.length) % gallery.length];
+  const nextSrc = nextThumb.src;
+
+  // slide current out + fade a touch
+  setImgTransform(dir * w, 0.85);
+
+  // preload next so swap doesn't "flash"
+  await preload(nextSrc);
+
+  // swap while OFFSCREEN (still hidden from view)
+  showAt(nextIndex);
+
+  // IMPORTANT: force it to start offscreen on the opposite side (still no transition)
+  modalImg.style.transition = 'none';
+  setImgTransform(-dir * w, 0.85);
+
+  // next frame: animate back to centre
+  requestAnimationFrame(() => {
+    modalImg.style.transition = 'transform 220ms ease, opacity 180ms ease';
+    setImgTransform(0, 1);
+  });
   });
 });
+
 </script>
 
 </body>
