@@ -816,9 +816,35 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
   <!-- ===== Hero Section ===== -->
   
+<section id="Project-images" class=" hidden md:block fade-in max-web mx-auto px-0 md:px-5 xl:px-10  ">
+       
+  <div class="content-column md:space-y-2.5 space-y-2.5  
+  ">
+    
+     <section id="project-gallery" class="fade-in">
+      <!-- Stacked Vertically -->
+      <div class="overflow-hidden aspect-[7/4] !mt-[4.25em]">
+        <!-- mobile only -->
+        <a   class="w-full h-full block ">
+    <video
+      class="w-full h-full object-cover  md:rounded-[0.6em] rounded-[0em]"
+      loop
+      autoplay
+      muted
+      playsinline   
+      preload="metadata"  
+      poster="images/MMT 2026-01.avif"
+    >
+      <source src="videos/2026 motion.mp4" type="video/mp4"> 
+    </video>
+  </a> 
+    </section>
+    </div>
+    </section>
+
   <section
   id="hero"
-  class="max-web mx-auto w-full z-40 px-5 xl:px-10 md:mt-36 mt-24 bg-[#F1F0EE] fade-in"
+  class="max-web mx-auto w-full z-40 px-5 xl:px-10 md:mt-24 mt-24 bg-[#F1F0EE] fade-in"
 >
 
   <!-- TITLE + DESCRIPTION -->
@@ -868,9 +894,9 @@ document.addEventListener('DOMContentLoaded', () => {
     <!-- Right Column: Project Description -->
     <div>
       <h2 class="hidden md:block h2 text-[#2b2b2b] text-[18pt] md:text-[24pt] mb-6 md:mb-12 fade-in">
-        I developed the brand identity and logo for MMT, the native cryptocurrency powering the Stream Live app. The mark draws on the app’s visual language, forming two stylised ‘M’s through a rhythmic wave motif.
+        MMT functioned as a utility token within the Stream Live ecosystem, paying concert promoters for driving engagement on the platform. Earned tokens could then be used by fans to access discounted tickets to high-profile artists and live events.
       <h2 class="block md:hidden text-[#2b2b2b] body-text-3 !text-[10pt] md:!text-[11pt] mb-6 md:mb-20 fade-in">
-        I developed the brand identity and logo for MMT, the native cryptocurrency powering the Stream Live app. The mark draws on the app’s visual language, forming two stylised ‘M’s through a rhythmic wave motif.
+        MMT functioned as a utility token within the Stream Live ecosystem, paying concert promoters for driving engagement on the platform. Earned tokens could then be used by fans to access discounted tickets to high-profile artists and live events.
       </h2>
       
     <!-- mobile only -->
@@ -887,10 +913,13 @@ document.addEventListener('DOMContentLoaded', () => {
          My contributions
       </h2>
       <h2 class="block md:hidden text-[#2b2b2b] body-text-3 !text-[10pt] md:!text-[11pt] mb-[0.5em] md:mb-20 fade-in">
-         Logo
+         Art direction
       </h2>
       <h2 class="block md:hidden text-[#2b2b2b] body-text-3 !text-[10pt] md:!text-[11pt] mb-[0.5em] md:mb-20 fade-in">
          Branding
+      </h2>
+      <h2 class="block md:hidden text-[#2b2b2b] body-text-3 !text-[10pt] md:!text-[11pt] mb-[0.5em] md:mb-20 fade-in">
+         Logo
       </h2>
       <h2 class="block md:hidden text-[#2b2b2b] body-text-3 !text-[10pt] md:!text-[11pt] mb-6 md:mb-20 fade-in">
          Motion graphics
@@ -910,7 +939,7 @@ document.addEventListener('DOMContentLoaded', () => {
   </div>
 
   <!-- NEW INFO ROW (2 main columns to match hero layout, footer-style micro columns inside) -->
-<div class="hidden md:grid grid-cols-2 gap-6 md:gap-5 items-start w-full mt-0 fade-in body-text-1 text-[12pt] md:text-[11pt] mb-6 md:mb-24">
+<div class="hidden md:grid grid-cols-2 gap-6 md:gap-5 items-start w-full mt-2 fade-in body-text-1 text-[12pt] md:text-[11pt] mb-6 md:mb-24">
 
   <!-- LEFT MAIN COLUMN: Back button (no heading, bordered) -->
   <div class="flex items-start">
@@ -918,7 +947,7 @@ document.addEventListener('DOMContentLoaded', () => {
   href="/"
   class="inline-flex items-center whitespace-nowrap
          bg-white text-[#2b2b2b]
-         px-3 py-2
+         px-3 py-2 mt-[0.4em]
          hover:bg-[#2b2b2b]/10
          transition-colors duration-0 rounded-[0.4em]
          group"
@@ -951,14 +980,15 @@ document.addEventListener('DOMContentLoaded', () => {
     <div class="flex flex-col items-start min-w-[50px]">
       <div class="nav-h2 text-[12pt] md:text-[11pt] mb-[0.5em]">My contributions</div>
       <div class="flex flex-col items-start space-y-[0.5em]">
-        <span class="whitespace-nowrap">Logo</span> 
+        <span class="whitespace-nowrap">Art direction</span> 
         <span class="whitespace-nowrap">Branding</span> 
+        <span class="whitespace-nowrap">Logo</span> 
         <span class="whitespace-nowrap">Motion graphics</span>
       </div>
     </div> 
 
     <!-- MICRO COL: YEAR -->
-    <div class="flex flex-col items-start md:min-w-[0px] lg:min-w-[100px]">
+    <div class="flex flex-col items-start md:min-w-[0px] min-[1200px]:min-w-[100px]">
       <div class="nav-h2 text-[12pt] md:text-[11pt] mb-[0.5em]">Year</div>
       <div class="flex flex-col items-start space-y-[0.5em]">
         <span class="whitespace-nowrap">2023</span>
@@ -977,36 +1007,9 @@ document.addEventListener('DOMContentLoaded', () => {
   <div class="content-column md:space-y-2.5 space-y-2.5  
   ">
     
-
-    <section id="project-gallery" class="fade-in">
-      <!-- Stacked Vertically -->
-      <div class="  aspect-[7/6] sm:aspect-auto overflow-hidden">
-        <img src="images/MMT-20250wide-2.avif" alt="Gallery Image 4" class="object-cover w-full h-full  md:rounded-[0.6em] rounded-[0em]" />
-      </div>
-       
-    </section>
-    
- <section id="project-info" class=" fade-in">
-    <div class="grid grid-cols-1 md:grid-cols-1 "> 
-      <!-- Image Column (occupies 2/3 columns) -->
-      <div class="md:col-span-2 md:col-span-1 ">
-        <div class="space-y-2.5">
-          <div class="flex flex-col md:flex-row gap-2.5 md:gap-y-2.5">
-            <div class="  flex-1">
-              <img src="images/MMT 2025_lines.avif" alt="Gallery Image 1" class=" w-full  md:rounded-[0.6em] rounded-[0em]" />
-            </div>
-            <div class=" flex-1">
-              <img src="images/MMT-2025-07.avif" alt="Gallery Image 2" class=" w-full   md:rounded-[0.6em] rounded-[0em] " />
-            </div>
-            
-          </div>
-        </div>
-      </div>
-    </div>
-  </section> 
   <section id="project-gallery" class="fade-in">
       <!-- Stacked Vertically -->
-      <div class="overflow-hidden aspect-[5/4]">
+      <div class="md:hidden overflow-hidden aspect-[5/4]">
         <!-- mobile only -->
         <a   class="w-full h-full block ">
     <video
@@ -1016,13 +1019,40 @@ document.addEventListener('DOMContentLoaded', () => {
       muted
       playsinline   
       preload="metadata"  
-      poster="images/MMT-2025-02.avif"
+      poster="images/MMT 2026-01.avif"
     >
-      <source src="videos/MMT-2025-02.mp4" type="video/mp4"> 
+      <source src="videos/2026 motion.mp4" type="video/mp4"> 
     </video>
   </a> 
     </section>
+
+<section id="project-gallery" class="fade-in">
+      <div class="  aspect-auto sm:aspect-auto overflow-hidden">
+        <img src="images/MMT 2026-06.avif" alt="Gallery Image 4" class="object-cover w-full h-full md:rounded-[0.6em] rounded-[0em] " />
+      </div>
+    </section> 
  
+ 
+
+     <section id="project-gallery" class="fade-in">
+      <div class="  aspect-auto sm:aspect-auto overflow-hidden">
+        <img src="images/MMT 2026-10.avif" alt="Gallery Image 4" class="object-cover w-full h-full md:rounded-[0.6em] rounded-[0em] " />
+      </div>
+    </section> 
+    
+
+
+    <section id="project-gallery" class="fade-in">
+      <div class="  aspect-auto sm:aspect-auto overflow-hidden">
+        <img src="images/MMT 2026-05.avif" alt="Gallery Image 4" class="object-cover w-full h-full md:rounded-[0.6em] rounded-[0em] " />
+      </div>
+    </section> 
+
+    <section id="project-gallery" class="fade-in">
+      <div class="  aspect-auto sm:aspect-auto overflow-hidden">
+        <img src="images/MMT 2026-03.avif" alt="Gallery Image 4" class="object-cover w-full h-full md:rounded-[0.6em] rounded-[0em] " />
+      </div>
+    </section> 
 
     <section id="project-info" class=" fade-in">
     <div class="grid grid-cols-1 md:grid-cols-1 ">
@@ -1033,10 +1063,10 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="space-y-2.5">
           <div class="flex flex-col md:flex-row gap-2.5">
             <div class="  flex-1">
-              <img src="images/MMT-2025-05.avif" alt="Gallery Image 1" class=" w-full  md:rounded-[0.6em] rounded-[0em] " />
+              <img src="images/MMT 2026-11.avif" alt="Gallery Image 1" class=" w-full  md:rounded-[0.6em] rounded-[0em] " />
             </div>
             <div class=" flex-1">
-              <img src="images/MMT-2025-06.avif" alt="Gallery Image 2" class=" w-full  md:rounded-[0.6em] rounded-[0em] " />
+              <img src="images/MMT 2026-08.avif" alt="Gallery Image 2" class=" w-full  md:rounded-[0.6em] rounded-[0em] " />
             </div>
             
           </div>
@@ -1045,12 +1075,20 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>
   </section>  
        
-    <section id="project-gallery" class="fade-in">
-      <div class="  aspect-[7/6] sm:aspect-auto overflow-hidden">
-        <img src="images/MMT-2025-09.avif" alt="Gallery Image 4" class="object-cover w-full h-full md:rounded-[0.6em] rounded-[0em] " />
+  
+     <section id="project-gallery" class="fade-in">
+      <div class=" hidden md:block aspect-auto sm:aspect-auto overflow-hidden">
+        <img src="images/MMT 2026-09.avif" alt="Gallery Image 4" class="object-cover w-full h-full md:rounded-[0.6em] rounded-[0em] " />
       </div>
     </section> 
- 
+
+    <section id="project-gallery" class="fade-in">
+      <div class=" flex md:hidden aspect-auto sm:aspect-auto overflow-hidden">
+        <img src="images/MMT 2026-04.avif" alt="Gallery Image 4" class="object-cover w-full h-full md:rounded-[0.6em] rounded-[0em] " />
+      </div>
+    </section> 
+
+
    <section id="Project-images" class="hidden md:block "> 
 
    <div class="fade-in max-web mx-auto w-full  md:grid grid-cols-[1fr_auto] items-end md:mt-24 mb-6">
