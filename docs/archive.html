@@ -125,12 +125,22 @@
 }
 .nav-h2 {
   font-family: 'SansFlex', sans-serif;
-  font-variation-settings: 'wght' 520;
+  font-variation-settings: 'wght' 480;
   color: #2b2b2b;
-  letter-spacing: 0.0em; 
+  letter-spacing: 0.015em; 
   line-height: 1.65;
   font-display: swap;
 }
+
+.nav-body {
+  font-family: 'SansFlex', sans-serif;
+  font-variation-settings: 'wght' 200;
+  color: #2b2b2b;
+  letter-spacing: 0.01em; 
+  line-height: 1.65;
+  font-display: swap;
+}
+
 .h3 {
   font-family: 'SansFlex', sans-serif;
   font-variation-settings: 'wght' 550;
@@ -1103,15 +1113,15 @@ A collection of exploratory work, experiments, and visual fragments.
     <div class="grid grid-cols-1 md:grid-cols-2 gap-x-5 ">
       
       <!-- LEFT COLUMN -->
-      <div class="flex flex-col items-start h-full mt-4 md:mt-8   mb-6 md:mb:0 fade-in">
-        <img class="hidden md:flex max-h-[13.5em]" src="images/Asset 3.svg" alt="logo">
-        <img class="block md:hidden !width-[20em] mt-5 -ml-0.5" src="images/Asset 3.svg" alt="logo">
+      <div class="flex flex-col items-start h-full mt-4 md:mt-8   mb-6 md:!mb-8 fade-in">
+        <img class="hidden md:flex max-h-[11em]" src="images/Layer 2-2.svg" alt="logo">
+        <img class="block md:hidden !width-[20em] mt-5 -ml-0.5" src="images/Layer 2-2.svg" alt="logo">
       
       </div>
 
      <!-- RIGHT COLUMN -->
-      <div class="flex flex-col md:gap-y-5 gap-y-5   mt-6 md:mt-5  mb-6 md:mb-0  fade-in ">
-        <h2 class="hidden md:block body-text-1 md:text-[23pt]   text-[12pt] ">
+      <div class="flex flex-col md:gap-y-8 gap-y-5   mt-6 md:mt-6  mb-6 md:mb-0  fade-in ">
+        <h2 class="hidden md:block h2 md:text-[23pt]   text-[12pt] ">
           Got a project in mind? 
         </h2>
         <h2 class="flex md:hidden body-text-4 md:text-[23pt]   text-[10pt] ">
@@ -1119,7 +1129,7 @@ A collection of exploratory work, experiments, and visual fragments.
         </h2>
 
         <!-- Contact details -->
-        <div class="-space-y-[2px] md:space-y-[4px]"> 
+        <div class="-space-y-[2px] md:space-y-[12px]"> 
           <div class="email">
             <a
   href="mailto:hello@jakepearce.com.au"
@@ -1132,7 +1142,7 @@ A collection of exploratory work, experiments, and visual fragments.
             <a
               href="#"
               data-copy="hello@jakepearce.com.au"
-              class="copy-target hidden md:flex body-text-1 text-[#2b2b2b]/50 block md:text-[23pt]   text-[20pt] hover:text-[#000000]"
+              class="copy-target hidden md:flex h2 text-[#2b2b2b]/50 block md:text-[23pt]   text-[20pt] hover:text-[#000000]"
             >
               hello@jakepearce.com.au
             </a>
@@ -1153,7 +1163,7 @@ A collection of exploratory work, experiments, and visual fragments.
             <a
               href="#"
               data-copy="+614229117799"
-              class="copy-target hidden md:flex body-text-1 text-[#2b2b2b]/50 block md:text-[23pt]   text-[20pt] hover:text-[#000000]"
+              class="copy-target hidden md:flex h2 text-[#2b2b2b]/50 block md:text-[23pt]   text-[20pt] hover:text-[#000000]"
             >
               +61 422 911 799
             </a>
@@ -1177,7 +1187,7 @@ A collection of exploratory work, experiments, and visual fragments.
       Acknowledgement of Country
     </div>
 
-    <p class="acknowledgment md:max-w-[28em] text-[12pt] md:text-[10pt]">
+    <p class="nav-body md:max-w-[28em] text-[12pt] md:text-[10pt]">
       I acknowledge Aboriginal and Torres Strait Islander peoples as the Traditional Owners of the lands I work on. I pay respect to elders past, present and emerging, and honour their enduring connection to country.
     </p>
   </div>
@@ -1193,8 +1203,8 @@ A collection of exploratory work, experiments, and visual fragments.
 
   <!-- COLUMN 2: LINKS -->
   <div class="flex flex-col items-start min-w-[50px]">
-    <div class="nav-h2 text-[10pt] md:text-[10pt] mb-[0.5em]">Links</div>
-    <div class="flex flex-col items-start space-y-[0.5em] text-[10pt] md:text-[10pt]">
+    <div class="nav-h2 text-[10pt] md:text-[10pt] mb-[5px]">Links</div>
+    <div class="nav-body flex flex-col items-start space-y-[5px] text-[10pt] md:text-[10pt]">
       <a href="/" class="hover:text-[#000000]/50 whitespace-nowrap">Home</a>
       <a href="work" class="hover:text-[#000000]/50 whitespace-nowrap">Work</a>
       <a href="archive" class="hover:text-[#000000]/50 whitespace-nowrap">Archive</a>
@@ -1203,8 +1213,8 @@ A collection of exploratory work, experiments, and visual fragments.
 
   <!-- COLUMN 1: SOCIALS -->
   <div class="flex flex-col items-start min-w-[50px]">
-    <div class="nav-h2 text-[10pt] md:text-[10pt] mb-[0.5em]">Socials</div>
-    <div class="flex flex-col items-start space-y-[0.5em] text-[10pt] md:text-[10pt]">
+    <div class="nav-h2 text-[10pt] md:text-[10pt] mb-[5px]">Socials</div>
+    <div class="nav-body flex flex-col items-start space-y-[5px] text-[10pt] md:text-[10pt]">
       <a href="https://instagram.com/jake.r.pearce" class="hover:text-[#000000]/50 whitespace-nowrap">Instagram</a>
       <a href="https://www.linkedin.com/in/jake-pearce-076b772b5/" class="hover:text-[#000000]/50 whitespace-nowrap">LinkedIn</a>
     </div>
@@ -1217,7 +1227,7 @@ A collection of exploratory work, experiments, and visual fragments.
 
   <!-- COLUMN 3: COPYRIGHT -->
   <div class="flex flex-col items-end text-right min-w-[20px] text-[10pt] md:text-[10pt] h-full">
-    <span class="whitespace-nowrap mt-auto !-mb-[0.09em] ">© Jake Pearce 2026</span>
+    <span class="nav-body whitespace-nowrap mt-auto !-mb-[0.09em] ">© Jake Pearce 2026</span>
   </div>
 
 </div>
