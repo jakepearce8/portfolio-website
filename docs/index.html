@@ -60,7 +60,7 @@
 }
 .h2 {
   font-family: 'SansFlex', sans-serif;
-  font-variation-settings: 'wght' 280;
+  font-variation-settings: 'wght' 320;
   color: #2b2b2b;
   letter-spacing: -0.006em; 
   line-height: 1.3;
@@ -85,32 +85,25 @@
 }
 .body-text-1 {
   font-family: 'SansFlex', sans-serif;
-  font-variation-settings: 'wght' 320;
-  color: #2b2b2b;
-  letter-spacing: 0.0em; 
-  line-height: 1.65;
-  font-display: swap;
-}
-.acknowledgment {
-  font-family: 'SansFlex', sans-serif;
   font-variation-settings: 'wght' 280;
   color: #2b2b2b;
-  letter-spacing: 0.0em; 
-  line-height: 1.45;
+  letter-spacing: -0.004em; 
+  line-height: 1.5;
   font-display: swap;
-}
+} 
+
 .body-text-2 {
  font-family: 'SansFlex', sans-serif;
-  font-variation-settings: 'wght' 340;
+ font-variation-settings: 'wght' 430;
   color: #2b2b2b;
-  letter-spacing: 0.0em; 
-  line-height: 1.65;
+  letter-spacing: -0.00em; 
+  line-height: 1.5;
   font-display: swap;
  
 } 
 .body-text-3 {
   font-family: 'SansFlex', sans-serif;
-  font-variation-settings: 'wght' 400;
+  font-variation-settings: 'wght' 320;
   color: #2b2b2b;
   letter-spacing: 0.0em; 
   line-height: 1.45;
@@ -118,7 +111,7 @@
 }
 .body-text-4 {
   font-family: 'SansFlex', sans-serif;
-  font-variation-settings: 'wght' 520;
+  font-variation-settings: 'wght' 430;
   color: #2b2b2b;
   letter-spacing: 0.0em; 
   line-height: 1.45;
@@ -126,7 +119,7 @@
 }
 .nav-h2 {
   font-family: 'SansFlex', sans-serif;
-  font-variation-settings: 'wght' 480;
+  font-variation-settings: 'wght' 430;
   color: #2b2b2b;
   letter-spacing: 0.015em; 
   line-height: 1.65;
@@ -135,16 +128,16 @@
 
 .nav-body {
   font-family: 'SansFlex', sans-serif;
-  font-variation-settings: 'wght' 200;
+  font-variation-settings: 'wght' 280;
   color: #2b2b2b;
   letter-spacing: 0.01em; 
-  line-height: 1.65;
+  line-height: 1.4;
   font-display: swap;
 }
 
 .h3 {
   font-family: 'SansFlex', sans-serif;
-  font-variation-settings: 'wght' 550;
+  font-variation-settings: 'wght' 430;
   color: #2b2b2b;
   letter-spacing: -0.01em; 
   line-height: 1.15;
@@ -155,7 +148,7 @@
 
 .button-1 {
   font-family: 'SansFlex', sans-serif;
-  font-variation-settings: 'wght' 280;
+  font-variation-settings: 'wght' 320;
   color: #2b2b2b;
   letter-spacing: 0.0em; 
   line-height: 1.35;
@@ -197,6 +190,7 @@ header {
   z-index: 1000;
   display: none;
   white-space: nowrap;
+  
 }
 
 /* the copy tooltip */
@@ -273,20 +267,13 @@ html {
   overflow: hidden;
   border-radius: inherit;
 }
-
-/* restore your original 16:10 ratio once 768px */
-@media (min-width: 1280px) {
-  .project-image-container {
-    aspect-ratio: 11 / 10;
-  }
-}
+ 
 
     .project-image-container:hover {
       cursor: default;
 }
     .projects-grid {
-      display: grid;
-      grid-template-columns: 1fr;
+      display: grid; 
       row-gap: 36px;
       column-gap: 20px;
     }
@@ -299,10 +286,10 @@ html {
         grid-column: 1; grid-row: 1;
       }
       .projects-grid > .project:nth-child(2) {
-        grid-column: 1; grid-row: 2;
+        grid-column: 2; grid-row: 1;
       }
       .projects-grid > .project:nth-child(3) {
-        grid-column: 2; grid-row: 1;
+        grid-column: 1; grid-row: 2;
       }
       .projects-grid > .project:nth-child(4) {
         grid-column: 2; grid-row: 2;
@@ -310,8 +297,32 @@ html {
       .projects-grid > .project:nth-child(5) {
         grid-column: 1; grid-row: 3;
       }
-      .projects-grid > .project:nth-child(6) {
+      .projects-grid > .project:nth-child(63) {
         grid-column: 2; grid-row: 3;
+      }
+    }
+     @media (min-width: 1100px) {
+      .projects-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto auto;
+      }
+      .projects-grid > .project:nth-child(1) {
+        grid-column: 1; grid-row: 1;
+      }
+      .projects-grid > .project:nth-child(2) {
+        grid-column: 2; grid-row: 1;
+      }
+      .projects-grid > .project:nth-child(3) {
+        grid-column: 3; grid-row: 1;
+      }
+      .projects-grid > .project:nth-child(4) {
+        grid-column: 1; grid-row: 2;
+      }
+      .projects-grid > .project:nth-child(5) {
+        grid-column: 2; grid-row: 2;
+      }
+      .projects-grid > .project:nth-child(63) {
+        grid-column: 3; grid-row: 2;
       }
     }
     @media (min-width: 768px) {
@@ -358,7 +369,7 @@ footer {
   background: #000;
 }
 /* 3) For mobile, use shorter footer */
-@media (max-width: 818px) {
+@media (max-width: 768px) {
   main {
     margin-bottom: 450px;
   }
@@ -378,7 +389,7 @@ body.nav-open {
 .mobile-social {
   display: none;
 }
-@media (max-width: 745px) {
+@media (max-width: 768px) {
   footer {
     /* ensure footer is flex-column */
     display: flex;
@@ -392,26 +403,26 @@ body.nav-open {
     margin-bottom: 40px;   /* 25px above bottom */
   }
 }
-@media (max-width: 745px) {
+@media (max-width: 768px) {
   .mobile-social img {
     /* invert black ↔ white */
     filter: invert(1);
   }
 }
-@media (min-width:818px) {
+@media (min-width:768px) {
   .max-web {
     margin: 0 auto;
-    max-width: 1640px;
+    max-width: 2000px;
   }
 }
 /* desktop / tablet */
 #navContainer {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-top: 14px;
+  margin-bottom: 14px;
 }
 
 /* mobile only */
-@media (max-width: 745px) {
+@media (max-width: 768px) {
   #navContainer {
     margin-top: 0.4rem;
   margin-bottom: 0.4rem;
@@ -452,7 +463,7 @@ body.nav-open {
   }
 }
 
-@media (max-width: 745px) {
+@media (max-width: 768px) {
   footer {
     /* ditch the fixed-height, internal-scrolling */
     position: relative !important;
@@ -694,6 +705,50 @@ body.nav-open {
 #mobileNavOverlay .nav-link:nth-child(2){ transition-delay: calc(var(--itemBaseDelay) + 1 * var(--stagger)); }
 #mobileNavOverlay .nav-link:nth-child(3){ transition-delay: calc(var(--itemBaseDelay) + 2 * var(--stagger)); }
 
+:root {
+  /* Base size (mobile → desktop) */
+  --step-0: clamp(0.9rem, 1vw + 0.5rem, 1rem);   /* ~14–16px */
+
+  /* Golden ratio scale */
+  --step-1: calc(var(--step-0) * 1.414);
+  --step-2: calc(var(--step-1) * 1.414);
+  --step-3: calc(var(--step-2) * 1.414);
+  --step-4: calc(var(--step-3) * 1.414);
+  --step-5: calc(var(--step-4) * 1.414);
+  --step-6: calc(var(--step-5) * 1.414);
+}
+
+.body-text-1 { font-size: var(--step-0); }
+.body-text-2 { font-size: var(--step-0); }
+.body-text-3 { font-size: var(--step-1); }
+.body-text-4 { font-size: var(--step-2); }
+
+.h3 { font-size: var(--step-4); }
+.h2 { font-size: var(--step-2); }
+.h1 { font-size: var(--step-5); }
+
+.nav-h2 { font-size: var(--step-0); }
+.nav-body { font-size: var(--step-0); }
+
+.project-image-container {
+  overflow: hidden;
+}
+
+.project-image-container img,
+.project-image-container video {
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+.project-image-container:hover img,
+.project-image-container:hover video {
+  transform: scale(1.06);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 
   </style>
   <link rel="icon" href="images/logo-new-circle-02.svg" type="image/svg+xml">
@@ -704,21 +759,27 @@ body.nav-open {
   <div id="project-tooltip"></div>
   <!-- ===== Header & Toggle ===== -->
   <header class="max-web fade-in fixed top-0 left-0 right-0 z-50 ">
-    <div id="navContainer" class="bg-[#F1F0EE] flex justify-between items-center w-full md:py-0 py-1 md:py-0 px-4  xl:px-10  ">
+<div
+  id="navContainer" 
+  class="bg-[#F1F0EE] flex justify-between items-center w-full py-1 md:py-0
+         px-[clamp(0px,4.5vw,180px)]"
+>
       <!-- Header Title -->
-      <a href="/" class=" mt-0 mb-0 transition-colors -ml-[0.4em] !text-[14pt] md:!text-[14pt] md:-ml-[0.4em]">
-  <img src="images/logo-new-circle-02.svg" alt="Jake Pearce logo" class=" h-[1.9em] w-auto duration-200 hover:opacity-50">
+      <a href="#" class="mt-0 mb-0 transition-colors -ml-[0.8em] md:-ml-[0.75em]">
+  <img src="images/logo-new-circle-02.svg" alt="Jake Pearce logo" class="h-[2em] w-auto duration-200 hover:opacity-50">
 </a>
 
+
   
-      <!-- Desktop Nav -->
-      <nav class="header-nav hidden md:flex " style="margin: 0pt;">
-        <ul class="flex space-x-5 mr-0 mt-0 mb-0">
-          <li><a href="work" class="!text-[20pt] md:!text-[11pt] body-text-1    hover:opacity-50 ">Work</a></li>
-          <li><a href="archive" class="!text-[20pt] md:!text-[11pt]   body-text-1   hover:opacity-50 ">Archive</a></li>
-          <li><a href="#contact" class="!text-[20pt] md:!text-[11pt]   body-text-1   hover:opacity-50 ">Contact</a></li>
-        </ul>
-      </nav>
+     <nav class="header-nav hidden md:flex " style="margin: 0pt;">
+  <ul class="flex space-x-4 -mr-[0.4em] !text-[9.5pt] md:-mr-[0.55em] mt-0 mb-0 ">
+    <li><a href="#work" class="body-text-0  hover:opacity-50">Work</a></li>
+    <li><a href="#about" class="body-text-0 hover:opacity-50">About</a></li>
+    <li><a href="archive" class="body-text-0 hover:opacity-50">Archive</a></li>
+    <li><a href="#contact" class="body-text-0 hover:opacity-50">Contact</a></li>
+  </ul>
+</nav>
+
       <!-- Mobile Menu Button (now hidden except ≤745pxx) -->
       
       <button id="mobileMenuBtn" aria-label="Open Menu">
@@ -733,29 +794,29 @@ body.nav-open {
 <div id="mobileNavOverlay" aria-hidden="true" role="dialog" aria-modal="true">
   <div class="mobileNavInner">
     <!-- CENTER NAV -->
-    <div class="flex-1 flex flex-col justify-center space-y-3.5 ">
-      <a href="/"       class="nav-link mobile-reveal-item  h3 text-[#2b2b2b] text-[28pt]">Home</a>
-      <a href="work"    class="nav-link mobile-reveal-item  h3 text-[#2b2b2b] text-[28pt]">Work</a>
-      <a href="archive" class="nav-link mobile-reveal-item  h3 text-[#2b2b2b] text-[28pt]">Archive</a>
+    <div class="flex-1 flex flex-col justify-center space-y-3.5 "> 
+      <a href="#work"    class="nav-link mobile-reveal-item  [font-variation-settings:'wght'_430]  h3 text-[50px]  text-[#2b2b2b]  ">Work</a>
+      <a href="#about"    class="nav-link mobile-reveal-item  [font-variation-settings:'wght'_430]  h3 text-[50px]  text-[#2b2b2b]  ">About</a>
+      <a href="archive" class="nav-link mobile-reveal-item  [font-variation-settings:'wght'_430]  h3 text-[50px]  text-[#2b2b2b]  ">Archive</a>
     </div>
 
   <!-- BOTTOM CONTACT -->
   <div class="mobile-contact flex flex-col items-start space-y-[4px] !mb-7">
     <div class="service border-b border-[#d3d3d3] "></div>
 
-   <h2 class="mobile-reveal-item body-text-4  text-[10pt] !mb-4">
+   <h2 class="mobile-reveal-item body-text-1 [font-variation-settings:'wght'_430]   !mb-4">
           Contact  
         </h2>
 
    <a
   href="mailto:hello@jakepearce.com.au"
   data-copy="hello@jakepearce.com.au"
-  class="mobile-reveal-item body-text-3 text-[#2b2b2b]  text-[10pt] hover:text-[#000000]"
+  class="mobile-reveal-item body-text-1 text-[#2b2b2b]   hover:text-[#000000]"
 >
   hello@jakepearce.com.au
 </a>
 
-    <span class="mobile-reveal-item body-text-3 text-[#2b2b2b]  text-[10pt] hover:text-[#000000]">
+    <span class="mobile-reveal-item body-text-1 text-[#2b2b2b]  hover:text-[#000000]">
       +61 422 911 799
     </span>
     
@@ -814,49 +875,53 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+
 </script>
   <!-- ===== Hero Section ===== -->
   
-  <section
-    id="hero"
-    class="  max-web mx-auto w-full z-40  px-5 xl:px-10   md:mt-36   mt-52 -mb-0  bg-[#F1F0EE] fade-in">
+<section
   
-  <div class="grid grid-cols-1  md:grid-cols-2 gap-8 md:gap-5 items-start">
-    <!-- Left Column: Project Title -->
+  class="max-web mx-auto w-full z-40 px-[clamp(0px,4.5vw,180px)] md:mt-52 mt-52 bg-[#F1F0EE] fade-in"
+>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-5 items-start">
+
+    <!-- Left Column -->
     <div>
-      <h2 class="h1 hidden md:flex !text-[36pt] md:!text-[42pt]   md:mr-6 mr-0     fade-in">
+      <h2 class="h1 hidden md:flex md:mr-6 fade-in">
         Hello
       </h2>
-       
     </div>
 
-    <!-- Right Column: Project Description + Tags -->
+    <!-- Right Column -->
     <div>
-      <h2 class="h2 hidden md:flex  text-[#2b2b2b] text-[18pt] lg:col-span-2 md:text-[24pt] lg:mr-2  mb-6 md:mb-3">
-     I'm Jake Pearce, brand and digital designer based in Naarm / Melbourne Australia. 
-  </h2>
-  <h2 class="h3 block md:hidden  text-[#2b2b2b] text-[28pt]  lg:col-span-2 md:text-[24pt]   mb-72  md:mb-8">
-    Hello, I'm Jake — brand and digital designer based in Naarm / Melbourne Australia. 
-  </h2>
-   <div> 
-
-
-    
-      <h2 class="block md:hidden body-text-3 md:h1 !text-[10pt] md:!text-[42pt]    md:mr-6 mr-0     fade-in">
-        Recent work
+      <h2 class="h2 hidden md:flex lg:col-span-2 lg:mr-2 mb-6 md:mb-3 mt-[9px]">
+        I'm Jake Pearce, brand and digital designer based in Naarm / Melbourne Australia.
       </h2>
+
+      <!-- Mobile hero -->
+      <h2 class="[font-variation-settings:'wght'_430]  h2 block md:hidden mb-72 md:mb-8">
+        Hello, I'm Jake — brand and digital designer based in Naarm / Melbourne Australia.
+      </h2>
+
+      <div>
+        <h2  class="block md:hidden body-text-2 md:h1 fade-in">
+          Selected work
+        </h2>
+      </div>
     </div>
-    
+
+  </div>
 </section>
 
-<!-- SECTION HEADER -->
-<div class="fade-in max-web mx-auto   px-5 xl:px-10 z-20 fade-in  ">
-  <div class="hidden md:block  border-b border-[#d3d3d3]/70 mt-0 md:mt-12 -mb-0 "></div>
-<div class="mt-10 md:mt-8 fade-in max-web mx-auto w-full   hidden md:flex ">
-  <a href="work" class="body-text-1  !text-[#2b2b2b] !text-[10pt] md:!text-[11pt] -mb-2 ">
-        Recent work
 
-  </a>
+<!-- SECTION HEADER -->
+<div id="work" class="fade-in max-web mx-auto   px-[clamp(0px,4.5vw,180px)]  z-20 fade-in  "> 
+<div class="mt-10 md:mt-8 fade-in max-web mx-auto w-full   hidden md:flex ">
+  <p   class=" body-text-1 !text-[#2b2b2b] !text-[15pt] mt-0 md:mt-28 flex items-baseline gap-8">
+ 
+  <span>Selected work</span>
+</a>
+
 </div>  
  
   <!-- ===== Recent Projects ===== -->
@@ -871,168 +936,147 @@ document.addEventListener('DOMContentLoaded', () => {
    
 </h2>
   </div> 
-   <section 
-    id="work"
-    class="max-web mx-auto z-40    fade-in">
-    <div class="projects-grid">
+ <section 
+  id="projects"
+  class="max-web mx-auto z-40 fade-in">
+  <div class="projects-grid">
 
- <div class="project   flex flex-col fade-in order-2 md:order-1">
-        <div class="project-image-container">
-          <a href="erima-australia" class="w-full h-full ">
-            <img
-              src="images/2026-erima-2.avif"
-              alt="Erima Australia"
-              class="w-full h-full object-cover rounded-[0.6em]"
+
+     <!-- MMT -->
+    <div class="project flex flex-col fade-in order-2 md:order-1">
+      <div class="project-image-container rounded-[0.6em]">
+        <a href="mmt" class="w-full h-full">
+           <img
+              src="images/MMT 2026-10.avif"
+              alt="MMT"
+              data-no-mobile
+              class="w-full h-full object-cover "
             />
-          </a>
+        </a>
+      </div>
+      <div class="mt-4 flex flex-col items-start">
+        <a href="mmt" class="body-text-2   ">
+          Music Metaverse Token
+        </a>
+        <a href="mmt" class="text-[#686868]/80 body-text-1 mb-[2em]">
+          Visual Identity
+        </a>
+      </div>
+    </div>
+<!-- ERIMA -->
+    <div class="project flex flex-col fade-in order-2 md:order-1">
+      <div class="project-image-container rounded-[0.6em]">
+        <a href="erima-australia" class="w-full h-full">
+          <img
+            src="images/2026-erima-2.avif"
+            alt="Erima Australia"
+            class="w-full h-full object-cover "
+          />
+        </a>
+      </div>
+      <div class="mt-4 flex flex-col items-start">
+        <a href="erima-australia" class="body-text-2   ">
+          Erima Australia
+        </a>
+        <a href="erima-australia" class="text-[#686868]/80 body-text-1 mb-[2em]">
+          Ad Creative / Tender Documents
+        </a>
+      </div>
+    </div>
+    <!-- BMP -->
+    <div class="project flex flex-col fade-in order-2 md:order-1">
+      <div class="project-image-container rounded-[0.6em]">
+        <a href="bmp-sports" class="w-full h-full">
+           <img
+            src="images/bmp-image-1.avif"
+            alt="Erima Australia"
+            class="w-full h-full object-cover "
+          />
+        </a>
+        </a>
+      </div>
+      <div class="mt-4 flex flex-col items-start">
+        <a href="bmp-sports" class="body-text-2   ">
+          BMP Sports
+        </a>
+        <a href="bmp-sports" class="text-[#686868]/80 body-text-1 mb-[2em]">
+          Visual Identity
+        </a>
+      </div>
+    </div> 
+    
+
+    <!-- BRAVES -->
+    <div class="project flex flex-col fade-in order-2 md:order-1">
+      <div class="project-image-container rounded-[0.6em]">
+        <a href="braves-cricket" class="w-full h-full">
+          <img
+            src="images/players-(Project-Thumbnails).avif"
+            alt="Braves Cricket"
+            class="w-full h-full object-cover "
+          />
+        </a>
+      </div>
+      <div class="mt-4 flex flex-col items-start">
+        <a href="braves-cricket" class="body-text-2   ">
+          Braves Cricket
+        </a>
+        <a href="braves-cricket" class="text-[#686868]/80 body-text-1 mb-[2em]">
+          Visual Identity / Uniforms
+        </a>
+      </div>
+    </div>
+     <div class="project   flex flex-col fade-in order-2 md:order-1">
+        <div class="project-image-container rounded-[0.6em]">
+          
+            <img
+              src="images/moss.avif"
+              alt="Stackd"
+              data-no-mobile
+              class="w-full h-full object-cover opacity-35"
+            />
+          
         </div>
         <div class="mt-4 flex flex-col items-start">
-          <a href="erima-australia" class=" body-text-2 !text-[10pt] md:!text-[11pt] mt-[0em] mb-[0.1em]">
-            Erima Australia
-          </a>
-          <a href="erima-australia" class="text-[#686868]/80 body-text-1  !text-[10pt] md:!text-[11pt] mb-[0.4em]">
-            Social media / Tender documents
-          </a>
-          <a href="erima-australia" class="flex flex-wrap gap-x-[6px] gap-y-[5px]  ">
-  
-            
-          </a>
+          <div href="" class="body-text-2   ">
+            Moss Fragrances
+          </div>
+          <div href="" class="text-[#686868]/80 body-text-1  mb-[2em]">
+            Coming Soon
+          </div>
+         
         </div>
       </div>
-
-      
-      
-     
-      <div class="project  flex flex-col fade-in order-2 md:order-1">
-        <div class="project-image-container">
-          <a href="braves-cricket" class="w-full h-full ">
-            <img
-              src="images/players-(Project-Thumbnails).avif"
-              alt="Braves Cricket"
-              class="w-full h-full object-cover rounded-[0.6em]"
-            />
-          </a>
-        </div>
-        <div class="mt-4 flex flex-col items-start">
-          <a href="braves-cricket" class=" body-text-2 !text-[10pt] md:!text-[11pt] mt-[0em] mb-[0.1em]">
-            Braves Cricket
-          </a>
-          <a href="braves-cricket" class="text-[#686868]/80 body-text-1   !text-[10pt] md:!text-[11pt] mb-[0.4em]">
-            Uniform / Digital assets
-          </a>
-          <a href="braves-cricket" class="flex flex-wrap gap-x-[6px] gap-y-[5px]  ">
-  
-            
-          </a>
-        </div>
-      </div>
-
-<div class="project  flex flex-col fade-in order-2 md:order-1">
-        <div class="project-image-container">
-  <a href="mmt" class="w-full h-full ">
-    <video
-      class="w-full h-full object-cover rounded-[0.6em]"
-      loop
-      autoplay
-      muted
-      playsinline   
-      preload="metadata"  
-      poster="images/MMT 2026-04.avif"
-    >
-      <source src="videos/2026-motion.mp4" type="video/mp4"> 
-    </video>
-  </a>
-</div>
-<div class="mt-4 flex flex-col items-start">
-  <a href="mmt" class=" body-text-2 !text-[10pt] md:!text-[11pt] mt-[0.0em] mb-[0.1em]">
-    Music Metaverse Token
-  </a>
-  <a href="mmt" class="text-[#686868]/80 body-text-1  !text-[10pt] md:!text-[11pt] mb-[0.4em]">
-    Branding / Digital assets
-  </a>
-  <a href="mmt" class="flex flex-wrap gap-x-[6px] gap-y-[5px] ">
-    <!-- tags here -->
-  </a>
-</div>
-      </div>
-      
       <div class="project   flex flex-col fade-in order-2 md:order-1">
-        <div class="project-image-container">
-  <a href="bmp-sports" class="w-full h-full ">
-    <video
-      class="w-full h-full object-cover rounded-[0.6em]"
-      loop
-      autoplay
-      muted
-      playsinline   
-      preload="metadata"  
-      poster="images/bmp-image-1.avif"
-    >
-      <source src="videos/bmp-email.mp4" type="video/mp4"> 
-    </video>
-  </a>
+        <div class="project-image-container rounded-[0.6em]">
+          
+            <img
+              src="images/stackd-mobile.avif"
+              alt="Stackd"
+              data-no-mobile
+              class="w-full h-full object-cover opacity-35"
+            />
+          
         </div>
         <div class="mt-4 flex flex-col items-start">
-          <a href="bmp-sports" class=" body-text-2 !text-[10pt] md:!text-[11pt] mt-[0em] mb-[0.1em]">
-            BMP Sports
-          </a>
-          <a href="bmp-sports" class="text-[#686868]/80 body-text-1  !text-[10pt] md:!text-[11pt] mb-[0.4em]">
-            Branding / Digital assets
-          </a>
-          <a href="bmp-sports" class="flex flex-wrap gap-x-[6px] gap-y-[5px]   ">
- 
-            
-          </a>
+          <div href="" class="body-text-2   ">
+            Stackd
+          </div>
+          <div  href="" class="text-[#686868]/80 body-text-1 mb-[2em]">
+            Coming Soon
+          </div>
+         
         </div>
       </div>
-      
 
-      
-      
-  </section>  
-   <div class="mt-12 mb-8 fade-in max-web mx-auto w-full   hidden md:flex justify-end">
-  <a
-  href="work"
-  class="body-text-1 md:!mb-[0.7em]
-         !text-[#2b2b2b] !text-[12pt] md:!text-[11pt]
-         hover:opacity-50 whitespace-nowrap 
-         group"
->
-  View all projects
-  <span
-    class="inline-block ml-1 transition-[margin] duration-200 ease-out
-           group-hover:ml-2"
-  >
-    🡪
-  </span>
-</a>
-</div>  
+   
+  </div >
+</section   >
 
-<div class="md:hidden border-y border-[#2b2b2b]/20 hover:border-[#2b2b2b] text-center justify-center mt-6 fade-in">
-  <a 
-  href="work"
-  class="service-header group grid items-center py-6 w-full cursor-pointer 
-         no-underline transition-colors"
->
-    <span class="text-[#2b2b2b]/55 group-hover:text-[#2b2b2b] body-text-1 !text-[12pt] md:!text-[11pt] mb-0">
-  See more work
-</span>
-  </a>
-</div>
+   
+ 
 
-  
- <style>
-  /* Smooth fade */
-.service [data-label] {
-  transition: color 0.2s ease;
-}
-
-/* Hover anywhere inside the service (including expanded content) */
-.service:hover [data-label] {
-  color: rgb(0, 0, 0);
-}
-
-</style>
+ 
 <style>
   .service-content ul {
     list-style-type: disc;       /* standard bullets */
@@ -1058,7 +1102,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* Default colour */
   [data-chevron] svg {
-    stroke: rgba(43, 43, 43, 0.55); /* matches your text-[#2b2b2b]/55 */
+    stroke: #2b2b2b; /* matches your text-[#2b2b2b]/55 */
   }
 
 
@@ -1066,11 +1110,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* default (closed) */
 .service {
-  border-color: rgba(202, 202, 202, 0.55);
+  border-color: #2b2b2b;
 }
 
 .service [data-label] {
-  color: rgba(43, 43, 43, 0.55);
+  color: #2b2b2b;
   transition: color 0.3s ease;
 }
 
@@ -1098,344 +1142,68 @@ document.addEventListener('DOMContentLoaded', () => {
 
 </style>
 
-<div class="hidden md:block  border-b border-[#d3d3d3]/70 mt-0 md:mt-6 mb-10 "></div>
+<div id="about" class="md:mt-[20px] mt-2" ></div>
 
+<section  class=" max-web mx-auto md:mt-[140px] mt-14"> 
+  <div class="block min-[1100px]:hidden border-b border-[#2b2b2b]/10 fade-in  mb-16 mt-16"></div>
 
-<section id="services" class=" max-web mx-auto md:mt-0 mt-16 mb-10">
-
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+<div class="grid grid-cols-1 min-[1100px]:grid-cols-2 min-[1100px]:gap-5 gap-0">
 
     <!-- LEFT COLUMN -->
     <div>
-      <h2 class="  md:h1 body-text-3 !text-[10pt] md:!text-[42pt]   md:mr-6 mr-0  md:mb-0 -mb-1 md:-mt-2 mt-0  fade-in">
-        Services
-      </h2>
+      <h2 class="[font-variation-settings:'wght'_430] block min-[1100px]:hidden h3   min-[1100px]:mb-0 mb-8      fade-in"> 
+        <span>About me</span>
+      </h2> 
+      <h2 class="[font-variation-settings:'wght'_430] hidden min-[1100px]:block  h2 text-[44px]  min-[1100px]:mb-0 mb-8      fade-in"> 
+        <span>About me</span>
+      </h2> 
     </div>
 
-    <!-- RIGHT COLUMN -->
-    <div class="">
-      <div id="services-accordion">
-        <h2 class="hidden md:block h2 text-[#2b2b2b] text-[28pt] md:col-span-2 md:text-[23pt] mr-4 md:mr-0 mb-6 md:mb-6 fade-in">
-          From early logo concepts to complete brand identities, I help shape clear, considered design systems.
-        </h2>
-        
-
-        <!-- 01 Brand Identity -->
-        <div class="hidden md:block service border-b border-[#2b2b2b] md:border-[#d3d3d3]/70 duration-200 hover:border-[#2b2b2b] fade-in" data-service>
-          <button class="service-header grid grid-cols-[auto,1fr,auto] items-center md:py-2.5 py-3 w-full text-left cursor-pointer active:opacity-70" data-toggle>
-            <div class="body-text-1  !text-[10pt] md:!text-[11pt] md:mt-0 mb-0 mr-16 md:mr-0 md:ml-0 ml-0 !transition-none text-[#2b2b2b] md:text-[#2b2b2b]/55" data-label>
-              Brand Identity
-            </div>
-            <span data-chevron class="ml-auto inline-block transition-transform duration-200">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <polyline points="4 8 12 16 20 8" />
-              </svg>
-            </span>
-          </button>
-          <div class="hidden md:block service-content max-h-0 overflow-hidden transition-all duration-1000" data-content>
-            <div class="grid grid-cols-[auto,1fr]">
-              <div></div>
-              <ul class="body-text-1  !text-[10pt] md:!text-[11pt] py-3 mb-5 space-y-1">
-                <li>Logos</li>
-                <li>Type systems</li>
-                <li>Brand assets</li>
-                <li>Guidelines</li>
-                <li>Rollout</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- 02 Content Design -->
-        <div class="hidden md:block service border-b border-[#2b2b2b] md:border-[#d3d3d3]/70 duration-200 hover:border-[#2b2b2b] fade-in" data-service>
-          <button class="service-header grid grid-cols-[auto,1fr,auto] items-center md:py-2.5 py-3 w-full text-left cursor-pointer active:opacity-70" data-toggle aria-expanded="false">
-            <div class="body-text-1  !text-[10pt] md:!text-[11pt] md:mt-0 mb-0 mr-16 md:mr-0 md:ml-0 ml-0 !transition-none text-[#2b2b2b] md:text-[#2b2b2b]/55" data-label>
-              Content Design
-            </div>
-            <span data-chevron class="ml-auto inline-block transition-transform duration-200">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <polyline points="4 8 12 16 20 8" />
-              </svg>
-            </span>
-          </button>
-          <div class="service-content max-h-0 overflow-hidden transition-all duration-1000" data-content>
-            <div class="grid grid-cols-[auto,1fr]">
-              <div></div>
-              <ul class="hidden md:block body-text-1  !text-[10pt] md:!text-[11pt] ml-1 py-3 list-none mb-5 space-y-1.5">
-                <li>Social posts</li>
-                <li>Ad creative</li>
-                <li>Campaign graphics</li>
-                <li>Video thumbnails</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- 03 Presentation Design -->
-        <div class="hidden md:block service border-b border-[#2b2b2b] md:border-[#d3d3d3]/70 duration-200 hover:border-[#2b2b2b] fade-in" data-service>
-          <button class="service-header grid grid-cols-[auto,1fr,auto] items-center md:py-2.5 py-3 w-full text-left cursor-pointer active:opacity-70" data-toggle aria-expanded="false">
-            <div class="body-text-1  !text-[10pt] md:!text-[11pt] md:mt-0 mb-0 mr-16 md:mr-0 md:ml-0 ml-0 !transition-none text-[#2b2b2b] md:text-[#2b2b2b]/55" data-label>
-              Presentation &amp; Decks
-            </div>
-            <span data-chevron class="ml-auto inline-block transition-transform duration-200">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <polyline points="4 8 12 16 20 8" />
-              </svg>
-            </span>
-          </button>
-          <div class="hidden md:block service-content max-h-0 overflow-hidden transition-all duration-1000" data-content>
-            <div class="grid grid-cols-[auto,1fr]">
-              <div></div>
-              <ul class="body-text-1  !text-[10pt] md:!text-[11pt] ml-1 py-3 list-none mb-5 space-y-1.5">
-                <li>Pitch decks</li>
-                <li>Sales presentations</li>
-                <li>Internal reports</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- 04 Digital Design -->
-        <div class="hidden md:block service border-b border-[#2b2b2b] md:border-[#d3d3d3]/70 duration-200 hover:border-[#2b2b2b] fade-in" data-service>
-          <button class="service-header grid grid-cols-[auto,1fr,auto] items-center md:py-2.5 py-3 w-full text-left cursor-pointer active:opacity-70" data-toggle aria-expanded="false">
-            <div class="body-text-1  !text-[10pt] md:!text-[11pt] md:mt-0 mb-0 mr-16 md:mr-0 md:ml-0 ml-0 !transition-none text-[#2b2b2b] md:text-[#2b2b2b]/55" data-label>
-              Digital Design
-            </div>
-            <span data-chevron class="ml-auto inline-block transition-transform duration-200">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <polyline points="4 8 12 16 20 8" />
-              </svg>
-            </span>
-          </button>
-          <div class="hidden md:block service-content max-h-0 overflow-hidden transition-all duration-1000" data-content>
-            <div class="grid grid-cols-[auto,1fr]">
-              <div></div>
-              <ul class="body-text-1  !text-[10pt] md:!text-[11pt] ml-1 py-3 list-none mb-5 space-y-1.5">
-                <li>Web visuals</li>
-                <li>Landing pages</li>
-                <li>UI mockups</li>
-                <li>Layout systems</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- 05 Print & Production -->
-        <div class="hidden md:block service border-b border-[#2b2b2b] md:border-[#d3d3d3]/70 duration-200 hover:border-[#2b2b2b] transition-colors fade-in" data-service>
-          <button class="service-header grid grid-cols-[auto,1fr,auto] items-center md:py-2.5 py-3 w-full text-left cursor-pointer active:opacity-70" data-toggle aria-expanded="false">
-            <div class="body-text-1  !text-[10pt] md:!text-[11pt] md:mt-0 mb-0 mr-16 md:mr-0 md:ml-0 ml-0 !transition-none text-[#2b2b2b] md:text-[#2b2b2b]/55" data-label>
-              Print &amp; Production
-            </div>
-            <span data-chevron class="ml-auto inline-block transition-transform duration-200">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <polyline points="4 8 12 16 20 8" />
-              </svg>
-            </span>
-          </button>
-          <div class="service-content max-h-0 overflow-hidden transition-all duration-1000" data-content>
-            <div class="grid grid-cols-[auto,1fr]">
-              <div></div>
-              <ul class="hidden md:block body-text-1 !text-[10pt] md:!text-[11pt] ml-1 py-3 list-none mb-5 space-y-1.5">
-                <li>Flyers</li>
-                <li>Signage</li>
-                <li>Merchandise</li>
-                <li>Production-ready artwork</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- 06 Creative Support -->
-        <div class="hidden md:block service border-b border-[#2b2b2b] md:border-[#d3d3d3]/70 duration-200 hover:border-[#2b2b2b] transition-colors fade-in" data-service>
-          <button class="service-header grid grid-cols-[auto,1fr,auto] items-center md:py-2.5 py-3 w-full text-left cursor-pointer active:opacity-70" data-toggle aria-expanded="false">
-            <div class="hidden md:block body-text-1 !text-[10pt] md:!text-[11pt] md:mt-0 mb-0 mr-16 md:mr-0 md:ml-0 ml-0 !transition-none text-[#2b2b2b] md:text-[#2b2b2b]/55" data-label>
-              Creative Support
-            </div>
-            <span data-chevron class="hidden md:block ml-auto inline-block transition-transform duration-200">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <polyline points="4 8 12 16 20 8" />
-              </svg>
-            </span>
-          </button>
-          <div class="service-content max-h-0 overflow-hidden transition-all duration-1000" data-content>
-            <div class="grid grid-cols-[auto,1fr]">
-              <div></div>
-              <ul class="hidden md:block  body-text-1   !text-[10pt] md:!text-[11pt] ml-1 py-3 list-none mb-5 space-y-1.5">
-                <li>Asset resizing</li>
-                <li>Formatting</li>
-                <li>File exports</li>
-                <li>Spec matching</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-<img class="hidden md:block mt-14 fade-in" src="images/Services.svg" alt="Illustration" />
-      </div>
-
-
-       <!-- RIGHT COLUMN MOBILE -->
-    <div class="block md:hidden" >
-      <div id="services-accordion">
-         
-        <h2 class="block md:hidden h3  !text-[#2b2b2b] text-[28pt] md:col-span-2 md:text-[23pt] mr-4 md:mr-0 mb-5 md:mb-8 fade-in">
-          From early logo concepts to complete brand identities, I help shape clear, considered design systems.
-        </h2>
-
-        <!-- 01 Brand Identity -->
-       <div class="service border-b !border-[#2b2b2b] fade-in  " data-service>
-          <button class="service-header grid grid-cols-[auto,1fr,auto] items-center md:py-2 py-3 w-full text-left cursor-pointer active:opacity-70" data-toggle aria-expanded="false">
-            <div class="md:body-text-1 body-text-3 !text-[10pt] md:!text-[11pt] md:mt-0 mb-0 mr-16 md:mr-0 md:ml-0 ml-0 !text-[#2b2b2b] "  >
-              Brand Identity
-            </div>
-            <span data-chevron class="ml-auto inline-block transition-transform duration-200">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <polyline points="4 8 12 16 20 8" />
-              </svg>
-            </span>
-          </button>
-          <div class="service-content max-h-0 overflow-hidden transition-all duration-1000" data-content>
-            <div class="grid grid-cols-[auto,1fr]">
-              <div></div>
-              <ul class="md:body-text-1 body-text-3 !text-[10pt] md:!text-[11pt] ml-1 py-3 list-none mb-5 space-y-1.5">
-                <li>Logos</li>
-                <li>Type systems</li>
-                <li>Brand assets</li>
-                <li>Guidelines</li>
-                <li>Rollout</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- 02 Content Design -->
-        <div class="service border-b !border-[#2b2b2b] fade-in  " data-service>
-          <button class="service-header grid grid-cols-[auto,1fr,auto] items-center md:py-2 py-3 w-full text-left cursor-pointer active:opacity-70" data-toggle aria-expanded="false">
-            <div class="md:body-text-1 body-text-3 !text-[10pt] md:!text-[11pt] md:mt-0 mb-0 mr-16 md:mr-0 md:ml-0 ml-0 !text-[#2b2b2b] "  >
-              Content Design
-            </div>
-            <span data-chevron class="ml-auto inline-block transition-transform duration-200">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <polyline points="4 8 12 16 20 8" />
-              </svg>
-            </span>
-          </button>
-          <div class="service-content max-h-0 overflow-hidden transition-all duration-1000" data-content>
-            <div class="grid grid-cols-[auto,1fr]">
-              <div></div>
-              <ul class="md:body-text-1 body-text-3 !text-[10pt] md:!text-[11pt] ml-1 py-3 list-none mb-5 space-y-1.5">
-                <li>Social posts</li>
-                <li>Ad creative</li>
-                <li>Campaign graphics</li>
-                <li>Video thumbnails</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- 03 Presentation Design -->
-        <div class="service border-b !border-[#2b2b2b] fade-in " data-service>
-          <button class="service-header grid grid-cols-[auto,1fr,auto] items-center md:py-2 py-3 w-full text-left cursor-pointer active:opacity-70" data-toggle aria-expanded="false">
-            <div class="md:body-text-1 body-text-3 !text-[10pt] md:!text-[11pt] md:mt-0 mb-0 mr-16 md:mr-0 md:ml-0 ml-0 !text-[#2b2b2b] " >
-              Presentation &amp; Decks
-            </div>
-            <span data-chevron class="ml-auto inline-block transition-transform duration-200">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <polyline points="4 8 12 16 20 8" />
-              </svg>
-            </span>
-          </button>
-          <div class="service-content max-h-0 overflow-hidden transition-all duration-1000" data-content>
-            <div class="grid grid-cols-[auto,1fr]">
-              <div></div>
-              <ul class="md:body-text-1 body-text-3 !text-[10pt] md:!text-[11pt] ml-1 py-3 list-none mb-5 space-y-1.5">
-                <li>Pitch decks</li>
-                <li>Sales presentations</li>
-                <li>Internal reports</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- 04 Digital Design -->
-        <div class="service border-b !border-[#2b2b2b] fade-in  " data-service>
-          <button class="service-header grid grid-cols-[auto,1fr,auto] items-center md:py-2 py-3 w-full text-left cursor-pointer active:opacity-70" data-toggle aria-expanded="false">
-            <div class="md:body-text-1 body-text-3 !text-[10pt] md:!text-[11pt] md:mt-0 mb-0 mr-16 md:mr-0 md:ml-0 ml-0 !text-[#2b2b2b] "  >
-              Digital Design
-            </div>
-            <span data-chevron class="ml-auto inline-block transition-transform duration-200">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <polyline points="4 8 12 16 20 8" />
-              </svg>
-            </span>
-          </button>
-          <div class="service-content max-h-0 overflow-hidden transition-all duration-1000" data-content>
-            <div class="grid grid-cols-[auto,1fr]">
-              <div></div>
-              <ul class="md:body-text-1 body-text-3 !text-[10pt] md:!text-[11pt] ml-1 py-3 list-none mb-5 space-y-1.5">
-                <li>Web visuals</li>
-                <li>Landing pages</li>
-                <li>UI mockups</li>
-                <li>Layout systems</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- 05 Print & Production -->
-        <div class="service border-b !border-[#2b2b2b]  fade-in " data-service>
-          <button class="service-header grid grid-cols-[auto,1fr,auto] items-center md:py-2 py-3 w-full text-left cursor-pointer active:opacity-70" data-toggle aria-expanded="false">
-            <div class="  body-text-3 !text-[10pt] md:!text-[11pt] md:mt-0 mb-0 mr-16 md:mr-0 md:ml-0 ml-0 !text-[#2b2b2b] " >
-              Print &amp; Production
-            </div>
-            <span data-chevron class="ml-auto inline-block transition-transform duration-200">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <polyline points="4 8 12 16 20 8" />
-              </svg>
-            </span>
-          </button>
-          <div class="service-content max-h-0 overflow-hidden transition-all duration-1000" data-content>
-            <div class="grid grid-cols-[auto,1fr]">
-              <div></div>
-              <ul class=" body-text-3 !text-[10pt] md:!text-[11pt] ml-1 py-3 list-none mb-5 space-y-1.5">
-                <li>Flyers</li>
-                <li>Signage</li>
-                <li>Merchandise</li>
-                <li>Production-ready artwork</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- 06 Creative Support -->
-        <div class="service border-b !border-[#2b2b2b] fade-in  " data-service>
-          <button class="service-header grid grid-cols-[auto,1fr,auto] items-center md:py-2 py-3 w-full text-left cursor-pointer active:opacity-70" data-toggle aria-expanded="false">
-            <div class="md:body-text-1 body-text-3 !text-[10pt] md:!text-[11pt] md:mt-0 mb-0 mr-16 md:mr-0 md:ml-0 ml-0 !text-[#2b2b2b] "  >
-              Creative Support
-            </div>
-            <span data-chevron class="ml-auto inline-block transition-transform duration-200">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <polyline points="4 8 12 16 20 8" />
-              </svg>
-            </span>
-          </button>
-          <div class="service-content max-h-0 overflow-hidden transition-all duration-1000" data-content>
-            <div class="grid grid-cols-[auto,1fr]">
-              <div></div>
-              <ul class="md:body-text-1 body-text-2 !text-[11pt] md:!text-[11pt] ml-1 py-3 list-none mb-5 space-y-1.5">
-                <li>Asset resizing</li>
-                <li>Formatting</li>
-                <li>File exports</li>
-                <li>Spec matching</li>
-              </ul>
-            </div>
-          </div>
-        </div>
+<!-- RIGHT COLUMN -->
+    <div>  
+    <div class="  text-[#2b2b2b] body-text-1   mr-0 md:mr-0 fade-in">
+        <p class="mb-8">
+          After starting out as a junior designer at a sports-tech collective, I completed a Diploma of Graphic Design and developed strong interests in packaging, branding, and website design. I now freelance across branding and digital projects and am looking to join a creative team where I can keep learning and contribute in a more collaborative environment.
 
       </div>
+      
+     
+<div class="flex items-center gap-4 mt-10 fade-in">
 
-      <img class="mt-14 fade-in" src="images/Services.svg" alt="Illustration" />
+  <!-- Avatar -->
+  <img 
+    src="images/jake-image-square.avif"
+    alt="Jake Pearce"
+    class="w-20 h-20 rounded-full object-cover"
+  />
+
+  <!-- Text -->
+  <div class="leading-tight">
+    <div class="body-text-1   [font-variation-settings:'wght'_430]  text-[#2b2b2b]">
+      Jake Pearce
     </div>
+<div class="opacity-70 hover:opacity-30">
+   <a 
+    href="https://drive.google.com/file/d/1Lcd4sVruhtPZ70xnYxc61YSNb-Bfiqus/view?usp=sharing"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="fade-in  items-center py-2 w-full cursor-pointer 
+             transition-colors no-underline"
+  >
+    <span
+      class="body-text-1   mb-0 "
+      data-label
+    > View résumé (PDF)
+    </span>
+
+  </a>
   </div>
+</div>
+</div>
+
+
+  
+
 </section>
 
 
@@ -1455,11 +1223,11 @@ document.addEventListener('DOMContentLoaded', function () {
       if (chev) {
         chev.classList.remove('rotate-180');
         chev.classList.remove('text-[#000000]');
-        chev.classList.add('text-[#000000]/50');
+        chev.classList.add('text-[#000000]');
       }
       if (label) {
         label.classList.remove('text-[#000000]');
-        label.classList.add('text-[#000000]/50');
+        label.classList.add('text-[#000000]');
       }
     });
   }
@@ -1473,11 +1241,11 @@ document.addEventListener('DOMContentLoaded', function () {
     content.style.maxHeight = content.scrollHeight + 'px';
     if (chev) {
       chev.classList.add('rotate-180');
-      chev.classList.remove('text-[#000000]/50');
+      chev.classList.remove('text-[#000000]');
       chev.classList.add('text-[#000000]');
     }
     if (label) {
-      label.classList.remove('text-[#000000]/50');
+      label.classList.remove('text-[#000000]');
       label.classList.add('text-[#000000]');
     }
   }
@@ -1508,128 +1276,180 @@ document.addEventListener('DOMContentLoaded', function () {
  
 
 
+ 
 
- <div class="hidden md:block service border-b border-[#d3d3d3]/70 mt-0 md:mt-24 mb-0 "></div>
 
-
-<section id="about me" class="max-web mx-auto   -mb-[4em] mt-0 md:mt-10">
-
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-28 md:mb-0">
+<section   class="max-web mx-auto    mt-0 md:mt-10">
+<div class="border-b border-[#2b2b2b]/10 fade-in  mb-16 mt-16"></div>
+  <div class="grid grid-cols-1 min-[1100px]:grid-cols-2 min-[1100px]:gap-5 gap-0  ">
     
     <!-- LEFT COLUMN --> 
     <div> 
-      <h2 class="  md:h1 body-text-3 !text-[10pt] md:!text-[42pt]   md:mr-6 mr-0  md:mb-0 -mb-1  md:-mt-2 mt-0  fade-in">
-        About me
-      </h2>
+      <h2 class="[font-variation-settings:'wght'_430] block min-[1100px]:hidden h3   min-[1100px]:mb-0 mb-20      fade-in"> 
+        <span>Services</span>
+      </h2> 
+      <h2 class="[font-variation-settings:'wght'_430] hidden min-[1100px]:block  h2 text-[44px]  min-[1100px]:mb-0 mb-8      fade-in"> 
+        <span>Services</span>
+      </h2> 
     </div>
 
-    <!-- RIGHT COLUMN -->
-    <div>
-      <div id="services-accordion">  <!-- First row: image + heading -->
-   
+     <!-- RIGHT COLUMN (DESKTOP) -->
+<div class="hidden min-[1100px]:block">
+  
 
-  <!-- Heading: spans two columns on lg+ -->
-  <h2 class="hidden md:block h2 text-[#2b2b2b] text-[28pt] md:col-span-2 md:text-[23pt] mr-4 md:mr-0 mb-6 md:mb-6 fade-in">
-          
-        I work across branding, layout, digital and print, with a focus on clear, practical design.
-        </h2>
-        <h2 class="block md:hidden h3  text-[#2b2b2b] text-[28pt] md:col-span-2 md:text-[23pt] mr-4 md:mr-0 mb-6 md:mb-8" fade-in>    
-        I work across branding, layout, digital and print, with a focus on clear, practical design.
-        </h2>
-    <div class="hidden md:block text-[#2b2b2b] body-text-1 !text-[10pt] md:!text-[11pt]   mr-4 md:mr-0 fade-in">
-        <p class="mb-4">
-        Alongside completing my Diploma of Graphic Design at RMIT in 2024, I’ve worked in both in-house and freelance roles, contributing to branding systems and campaigns at BNDR Music & partner brands, and delivering client-facing print and digital work for Moss Fragrances, Besteam Sport and Renaissance Sports Group.
-      </div>
-      <div class="block md:hidden text-[#2b2b2b] body-text-3 !text-[10pt] md:!text-[11pt]   mr-4 md:mr-0 fade-in">
-        <p class="mb-4">
-        Alongside completing my Diploma of Graphic Design at RMIT in 2024, I’ve worked in both in-house and freelance roles, contributing to branding systems and campaigns at BNDR Music & partner brands, and delivering client-facing print and digital work for Moss Fragrances, Besteam Sport and Renaissance Sports Group.
-      </div>
-      
-<div class="block md:hidden service border-b border-[#d3d3d3]/70 hover:border-[#2b2b2b]  duration-200 transition-colors fade-in">
-  <a 
-    href="https://drive.google.com/file/d/1Lcd4sVruhtPZ70xnYxc61YSNb-Bfiqus/view?usp=sharing"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="service-header grid grid-cols-[auto,1fr,auto] items-center py-2 w-full cursor-pointer 
-           text-[#2b2b2b]/50 hover:text-[#2b2b2b] transition-colors no-underline"
-  >
-    <span
-      class="text-[#2b2b2b]/55 hover:text-[#2b2b2b] md:body-text-1 body-text-2 !text-[10pt] md:!text-[11pt] mb-0 "
-      data-label
-    > View resume
-    </span>
+  <!-- 01 Brand Identity -->
+  <div class="border-b border-[#2b2b2b]/10 fade-in grid grid-cols-[1fr,auto] py-6 -mt-4">
+    <div class="body-text-1 text-[15pt] [font-variation-settings:'wght'_430] text-[#2b2b2b]">
+      Brand Identity
+    </div>
+    <ul class="body-text-1 space-y-[0px] justify-self-end mr-[56px]">
+      <li>Logo Design</li>
+      <li>Type systems</li>
+      <li>Brand assets</li>
+      <li>Guidelines</li> 
+    </ul>
+  </div>
 
-    <span   class="ml-auto inline-block transition-transform duration-200">
-      <svg aria-hidden="true" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M10 6V8H5V19H16V14H18V20C18 20.5523 17.5523 21 17 21H4C3.4477 21 3 20.5523 3 20V7C3 6.4477 3.4477 6 4 6H10ZM21 3V11H19L18.9999 6.413L11.2071 14.2071L9.7929 12.7929L17.5849 5H13V3H21Z"/>
-      </svg>
-    </span>
-  </a>
-</div>
-<div class="hidden md:block service border-b border-[#d3d3d3]/70 hover:border-[#2b2b2b]  duration-200 transition-colors fade-in">
-  <a 
-    href="https://drive.google.com/file/d/1Lcd4sVruhtPZ70xnYxc61YSNb-Bfiqus/view?usp=sharing"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="service-header grid grid-cols-[auto,1fr,auto] items-center py-2 w-full cursor-pointer 
-           text-[#2b2b2b]/50 hover:text-[#2b2b2b] transition-colors no-underline"
-  >
-    <span
-      class="text-[#2b2b2b]/55 hover:text-[#2b2b2b] body-text-1 !text-[10pt] md:!text-[12pt] mb-0 fade-in"
-      data-label
-    > View resume
-    </span>
+  <!-- 02 Content Design -->
+  <div class="border-b border-[#2b2b2b]/10 fade-in grid grid-cols-[1fr,auto] py-6">
+    <div class="body-text-1 text-[15pt] [font-variation-settings:'wght'_430] text-[#2b2b2b]">
+       Content Design
+    </div>
+    <ul class="body-text-1 space-y-[0px] justify-self-end mr-[16px]">
+      <li>Social posts</li>
+      <li>Ad creative</li>
+      <li>Campaign graphics</li>
+      <li>Video thumbnails</li>
+    </ul>
+  </div>
 
-    <span   class="ml-auto inline-block transition-transform duration-200">
-      <svg aria-hidden="true" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M10 6V8H5V19H16V14H18V20C18 20.5523 17.5523 21 17 21H4C3.4477 21 3 20.5523 3 20V7C3 6.4477 3.4477 6 4 6H10ZM21 3V11H19L18.9999 6.413L11.2071 14.2071L9.7929 12.7929L17.5849 5H13V3H21Z"/>
-      </svg>
-    </span>
-  </a>
-</div>
-<img class="mt-14 fade-in" src="images/About me.svg" alt="Illustration">
-</section>
+  <!-- 03 Presentation & Decks -->
+  <div class="border-b border-[#2b2b2b]/10 fade-in grid grid-cols-[1fr,auto] py-6">
+    <div class="body-text-1 text-[15pt] [font-variation-settings:'wght'_430] text-[#2b2b2b]">
+     Presentation &amp; Decks
+    </div>
+    <ul class="body-text-1 space-y-[0px] justify-self-end mr-[20px]">
+      <li>Pitch decks</li>
+      <li>Tender documents</li>
+      <li>Internal reports</li> 
+      <li>Information design</li> 
+    </ul>
+  </div>
+
+  <!-- 04 Digital Design -->
+  <div class="border-b border-[#2b2b2b]/10 fade-in grid grid-cols-[1fr,auto] py-6">
+    <div class="body-text-1 text-[15pt] [font-variation-settings:'wght'_430] text-[#2b2b2b]">
+      Digital Design
+    </div>
+    <ul class=" body-text-1 space-y-[0px] justify-self-end mr-[44px]">
+      <li>Web visuals</li>
+      <li>Landing pages</li>
+      <li>UI mockups</li>
+      <li>Layout systems</li>
+    </ul>
+  </div>
+
+</div >
+
+<div class="block min-[1100px]:hidden">
+  
+
+  <!-- 01 Brand Identity -->
+  <div class="border-b border-[#2b2b2b]/10 fade-in grid grid-cols-[1fr,auto] py-6 -mt-4">
+    <div class="body-text-3 [font-variation-settings:'wght'_430] text-[#2b2b2b]">
+      Brand Identity
+    </div>
+    <ul class="body-text-1 space-y-[0px] justify-self-end mr-[56px]">
+      <li>Logo Design</li>
+      <li>Type systems</li>
+      <li>Brand assets</li>
+      <li>Guidelines</li> 
+    </ul>
+  </div>
+
+  <!-- 02 Content Design -->
+  <div class="border-b border-[#2b2b2b]/10 fade-in grid grid-cols-[1fr,auto] py-6">
+    <div class="body-text-3 [font-variation-settings:'wght'_430] text-[#2b2b2b]">
+       Content Design
+    </div>
+    <ul class="body-text-1 space-y-[0px] justify-self-end mr-[16px]">
+      <li>Social posts</li>
+      <li>Ad creative</li>
+      <li>Campaign graphics</li>
+      <li>Video thumbnails</li>
+    </ul>
+  </div>
+
+  <!-- 03 Presentation & Decks -->
+  <div class="border-b border-[#2b2b2b]/10 fade-in grid grid-cols-[1fr,auto] py-6">
+    <div class="body-text-3 [font-variation-settings:'wght'_430] text-[#2b2b2b]">
+     Presentation &amp; Decks
+    </div>
+    <ul class="body-text-1 space-y-[0px] justify-self-end mr-[20px]">
+      <li>Pitch decks</li>
+      <li>Tender documents</li>
+      <li>Internal reports</li> 
+      <li>Information design</li> 
+    </ul>
+  </div>
+
+  <!-- 04 Digital Design -->
+  <div class="border-b border-[#2b2b2b]/10 fade-in grid grid-cols-[1fr,auto] py-6">
+    <div class="body-text-3 [font-variation-settings:'wght'_430] text-[#2b2b2b]">
+      Digital Design
+    </div>
+    <ul class=" body-text-1 space-y-[0px] justify-self-end mr-[44px]">
+      <li>Web visuals</li>
+      <li>Landing pages</li>
+      <li>UI mockups</li>
+      <li>Layout systems</li>
+    </ul>
+  </div>
+
+</div >
 
 
+
+</section> 
 
 
 
   
-<div class="h-3 md:h-[7em]"></div>
-<div id=""></div>
+<div class="h-[8.5em] md:h-[8.5em]"></div>
+<div id="contact" ></div>
 </main>
 <footer
-  id="contact"
-  class="bg-[#dfdedd]/30 text-[#2b2b2b] py-5 md:py-7 xl:py-10"
+  
+  class="bg-[#dfdedd]/50 text-[#2b2b2b] py-5 md:py-10 "
 >
-  <div class="max-web mx-auto w-full px-5  xl:px-10    ">
+  <div class="max-web mx-auto w-full px-[clamp(0px,4.5vw,180px)]   ">
 
     <!-- TOP SECTION (unchanged) -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-x-5 ">
       
       <!-- LEFT COLUMN -->
-      <div class="flex flex-col items-start h-full mt-4 md:mt-8   mb-6 md:!mb-8 fade-in">
-        <img class="hidden md:flex max-h-[11em]" src="images/Layer 2-2.svg" alt="logo">
-        <img class="block md:hidden !width-[20em] mt-5 -ml-0.5" src="images/Layer 2-2.svg" alt="logo">
+      <div class="flex flex-col items-start h-full mt-4 md:mt-8   mb-6 md:!mb-0 fade-in">
+        <img class="hidden md:flex max-h-[140px]" src="images/Layer 2-2.svg" alt="logo">
+        <img class="block md:hidden max-h-[11em] mt-5 -ml-0.5" src="images/Layer 2-2.svg" alt="logo">
       
       </div>
 
      <!-- RIGHT COLUMN -->
-      <div class="flex flex-col md:gap-y-8 gap-y-5   mt-6 md:mt-6  mb-6 md:mb-0  fade-in ">
-        <h2 class="hidden md:block h2 md:text-[23pt]   text-[12pt] ">
-          Got a project in mind? 
+      <div class="flex flex-col md:gap-y-7 gap-y-5   mt-6 md:mt-7  mb-6 md:mb-0  fade-in ">
+        <h2 class="hidden md:block h4   ">
+          Say hello 
         </h2>
-        <h2 class="flex md:hidden body-text-4 md:text-[23pt]   text-[10pt] ">
+        <h2 class="flex md:hidden body-text-1 [font-variation-settings:'wght'_430]">
           Contact  
         </h2>
 
         <!-- Contact details -->
-        <div class="-space-y-[2px] md:space-y-[12px]"> 
+        <div class="-space-y-[2px] md:space-y-[10px]"> 
           <div class="email">
             <a
   href="mailto:hello@jakepearce.com.au"
   data-copy="hello@jakepearce.com.au"
-  class="block md:hidden body-text-3 text-[#2b2b2b] md:text-[23pt] text-[10pt] hover:text-[#000000]"
+  class="block md:hidden body-text-1 text-[#2b2b2b]   hover:text-[#000000]"
 >
   hello@jakepearce.com.au
 </a>
@@ -1637,20 +1457,19 @@ document.addEventListener('DOMContentLoaded', function () {
             <a
               href="#"
               data-copy="hello@jakepearce.com.au"
-              class="copy-target hidden md:flex h2 text-[#2b2b2b]/50 block md:text-[23pt]   text-[20pt] hover:text-[#000000]"
+              class="copy-target hidden md:flex h2 text-[#2b2b2b] block  [font-variation-settings:'wght'_430]  hover:text-[#2b2b2b]/50"
             >
               hello@jakepearce.com.au
             </a>
           </div>
 
-          <div class="block md:hidden border-b border-1 border-[#2b2b2b]/0 "></div>
-          <div class="hidden md:flex border-b border-1 border-[#2b2b2b]/15 "></div>
+           
 
           <div class="phone">
             <a
   href="sms:+614229117799"
   data-copy="+614229117799"
-  class="mt-2 block md:hidden body-text-3 text-[#2b2b2b] md:text-[23pt] text-[10pt] hover:text-[#000000]"
+  class="mt-2 block md:hidden body-text-1 text-[#2b2b2b]   hover:text-[#000000]"
 >
   +61 422 911 799
 </a>
@@ -1658,97 +1477,98 @@ document.addEventListener('DOMContentLoaded', function () {
             <a
               href="#"
               data-copy="+614229117799"
-              class="copy-target hidden md:flex h2 text-[#2b2b2b]/50 block md:text-[23pt]   text-[20pt] hover:text-[#000000]"
+              class="copy-target hidden md:flex h2 text-[#2b2b2b] block [font-variation-settings:'wght'_430]   hover:text-[#2b2b2b]/50"
             >
               +61 422 911 799
             </a>
           </div>
         </div>
-        
-      </div>
+         
+      
 
        
     </div>
  <div class="block md:hidden border-b border-1 border-[#2b2b2b]/15 mb-6 mt-1 "></div>
    <!-- NEW BOTTOM NAV AREA -->
-<div class="md:mt-6 -mt-6   grid grid-cols-1 md:grid-cols-2 gap-5 text-[#2b2b2b] ">
+<div class="md:mt-10 -mt-6   grid grid-cols-1 md:grid-cols-1 gap-4 text-[#2b2b2b] ">
+ 
+ 
+</div> </div>
 
-  <!-- LEFT BIG COLUMN (unchanged, with shock absorbers) -->
-<div class="w-full footer-left-grid hidden md:grid"
-     style="grid-template-columns: minmax(360px,360px) repeat(4, minmax(0,1fr)); gap:0;">
+<!-- ACKNOWLEDGEMENT + SOCIALS ROW -->
+<div class="hidden md:flex w-full items-stretch justify-between gap-4 mt-6">
 
-  <div class="flex flex-col items-start justify-end space-y-0 px-0">
-    <div class="nav-h2 text-[12pt] md:text-[10pt] mb-2">
-      Acknowledgement of Country
-    </div>
-
-    <p class="nav-body md:max-w-[28em] text-[12pt] md:text-[10pt]">
-      I acknowledge Aboriginal and Torres Strait Islander peoples as the Traditional Owners of the lands I work on. I pay respect to elders past, present and emerging, and honour their enduring connection to country.
-    </p>
-  </div>
-
-  <div class="min-w-0"></div>
-  <div class="min-w-0"></div>
-  <div class="min-w-0"></div>
-  <div class="min-w-0"></div>
-</div>
-
-<!-- RIGHT BIG COLUMN (lg+ version) -->
-<div class="hidden md:flex w-full justify-between items-stretch body-text-1 text-[12pt] md:text-[9pt]">
-
-  <!-- COLUMN 2: LINKS -->
-  <div class="flex flex-col items-start min-w-[50px]">
-    <div class="nav-h2 text-[10pt] md:text-[10pt] mb-[5px]">Links</div>
-    <div class="nav-body flex flex-col items-start space-y-[5px] text-[10pt] md:text-[10pt]">
-      <a href="/" class="hover:text-[#000000]/50 whitespace-nowrap">Home</a>
-      <a href="work" class="hover:text-[#000000]/50 whitespace-nowrap">Work</a>
-      <a href="archive" class="hover:text-[#000000]/50 whitespace-nowrap">Archive</a>
-    </div>
-  </div>
-
-  <!-- COLUMN 1: SOCIALS -->
-  <div class="flex flex-col items-start min-w-[50px]">
-    <div class="nav-h2 text-[10pt] md:text-[10pt] mb-[5px]">Socials</div>
-    <div class="nav-body flex flex-col items-start space-y-[5px] text-[10pt] md:text-[10pt]">
-      <a href="https://instagram.com/jake.r.pearce" class="hover:text-[#000000]/50 whitespace-nowrap">Instagram</a>
-      <a href="https://www.linkedin.com/in/jake-pearce-076b772b5/" class="hover:text-[#000000]/50 whitespace-nowrap">LinkedIn</a>
-    </div>
-  </div>
+  
 
 
  
-<div></div>
-<div></div> 
 
-  <!-- COLUMN 3: COPYRIGHT -->
-  <div class="flex flex-col items-end text-right min-w-[20px] text-[10pt] md:text-[10pt] h-full">
-    <span class="nav-body whitespace-nowrap mt-auto !-mb-[0.09em] ">© Jake Pearce 2026</span>
+  <!-- ACKNOWLEDGEMENT PILL -->
+  <div class="bg-[#F1F0EE] rounded-[0.5em] px-8 py-5 flex">
+    <p class="nav-body text-[12pt] md:text-[9pt] text-[#2b2b2b] self-center">
+      I acknowledge the Wurundjeri Woi-wurrung and Bunurong / Boon Wurrung peoples of the Kulin peoples as the Traditional Owners of the lands I work on. I pay respect to elders past, present and emerging and recognise that their sovereignty has never been ceded.
+    </p>
   </div>
+
+  
+ <!-- SOCIALS PILL -->
+<div class="bg-[#F1F0EE] rounded-[0.5em] px-8 py-5 flex">
+  <div class="nav-body flex flex-col lg:flex-row items-start lg:items-center gap-1 lg:gap-4 text-[#2b2b2b] self-center">
+
+    <!-- Instagram -->
+    <a href="https://instagram.com/jake.r.pearce" class="hover:text-[#000000]/50" aria-label="Instagram">
+      <svg viewBox="0 0 256 256" class="w-7 h-7 fill-current">
+        <path d="M176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24ZM128,176a48,48,0,1,1,48-48A48.05,48.05,0,0,1,128,176Zm60-96a12,12,0,1,1,12-12A12,12,0,0,1,188,80Zm-28,48a32,32,0,1,1-32-32A32,32,0,0,1,160,128Z"></path>
+      </svg>
+    </a>
+
+    <!-- LinkedIn -->
+    <a href="https://www.linkedin.com/in/jake-pearce-076b772b5/" class="hover:text-[#000000]/50" aria-label="LinkedIn">
+      <svg viewBox="0 0 256 256" class="w-7 h-7 fill-current">
+        <path d="M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24ZM96,176a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0ZM88,96a12,12,0,1,1,12-12A12,12,0,0,1,88,96Zm96,80a8,8,0,0,1-16,0V140a20,20,0,0,0-40,0v36a8,8,0,0,1-16,0V112a8,8,0,0,1,15.79-1.78A36,36,0,0,1,184,140Z"></path>
+      </svg>
+    </a>
+
+  </div>
+</div>
+  
+ <!-- LINKS PILL -->
+<div class="bg-[#F1F0EE] rounded-[0.5em] px-8 py-5 flex">
+  <div class="nav-body flex flex-col lg:flex-row items-start lg:items-center gap-1 lg:gap-4 text-[10pt] text-[#2b2b2b] self-center"> 
+    <a href="#work" class="md:text-[9pt] hover:text-[#000000]/50 whitespace-nowrap">Work</a>
+    <a href="#about" class="md:text-[9pt] hover:text-[#000000]/50 whitespace-nowrap">About</a>
+    <a href="archive" class="md:text-[9pt] hover:text-[#000000]/50 whitespace-nowrap">Archive</a>
+  </div>
+</div>
+  
 
 </div>
 
 
+
+
+
 <!-- 🔥 md and BELOW version (4-column mobile footer layout) -->
-<div class="md:hidden flex flex-col text-[#2b2b2b]  xl:mt-0 mt-8 xl:mb-0 mb-0">
+<div class="md:hidden flex flex-col text-[#2b2b2b]  xl:mt-0 mt-2 xl:mb-0 mb-0">
 
   <div class="flex flex-col text-[#2b2b2b] lg:text-[12pt] text-[10pt] space-y-4 xl:mt-0 mt-0">
 
     <div class="flex flex-col items-start px-0 mt-0 mb-4 fade-in ">
-      <h2 class="flex md:hidden body-text-4 md:text-[23pt]  mb-6 text-[10pt] ">
+      <h2 class="flex md:hidden body-text-1  mb-6 text-[10pt] [font-variation-settings:'wght'_430]">
           Acknowledgement of Country  
         </h2>
-      <p class="body-text-3 max-w-[23em] lg:text-[12pt] text-[10pt] md:body-text-1 body-text-2  text-[#2b2b2b]">
+      <p class="body-text-1 max-w-[23em]    text-[#2b2b2b]">
         I acknowledge Aboriginal and Torres Strait Islander peoples as the Traditional Owners of the lands I work on. I pay respect to elders past, present and emerging, and honour their enduring connection to country.
       </p>
        
     </div>
 <div class="block md:hidden border-b border-1 border-[#2b2b2b]/15 !mb-4 "></div>
     <!-- 4-column link/copyright grid -->
-    <div class="body-text-3 leading-snug grid grid-cols-4 gap-x-4  w-full text-[#2b2b2b]  items-end">
+    <div class="body-text-1 text-[#2b2b2b] leading-snug grid grid-cols-4 gap-x-4  w-full text-[#2b2b2b]  items-end">
       <!-- Column 1: Home/Work/Archive -->
       <div class=" flex flex-col items-start space-y-2">
-        <a href="/" class="hover:text-[#000000]">Home</a>
-        <a href="work" class="hover:text-[#000000]">Work</a>
+        <a href="#work" class="hover:text-[#000000]">Work</a>
+        <a href="#about" class="hover:text-[#000000]">About</a>
         <a href="archive" class="hover:text-[#000000]">Archive</a>
       </div>
 
@@ -1787,72 +1607,7 @@ document.addEventListener("DOMContentLoaded", () => {
     pre.src = next;
   }
 
-  document.querySelectorAll('.project-image-container').forEach(container => {
-    const img = container.querySelector('img');
-    const video = container.querySelector('video');
-
-    let base, ext, original;
-
-    if (img) {
-      const src = img.getAttribute('src');
-      const dot = src.lastIndexOf('.');
-      if (dot === -1) return;
-      base = src.slice(0, dot).replace(/-mobile$/, '');
-      ext = src.slice(dot);
-      original = img;
-    } else if (video && video.poster) {
-      const poster = video.poster;
-      const dot = poster.lastIndexOf('.');
-      if (dot === -1) return;
-      base = poster.slice(0, dot).replace(/-mobile$/, '');
-      ext = poster.slice(dot);
-      original = video;
-    } else return;
-
-    const alts = [
-      base + '-alt.avif',
-      base + '-alt.gif',
-      base + '-alt.png',
-      base + '-alt' + ext
-    ];
-
-    const altImg = document.createElement('img');
-    altImg.alt = (original.alt || 'Project') + ' alt';
-    altImg.className = original.className;
-
-    Object.assign(altImg.style, {
-      position: 'absolute',
-      inset: 0,
-      width: '100%',
-      height: '100%',
-      objectFit: 'cover',
-      zIndex: 1,
-      opacity: 0,
-      transition: 'opacity 0.4s ease'
-    });
-
-    container.style.position = 'relative';
-    container.appendChild(altImg);
-
-    Object.assign(original.style, {
-      position: 'relative',
-      zIndex: 2,
-      transition: 'opacity 0.4s ease'
-    });
-
-    tryAltSrc(altImg, alts);
-
-    container.addEventListener('mouseenter', () => {
-      original.style.opacity = 0;
-      altImg.style.opacity = 1;
-    });
-
-    container.addEventListener('mouseleave', () => {
-      original.style.opacity = 1;
-      altImg.style.opacity = 0;
-    });
-  });
-});
+   });
 </script>
 
 <script>
@@ -1910,7 +1665,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }, {
       root: null,
-      rootMargin: '0px 0px -10% 0px', // triggers a bit before fully in view
+      rootMargin: '0px 0px -1% 0px', // triggers a bit before fully in view
       threshold: 0.01
     });
 
@@ -1971,15 +1726,7 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
   <script>
     
-    // Scroll-to-bottom for Contact links
-    document.addEventListener('DOMContentLoaded', () => {
-      document.querySelectorAll('a[href="#contact"]').forEach(link => {
-        link.addEventListener('click', e => {
-          e.preventDefault();
-          window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
-        });
-      });
-    });
+    
     
     // Tooltip for project images
     document.addEventListener('DOMContentLoaded', () => {
@@ -2002,6 +1749,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       });
     });
+    
     
     document.addEventListener('DOMContentLoaded', () => {
   const MOBILE_BREAKPOINT = 745;
@@ -2055,9 +1803,7 @@ document.addEventListener('DOMContentLoaded', () => {
           icon.classList.remove('open');
           document.body.classList.remove('nav-open');
         }
-      }); 
-     
-  document.querySelectorAll('.project-image-container').forEach(container => {
+      });  
     const img = container.querySelector('img');
     const video = container.querySelector('video');
 
@@ -2109,8 +1855,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     container.addEventListener('mouseleave', () => {
       original.style.opacity = 1;
-    });
-  }); 
+    }); 
 
     // Smooth-scroll for Work link
     document.addEventListener("DOMContentLoaded", () => {
@@ -2138,7 +1883,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (grid && bravesProject) {
       grid.insertBefore(bravesProject, grid.firstChild);
     }
+    
   }
+  
 });
 
   </script>
@@ -2196,7 +1943,27 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
-
+// Tooltip for project images
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.innerWidth <= 745) return; // Disable tooltip on mobile
+      const tooltip = document.createElement('div');
+      tooltip.id = 'project-tooltip';
+      document.body.appendChild(tooltip);
+      document.querySelectorAll(".project-image-container").forEach(container => {
+        container.addEventListener("mouseenter", () => {
+          const anchor = container.querySelector("a");
+          tooltip.textContent = anchor ? "View Project" : "Coming Soon";
+          tooltip.style.display = "block";
+        });
+        container.addEventListener("mousemove", e => {
+          tooltip.style.top = e.clientY + 15 + "px";
+          tooltip.style.left = e.clientX + 15 + "px";
+        });
+        container.addEventListener("mouseleave", () => {
+          tooltip.style.display = "none";
+        });
+      });
+    });
 </script>
 
 </body>
