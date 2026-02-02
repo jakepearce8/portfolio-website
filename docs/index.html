@@ -51,7 +51,7 @@
    
 .h1 {
   font-family: 'SansFlex', sans-serif;
-  font-variation-settings: 'wght' 430;
+  font-variation-settings: 'wght' 450;
   color: #2b2b2b;
   letter-spacing: -0.006em; 
   line-height: 1.15;
@@ -85,16 +85,16 @@
 }
 .body-text-1 {
   font-family: 'SansFlex', sans-serif;
-  font-variation-settings: 'wght' 280;
+  font-variation-settings: 'wght' 300;
   color: #2b2b2b;
   letter-spacing: -0.004em; 
-  line-height: 1.5;
+  line-height: 1.55;
   font-display: swap;
 } 
 
 .body-text-2 {
  font-family: 'SansFlex', sans-serif;
- font-variation-settings: 'wght' 430;
+ font-variation-settings: 'wght' 450;
   color: #2b2b2b;
   letter-spacing: -0.00em; 
   line-height: 1.5;
@@ -111,7 +111,7 @@
 }
 .body-text-4 {
   font-family: 'SansFlex', sans-serif;
-  font-variation-settings: 'wght' 430;
+  font-variation-settings: 'wght' 450;
   color: #2b2b2b;
   letter-spacing: 0.0em; 
   line-height: 1.45;
@@ -119,7 +119,7 @@
 }
 .nav-h2 {
   font-family: 'SansFlex', sans-serif;
-  font-variation-settings: 'wght' 430;
+  font-variation-settings: 'wght' 450;
   color: #2b2b2b;
   letter-spacing: 0.015em; 
   line-height: 1.65;
@@ -137,10 +137,10 @@
 
 .h3 {
   font-family: 'SansFlex', sans-serif;
-  font-variation-settings: 'wght' 430;
+  font-variation-settings: 'wght' 450;
   color: #2b2b2b;
-  letter-spacing: -0.01em; 
-  line-height: 1.15;
+  letter-spacing: -0.006em; 
+  line-height: 1.3;
   font-display: swap;
 }
 
@@ -705,31 +705,7 @@ body.nav-open {
 #mobileNavOverlay .nav-link:nth-child(2){ transition-delay: calc(var(--itemBaseDelay) + 1 * var(--stagger)); }
 #mobileNavOverlay .nav-link:nth-child(3){ transition-delay: calc(var(--itemBaseDelay) + 2 * var(--stagger)); }
 
-:root {
-  /* Base size (mobile → desktop) */
-  --step-0: clamp(0.9rem, 1vw + 0.5rem, 1rem);   /* ~14–16px */
-
-  /* Golden ratio scale */
-  --step-1: calc(var(--step-0) * 1.414);
-  --step-2: calc(var(--step-1) * 1.414);
-  --step-3: calc(var(--step-2) * 1.414);
-  --step-4: calc(var(--step-3) * 1.414);
-  --step-5: calc(var(--step-4) * 1.414);
-  --step-6: calc(var(--step-5) * 1.414);
-}
-
-.body-text-1 { font-size: var(--step-0); }
-.body-text-2 { font-size: var(--step-0); }
-.body-text-3 { font-size: var(--step-1); }
-.body-text-4 { font-size: var(--step-2); }
-
-.h3 { font-size: var(--step-4); }
-.h2 { font-size: var(--step-2); }
-.h1 { font-size: var(--step-5); }
-
-.nav-h2 { font-size: var(--step-0); }
-.nav-body { font-size: var(--step-0); }
-
+ 
 .project-image-container {
   overflow: hidden;
 }
@@ -749,6 +725,53 @@ html {
   scroll-behavior: smooth;
 }
 
+:root {
+  /* Base size (fluid) */
+  --step-0: clamp(0.95rem, 1vw + 0.6rem, 0.95rem);
+
+  /* Ratio */
+  --ratio: 1.414;
+
+  /* Scale */
+  --step-1: calc(var(--step-0) * var(--ratio));
+  --step-2: calc(var(--step-1) * var(--ratio));
+  --step-3: calc(var(--step-2) * var(--ratio));
+  --step-4: calc(var(--step-3) * var(--ratio));
+  --step-5: calc(var(--step-4) * var(--ratio));
+  --step-6: calc(var(--step-5) * var(--ratio));
+}
+
+.body-text-1,
+.body-text-2 {
+  font-size: var(--step-0);
+}
+
+.body-text-3,
+.body-text-4 {
+  font-size: var(--step-1);
+}
+
+.nav-body {
+  font-size: var(--step-0);
+}
+
+.nav-h2 {
+  font-size: var(--step-1);
+}
+
+.h3 { font-size: var(--step-3); }
+.h2 { font-size: var(--step-2); }
+.h1 { font-size: var(--step-5); }
+
+
+@media (max-width: 768px) {
+  :root {
+    --step-0: clamp(0.85rem, 1vw + 0.5rem, 0.95rem);
+  }
+}
+
+
+
 
   </style>
   <link rel="icon" href="images/logo-new-circle-02.svg" type="image/svg+xml">
@@ -765,7 +788,7 @@ html {
          px-[clamp(0px,4.5vw,180px)]"
 >
       <!-- Header Title -->
-      <a href="#" class="mt-0 mb-0 transition-colors -ml-[0.8em] md:-ml-[0.75em]">
+      <a href="#" class="mt-0 mb-0 transition-colors -ml-[0.5em] md:-ml-[0.75em]">
   <img src="images/logo-new-circle-02.svg" alt="Jake Pearce logo" class="h-[2em] w-auto duration-200 hover:opacity-50">
 </a>
 
@@ -783,7 +806,7 @@ html {
       <!-- Mobile Menu Button (now hidden except ≤745pxx) -->
       
       <button id="mobileMenuBtn" aria-label="Open Menu">
-        <div class="hamburger-icon">
+        <div class="hamburger-icon -ml-[0.5em] md:-ml-[0em]">
           <span></span>
           <span></span>
         </div>
@@ -794,17 +817,17 @@ html {
 <div id="mobileNavOverlay" aria-hidden="true" role="dialog" aria-modal="true">
   <div class="mobileNavInner">
     <!-- CENTER NAV -->
-    <div class="flex-1 flex flex-col justify-center space-y-3.5 "> 
-      <a href="#work"    class="nav-link mobile-reveal-item  [font-variation-settings:'wght'_430]  h3 text-[50px]  text-[#2b2b2b]  ">Work</a>
-      <a href="#about"    class="nav-link mobile-reveal-item  [font-variation-settings:'wght'_430]  h3 text-[50px]  text-[#2b2b2b]  ">About</a>
-      <a href="archive" class="nav-link mobile-reveal-item  [font-variation-settings:'wght'_430]  h3 text-[50px]  text-[#2b2b2b]  ">Archive</a>
+    <div class="flex-1 flex flex-col justify-center space-y-0.5 "> 
+      <a href="#work"    class="nav-link mobile-reveal-item  [font-variation-settings:'wght'_450]  h3 text-[50px]  text-[#2b2b2b]  ">Work</a>
+      <a href="#Info"    class="nav-link mobile-reveal-item  [font-variation-settings:'wght'_450]  h3 text-[50px]  text-[#2b2b2b]  ">Info</a>
+      <a href="archive" class="nav-link mobile-reveal-item  [font-variation-settings:'wght'_450]  h3 text-[50px]  text-[#2b2b2b]  ">Archive</a>
     </div>
 
   <!-- BOTTOM CONTACT -->
   <div class="mobile-contact flex flex-col items-start space-y-[4px] !mb-7">
     <div class="service border-b border-[#d3d3d3] "></div>
 
-   <h2 class="mobile-reveal-item body-text-1 [font-variation-settings:'wght'_430]   !mb-4">
+   <h2 class="mobile-reveal-item body-text-1 [font-variation-settings:'wght'_450]   !mb-4">
           Contact  
         </h2>
 
@@ -881,32 +904,26 @@ document.addEventListener('DOMContentLoaded', () => {
   
 <section
   
-  class="max-web mx-auto w-full z-40 px-[clamp(0px,4.5vw,180px)] md:mt-52 mt-52 bg-[#F1F0EE] fade-in"
+  class="max-web mx-auto w-full z-40 px-[clamp(0px,4.5vw,180px)] md:mt-52 mt-48 bg-[#F1F0EE] fade-in"
 >
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-5 items-start">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-5 items-start">
 
     <!-- Left Column -->
     <div>
-      <h2 class="h1 hidden md:flex md:mr-6 fade-in">
+      <h2 class="h1   md:mr-6 fade-in">
         Hello
       </h2>
     </div>
 
     <!-- Right Column -->
     <div>
-      <h2 class="h2 hidden md:flex lg:col-span-2 lg:mr-2 mb-6 md:mb-3 mt-[9px]">
+      <h2 class="h2  lg:col-span-2 lg:mr-2 mb-16 md:mb-3 mt-[9px]">
         I'm Jake Pearce, brand and digital designer based in Naarm / Melbourne Australia.
       </h2>
-
-      <!-- Mobile hero -->
-      <h2 class="[font-variation-settings:'wght'_430]  h2 block md:hidden mb-72 md:mb-8">
-        Hello, I'm Jake — brand and digital designer based in Naarm / Melbourne Australia.
-      </h2>
+ 
 
       <div>
-        <h2  class="block md:hidden body-text-2 md:h1 fade-in">
-          Selected work
-        </h2>
+        
       </div>
     </div>
 
@@ -916,8 +933,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 <!-- SECTION HEADER -->
 <div id="work" class="fade-in max-web mx-auto   px-[clamp(0px,4.5vw,180px)]  z-20 fade-in  "> 
-<div class="mt-10 md:mt-8 fade-in max-web mx-auto w-full   hidden md:flex ">
-  <p   class=" body-text-1 !text-[#2b2b2b] !text-[15pt] mt-0 md:mt-28 flex items-baseline gap-8">
+<div class="mt-6 md:mt-8 fade-in max-web mx-auto w-full   ">
+  <p   class="hidden md:flex body-text-1 !text-[#2b2b2b] !text-[15pt] mt-0 md:mt-28 flex items-baseline gap-8">
+ 
+  <span>Selected work</span>
+</a>
+<p   class="block md:hidden body-text-1 !text-[#2b2b2b]   mt-0 md:mt-28 flex items-baseline gap-8">
  
   <span>Selected work</span>
 </a>
@@ -1033,7 +1054,7 @@ document.addEventListener('DOMContentLoaded', () => {
               src="images/moss.avif"
               alt="Stackd"
               data-no-mobile
-              class="w-full h-full object-cover opacity-35"
+              class="w-full h-full object-cover opacity-25 "
             />
           
         </div>
@@ -1054,7 +1075,7 @@ document.addEventListener('DOMContentLoaded', () => {
               src="images/stackd-mobile.avif"
               alt="Stackd"
               data-no-mobile
-              class="w-full h-full object-cover opacity-35"
+              class="w-full h-full object-cover opacity-25"
             />
           
         </div>
@@ -1144,17 +1165,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
 <div id="about" class="md:mt-[20px] mt-2" ></div>
 
-<section  class=" max-web mx-auto md:mt-[140px] mt-14"> 
-  <div class="block min-[1100px]:hidden border-b border-[#2b2b2b]/10 fade-in  mb-16 mt-16"></div>
+<section  class=" max-web mx-auto md:mt-[140px] mt-14">  
 
 <div class="grid grid-cols-1 min-[1100px]:grid-cols-2 min-[1100px]:gap-5 gap-0">
 
     <!-- LEFT COLUMN -->
     <div>
-      <h2 class="[font-variation-settings:'wght'_430] block min-[1100px]:hidden h3   min-[1100px]:mb-0 mb-8      fade-in"> 
+      <h2 class="[font-variation-settings:'wght'_450] block min-[1100px]:hidden h3   min-[1100px]:mb-0 mb-6      fade-in"> 
         <span>About me</span>
       </h2> 
-      <h2 class="[font-variation-settings:'wght'_430] hidden min-[1100px]:block  h2 text-[44px]  min-[1100px]:mb-0 mb-8      fade-in"> 
+      <h2 class="[font-variation-settings:'wght'_450] hidden min-[1100px]:block  h3 min-[1100px]:mb-0 mb-8      fade-in"> 
         <span>About me</span>
       </h2> 
     </div>
@@ -1168,18 +1188,18 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
       
      
-<div class="flex items-center gap-4 mt-10 fade-in">
+<div class="flex items-center gap-4 mt-8 md:mt-10 fade-in">
 
   <!-- Avatar -->
   <img 
     src="images/jake-image-square.avif"
     alt="Jake Pearce"
-    class="w-20 h-20 rounded-full object-cover"
+    class="md:w-20 md:h-20 w-16 h-16   rounded-full object-cover"
   />
 
   <!-- Text -->
-  <div class="leading-tight">
-    <div class="body-text-1   [font-variation-settings:'wght'_430]  text-[#2b2b2b]">
+  <div class="leading-[0.5em] ">
+    <div class="body-text-1   [font-variation-settings:'wght'_450]  text-[#2b2b2b]">
       Jake Pearce
     </div>
 <div class="opacity-70 hover:opacity-30">
@@ -1187,7 +1207,7 @@ document.addEventListener('DOMContentLoaded', () => {
     href="https://drive.google.com/file/d/1Lcd4sVruhtPZ70xnYxc61YSNb-Bfiqus/view?usp=sharing"
     target="_blank"
     rel="noopener noreferrer"
-    class="fade-in  items-center py-2 w-full cursor-pointer 
+    class="fade-in  items-center   w-full cursor-pointer 
              transition-colors no-underline"
   >
     <span
@@ -1280,15 +1300,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 <section   class="max-web mx-auto    mt-0 md:mt-10">
-<div class="border-b border-[#2b2b2b]/10 fade-in  mb-16 mt-16"></div>
+  <div class="mt-[5em] mb-8"></div>
+<div class="md:block hidden border-b border-[#2b2b2b]/10 fade-in  mb-8 md:mb-16 mt-16"></div>
   <div class="grid grid-cols-1 min-[1100px]:grid-cols-2 min-[1100px]:gap-5 gap-0  ">
     
     <!-- LEFT COLUMN --> 
     <div> 
-      <h2 class="[font-variation-settings:'wght'_430] block min-[1100px]:hidden h3   min-[1100px]:mb-0 mb-20      fade-in"> 
+      <h2 class="[font-variation-settings:'wght'_450] block min-[1100px]:hidden h3   min-[1100px]:mb-0 mb-10      fade-in"> 
         <span>Services</span>
       </h2> 
-      <h2 class="[font-variation-settings:'wght'_430] hidden min-[1100px]:block  h2 text-[44px]  min-[1100px]:mb-0 mb-8      fade-in"> 
+      <h2 class="[font-variation-settings:'wght'_450] hidden min-[1100px]:block  h3  min-[1100px]:mb-0 mb-8      fade-in"> 
         <span>Services</span>
       </h2> 
     </div>
@@ -1299,7 +1320,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   <!-- 01 Brand Identity -->
   <div class="border-b border-[#2b2b2b]/10 fade-in grid grid-cols-[1fr,auto] py-6 -mt-4">
-    <div class="body-text-1 text-[15pt] [font-variation-settings:'wght'_430] text-[#2b2b2b]">
+    <div class="body-text-1 text-[15pt] [font-variation-settings:'wght'_450] text-[#2b2b2b]">
       Brand Identity
     </div>
     <ul class="body-text-1 space-y-[0px] justify-self-end mr-[56px]">
@@ -1312,7 +1333,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   <!-- 02 Content Design -->
   <div class="border-b border-[#2b2b2b]/10 fade-in grid grid-cols-[1fr,auto] py-6">
-    <div class="body-text-1 text-[15pt] [font-variation-settings:'wght'_430] text-[#2b2b2b]">
+    <div class="body-text-1 text-[15pt] [font-variation-settings:'wght'_450] text-[#2b2b2b]">
        Content Design
     </div>
     <ul class="body-text-1 space-y-[0px] justify-self-end mr-[16px]">
@@ -1325,7 +1346,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   <!-- 03 Presentation & Decks -->
   <div class="border-b border-[#2b2b2b]/10 fade-in grid grid-cols-[1fr,auto] py-6">
-    <div class="body-text-1 text-[15pt] [font-variation-settings:'wght'_430] text-[#2b2b2b]">
+    <div class="body-text-1 text-[15pt] [font-variation-settings:'wght'_450] text-[#2b2b2b]">
      Presentation &amp; Decks
     </div>
     <ul class="body-text-1 space-y-[0px] justify-self-end mr-[20px]">
@@ -1338,7 +1359,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   <!-- 04 Digital Design -->
   <div class="border-b border-[#2b2b2b]/10 fade-in grid grid-cols-[1fr,auto] py-6">
-    <div class="body-text-1 text-[15pt] [font-variation-settings:'wght'_430] text-[#2b2b2b]">
+    <div class="body-text-1 text-[15pt] [font-variation-settings:'wght'_450] text-[#2b2b2b]">
       Digital Design
     </div>
     <ul class=" body-text-1 space-y-[0px] justify-self-end mr-[44px]">
@@ -1356,10 +1377,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
   <!-- 01 Brand Identity -->
   <div class="border-b border-[#2b2b2b]/10 fade-in grid grid-cols-[1fr,auto] py-6 -mt-4">
-    <div class="body-text-3 [font-variation-settings:'wght'_430] text-[#2b2b2b]">
+    <div class="body-text-3 [font-variation-settings:'wght'_450] text-[#2b2b2b]">
       Brand Identity
     </div>
-    <ul class="body-text-1 space-y-[0px] justify-self-end mr-[56px]">
+    <ul class="body-text-1 space-y-[2px] justify-self-end mr-[56px]">
       <li>Logo Design</li>
       <li>Type systems</li>
       <li>Brand assets</li>
@@ -1369,10 +1390,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
   <!-- 02 Content Design -->
   <div class="border-b border-[#2b2b2b]/10 fade-in grid grid-cols-[1fr,auto] py-6">
-    <div class="body-text-3 [font-variation-settings:'wght'_430] text-[#2b2b2b]">
+    <div class="body-text-3 [font-variation-settings:'wght'_450] text-[#2b2b2b]">
        Content Design
     </div>
-    <ul class="body-text-1 space-y-[0px] justify-self-end mr-[16px]">
+    <ul class="body-text-1 space-y-[2px] justify-self-end mr-[16px]">
       <li>Social posts</li>
       <li>Ad creative</li>
       <li>Campaign graphics</li>
@@ -1382,10 +1403,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
   <!-- 03 Presentation & Decks -->
   <div class="border-b border-[#2b2b2b]/10 fade-in grid grid-cols-[1fr,auto] py-6">
-    <div class="body-text-3 [font-variation-settings:'wght'_430] text-[#2b2b2b]">
+    <div class="body-text-3 [font-variation-settings:'wght'_450] text-[#2b2b2b]">
      Presentation &amp; Decks
     </div>
-    <ul class="body-text-1 space-y-[0px] justify-self-end mr-[20px]">
+    <ul class="body-text-1 space-y-[2px] justify-self-end mr-[20px]">
       <li>Pitch decks</li>
       <li>Tender documents</li>
       <li>Internal reports</li> 
@@ -1395,10 +1416,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
   <!-- 04 Digital Design -->
   <div class="border-b border-[#2b2b2b]/10 fade-in grid grid-cols-[1fr,auto] py-6">
-    <div class="body-text-3 [font-variation-settings:'wght'_430] text-[#2b2b2b]">
+    <div class="body-text-3 [font-variation-settings:'wght'_450] text-[#2b2b2b]">
       Digital Design
     </div>
-    <ul class=" body-text-1 space-y-[0px] justify-self-end mr-[44px]">
+    <ul class=" body-text-1 space-y-[2px] justify-self-end mr-[44px]">
       <li>Web visuals</li>
       <li>Landing pages</li>
       <li>UI mockups</li>
@@ -1430,7 +1451,7 @@ document.addEventListener('DOMContentLoaded', function () {
       <!-- LEFT COLUMN -->
       <div class="flex flex-col items-start h-full mt-4 md:mt-8   mb-6 md:!mb-0 fade-in">
         <img class="hidden md:flex max-h-[140px]" src="images/Layer 2-2.svg" alt="logo">
-        <img class="block md:hidden max-h-[11em] mt-5 -ml-0.5" src="images/Layer 2-2.svg" alt="logo">
+        <img class="block md:hidden max-h-[6em] mt-5 -ml-0.5" src="images/Layer 2-2.svg" alt="logo">
       
       </div>
 
@@ -1439,7 +1460,7 @@ document.addEventListener('DOMContentLoaded', function () {
         <h2 class="hidden md:block h4   ">
           Say hello 
         </h2>
-        <h2 class="flex md:hidden body-text-1 [font-variation-settings:'wght'_430]">
+        <h2 class="flex md:hidden body-text-1 [font-variation-settings:'wght'_450]">
           Contact  
         </h2>
 
@@ -1457,7 +1478,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <a
               href="#"
               data-copy="hello@jakepearce.com.au"
-              class="copy-target hidden md:flex h2 text-[#2b2b2b] block  [font-variation-settings:'wght'_430]  hover:text-[#2b2b2b]/50"
+              class="copy-target hidden md:flex h2 text-[#2b2b2b] block  [font-variation-settings:'wght'_450]  hover:text-[#2b2b2b]/50"
             >
               hello@jakepearce.com.au
             </a>
@@ -1477,7 +1498,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <a
               href="#"
               data-copy="+614229117799"
-              class="copy-target hidden md:flex h2 text-[#2b2b2b] block [font-variation-settings:'wght'_430]   hover:text-[#2b2b2b]/50"
+              class="copy-target hidden md:flex h2 text-[#2b2b2b] block [font-variation-settings:'wght'_450]   hover:text-[#2b2b2b]/50"
             >
               +61 422 911 799
             </a>
@@ -1554,7 +1575,7 @@ document.addEventListener('DOMContentLoaded', function () {
   <div class="flex flex-col text-[#2b2b2b] lg:text-[12pt] text-[10pt] space-y-4 xl:mt-0 mt-0">
 
     <div class="flex flex-col items-start px-0 mt-0 mb-4 fade-in ">
-      <h2 class="flex md:hidden body-text-1  mb-6 text-[10pt] [font-variation-settings:'wght'_430]">
+      <h2 class="flex md:hidden body-text-1  mb-6 text-[10pt] [font-variation-settings:'wght'_450]">
           Acknowledgement of Country  
         </h2>
       <p class="body-text-1 max-w-[23em]    text-[#2b2b2b]">
