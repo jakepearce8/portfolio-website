@@ -9,6 +9,7 @@
   <title>MMT — Jake Pearce</title>
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+
   <link
   rel="preload"
   href="/Fonts/GoogleSansFlex.ttf"
@@ -21,7 +22,7 @@
 
 
 
-    /* ===== Font faces ===== */
+   /* ===== Font faces ===== */
     
     @font-face {
   font-family: 'SansFlex';
@@ -36,13 +37,13 @@
 * {
   font-synthesis: none;
 }
-    /* ===== Global ===== */
+   /* ===== Global ===== */
     body {
       font-family: 'SansFlex', sans-serif;
-  font-variation-settings: 'wght' 320;
-  color: #242424;
-  letter-spacing: 0.0em; 
-  line-height: 1.35;
+  font-variation-settings: 'wght' 340;
+  color: #2b2b2b;
+  letter-spacing: 0.00em; 
+  line-height: 1.55;
   font-display: swap;
     }
     /* ===== Typography & components ===== */
@@ -50,121 +51,84 @@
    
 .h1 {
   font-family: 'SansFlex', sans-serif;
-  font-variation-settings: 'wght' 430;
+  font-variation-settings: 'wght' 410;
   color: #2b2b2b;
-  letter-spacing: -0.006em; 
-  line-height: 1.15;
+  letter-spacing: -0.012em; 
+  line-height: 1.2;
   font-display: swap;
 
 }
 .h2 {
   font-family: 'SansFlex', sans-serif;
-  font-variation-settings: 'wght' 280;
+  font-variation-settings: 'wght' 420;
   color: #2b2b2b;
   letter-spacing: -0.006em; 
   line-height: 1.3;
   font-display: swap;
 }
- 
-.quote {
+.h3 {
   font-family: 'SansFlex', sans-serif;
-  font-variation-settings: 'wght' 320;
+  font-variation-settings: 'wght' 420;
   color: #2b2b2b;
-  letter-spacing: 0.0em; 
-  line-height: 1.35;
+  letter-spacing: -0.01em; 
+  line-height: 1.3;
   font-display: swap;
 }
-.email {
+.h4 {
   font-family: 'SansFlex', sans-serif;
-  font-variation-settings: 'wght' 320;
+  font-variation-settings: 'wght' 420;
   color: #2b2b2b;
-  letter-spacing: 0.0em; 
-  line-height: 1.35;font-display: swap;
+  letter-spacing: -0.011em; 
+  line-height: 1.1;
+  font-display: swap;
 
 }
+  
 .body-text-1 {
   font-family: 'SansFlex', sans-serif;
-  font-variation-settings: 'wght' 320;
+  font-variation-settings: 'wght' 380;
   color: #2b2b2b;
-  letter-spacing: 0.0em; 
-  line-height: 1.65;
+  letter-spacing: 0.001em; 
+  line-height: 1.5;
   font-display: swap;
-}
-.acknowledgment {
+} 
+.body-text-small {
   font-family: 'SansFlex', sans-serif;
-  font-variation-settings: 'wght' 280;
-  color: #2b2b2b;
-  letter-spacing: 0.0em; 
-  line-height: 1.45;
-  font-display: swap;
-}
-.body-text-2 {
- font-family: 'SansFlex', sans-serif;
   font-variation-settings: 'wght' 340;
   color: #2b2b2b;
-  letter-spacing: 0.0em; 
+  letter-spacing: 0.00em; 
+  line-height: 1.65;
+  font-display: swap;
+} 
+
+.body-text-2 {
+ font-family: 'SansFlex', sans-serif;
+ font-variation-settings: 'wght' 520;
+  color: #2f2f2f;
+  letter-spacing: 0.001em; 
   line-height: 1.65;
   font-display: swap;
  
 } 
 .body-text-3 {
   font-family: 'SansFlex', sans-serif;
-  font-variation-settings: 'wght' 400;
+  font-variation-settings: 'wght' 450;
   color: #2b2b2b;
   letter-spacing: 0.0em; 
-  line-height: 1.45;
+  line-height: 1.15;
   font-display: swap;
 }
 .body-text-4 {
   font-family: 'SansFlex', sans-serif;
-  font-variation-settings: 'wght' 520;
+  font-variation-settings: 'wght' 450;
   color: #2b2b2b;
   letter-spacing: 0.0em; 
   line-height: 1.45;
   font-display: swap;
-}
-.nav-h2 {
-  font-family: 'SansFlex', sans-serif;
-  font-variation-settings: 'wght' 480;
-  color: #2b2b2b;
-  letter-spacing: 0.015em; 
-  line-height: 1.65;
-  font-display: swap;
-}
+} 
 
-.nav-body {
-  font-family: 'SansFlex', sans-serif;
-  font-variation-settings: 'wght' 200;
-  color: #2b2b2b;
-  letter-spacing: 0.01em; 
-  line-height: 1.65;
-  font-display: swap;
-}
-
-.h3 {
-  font-family: 'SansFlex', sans-serif;
-  font-variation-settings: 'wght' 550;
-  color: #2b2b2b;
-  letter-spacing: -0.01em; 
-  line-height: 1.15;
-  font-display: swap;
-}
 
  
-
-.button-1 {
-  font-family: 'SansFlex', sans-serif;
-  font-variation-settings: 'wght' 280;
-  color: #2b2b2b;
-  letter-spacing: 0.0em; 
-  line-height: 1.35;
-  text-decoration-line: underline;
-  text-decoration-color: currentColor;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 3px;
-  font-display: swap;
-}
-
 /* ===== Header & Toggle ===== */
 header {
   position: fixed;
@@ -174,16 +138,10 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 6pt;
-  padding-top: 0pt;
+  padding: 0pt;
+  padding-top: pt;
   padding-bottom: 0pt;
-}
-
-
-
-
- 
-
+} 
     
     /* your existing project tooltip */
 #project-tooltip {
@@ -197,6 +155,7 @@ header {
   z-index: 1000;
   display: none;
   white-space: nowrap;
+  
 }
 
 /* the copy tooltip */
@@ -212,59 +171,11 @@ header {
   display: none;
   white-space: nowrap;
 }
-
-    /* Hide hamburger by default, show only on mobile ≤768px */
-    #mobileMenuBtn {
-      font-size: 10px;
-      background: transparent; border: none;
-      cursor: pointer; touch-action: manipulation;
-      line-height: 1; padding: 0; margin: 0;  padding-right: 8pt; padding-top: 2pt;
-      width: 40px; height: 40px;
-      display: none;
-      align-items: center; justify-content: center;
-      z-index: 51;
-    }
-    @media (max-width: 768px) {
-      #mobileMenuBtn {
-        display: flex;
-      }
-    }
-    .hamburger-icon {
-  position: relative;
-  width: 24px;
-  height: 24px;
-}
- 
-.hamburger-icon {
-  position: relative;
-  width: 24px;
-  height: 24px;
-}
+  
 html {
   background-color: #F1F0EE; /* same as main */
 }
-.hamburger-icon span {
-  position: absolute;
-  left: 0;
-  top: 40%;
-  width: 130%;
-  height: 2.5px;
-  background-color: #2B2B2D;
-  transform-origin: center center;
-  transition: transform 0.3s ease;
-}
-.hamburger-icon span:nth-child(1) {
-  transform: translateY(-5px);
-}
-.hamburger-icon span:nth-child(2) {
-  transform: translateY(5px);
-}
-.hamburger-icon.open span:nth-child(1) {
-  transform: rotate(45deg);
-}
-.hamburger-icon.open span:nth-child(2) {
-  transform: rotate(-45deg);
-}
+ 
     
 /* override all project-image-container to square on small screens */
 .project-image-container {
@@ -273,18 +184,13 @@ html {
   overflow: hidden;
   border-radius: inherit;
 }
-
-/* restore your original 16:10 ratio once 768px */
-@media (min-width: 1280px) {
-  .project-image-container {
-    aspect-ratio: 11 / 10;
-  }
-}
+ 
 
     .project-image-container:hover {
       cursor: default;
 }
-    .projects-grid {
+    
+     .projects-grid {
       display: grid;
       grid-template-columns: 1fr;
       row-gap: 36px;
@@ -303,12 +209,12 @@ html {
       }
     
     }
-    @media (min-width: 768px) {
+    @media (min-width: 767px) {
       .desktop     { display: block !important; }
       .desktop-flex{ display: flex  !important; }
       .mobile      { display: none  !important; }
     }
-    @media (max-width: 768px) {
+    @media (max-width: 767px) {
       .header-nav  { display: none !important; }
       }
     @media (min-width: 768px) {
@@ -316,7 +222,7 @@ html {
       .desktop-flex{ display: flex  !important; }
       .mobile      { display: none  !important; }
     }
-    @media (max-width: 768px) {
+    @media (max-width: 767px) {
       .header-nav  { display: none !important; }
       }
     
@@ -338,16 +244,16 @@ main {
 }
 
 footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%; 
-  max-height: 80vh;
-  overflow-y: auto; /* footer scrolls internally when content exceeds */
-  background: #000;
+  position: relative;
+  bottom: auto;
+  left: auto;
+  width: 100%;
+  max-height: none;
+  overflow: visible;
 }
+
 /* 3) For mobile, use shorter footer */
-@media (max-width: 818px) {
+@media (max-width: 767px) {
   main {
     margin-bottom: 450px;
   }
@@ -355,52 +261,23 @@ footer {
 }
 footer button[aria-label="Scroll to top"] {
   font-family: Geist;
-}
-/* Prevent background scroll when mobile nav is open */
-body.nav-open {
-  overflow: hidden !important;
-}
-#mobileMenuBtn {
-  margin-right: -12px;
-}
-/* mobile-only social icons in footer */
-.mobile-social {
-  display: none;
-}
-@media (max-width: 745px) {
+} 
+@media (max-width: 767px) {
   footer {
     /* ensure footer is flex-column */
     display: flex;
     flex-direction: column;
-  }
-  .mobile-social {
-    display: flex;
-    justify-content: left;
-    gap: 12px;
-    margin-top: -66px;      /* push to bottom */
-    margin-bottom: 40px;   /* 25px above bottom */
-  }
-}
-@media (max-width: 745px) {
-  .mobile-social img {
-    /* invert black ↔ white */
-    filter: invert(1);
-  }
-}
-@media (min-width:818px) {
-  .max-web {
-    margin: 0 auto;
-    max-width: 1640px;
-  }
-}
+  } 
+}  
+ 
 /* desktop / tablet */
 #navContainer {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-top: 11px;
+  margin-bottom: 11px;
 }
 
 /* mobile only */
-@media (max-width: 745px) {
+@media (max-width: 767px) {
   #navContainer {
     margin-top: 0.4rem;
   margin-bottom: 0.4rem;
@@ -441,7 +318,7 @@ body.nav-open {
   }
 }
 
-@media (max-width: 745px) {
+@media (max-width: 767px) {
   footer {
     /* ditch the fixed-height, internal-scrolling */
     position: relative !important;
@@ -454,7 +331,12 @@ body.nav-open {
     margin-bottom: 0 !important;
   }
 }
- 
+
+ header {
+  transform: translateY(-101%);
+  will-change: transform;
+}
+
  
 :root { --header-h: 0px; }
 
@@ -469,219 +351,97 @@ body.nav-open {
 /* Only for users who prefer reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .autoplay-video { animation: none !important; }
-}
-
-/* ===== Modern Mobile Nav Overlay ===== */
-#mobileNavOverlay {
-  position: fixed;
-  inset: 0;
-  z-index: 40;
-  background-color: #F1F0EE;
-  display: flex;
-  flex-direction: column;
-  padding: 24px;
-
-  /* closed state */
-  transform: translateY(100%);
-  transition: transform 540ms cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-/* open state */
-#mobileNavOverlay.is-open {
-  transform: translateY(0);
-}
-
-/* prevent interaction when closed */
-#mobileNavOverlay:not(.is-open) {
-  pointer-events: none;
-}
-
-/* lock page scroll */
-body.nav-open {
+} 
+ 
+.project-image-container {
   overflow: hidden;
-  touch-action: none;
-}
- 
-
-
-#mobileNavOverlay.is-open .nav-link {
-  transform: translateY(0);
 }
 
-#mobileNavOverlay .nav-link:nth-child(1) { transition-delay: 80ms; }
-#mobileNavOverlay .nav-link:nth-child(2) { transition-delay: 120ms; }
-#mobileNavOverlay .nav-link:nth-child(3) { transition-delay: 160ms; }
-
-/* panel slides up (your current behaviour stays) */
-#mobileNavOverlay {
-  position: fixed;
-  inset: 0;
-  z-index: 40;
-  background-color: #F1F0EE;
-  padding: 24px;
-
-  transform: translateY(100%);
-  transition: transform var(--panelDur) var(--ease);
-}
-
-#mobileNavOverlay.is-open {
-  transform: translateY(0);
-}
-
-/* CONTENT REVEAL LAYER (separate from the panel) */
-#mobileNavOverlay .mobileNavInner{
-  height: 100%;
-  display: flex;
-  flex-direction: column;
- 
-}
-#mobileNavOverlay .mobile-reveal-item{
-  transform: translateY(var(--itemMove));
-  opacity: 0;
-  transition:
-    transform var(--itemDur) var(--ease),
-    opacity   var(--itemDur) var(--ease);
-  transition-delay: var(--itemBaseDelay);
-  will-change: transform, opacity;
-}
-
-#mobileNavOverlay.is-open .mobile-reveal-item{
-  transform: translateY(0);
-  opacity: 1;
-}
-
-
-/* OPTIONAL: "text slides up in place" feel */
-#mobileNavOverlay .nav-link,
- 
-
-#mobileNavOverlay.is-open .nav-link,
-#mobileNavOverlay.is-open .mobileNavInner .body-text-2,
-#mobileNavOverlay.is-open .mobileNavInner h2,
-#mobileNavOverlay.is-open .mobileNavInner span,
-#mobileNavOverlay.is-open .mobileNavInner a {
-  transform: translateY(0);
-  opacity: 1;
-}
-
-/* stagger only the big nav links */
-#mobileNavOverlay .nav-link:nth-child(1) { transition-delay: 220ms; }
-#mobileNavOverlay .nav-link:nth-child(2) { transition-delay: 260ms; }
-#mobileNavOverlay .nav-link:nth-child(3) { transition-delay: 300ms; }
-
-:root{
-  --ease: cubic-bezier(0.22, 1, 0.36, 1);
-
-  /* panel (background) */
-  --panelDur: 700ms;
-
-  /* masked content reveal */
-  --contentDur: 520ms;
-  --contentDelay: 260ms; /* starts after panel begins */
-
-  /* item slide/fade */
-  --itemDur: 720ms;
-  --itemBaseDelay: 440ms; /* starts after mask begins */
-  --itemMove: 30px;
-
-  /* stagger step between items */
-  --stagger: 60ms;
-}
-/* NAV links */
-#mobileNavOverlay .nav-link:nth-child(1){ transition-delay: calc(var(--itemBaseDelay) + 0 * var(--stagger)); }
-#mobileNavOverlay .nav-link:nth-child(2){ transition-delay: calc(var(--itemBaseDelay) + 1 * var(--stagger)); }
-#mobileNavOverlay .nav-link:nth-child(3){ transition-delay: calc(var(--itemBaseDelay) + 2 * var(--stagger)); }
-
-/* CONTACT block items (target only the contact container’s children) */
-#mobileNavOverlay .mobile-contact .mobile-reveal-item:nth-child(1){ transition-delay: calc(var(--itemBaseDelay) + 4 * var(--stagger)); }
-#mobileNavOverlay .mobile-contact .mobile-reveal-item:nth-child(2){ transition-delay: calc(var(--itemBaseDelay) + 5 * var(--stagger)); }
-#mobileNavOverlay .mobile-contact .mobile-reveal-item:nth-child(3){ transition-delay: calc(var(--itemBaseDelay) + 6 * var(--stagger)); }
-#mobileNavOverlay .mobile-contact .mobile-reveal-item:nth-child(4){ transition-delay: calc(var(--itemBaseDelay) + 7 * var(--stagger)); }
-#mobileNavOverlay .mobile-contact .mobile-reveal-item:nth-child(5){ transition-delay: calc(var(--itemBaseDelay) + 8 * var(--stagger)); }
-#mobileNavOverlay .mobile-contact .mobile-reveal-item:nth-child(6){ transition-delay: calc(var(--itemBaseDelay) + 9 * var(--stagger)); }
-#mobileNavOverlay .mobile-contact .mobile-reveal-item:nth-child(7){ transition-delay: calc(var(--itemBaseDelay) + 10 * var(--stagger)); }
-
-:root{
-  --ease: cubic-bezier(0.22, 1, 0.36, 1);
-  --panelDur: 720ms;
-
-  --curtainDur: 520ms;
-  --curtainDelay: 80ms;
-
-  --itemDur: 520ms;
-  --itemBaseDelay: 220ms;
-  --itemMove: 14px;
-  --stagger: 45ms;
-}
-
-/* PANEL */
-#mobileNavOverlay{
-  position: fixed;
-  inset: 0;
-  z-index: 40;
-  background: #F1F0EE;
-  padding: 24px;
-
-  transform: translate3d(0,100%,0);
-  transition: transform var(--panelDur) var(--ease);
+.project-image-container img,
+.project-image-container video {
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
   will-change: transform;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
 }
 
-#mobileNavOverlay.is-open{
-  transform: translate3d(0,0,0);
+.project-image-container:hover img,
+.project-image-container:hover video {
+  transform: scale(1.06);
 }
 
-#mobileNavOverlay:not(.is-open){
-  pointer-events: none;
+html {
+  scroll-behavior: smooth;
+}
+:root {
+  /* Base size (fluid) */
+  --step-0: clamp(0.95rem, 1vw + 0.6rem, 0.95rem);
+
+  /* Ratio */
+  --ratio: 1.3;
+
+  /* Smaller-than-body (negative step) */
+--step--1: calc(var(--step-0) / 1.25);
+
+
+
+  /* Scale */
+  --step-1: calc(var(--step-0) * var(--ratio));
+  --step-2: calc(var(--step-1) * var(--ratio));
+  --step-3: calc(var(--step-2) * var(--ratio));
+  --step-4: calc(var(--step-3) * var(--ratio));
+  --step-5: calc(var(--step-4) * var(--ratio));
+  --step-6: calc(var(--step-5) * var(--ratio));
 }
 
-/* CONTENT LAYER */
-#mobileNavOverlay .mobileNavInner{
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  position: relative;
+@media (max-width: 767px) {
+  :root {
+    --step-0: 0.9em;
+
+    /* Mobile ratio (tighter hierarchy) */
+    --ratio: 1.2;
+  }
 }
 
-/* CURTAIN MASK (transform-only) */
-#mobileNavOverlay .mobileNavInner::before{
-  content:"";
-  position: absolute;
-  inset: 0;
-  background: transparent;
-  transform: translate3d(0,0,0);
-  transition: transform var(--curtainDur) var(--ease);
-  transition-delay: var(--curtainDelay);
-  will-change: transform;
-  z-index: 5;
+/* Type mappings */
+.body-text-1,
+.body-text-2 {
+  font-size: var(--step-0);
 }
 
-#mobileNavOverlay.is-open .mobileNavInner::before{
-  transform: translate3d(0,-100%,0); /* reveals bottom→top */
+.body-text-3,
+.body-text-4 {
+  font-size: var(--step-1);
 }
 
-/* ITEMS */
-#mobileNavOverlay .mobile-reveal-item{
-  transform: translate3d(0,var(--itemMove),0);
-  opacity: 0;
-  transition:
-    transform var(--itemDur) var(--ease),
-    opacity   var(--itemDur) var(--ease);
-  transition-delay: var(--itemBaseDelay);
-  will-change: transform, opacity;
+/* NEW: smaller-than-body utility */
+.body-text-small {
+  font-size: var(--step--1);
 }
 
-#mobileNavOverlay.is-open .mobile-reveal-item{
-  transform: translate3d(0,0,0);
-  opacity: 1;
+.nav-body {
+  font-size: var(--step-0);
 }
 
-/* STAGGER big links */
-#mobileNavOverlay .nav-link:nth-child(1){ transition-delay: calc(var(--itemBaseDelay) + 0 * var(--stagger)); }
-#mobileNavOverlay .nav-link:nth-child(2){ transition-delay: calc(var(--itemBaseDelay) + 1 * var(--stagger)); }
-#mobileNavOverlay .nav-link:nth-child(3){ transition-delay: calc(var(--itemBaseDelay) + 2 * var(--stagger)); }
+.nav-h2 {
+  font-size: var(--step-1);
+}
+.h4 { font-size: var(--step-4); }
+.h3 { font-size: var(--step-3); }
+.h2 { font-size: var(--step-2); }
+.h1 { font-size: var(--step-5); }
+
+#projects {
+  scroll-margin-top: 100px;
+}
+#about {
+  scroll-margin-top: 30px;
+}
+
+
+@media (max-width: 767px) {
+  header {
+    transform: translateY(0) !important;
+  }
+}
 
 
   </style>
@@ -692,164 +452,129 @@ body.nav-open {
   <!-- Project tooltip -->
   <div id="project-tooltip"></div>
   <!-- ===== Header & Toggle ===== -->
-  <header class="max-web fade-in fixed top-0 left-0 right-0 z-50 ">
-    <div id="navContainer" class="bg-[#F1F0EE] flex justify-between items-center w-full md:py-0 py-1 md:py-0 px-4  xl:px-10   ">
-      <!-- Header Title -->
-      <a href="/" class=" mt-0 mb-0 transition-colors -ml-[0.4em] !text-[14pt] md:!text-[14pt] md:-ml-[0.4em]">
-  <img src="images/logo-new-circle-02.svg" alt="Jake Pearce logo" class=" h-[1.9em] w-auto duration-200 hover:opacity-50">
-</a>
+   <header class="bg-[#F1F0EE] fade-in fixed top-0 left-0 right-0 z-50 fixed">
 
-  
-      <!-- Desktop Nav -->
-      <nav class="header-nav hidden md:flex " style="margin: 0pt;">
-        <ul class="flex space-x-5 mr-0 mt-0 mb-0">
-          <li><a href="work" class="!text-[20pt] md:!text-[11pt] body-text-1    hover:opacity-50 ">Work</a></li>
-          <li><a href="archive" class="!text-[20pt] md:!text-[11pt]   body-text-1   hover:opacity-50 ">Archive</a></li>
-          <li><a href="#contact" class="!text-[20pt] md:!text-[11pt]   body-text-1   hover:opacity-50 ">Contact</a></li>
-        </ul>
-      </nav>
-      <!-- Mobile Menu Button (now hidden except ≤745pxx) -->
-      
-      <button id="mobileMenuBtn" aria-label="Open Menu">
-        <div class="hamburger-icon">
-          <span></span>
-          <span></span>
-        </div>
-      </button>
-    </div>
-  </header>
-  <!-- ===== Mobile Overlay ===== -->
-<div id="mobileNavOverlay" aria-hidden="true" role="dialog" aria-modal="true">
-  <div class="mobileNavInner">
-    <!-- CENTER NAV -->
-    <div class="flex-1 flex flex-col justify-center space-y-3.5 ">
-      <a href="/"       class="nav-link mobile-reveal-item  h3 text-[#2b2b2b] text-[28pt]">Home</a>
-      <a href="work"    class="nav-link mobile-reveal-item  h3 text-[#2b2b2b] text-[28pt]">Work</a>
-      <a href="archive" class="nav-link mobile-reveal-item  h3 text-[#2b2b2b] text-[28pt]">Archive</a>
-    </div>
 
-  <!-- BOTTOM CONTACT -->
-  <div class="mobile-contact flex flex-col items-start space-y-[4px] !mb-7">
-    <div class="service border-b border-[#d3d3d3] "></div>
 
-   <h2 class="mobile-reveal-item body-text-4  text-[10pt] !mb-4">
-          Contact  
-        </h2>
-
-   <a
-  href="mailto:hello@jakepearce.com.au"
-  data-copy="hello@jakepearce.com.au"
-  class="mobile-reveal-item body-text-3 text-[#2b2b2b]  text-[10pt] hover:text-[#000000]"
+<div
+  id="navContainer" 
+  class="flex justify-between items-center w-full py-3  md:py-0
+          px-6 md:px-5 xl:px-[clamp(4px,5.5vw,300px)] "
 >
-  hello@jakepearce.com.au
-</a>
-
-    <span class="mobile-reveal-item body-text-3 text-[#2b2b2b]  text-[10pt] hover:text-[#000000]">
-      +61 422 911 799
-    </span>
-    
-  </div>
-</div>
-
-  </div>
-  <script>
-    
-document.addEventListener('DOMContentLoaded', () => {
-  const btn = document.getElementById('mobileMenuBtn');
-  const icon = btn.querySelector('.hamburger-icon');
-  const overlay = document.getElementById('mobileNavOverlay');
-
-  let isOpen = false; 
-
-  function openNav() {
-    if (isOpen) return;
-    isOpen = true;
-
-    lastFocused = document.activeElement;
-
-    overlay.classList.add('is-open');
-    overlay.setAttribute('aria-hidden', 'false');
-    icon.classList.add('open');
-    document.body.classList.add('nav-open');
-
-    const firstLink = overlay.querySelector('.nav-link'); 
-  }
-
-  function closeNav() {
-    if (!isOpen) return;
-    isOpen = false;
-
-    overlay.classList.remove('is-open');
-    overlay.setAttribute('aria-hidden', 'true');
-    icon.classList.remove('open');
-    document.body.classList.remove('nav-open');
-
-    if (lastFocused) lastFocused.focus();
-  }
-
-  btn.addEventListener('click', () => {
-    isOpen ? closeNav() : openNav();
-  });
-
-  // close when clicking any nav link
-  overlay.addEventListener('click', e => {
-    if (e.target.closest('a')) closeNav();
-  });
-
-  // close on ESC
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') closeNav();
-  });
-});
-
-
-</script>
-  <!-- ===== Hero Section ===== -->
-  
-<section id="Project-images" class=" hidden md:block fade-in max-web mx-auto px-0 md:px-5 xl:px-10  ">
-       
-  <div class="content-column md:space-y-2.5 space-y-2.5  
-  ">
-    
-     <section id="project-gallery" class="fade-in">
-      <!-- Stacked Vertically -->
-      <div class="overflow-hidden aspect-[7/4] !mt-[4.25em]">
-        <!-- mobile only -->
-        <a   class="w-full h-full block ">
-    <video
-      class="w-full h-full object-cover  md:rounded-[0.6em] rounded-[0em]"
-      loop
-      autoplay
-      muted
-      playsinline   
-      preload="metadata"  
-      poster="images/MMT 2026-01.avif"
-    >
-      <source src="videos/2026-motion.mp4" type="video/mp4"> 
-    </video>
-  </a> 
-    </section>
-    </div>
-    </section>
-
-  <section
-  id="hero"
-  class="max-web mx-auto w-full z-40 px-5 xl:px-10 md:mt-24 mt-24 bg-[#F1F0EE] fade-in"
->
-
-  <!-- TITLE + DESCRIPTION -->
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-5 items-start">
-    <!-- Left Column: Project Title -->
-    <div>
-
-
-      <a
+  <!-- Header Title -->
+<a
   href="/"
-  class="flex md:hidden inline-flex items-center whitespace-nowrap mb-6 fade-in
-         bg-white !text-[10pt] text-[#2b2b2b]
+  class="inline-flex items-center -ml-[0.25em] "
+>
+  <img
+    src="images/logo-new-circle-03.svg"
+    alt="Jake Pearce logo"
+    class="h-[1.8em] md:h-[1.5em] w-auto opacity-95 
+           hover:opacity-50  "
+  >
+</a>
+
+
+
+  
+     <nav class="body-text-small hidden md:flex " style="margin: 0pt;">
+  <ul class="flex space-x-5 -mr-[0.4em] !text-[9.5pt] md:-mr-[0em] mt-0 mb-0 ">
+    <li><a href="/#projects" class="  hover:opacity-50">Projects</a></li> 
+    <li><a href="/#about" class=" hover:opacity-50">About</a></li>
+    <li><a href="/#contact" class=" hover:opacity-50">Contact</a></li>
+  </ul>
+</nav>
+
+    <button
+  id="mobileMenuBtn"
+  class="md:hidden p-2 -mr-4"
+  aria-label="Open menu"
+>
+  <div class="w-6 h-4 flex flex-col justify-between">
+    <span class="h-[2px] bg-[#2b2b2b]"></span>
+    <span class="h-[2px] bg-[#2b2b2b]"></span>
+    <span class="h-[2px] bg-[#2b2b2b]"></span>
+  </div>
+</button>
+
+  </header>
+  
+  
+<section
+  id="Project-images"
+  class=" hidden md:block fade-in   mx-auto md:-mt-3"
+>
+  <div class="content-column md:space-y-2.5 space-y-2.5">
+  <section id="project-gallery" class="fade-in">
+    <div
+      class="
+        overflow-hidden
+        h-[clamp(440px,5vh+60vw,102vh)]
+      "
+    >
+      <video
+        class="project-parallax w-full h-full object-cover md:rounded-[0.6em] rounded-[0em]"
+        loop
+        autoplay
+        muted
+        playsinline
+        preload="metadata"
+        poster="images/MMT 2026-01.avif"
+      >
+        <source src="videos/2026-motion.mp4" type="video/mp4">
+      </video>
+    </div>
+  </section>
+  </div>
+</section>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const img = document.querySelector('.project-parallax');
+  if (!img) return;
+
+  const container = img.parentElement;
+  const strength = 0.12; // 👈 subtlety knob (0.05–0.12 sweet spot)
+
+  function update() {
+    const rect = container.getBoundingClientRect();
+    const viewH = window.innerHeight;
+
+    // progress: -1 (above) → 0 (centered) → 1 (below)
+    const progress = (rect.top + rect.height / 2 - viewH / 2) / viewH;
+
+    const translateY = -progress * rect.height * strength;
+
+    img.style.transform = `translateY(${translateY}px)`;
+  }
+
+  // initial
+  update();
+
+  window.addEventListener('scroll', () => {
+    requestAnimationFrame(update);
+  }, { passive: true });
+
+  window.addEventListener('resize', update);
+});
+</script>
+
+<section
+  id="hero"
+  class="mt-10 md:mt-0 max-web mx-auto w-full z-40
+         px-5 xl:px-[clamp(4px,5.5vw,300px)] 
+          py-[clamp(4px,9vw,120px)]
+         bg-[#F1F0EE] fade-in"
+>
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-5 items-start">
+
+<div class="lg:hidden flex items-start">
+  <a
+  href="/"
+  class="flex lg:hidden inline-flex items-center whitespace-nowrap  mb-4 fade-in
+         bg-white/60 !text-[10pt] text-[#2b2b2b]
          px-2.5 py-2
          hover:bg-[#2b2b2b]/10
-         transition-colors duration-0 rounded-[0.4em]"
+         transition-colors duration-0  "
 >
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -872,79 +597,28 @@ document.addEventListener('DOMContentLoaded', () => {
 </a>
 
 
-
-      <h2 class="hidden md:block h1 !text-[42pt] md:mr-6 mr-0 fade-in">
-        Music <br> Metaverse <br> Token
-      </h2>
-      <h2 class="block md:hidden h3 !text-[28pt] md:mr-6 mr-0 fade-in">
-        Music <br> Metaverse <br> Token
-      </h2>
-    </div>
-
-    <!-- Right Column: Project Description -->
-    <div>
-      <h2 class="hidden md:block h2 text-[#2b2b2b] text-[18pt] md:text-[24pt] mb-6 md:mb-12 fade-in">
-        MMT functioned as a utility token within the Stream Live ecosystem, paying concert promoters for driving engagement on the platform. Earned tokens could then be used by fans to access discounted tickets to high-profile artists and live events.
-      <h2 class="block md:hidden text-[#2b2b2b] body-text-3 !text-[10pt] md:!text-[11pt] mb-6 md:mb-20 fade-in">
-        MMT functioned as a utility token within the Stream Live ecosystem, paying concert promoters for driving engagement on the platform. Earned tokens could then be used by fans to access discounted tickets to high-profile artists and live events.
-      </h2>
-      
-    <!-- mobile only -->
-       <h2 class="block md:hidden text-[#2b2b2b] body-text-4 !text-[10pt] md:!text-[11pt] mb-[0.5em] md:mb-20 fade-in">
-         Team
-      </h2>
-      <h2 class="block md:hidden text-[#2b2b2b] body-text-3 !text-[10pt] md:!text-[11pt]  mb-[0.5em] md:mb-20 fade-in">
-         Corban K. - Senior Designer
-      </h2>
-       <h2 class="block md:hidden text-[#2b2b2b] body-text-3 !text-[10pt] md:!text-[11pt] mb-6 md:mb-20 fade-in">
-         Jake Pearce - Junior Designer
-      </h2>
-      <h2 class="block md:hidden text-[#2b2b2b] body-text-4 !text-[10pt] md:!text-[11pt] mb-[0.5em] md:mb-20 fade-in">
-         My contributions
-      </h2>
-      <h2 class="block md:hidden text-[#2b2b2b] body-text-3 !text-[10pt] md:!text-[11pt] mb-[0.5em] md:mb-20 fade-in">
-         Art direction
-      </h2>
-      <h2 class="block md:hidden text-[#2b2b2b] body-text-3 !text-[10pt] md:!text-[11pt] mb-[0.5em] md:mb-20 fade-in">
-         Branding
-      </h2>
-      <h2 class="block md:hidden text-[#2b2b2b] body-text-3 !text-[10pt] md:!text-[11pt] mb-[0.5em] md:mb-20 fade-in">
-         Logo
-      </h2>
-      <h2 class="block md:hidden text-[#2b2b2b] body-text-3 !text-[10pt] md:!text-[11pt] mb-6 md:mb-20 fade-in">
-         Motion graphics
-      </h2> 
-      <h2 class="block md:hidden text-[#2b2b2b] body-text-4 !text-[10pt] md:!text-[11pt] mb-[0.5em] md:mb-20 fade-in">
-         Year
-      </h2>
-      <h2 class="block md:hidden text-[#2b2b2b] body-text-3 !text-[10pt] md:!text-[11pt] mb-14 md:mb-20 fade-in">
-         2023
-      </h2>
-
-
-
-
-      
-    </div>
   </div>
 
-  <!-- NEW INFO ROW (2 main columns to match hero layout, footer-style micro columns inside) -->
-<div class="hidden md:grid grid-cols-2 gap-6 md:gap-5 items-start w-full mt-2 fade-in body-text-1 text-[12pt] md:text-[11pt] mb-6 md:mb-24">
+    <!-- LEFT COLUMN -->
+    <div>
+      <h2 class="h4 leading-tight md:leading-snug   fade-in  mr-[0.5em] xl:max-w-[24ch] mb-6">
+        Designing a visual identity for a music-focused utility token
+      </h2>
+      
 
-  <!-- LEFT MAIN COLUMN: Back button (no heading, bordered) -->
-  <div class="flex items-start">
+    <div class="flex items-start">
    <a
   href="/"
-  class="inline-flex items-center whitespace-nowrap
-         bg-white text-[#2b2b2b]
-         px-3 py-2 mt-[0.4em]
-         hover:bg-[#2b2b2b]/10
-         transition-colors duration-0 rounded-[0.4em]
+  class="hidden lg:block body-text-1 inline-flex items-center 
+         bg-white/60 text-[#2b2b2b] whitespace-nowrap
+         px-3 py-2 mt-[2em]
+         hover:bg-[#2b2b2b]/5
+         transition-colors duration-0  
          group"
 >
   <span
-    class="inline-block mr-1 transition-[margin] duration-200 ease-out
-           group-hover:mr-2"
+    class="inline-block mr-0.5 transition-[margin] duration-200 ease-out
+           group-hover:mr-1.5"
   >
     🡨
   </span>
@@ -954,422 +628,318 @@ document.addEventListener('DOMContentLoaded', () => {
 
   </div>
 
-  <!-- RIGHT MAIN COLUMN: Micro columns (aligned with hero description column above) -->
-  <div class="flex w-full justify-between items-stretch ">
+    </div>
 
-    <!-- MICRO COL: CLIENT -->
-    <div class="flex flex-col items-start min-w-[50px]">
-      <div class="nav-h2 text-[12pt] md:text-[11pt] mb-[0.5em]">Team</div>
-      <div class="flex flex-col items-start space-y-[0.5em]">
-        <span class="whitespace-nowrap">Corban K. — Senior Designer</span>
-        <span class="whitespace-nowrap">Jake Pearce — Junior Designer</span>
+    <!-- RIGHT COLUMN -->
+    <div
+      class="
+        grid grid-cols-1 gap-y-5 gap-x-8
+        fade-in justify-between items-stretch
+      "
+    > 
+      <div class="flex flex-col items-start">
+        <span class="body-text-small   [font-variation-settings:'wght'_520]  mb-1.5">Client</span>
+        <span class="body-text-1">Music Metaverse Token</span>
       </div>
-    </div> 
 
-    <!-- MICRO COL: SERVICES -->
-    <div class="flex flex-col items-start min-w-[50px]">
-      <div class="nav-h2 text-[12pt] md:text-[11pt] mb-[0.5em]">My contributions</div>
-      <div class="flex flex-col items-start space-y-[0.5em]">
-        <span class="whitespace-nowrap">Art direction</span> 
-        <span class="whitespace-nowrap">Branding</span> 
-        <span class="whitespace-nowrap">Logo</span> 
-        <span class="whitespace-nowrap">Motion graphics</span>
+      <div class="flex flex-col items-start">
+        <span class="body-text-small   [font-variation-settings:'wght'_520]  mb-1.5">Year</span>
+        <span class="body-text-1">2023</span>
       </div>
-    </div> 
 
-    <!-- MICRO COL: YEAR -->
-    <div class="flex flex-col items-start md:min-w-[0px] min-[1200px]:min-w-[100px]">
-      <div class="nav-h2 text-[12pt] md:text-[11pt] mb-[0.5em]">Year</div>
-      <div class="flex flex-col items-start space-y-[0.5em]">
-        <span class="whitespace-nowrap">2023</span>
+      <div class="flex flex-col items-start max-w-[75ch]">
+        <span class="body-text-small   [font-variation-settings:'wght'_520]  mb-1.5">Brief</span>
+        <span class="body-text-1">Music Metaverse Token (MMT) is a utility token operating within the Stream Live ecosystem.
+The brief was to develop a clear and restrained identity for a crypto product used to compensate concert promoters for driving audience engagement on live-streamed events. Earned tokens could then be redeemed by fans for discounted tickets and access to live music experiences.</span>
+      </div>
+
+      <div class="flex flex-col">
+        <span class="body-text-small   [font-variation-settings:'wght'_520]  mb-1.5">Team</span>
+        <ul class="body-text-1 ">
+          <li>Corban K. — Senior Designer</li>
+          <li>Jake Pearce — Junior Designer</li> 
+        </ul>
+      </div>
+
+      <div class="flex flex-col">
+        <span class="body-text-small   [font-variation-settings:'wght'_520]  mb-1.5">My contribution</span>
+        <ul class="body-text-1 ">
+          <li>Art direction</li>
+          <li>Branding</li>
+          <li>Motion graphics</li> 
+        </ul>
       </div>
     </div>
 
   </div>
+</section>
+
+
+ 
+<section class="fade-in max-web mx-auto px-0 md:px-5 xl:px-[clamp(4px,5.5vw,300px)]   ">
+
+
+  <!-- Image Column (2x rows, single section) -->
+<section id="project-gallery" class="fade-in">
+    <div
+      class=" md:hidden mb-2.5
+        overflow-hidden
+        h-[clamp(440px,5vh+60vw,102vh)]
+      "
+    >
+      <video
+        class="project-parallax w-full h-full object-cover md:rounded-[0.6em] rounded-[0em]"
+        loop
+        autoplay
+        muted
+        playsinline
+        preload="metadata"
+        poster="images/MMT 2026-01.avif"
+      >
+        <source src="videos/2026-motion.mp4" type="video/mp4">
+      </video>
+    </div>
+  </section>
+
+        
+
+    <!-- Image Column (2x rows, single section) -->
+<section class="fade-in">
+  <div class="space-y-2.5 md:space-y-2  ">
+
+    <!-- Row 1 -->
+    <div class="flex flex-col xl:flex-row gap-2.5 md:gap-2">
+      <div class="flex-1">
+        <div class="aspect-[4/3] overflow-hidden   rounded-none">
+          <img
+            src="images/MMT 2025-223.avif"
+            alt="Gallery Image 1"
+            class="w-full h-full object-cover"
+          />
+        </div>
+      </div>
+
+      
+
+      <div class="flex-1">
+        <div class="aspect-[4/3] overflow-hidden   rounded-none">
+          <img
+            src="images/mmt posters2.avif"
+            alt="Gallery Image 2"
+            class="w-full h-full object-cover"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 2 -->
+    <div class="flex flex-col xl:flex-row gap-2.5 md:gap-2">
+      <div class="flex-1">
+        <div class="aspect-[4/3] overflow-hidden   rounded-none">
+          <img
+            src="images/MMT 2026-10.avif"
+            alt="Gallery Image 3"
+            class="w-full h-full object-cover"
+          />
+        </div>
+      </div>
+
+      <div class="flex-1">
+        <div class="aspect-[4/3] overflow-hidden  rounded-none">
+          <img
+            src="images/MMT 2025.avif"
+            alt="Gallery Image 4"
+            class="w-full h-full object-cover"
+          />
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+  </section>
+  
+
+  <section  class="max-web mx-auto w-full z-40
+         py-16 md:py-[clamp(6px,6.5vw,340px)]  
+
+         bg-[#F1F0EE] fade-in px-5 xl:px-[clamp(4px,5.5vw,300px)]"
+>
+  <div class="  items-center">
+
+    <!-- LEFT COLUMN -->
+    <div>
+     <div class="text-center space-y-2 fade-in">
+
+  <!-- View all projects -->
+  <div 
+    class="body-text-small  "
+  >
+    Next project
+     </div>
+
+  <!-- Next project --> 
+    <div class="h3 inline-flex items-center justify-center ">
+       
+      <!-- Static project name -->
+      <a href="braves-cricket"
+    class="group block hover:opacity-60  ">
+        Braves Cricket
+    </a>
+
+    </div>
+  </div>
+
 </div>
+
+    </div>
+ 
+
+ 
+
+
+  
 
 </section>
 
-  
- 
-<section id="Project-images" class="fade-in max-web mx-auto px-0 md:px-5 xl:px-10  ">
-       
-  <div class="content-column md:space-y-2.5 space-y-2.5  
-  ">
-    
-  <section id="project-gallery" class="fade-in">
-      <!-- Stacked Vertically -->
-      <div class="md:hidden overflow-hidden aspect-[5/4]">
-        <!-- mobile only -->
-        <a   class="w-full h-full block ">
-    <video
-      class="w-full h-full object-cover  md:rounded-[0.6em] rounded-[0em]"
-      loop
-      autoplay
-      muted
-      playsinline   
-      preload="metadata"  
-      poster="images/MMT 2026-01.avif"
-    >
-      <source src="videos/2026-motion.mp4" type="video/mp4"> 
-    </video>
-  </a> 
-    </section>
 
-<section id="project-gallery" class="fade-in">
-      <div class="  aspect-auto sm:aspect-auto overflow-hidden">
-        <img src="images/MMT 2026-06.avif" alt="Gallery Image 4" class="object-cover w-full h-full md:rounded-[0.6em] rounded-[0em] " />
-      </div>
-    </section> 
- 
- 
-
-     <section id="project-gallery" class="fade-in">
-      <div class="  aspect-auto sm:aspect-auto overflow-hidden">
-        <img src="images/MMT 2026-10.avif" alt="Gallery Image 4" class="object-cover w-full h-full md:rounded-[0.6em] rounded-[0em] " />
-      </div>
-    </section> 
-    
-
-
-    <section id="project-gallery" class="fade-in">
-      <div class="  aspect-auto sm:aspect-auto overflow-hidden">
-        <img src="images/MMT 2026-05.avif" alt="Gallery Image 4" class="object-cover w-full h-full md:rounded-[0.6em] rounded-[0em] " />
-      </div>
-    </section> 
-
-    <section id="project-gallery" class="fade-in">
-      <div class="  aspect-auto sm:aspect-auto overflow-hidden">
-        <img src="images/MMT 2026-03.avif" alt="Gallery Image 4" class="object-cover w-full h-full md:rounded-[0.6em] rounded-[0em] " />
-      </div>
-    </section> 
-
-    <section id="project-info" class=" fade-in">
-    <div class="grid grid-cols-1 md:grid-cols-1 ">
-       
-       
-      <!-- Image Column (occupies 2/3 columns) -->
-      <div class="md:col-span-2 md:col-span-1 ">
-        <div class="space-y-2.5">
-          <div class="flex flex-col md:flex-row gap-2.5">
-            <div class="  flex-1">
-              <img src="images/MMT 2026-11.avif" alt="Gallery Image 1" class=" w-full  md:rounded-[0.6em] rounded-[0em] " />
-            </div>
-            <div class=" flex-1">
-              <img src="images/MMT 2026-08.avif" alt="Gallery Image 2" class=" w-full  md:rounded-[0.6em] rounded-[0em] " />
-            </div>
-            
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>  
-       
-  
-     <section id="project-gallery" class="fade-in">
-      <div class=" hidden md:block aspect-auto sm:aspect-auto overflow-hidden">
-        <img src="images/MMT 2026-09.avif" alt="Gallery Image 4" class="object-cover w-full h-full md:rounded-[0.6em] rounded-[0em] " />
-      </div>
-    </section> 
-
-    <section id="project-gallery" class="fade-in">
-      <div class=" flex md:hidden aspect-auto sm:aspect-auto overflow-hidden">
-        <img src="images/MMT 2026-04.avif" alt="Gallery Image 4" class="object-cover w-full h-full md:rounded-[0.6em] rounded-[0em] " />
-      </div>
-    </section> 
-
-
-   <section id="Project-images" class="hidden md:block "> 
-
-   <div class="fade-in max-web mx-auto w-full  md:grid grid-cols-[1fr_auto] items-end md:mt-24 mb-6">
-
-  <!-- LEFT: HEADING -->
-  <h2 class=" h1  !text-[10pt] md:!text-[42pt]   md:mb-0 mb-1 fade-in">
-    Related work
-  </h2>
-
-  <!-- RIGHT: BUTTON -->
-  <a
-  href="work"
-  class="body-text-1 md:!mb-[0.7em]
-         !text-[#2b2b2b] !text-[12pt] md:!text-[11pt]
-         hover:opacity-50 whitespace-nowrap 
-         group"
->
-  View all projects
-  <span
-    class="inline-block ml-1 transition-[margin] duration-200 ease-out
-           group-hover:ml-2"
-  >
-    🡪
-  </span>
-</a>
-
-
-</div>
-
-<section 
-    id="work"
-    class="max-web mx-auto z-40    fade-in">
-    <div class="projects-grid">
-       
-       <div class="project   flex flex-col fade-in order-2 md:order-1">
-        <div class="project-image-container">
-  <a href="bmp-sports" class="w-full h-full ">
-    <video
-      class="w-full h-full object-cover rounded-[0.6em]"
-      loop
-      autoplay
-      muted
-      playsinline   
-      preload="metadata"  
-      poster="images/bmp-image-1.avif"
-    >
-      <source src="videos/bmp-email.mp4" type="video/mp4"> 
-    </video>
-  </a>
-        </div>
-        <div class="mt-4 flex flex-col items-start">
-          <a href="bmp-sports" class=" body-text-2 !text-[10pt] md:!text-[11pt] mt-[0em] mb-[0.1em]">
-            BMP Sports
-          </a>
-          <a href="bmp-sports" class="text-[#686868]/80 body-text-1  !text-[10pt] md:!text-[11pt] mb-[0.4em]">
-            Branding / Digital assets
-          </a>
-          <a href="bmp-sports" class="flex flex-wrap gap-x-[6px] gap-y-[5px]   ">
- 
-            
-          </a>
-        </div>
-      </div>
-      <div class="project   flex flex-col fade-in order-2 md:order-1">
-        <div class="project-image-container">
-          <a href="erima-australia" class="w-full h-full ">
-            <img
-              src="images/2026-erima-2.avif"
-              alt="Erima Australia"
-              class="w-full h-full object-cover rounded-[0.8em]"
-            />
-          </a>
-        </div>
-        <div class="mt-4 flex flex-col items-start">
-          <a href="erima-australia" class=" body-text-2 !text-[10pt] md:!text-[11pt] mt-[0em] mb-[0.1em]">
-            Erima Australia
-          </a>
-          <a href="erima-australia" class="text-[#686868]/80 body-text-1  !text-[10pt] md:!text-[11pt] ">
-            Social media / Tender documents
-          </a>
-          <a href="erima-australia" class="flex flex-wrap gap-x-[6px] gap-y-[5px]  ">
-  
-            
-          </a>
-        </div>
-      </div>
-      
-      
-      
-
-      
-      
-  </section>  
-      
 </section>  
-
-
-<div class="md:hidden border-y border-[#2b2b2b]/20 hover:border-[#2b2b2b] text-center justify-center !mt-14 !-mb-2 fade-in">
-  <a 
-  href="work"
-  class="service-header group grid items-center py-6 w-full cursor-pointer 
-         no-underline transition-colors"
->
-    <span class="text-[#2b2b2b]/55 group-hover:text-[#2b2b2b] body-text-1 !text-[12pt] md:!text-[11pt] mb-0">
-  See more work
-</span>
-  </a>
-</div>
-
-
-<div class="h-0 md:h-[1em]"></div>
-<div id=""></div>
+ 
 </main>
 <footer
-  id="contact"
-  class="bg-[#dfdedd]/30 text-[#2b2b2b] py-5 md:py-7 xl:py-10"
+  class="
+    relative w-full bg-[#E8E7E6]
+    [@media(min-width:874px)]:bg-[#F1F0EE]
+    
+    text-[#2b2b2b]  px-5 xl:px-[clamp(4px,5.5vw,300px)] 
+  "
+> 
+  <div class=" mx-auto w-full  mb-5  ">
+
+     
+<!-- ACKNOWLEDGEMENT + SOCIALS ROW -->
+<div class="  hidden [@media(min-width:874px)]:grid w-full grid-cols-[auto_1fr_auto_auto] items-stretch">
+
+<!-- SVG LOGO PILL -->
+<div class=" bg-[#F9F9F8]   p-5 flex items-center justify-center mr-2"
 >
-  <div class="max-web mx-auto w-full px-5  xl:px-10    ">
+  <a 
+    href="/" 
+    aria-label="Home"
+    class="h-6 w-6 opacity-95   hover:opacity-50"
+    style="background: url('images/logo-new-circle-03.svg') center / contain no-repeat;"
+  ></a>
+</div>
 
-    <!-- TOP SECTION (unchanged) -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-5 ">
-      
-      <!-- LEFT COLUMN -->
-      <div class="flex flex-col items-start h-full mt-4 md:mt-8   mb-6 md:!mb-8 fade-in">
-        <img class="hidden md:flex max-h-[11em]" src="images/Layer 2-2.svg" alt="logo">
-        <img class="block md:hidden !width-[20em] mt-5 -ml-0.5" src="images/Layer 2-2.svg" alt="logo">
-      
-      </div>
 
-     <!-- RIGHT COLUMN -->
-      <div class="flex flex-col md:gap-y-8 gap-y-5   mt-6 md:mt-6  mb-6 md:mb-0  fade-in ">
-        <h2 class="hidden md:block h2 md:text-[23pt]   text-[12pt] ">
-          Got a project in mind? 
-        </h2>
-        <h2 class="flex md:hidden body-text-4 md:text-[23pt]   text-[10pt] ">
-          Contact  
-        </h2>
 
-        <!-- Contact details -->
-        <div class="-space-y-[2px] md:space-y-[12px]"> 
-          <div class="email">
-            <a
-  href="mailto:hello@jakepearce.com.au"
-  data-copy="hello@jakepearce.com.au"
-  class="block md:hidden body-text-3 text-[#2b2b2b] md:text-[23pt] text-[10pt] hover:text-[#000000]"
->
-  hello@jakepearce.com.au
-</a>
 
-            <a
-              href="#"
-              data-copy="hello@jakepearce.com.au"
-              class="copy-target hidden md:flex h2 text-[#2b2b2b]/50 block md:text-[23pt]   text-[20pt] hover:text-[#000000]"
-            >
-              hello@jakepearce.com.au
-            </a>
-          </div>
+ <!-- ACKNOWLEDGEMENT PILL -->
+<div class="bg-[#F9F9F8]     px-5 py-4 flex flex-1  ">
+  <p
+    class="
+      body-text-small xl:leading-snug text-[#2b2b2b] self-center  
 
-          <div class="block md:hidden border-b border-1 border-[#2b2b2b]/0 "></div>
-          <div class="hidden md:flex border-b border-1 border-[#2b2b2b]/15 "></div>
+    "
+  >
+I acknowledge the Wurundjeri Woi-wurrung and Bunurong / Boon Wurrung peoples of the Kulin Nation as the Traditional Owners of the lands on which I work, and I pay my respect to Elders past, present and emerging.  </p>
+</div>
 
-          <div class="phone">
-            <a
-  href="sms:+614229117799"
-  data-copy="+614229117799"
-  class="mt-2 block md:hidden body-text-3 text-[#2b2b2b] md:text-[23pt] text-[10pt] hover:text-[#000000]"
->
-  +61 422 911 799
-</a>
+  <!-- RIGHT SIDE GROUP -->
+  <div class="flex items-stretch  ml-auto">
 
-            <a
-              href="#"
-              data-copy="+614229117799"
-              class="copy-target hidden md:flex h2 text-[#2b2b2b]/50 block md:text-[23pt]   text-[20pt] hover:text-[#000000]"
-            >
-              +61 422 911 799
-            </a>
-          </div>
-        </div>
+    <!-- SOCIALS PILL -->
+    <div class="bg-[#F9F9F8]     px-5 py-4 flex mx-2 ">
+      <div class="body-text-1 flex flex-col [@media(min-width:1034px)]:flex-row items-start [@media(min-width:1034px)]:items-center gap-2.5 [@media(min-width:1034px)]:gap-2.5 text-[#2b2b2b] self-center">
+        <!-- icons -->
+    <!-- Instagram -->
+    <a href="https://instagram.com/jake.r.pearce" class="hover:text-[#000000]/50" aria-label="Instagram">
+      <svg viewBox="0 0 256 256" class="[@media(min-width:100px)_and_(max-width:838px)]:w-6 [@media(min-width:100px)_and_(max-width:838px)]:h-6   w-6 h-6 fill-current">
+        <path d="M176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24ZM128,176a48,48,0,1,1,48-48A48.05,48.05,0,0,1,128,176Zm60-96a12,12,0,1,1,12-12A12,12,0,0,1,188,80Zm-28,48a32,32,0,1,1-32-32A32,32,0,0,1,160,128Z"></path>
+      </svg>
+    </a>
+
+    <!-- LinkedIn -->
+    <a href="https://www.linkedin.com/in/jake-pearce-076b772b5/" class="hover:text-[#000000]/50" aria-label="LinkedIn">
+      <svg viewBox="0 0 256 256" class="[@media(min-width:100px)_and_(max-width:838px)]:w-6 [@media(min-width:100px)_and_(max-width:838px)]:h-6   w-6 h-6 fill-current">
+        <path d="M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24ZM96,176a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0ZM88,96a12,12,0,1,1,12-12A12,12,0,0,1,88,96Zm96,80a8,8,0,0,1-16,0V140a20,20,0,0,0-40,0v36a8,8,0,0,1-16,0V112a8,8,0,0,1,15.79-1.78A36,36,0,0,1,184,140Z"></path>
+      </svg>
+    </a>
+
+  </div>
+</div>
+  
+ <!-- LINKS PILL -->
+    <div class="bg-[#F9F9F8]     px-6 py-4 flex  ">
+      <div class="body-text-small flex flex-col [@media(min-width:1034px)]:flex-row items-start [@media(min-width:1034px)]:items-center gap-1 [@media(min-width:1034px)]:gap-4 text-[#2b2b2b] self-center ">
+        <a href="/#projects" class="  hover:text-[#000000]/50 whitespace-nowrap">Projects</a>
+        <a href="/#about" class=" hover:text-[#000000]/50 whitespace-nowrap">About</a>
+        <a href="/#contact" class="  hover:text-[#000000]/50 whitespace-nowrap">Contact</a>
         
       </div>
+    </div> 
+  </div> 
 
-       
-    </div>
- <div class="block md:hidden border-b border-1 border-[#2b2b2b]/15 mb-6 mt-1 "></div>
-   <!-- NEW BOTTOM NAV AREA -->
-<div class="md:mt-6 -mt-6   grid grid-cols-1 md:grid-cols-2 gap-5 text-[#2b2b2b] ">
+  
+</div> 
 
-  <!-- LEFT BIG COLUMN (unchanged, with shock absorbers) -->
-<div class="w-full footer-left-grid hidden md:grid"
-     style="grid-template-columns: minmax(360px,360px) repeat(4, minmax(0,1fr)); gap:0;">
+<div class="" >
+<!-- 🔥 md and BELOW version (4-column mobile footer layout) -->
+<div class=" py-4 [@media(min-width:874px)]:hidden flex flex-col -mt-8 text-[#2b2b2b] body-text-1 space-y-10">
 
-  <div class="flex flex-col items-start justify-end space-y-0 px-0">
-    <div class="nav-h2 text-[12pt] md:text-[10pt] mb-2">
+ <div class="flex flex-col items-start h-full    mb-6  fade-in"> 
+        <img class="hidden md:block  [@media(min-width:874px)]:hidden max-h-[9em] mt-0 -ml-0.5" src="images/logo-new-circle-03.svg" alt="logo">
+      
+      </div>
+
+  <!-- Links -->
+  <div>
+    <h2 class="mb-2 [font-variation-settings:'wght'_550]  ">
+      Links
+    </h2>
+    <nav class="flex flex-col space-y-1">
+      <a href="/" class="hover:text-[#000000]">Home</a>
+      <a href="/#projects" class="hover:text-[#000000]">Projects</a> 
+      <a href="/#about" class="hover:text-[#000000]">About</a>
+    </nav>
+  </div>
+
+  <!-- Socials -->
+  <div>
+    <h2 class="mb-2 [font-variation-settings:'wght'_550] ">
+      Socials
+    </h2>
+    <nav class="flex flex-col space-y-1">
+      <a href="https://instagram.com/jake.r.pearce" class="hover:text-[#000000]">Instagram</a>
+      <a href="https://www.linkedin.com/in/jake-pearce-076b772b5/" class="hover:text-[#000000]">LinkedIn</a>
+    </nav>
+  </div>
+
+  <!-- Acknowledgement -->
+  <div>
+    <h2 class="mb-2 [font-variation-settings:'wght'_550] ">
       Acknowledgement of Country
-    </div>
-
-    <p class="nav-body md:max-w-[28em] text-[12pt] md:text-[10pt]">
+    </h2>
+    <p class="leading-relaxed">
       I acknowledge Aboriginal and Torres Strait Islander peoples as the Traditional Owners of the lands I work on. I pay respect to elders past, present and emerging, and honour their enduring connection to country.
     </p>
   </div>
 
-  <div class="min-w-0"></div>
-  <div class="min-w-0"></div>
-  <div class="min-w-0"></div>
-  <div class="min-w-0"></div>
-</div>
-
-<!-- RIGHT BIG COLUMN (lg+ version) -->
-<div class="hidden md:flex w-full justify-between items-stretch body-text-1 text-[12pt] md:text-[9pt]">
-
-  <!-- COLUMN 2: LINKS -->
-  <div class="flex flex-col items-start min-w-[50px]">
-    <div class="nav-h2 text-[10pt] md:text-[10pt] mb-[5px]">Links</div>
-    <div class="nav-body flex flex-col items-start space-y-[5px] text-[10pt] md:text-[10pt]">
-      <a href="/" class="hover:text-[#000000]/50 whitespace-nowrap">Home</a>
-      <a href="work" class="hover:text-[#000000]/50 whitespace-nowrap">Work</a>
-      <a href="archive" class="hover:text-[#000000]/50 whitespace-nowrap">Archive</a>
-    </div>
-  </div>
-
-  <!-- COLUMN 1: SOCIALS -->
-  <div class="flex flex-col items-start min-w-[50px]">
-    <div class="nav-h2 text-[10pt] md:text-[10pt] mb-[5px]">Socials</div>
-    <div class="nav-body flex flex-col items-start space-y-[5px] text-[10pt] md:text-[10pt]">
-      <a href="https://instagram.com/jake.r.pearce" class="hover:text-[#000000]/50 whitespace-nowrap">Instagram</a>
-      <a href="https://www.linkedin.com/in/jake-pearce-076b772b5/" class="hover:text-[#000000]/50 whitespace-nowrap">LinkedIn</a>
-    </div>
-  </div>
-
-
- 
-<div></div>
-<div></div> 
-
-  <!-- COLUMN 3: COPYRIGHT -->
-  <div class="flex flex-col items-end text-right min-w-[20px] text-[10pt] md:text-[10pt] h-full">
-    <span class="nav-body whitespace-nowrap mt-auto !-mb-[0.09em] ">© Jake Pearce 2026</span>
+  <!-- Copyright -->
+  <div class="">
+    <span class="whitespace-nowrap [font-variation-settings:'wght'_550] ">
+      © Jake Pearce 2026
+    </span>
   </div>
 
 </div>
 
-
-<!-- 🔥 md and BELOW version (4-column mobile footer layout) -->
-<div class="md:hidden flex flex-col text-[#2b2b2b]  xl:mt-0 mt-8 xl:mb-0 mb-0">
-
-  <div class="flex flex-col text-[#2b2b2b] lg:text-[12pt] text-[10pt] space-y-4 xl:mt-0 mt-0">
-
-    <div class="flex flex-col items-start px-0 mt-0 mb-4 fade-in ">
-      <h2 class="flex md:hidden body-text-4 md:text-[23pt]  mb-6 text-[10pt] ">
-          Acknowledgement of Country  
-        </h2>
-      <p class="body-text-3 max-w-[23em] lg:text-[12pt] text-[10pt] md:body-text-1 body-text-2  text-[#2b2b2b]">
-        I acknowledge Aboriginal and Torres Strait Islander peoples as the Traditional Owners of the lands I work on. I pay respect to elders past, present and emerging, and honour their enduring connection to country.
-      </p>
-       
-    </div>
-<div class="block md:hidden border-b border-1 border-[#2b2b2b]/15 !mb-4 "></div>
-    <!-- 4-column link/copyright grid -->
-    <div class="body-text-3 leading-snug grid grid-cols-4 gap-x-4  w-full text-[#2b2b2b]  items-end">
-      <!-- Column 1: Home/Work/Archive -->
-      <div class=" flex flex-col items-start space-y-2">
-        <a href="/" class="hover:text-[#000000]">Home</a>
-        <a href="work" class="hover:text-[#000000]">Work</a>
-        <a href="archive" class="hover:text-[#000000]">Archive</a>
-      </div>
-
-      <!-- Column 2: Instagram/LinkedIn -->
-      <div class=" flex flex-col items-start space-y-2">
-        <a href="https://instagram.com/jake.r.pearce" class="hover:text-[#000000]">Instagram</a>
-        <a href="https://www.linkedin.com/in/jake-pearce-076b772b5/" class="hover:text-[#000000]">LinkedIn</a>
-      </div>
-
-      <div></div>
-      <div class="  flex justify-end items-end text-right mt-4">
-        <span class="whitespace-nowrap">© Jake Pearce 2025</span>
-      </div>
-      
- 
-  <!-- Column 4: Copyright (right aligned) -->
-      
-    </div>
-</div>
-
-
-
-  </div>
 </footer>
+
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-  if (window.innerWidth <= 745) return;
+  if (window.innerWidth <= 768) return;
 
   function tryAltSrc(img, candidates) {
     if (!candidates.length) return;
@@ -1381,77 +951,12 @@ document.addEventListener("DOMContentLoaded", () => {
     pre.src = next;
   }
 
-  document.querySelectorAll('.project-image-container').forEach(container => {
-    const img = container.querySelector('img');
-    const video = container.querySelector('video');
-
-    let base, ext, original;
-
-    if (img) {
-      const src = img.getAttribute('src');
-      const dot = src.lastIndexOf('.');
-      if (dot === -1) return;
-      base = src.slice(0, dot).replace(/-mobile$/, '');
-      ext = src.slice(dot);
-      original = img;
-    } else if (video && video.poster) {
-      const poster = video.poster;
-      const dot = poster.lastIndexOf('.');
-      if (dot === -1) return;
-      base = poster.slice(0, dot).replace(/-mobile$/, '');
-      ext = poster.slice(dot);
-      original = video;
-    } else return;
-
-    const alts = [
-      base + '-alt.avif',
-      base + '-alt.gif',
-      base + '-alt.png',
-      base + '-alt' + ext
-    ];
-
-    const altImg = document.createElement('img');
-    altImg.alt = (original.alt || 'Project') + ' alt';
-    altImg.className = original.className;
-
-    Object.assign(altImg.style, {
-      position: 'absolute',
-      inset: 0,
-      width: '100%',
-      height: '100%',
-      objectFit: 'cover',
-      zIndex: 1,
-      opacity: 0,
-      transition: 'opacity 0.4s ease'
-    });
-
-    container.style.position = 'relative';
-    container.appendChild(altImg);
-
-    Object.assign(original.style, {
-      position: 'relative',
-      zIndex: 2,
-      transition: 'opacity 0.4s ease'
-    });
-
-    tryAltSrc(altImg, alts);
-
-    container.addEventListener('mouseenter', () => {
-      original.style.opacity = 0;
-      altImg.style.opacity = 1;
-    });
-
-    container.addEventListener('mouseleave', () => {
-      original.style.opacity = 1;
-      altImg.style.opacity = 0;
-    });
-  });
-});
+   });
 </script>
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-  if (window.innerWidth > 745) return;
+  if (window.innerWidth > 768) return;
 
   // iOS Safari: prevent double-tap zoom
   let lastTouchEnd = 0;
@@ -1504,7 +1009,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }, {
       root: null,
-      rootMargin: '0px 0px -10% 0px', // triggers a bit before fully in view
+      rootMargin: '0px 0px -1% 0px', // triggers a bit before fully in view
       threshold: 0.01
     });
 
@@ -1518,44 +1023,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 })();
 </script> 
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-  const main = document.querySelector('main');
-  const footer = document.querySelector('footer');
-  if (!main || !footer) return;
-
-  // Don’t do the fixed-footer hack on mobile where your CSS makes footer relative
-  const MOBILE_BREAKPOINT = 745;
-
-  const setMargin = () => {
-    if (window.innerWidth <= MOBILE_BREAKPOINT) {
-      main.style.marginBottom = '0px';
-      return;
-    }
-    const h = Math.ceil(footer.getBoundingClientRect().height);
-    main.style.marginBottom = h + 'px';
-  };
-
-  // 1) Run immediately
-  setMargin();
-
-  // 2) Run after everything (images, fonts, etc.) has a chance to affect layout
-  window.addEventListener('load', setMargin);
-
-  // 3) Run after fonts finish loading (prevents reflow surprises)
-  if (document.fonts && document.fonts.ready) {
-    document.fonts.ready.then(setMargin).catch(() => {});
-  }
-
-  // 4) React to footer height changes automatically
-  const ro = new ResizeObserver(() => setMargin());
-  ro.observe(footer);
-
-  // 5) Also on viewport changes
-  window.addEventListener('resize', setMargin);
-  });
-</script>
+ 
 
    <script>
     
@@ -1565,19 +1033,11 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
   <script>
     
-    // Scroll-to-bottom for Contact links
-    document.addEventListener('DOMContentLoaded', () => {
-      document.querySelectorAll('a[href="#contact"]').forEach(link => {
-        link.addEventListener('click', e => {
-          e.preventDefault();
-          window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
-        });
-      });
-    });
+    
     
     // Tooltip for project images
     document.addEventListener('DOMContentLoaded', () => {
-      if (window.innerWidth <= 745) return; // Disable tooltip on mobile
+      if (window.innerWidth <= 768) return; // Disable tooltip on mobile
       const tooltip = document.createElement('div');
       tooltip.id = 'project-tooltip';
       document.body.appendChild(tooltip);
@@ -1597,8 +1057,9 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
     
+    
     document.addEventListener('DOMContentLoaded', () => {
-  const MOBILE_BREAKPOINT = 745;
+  const MOBILE_BREAKPOINT = 768;
 
   function swapImages() {
     const isMobile = window.innerWidth <= MOBILE_BREAKPOINT;
@@ -1649,9 +1110,7 @@ document.addEventListener('DOMContentLoaded', () => {
           icon.classList.remove('open');
           document.body.classList.remove('nav-open');
         }
-      }); 
-     
-  document.querySelectorAll('.project-image-container').forEach(container => {
+      });  
     const img = container.querySelector('img');
     const video = container.querySelector('video');
 
@@ -1703,8 +1162,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     container.addEventListener('mouseleave', () => {
       original.style.opacity = 1;
-    });
-  }); 
+    }); 
 
     // Smooth-scroll for Work link
     document.addEventListener("DOMContentLoaded", () => {
@@ -1726,13 +1184,15 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
     document.addEventListener('DOMContentLoaded', () => {
-  if (window.innerWidth <= 745) {
+  if (window.innerWidth <= 768) {
     const grid = document.querySelector('.projects-grid');
     const bravesProject = grid.children[2]; // assuming Braves is 3rd project
     if (grid && bravesProject) {
       grid.insertBefore(bravesProject, grid.firstChild);
     }
+    
   }
+  
 });
 
   </script>
@@ -1790,8 +1250,142 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+// Tooltip for project images
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.innerWidth <= 768) return; // Disable tooltip on mobile
+      const tooltip = document.createElement('div');
+      tooltip.id = 'project-tooltip';
+      document.body.appendChild(tooltip);
+      document.querySelectorAll(".project-image-container").forEach(container => {
+        container.addEventListener("mouseenter", () => {
+          const anchor = container.querySelector("a");
+          tooltip.textContent = anchor ? "View Project" : "Coming Soon";
+          tooltip.style.display = "block";
+        });
+        container.addEventListener("mousemove", e => {
+          tooltip.style.top = e.clientY + 15 + "px";
+          tooltip.style.left = e.clientX + 15 + "px";
+        });
+        container.addEventListener("mouseleave", () => {
+          tooltip.style.display = "none";
+        });
+      });
+    });
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const btn      = document.getElementById('mobileMenuBtn');
+  const nav      = document.getElementById('mobileNav');
+  const closeBtn = document.getElementById('mobileNavClose');
+
+  if (!btn || !nav) return;
+
+  const open = () => {
+    nav.classList.remove('-translate-y-full');
+    nav.classList.add('shadow-[0_6px_12px_rgba(0,0,0,0.06)]');
+    nav.setAttribute('aria-hidden', 'false');
+  };
+
+  const close = () => {
+    nav.classList.add('-translate-y-full');
+    nav.classList.remove('shadow-[0_6px_12px_rgba(0,0,0,0.06)]');
+    nav.setAttribute('aria-hidden', 'true');
+  };
+
+  btn.addEventListener('click', () => {
+    nav.classList.contains('-translate-y-full') ? open() : close();
+  });
+
+  closeBtn?.addEventListener('click', close);
+
+  nav.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      requestAnimationFrame(close);
+    });
+    
+  });
+});
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const header = document.querySelector('header');
+  if (!header) return;
+
+  // 🔒 Mobile: header always visible
+  if (window.innerWidth <= 767) {
+    header.style.transform = 'translateY(0)';
+    return;
+  }
+
+  const headerHeight = header.offsetHeight;
+
+  function onScroll() {
+    const scrollY = window.scrollY;
+    const translateY = Math.min(0, scrollY - headerHeight);
+    header.style.transform = `translateY(${translateY}px)`;
+  }
+
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+});
 
 </script>
 
+
+
+<!-- Mobile Top Nav -->
+<div
+  id="mobileNav"
+  class="fixed inset-x-0 top-0 z-40 bg-[#F1F0EE]
+         -translate-y-full
+         transition-transform duration-500
+         ease-[cubic-bezier(.22,1,.36,1)] transition-[transform,box-shadow] duration-500
+ease-[cubic-bezier(.22,1,.36,1)]
+         md:hidden
+         max-h-[70svh] overflow-y-auto  "
+>
+
+
+  <div class="relative h-full px-6 pt-6 pb-5 flex flex-col justify-between">
+
+    <!-- Close button (same footprint as hamburger) -->
+    <button
+      id="mobileNavClose"
+      aria-label="Close menu"
+      class="absolute top-[0.88rem] right-[0.45rem] w-[40px] h-[40px]
+             flex items-center justify-center"
+    >
+      <span class="sr-only">Close</span>
+      <div class="relative w-[24px] h-[24px]">
+        <span class="absolute left-0 top-1/2 w-full h-[2px] bg-[#2b2b2b]
+                     rotate-45"></span>
+        <span class="absolute left-0 top-1/2 w-full h-[2px] bg-[#2b2b2b]
+                     -rotate-45"></span>
+      </div>
+    </button>
+
+    <!-- Pages -->
+    <nav class="space-y-3 pt-6 mb-6">
+      <a href="/#"    class="h1 block  ">Home</a>
+      <a href="/#projects"    class="h1 block  ">Projects</a>
+      <a href="/#about"   class="h1 block  ">About</a> 
+    </nav>
+
+    <!-- Contact -->
+    <div class="pt-6 mb-2 border-t border-[#2b2b2b]/10 body-text-1 space-y-1">
+      <a href="mailto:hello@jakepearce.com.au" class="block">
+        hello@jakepearce.com.au
+      </a>
+      <a href="sms:+614229117799" class="block">
+        +61 422 911 799
+      </a>
+    </div>
+
+  </div>
+</div>
+
+
+
 </body>
-</html>
+</html> 

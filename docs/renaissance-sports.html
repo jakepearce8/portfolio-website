@@ -6,7 +6,7 @@
     name="viewport"
     content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
   />
-  <title>Jake Pearce</title>
+  <title>Renaissance Sports — Jake Pearce</title>
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 
@@ -126,6 +126,8 @@
   line-height: 1.45;
   font-display: swap;
 } 
+
+
  
 /* ===== Header & Toggle ===== */
 header {
@@ -137,7 +139,7 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 0pt;
-  padding-top: 0pt;
+  padding-top: pt;
   padding-bottom: 0pt;
 } 
     
@@ -188,10 +190,11 @@ html {
       cursor: default;
 }
     
-      .projects-grid {
-      display: grid; 
-      row-gap: 24px;
-      column-gap: 8px;
+     .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      row-gap: 36px;
+      column-gap: 20px;
     }
     @media (min-width: 768px) {
       .projects-grid {
@@ -204,45 +207,24 @@ html {
       .projects-grid > .project:nth-child(2) {
         grid-column: 2; grid-row: 1;
       }
-      .projects-grid > .project:nth-child(3) {
-        grid-column: 1; grid-row: 2;
-      }
-      .projects-grid > .project:nth-child(4) {
-        grid-column: 2; grid-row: 2;
-      }
-      .projects-grid > .project:nth-child(5) {
-        grid-column: 1; grid-row: 3;
-      }
-      .projects-grid > .project:nth-child(63) {
-        grid-column: 2; grid-row: 3;
-      }
+    
     }
-
-     @media (min-width: 1280px) {
-      .projects-grid {
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: auto auto;
-      }
-      .projects-grid > .project:nth-child(1) {
-        grid-column: 1; grid-row: 1;
-      }
-      .projects-grid > .project:nth-child(2) {
-        grid-column: 2; grid-row: 1;
-      }
-      .projects-grid > .project:nth-child(3) {
-        grid-column: 3; grid-row: 1;
-      }
-      .projects-grid > .project:nth-child(4) {
-        grid-column: 1; grid-row: 2;
-      }
-      .projects-grid > .project:nth-child(5) {
-        grid-column: 2; grid-row: 2;
-      }
-      .projects-grid > .project:nth-child(63) {
-        grid-column: 3; grid-row: 2;
-      }
+    @media (min-width: 767px) {
+      .desktop     { display: block !important; }
+      .desktop-flex{ display: flex  !important; }
+      .mobile      { display: none  !important; }
     }
-      
+    @media (max-width: 767px) {
+      .header-nav  { display: none !important; }
+      }
+    @media (min-width: 768px) {
+      .desktop     { display: block !important; }
+      .desktop-flex{ display: flex  !important; }
+      .mobile      { display: none  !important; }
+    }
+    @media (max-width: 767px) {
+      .header-nav  { display: none !important; }
+      }
     
     .email-phone {
   /* default (mobile) */
@@ -451,7 +433,7 @@ html {
   scroll-margin-top: 100px;
 }
 #about {
-  scroll-margin-top: 80px;
+  scroll-margin-top: 30px;
 }
 
 
@@ -463,12 +445,14 @@ html {
 
 
   </style>
-  <link rel="icon" href="images/Layer 2-2.svg" type="image/svg+xml">
+  <link rel="icon" href="images/logo-new-circle-02.svg" type="image/svg+xml">
 </head>
 <body>
-   <main> 
+   <main>
+  <!-- Project tooltip -->
+  <div id="project-tooltip"></div>
   <!-- ===== Header & Toggle ===== -->
- <header class="bg-[#F1F0EE] fade-in  top-0 left-0 right-0 z-50 ">
+   <header class="bg-[#F1F0EE] fade-in fixed top-0 left-0 right-0 z-50 fixed">
 
 
 
@@ -479,7 +463,7 @@ html {
 >
   <!-- Header Title -->
 <a
-  href="#"
+  href="/"
   class="inline-flex items-center -ml-[0.25em] "
 >
   <img
@@ -495,9 +479,9 @@ html {
   
      <nav class="body-text-small hidden md:flex " style="margin: 0pt;">
   <ul class="flex space-x-5 -mr-[0.4em] !text-[9.5pt] md:-mr-[0em] mt-0 mb-0 ">
-    <li><a href="#projects" class="  hover:opacity-50">Projects</a></li> 
-    <li><a href="#about" class=" hover:opacity-50">About</a></li>
-    <li><a href="#contact" class=" hover:opacity-50">Contact</a></li>
+    <li><a href="/#projects" class="  hover:opacity-50">Projects</a></li> 
+    <li><a href="/#about" class=" hover:opacity-50">About</a></li>
+    <li><a href="/#contact" class=" hover:opacity-50">Contact</a></li>
   </ul>
 </nav>
 
@@ -516,31 +500,129 @@ html {
   </header>
   
   
- 
+<section
+  id="Project-images"
+  class=" hidden md:block fade-in   mx-auto md:-mt-3"
+>
+  <div class="content-column md:space-y-2.5 space-y-2.5">
+    <section id="project-gallery" class="fade-in ">
+      <div
+        class="
+          overflow-hidden
+          h-[clamp(440px,5vh+60vw,102vh)]
+
+        "
+      >
+        <img
+  src="images/2026-erima-9.avif"
+  alt="Gallery Image 4"
+  class="project-parallax w-full h-full object-cover  "
+/>
+
+      </div>
+    </section>
+  </div>
+</section>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const img = document.querySelector('.project-parallax');
+  if (!img) return;
+
+  const container = img.parentElement;
+  const strength = 0.12; // 👈 subtlety knob (0.05–0.12 sweet spot)
+
+  function update() {
+    const rect = container.getBoundingClientRect();
+    const viewH = window.innerHeight;
+
+    // progress: -1 (above) → 0 (centered) → 1 (below)
+    const progress = (rect.top + rect.height / 2 - viewH / 2) / viewH;
+
+    const translateY = -progress * rect.height * strength;
+
+    img.style.transform = `translateY(${translateY}px)`;
+  }
+
+  // initial
+  update();
+
+  window.addEventListener('scroll', () => {
+    requestAnimationFrame(update);
+  }, { passive: true });
+
+  window.addEventListener('resize', update);
+});
+</script>
 
 <section
   id="hero"
-  class="mt-10 md:mt-0 max-web mx-auto w-full z-40 mt-28
-          px-5 xl:px-[clamp(4px,5.5vw,300px)] 
-          md:pt-[clamp(5px,12vw,180px)] pb-[clamp(3px,7vw,100px)]
+  class="mt-10 md:mt-0 max-web mx-auto w-full z-40
+         px-5 xl:px-[clamp(4px,5.5vw,300px)] 
+          py-[clamp(4px,9vw,120px)]
          bg-[#F1F0EE] fade-in"
 >
-  <div class="grid grid-cols-1 lg:grid-cols-1 gap-6 md:gap-5 items-start">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-5 items-start">
 
- 
+<div class="lg:hidden flex items-start">
+  <a
+  href="/"
+  class="flex lg:hidden inline-flex items-center whitespace-nowrap  mb-4 fade-in
+         bg-white/60 !text-[10pt] text-[#2b2b2b]
+         px-2.5 py-2
+         hover:bg-[#2b2b2b]/10
+         transition-colors duration-0  "
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    class="w-4 h-4 mr-1 -ml-[5px]"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="1.5"
+    stroke-linecap="square"
+    stroke-linejoin="miter"
+    aria-hidden="true"
+  >
+    <!-- shaft -->
+    <line x1="20" y1="12" x2="6" y2="12" />
+    <!-- arrow head -->
+    <line x1="6" y1="12" x2="12" y2="6" />
+    <line x1="6" y1="12" x2="12" y2="18" />
+  </svg>
+  <span>Back</span>
+</a>
+
+
+  </div>
 
     <!-- LEFT COLUMN -->
     <div>
-      <h2 class="md:hidden lg:block h1    fade-in  mr-[0.5em] md:max-w-[22ch] mb-6">
-        Hi! I'm Jake. <br> A graphic designer based in Naarm / Melbourne Australia.
+      <h2 class="h4 leading-tight md:leading-snug   fade-in  mr-[0.5em] xl:max-w-[24ch] mb-6">
+         Introducing German sportswear heritage to Australian clubs
       </h2>
-
-      <h2 class="hidden md:block lg:hidden h4     fade-in  mr-[0.5em] md:max-w-[22ch] mb-6">
-        Hi! I'm Jake. <br> A graphic designer based in Naarm / Melbourne Australia.
-      </h2>
- 
       
- 
+
+    <div class="flex items-start">
+   <a
+  href="/"
+  class="hidden lg:block body-text-1 inline-flex items-center 
+         bg-white/60 text-[#2b2b2b] whitespace-nowrap
+         px-3 py-2 mt-[2em]
+         hover:bg-[#2b2b2b]/5
+         transition-colors duration-0  
+         group"
+>
+  <span
+    class="inline-block mr-0.5 transition-[margin] duration-200 ease-out
+           group-hover:mr-1.5"
+  >
+    🡨
+  </span>
+  Back
+</a>
+
+
+  </div>
 
     </div>
 
@@ -551,291 +633,139 @@ html {
         fade-in justify-between items-stretch
       "
     > 
-      
+      <div class="flex flex-col items-start">
+        <span class="body-text-small   [font-variation-settings:'wght'_520]  mb-1.5">Client</span>
+        <span class="body-text-1">Renaissance Sports Group</span>
+      </div>
+
+      <div class="flex flex-col items-start">
+        <span class="body-text-small   [font-variation-settings:'wght'_520]  mb-1.5">Year</span>
+        <span class="body-text-1">2025</span>
+      </div>
+
+      <div class="flex flex-col items-start max-w-[75ch]">
+        <span class="body-text-small   [font-variation-settings:'wght'_520]  mb-1.5">Brief</span>
+        <span class="body-text-1">Renaissance Sports Group engaged me to support the introduction of Erima to the Australian market. Working within Erima’s established German brand identity, I developed social and promotional assets designed to resonate with local clubs, build early traction, and translate the brand’s performance-driven heritage for a new audience.</span>
+      </div>
+
+      <div class="flex flex-col">
+        <span class="body-text-small   [font-variation-settings:'wght'_520]  mb-1.5">Deliverables</span>
+        <ul class="body-text-1 ">
+          <li>Social posts</li>
+          <li>Digital assets</li>
+          <li>Tender documents</li>
+        </ul>
+      </div>
     </div>
 
   </div>
 </section>
 
 
-<!-- SECTION HEADER -->
-<div id="projects" class="fade-in max-web mx-auto  px-5 xl:px-[clamp(4px,5.5vw,300px)] z-20 fade-in  "> 
-<div class="fade-in max-web mx-auto w-full grid grid-cols-[1fr_auto] items-end">
-  <!-- LEFT: TITLE -->
-   
-   <p
-    class="
-       body-text-4 [font-variation-settings:'wght'_400] 
-      flex items-baseline
-    "
-  >
-    Selected projects
-  </p>
-
-   
-</div>
+ 
+<section class="fade-in max-web mx-auto px-0 md:px-5 xl:px-[clamp(4px,5.5vw,300px)]   ">
 
 
+  <!-- Image Column (2x rows, single section) -->
+<section class="md:hidden fade-in">
+  <div class="space-y-2 mt-0 mb-2.5">
 
-  <!-- ===== Recent Projects ===== --> 
-
-<div class="max-web z-20 bg-[#F1F0EE] fade-in  ">  
-     
-
-    <h2 class="body-text-1 text-[11pt] md:text-[12pt] -mt-3 mb-8 md:mb-10 "> 
-   
-</h2>
-  </div> 
- <section 
-  id="projects"
-  class="max-web mx-auto z-40 fade-in pb-[clamp(2px,2.5vw,190px)] ">
-  <div class="projects-grid">
-
-
-
-     <!-- Moss Fragrances -->
-    <div class="project flex flex-col fade-in order-2 md:order-1">
-      <div class="project-image-container  ">
-        <a href="mmt" class="w-full h-full">
+    <!-- Row 1 -->
+    <div class="flex flex-col xl:flex-row gap-2 md:gap-3">
+      <div class="flex-1">
+        <div class="aspect-[4/3] overflow-hidden md:rounded-[0.6em] rounded-none">
           <img
-            src="images/bottles-7.jpg"
-            alt="MMT"
-            class="w-full h-full object-cover "
+            src="images/2026-erima-9.avif"
+            alt="Gallery Image 1"
+            class="w-full h-full object-cover"
           />
-        </a>
+        </div>
       </div>
-      <div class="mt-4 flex flex-col items-start">
-         <a href="mmt" class="block md:hidden [font-variation-settings:'wght'_510] body-text-2   ">
-          Moss Fragrances
-        </a>
-         <a href="mmt" class="hidden md:block body-text-2   ">
-          Moss Fragrances
-        </a>
-        <a href="mmt" class="text-[#686868]/80 body-text-1 mb-[2em]">
-          Visual Identity / Labels
-        </a>
-      </div>
+
+      
+ 
     </div>
 
-    <!-- Renaissance Sports -->
-    <div class="project flex flex-col fade-in order-2 md:order-1">
-      <div class="project-image-container  ">
-        <a href="renaissance-sports" class="w-full h-full">
+  </div>
+</section>
+
+        
+
+    <!-- Image Column (2x rows, single section) -->
+<section class="fade-in">
+  <div class="space-y-2.5 md:space-y-2  ">
+
+    <!-- Row 1 -->
+    <div class="flex flex-col xl:flex-row gap-2.5 md:gap-2">
+      <div class="flex-1">
+        <div class="aspect-[4/3] overflow-hidden   rounded-none">
+          <img
+            src="images/2026-erima-10.avif"
+            alt="Gallery Image 1"
+            class="w-full h-full object-cover"
+          />
+        </div>
+      </div>
+
+      
+
+      <div class="flex-1">
+        <div class="aspect-[4/3] overflow-hidden   rounded-none">
           <img
             src="images/2026-erima-15.avif"
-            alt="Renaissance Sports"
-            class="w-full h-full object-cover "
+            alt="Gallery Image 2"
+            class="w-full h-full object-cover"
           />
-        </a>
-      </div>
-      <div class="mt-4 flex flex-col items-start">
-        <a href="renaissance-sports" class="block md:hidden [font-variation-settings:'wght'_510] body-text-2   ">
-          Renaissance Sports
-        </a>
-         <a href="renaissance-sports" class="hidden md:block body-text-2   ">
-          Renaissance Sports
-        </a>
-        <a href="renaissance-sports" class="text-[#686868]/80 body-text-1 mb-[2em]">
-          Ad Creative / Tender Documents
-        </a>
+        </div>
       </div>
     </div>
 
-     <!-- BMP -->
-    <div class="project flex flex-col fade-in order-2 md:order-1">
-      <div class="project-image-container  ">
-        <a href="bmp-sports" class="w-full h-full ">
-    <img
-            src="images/bmp-1.avif"
-            alt="Renaissance Sports"
-            class="w-full h-full object-cover "
+    <!-- Row 2 -->
+    <div class="flex flex-col xl:flex-row gap-2.5 md:gap-2">
+      <div class="flex-1">
+        <div class="aspect-[4/3] overflow-hidden   rounded-none">
+          <img
+            src="images/2026-erima-12.avif"
+            alt="Gallery Image 3"
+            class="w-full h-full object-cover"
           />
-  </a>
+        </div>
       </div>
-      <div class="mt-4 flex flex-col items-start">
-        <a href="bmp-sports" class="block md:hidden [font-variation-settings:'wght'_510] body-text-2   ">
-          BMP Sports
-        </a>
-         <a href="bmp-sports" class="hidden md:block body-text-2   ">
-          BMP Sports
-        </a>
-        <a href="bmp-sports" class="text-[#686868]/80 body-text-1 mb-[2em]">
-          Visual Identity
-        </a>
-      </div>
-    </div> 
 
-     
-     
-     <!-- MMT -->
-    <div class="project flex flex-col fade-in order-2 md:order-1">
-      <div class="project-image-container  ">
-        <a href="mmt" class="w-full h-full">
-           <video
-      class="w-full h-full object-cover  "
-      loop
-      autoplay
-      muted
-      playsinline   
-      preload="metadata"  
-      poster="images/MMT 2025.avif"
-    >
-      <source src="videos/2026-motion.mp4" type="video/mp4"> 
-    </video>
-        </a>
-      </div>
-      <div class="mt-4 flex flex-col items-start">
-         <a href="mmt" class="block md:hidden [font-variation-settings:'wght'_510] body-text-2   ">
-          Music Metaverse Token
-        </a>
-         <a href="mmt" class="hidden md:block body-text-2   ">
-          Music Metaverse Token
-        </a>
-        <a href="mmt" class="text-[#686868]/80 body-text-1 mb-[2em]">
-          Visual Identity
-        </a>
+      <div class="flex-1">
+        <div class="aspect-[4/3] overflow-hidden  rounded-none">
+          <img
+            src="images/2026-erima-13.avif"
+            alt="Gallery Image 4"
+            class="w-full h-full object-cover"
+          />
+        </div>
       </div>
     </div>
- 
-   <!-- Placeholder -->
-    <div class=" flex flex-col fade-in order-2 md:order-1">
-      <div class="aspect-[1/1] ">
-        <div class="w-full h-full ">
-   <img
-            src="images/Artboard 6.jpg"
-            alt="Renaissance Sports"
-            class="w-full h-full object-cover  aspect-[1/1]" 
-          />
-        </div>
-      </div>
-      <div class="mt-4 flex flex-col items-start">
-        <div  class="block md:hidden [font-variation-settings:'wght'_510] body-text-2   ">
-          Coming soon
-        </div>
-         <div   class="hidden md:block body-text-2   ">
-          Coming soon
-        </div> 
-      </div>
-    </div> 
 
-     <!-- Placeholder -->
-    <div class=" flex flex-col fade-in order-2 md:order-1">
-      <div class=" aspect-[1/1]  ">
-        <div class="w-full h-full ">
-   <img
-            src="images/players-(Project-Thumbnails)-mobile.avif"
-            alt="Renaissance Sports"
-            class="w-full h-full object-cover   aspect-[1/1]" 
-          />
-        </div>
-      </div>
-      <div class="mt-4 flex flex-col items-start">
-        <div  class="block md:hidden [font-variation-settings:'wght'_510] body-text-2   ">
-          Coming soon
-        </div>
-         <div   class="hidden md:block body-text-2   ">
-          Coming soon
-        </div> 
-      </div>
-    </div> 
+  </div>
+</section>
 
+  </section>
+      <section  class="max-web mx-auto w-full z-40
+         py-[clamp(4px,5.5vw,300px)]  
 
-
-  </div> 
-
-</section   >
-
-   
- 
-
- 
-<style>
-  .service-content ul {
-    list-style-type: disc;       /* standard bullets */
-    margin-left: 1.5rem;         /* indent a bit */
-    padding-left: 0.5rem;
-     transition: color 0.2s ease;
-  }
-
-  .service-content li {
-    line-height: 1.6;
-    transition: color 0.2s ease;
-  }
-
-  .service-content li:hover {
-    color: rgb(0, 0, 0);         /* darken on hover */
-  }
-</style>
-<style>
-  /* Make service row hover affect chevron stroke colour */
-  .service:hover [data-chevron] svg {
-    stroke: #2b2b2b; /* hover colour */
-  }
-
-  /* Default colour */
-  [data-chevron] svg {
-    stroke: #2b2b2b; /* matches your text-[#2b2b2b]/55 */
-  }
-
-
-
-
-  /* default (closed) */
-.service {
-  border-color: #2b2b2b;
-}
-
-.service [data-label] {
-  color: #2b2b2b;
-  transition: color 0.3s ease;
-}
-
-/* hover — but only when NOT open */
-.service:not(.open):hover {
-  border-color: #2b2b2b;
-}
-
-.service:not(.open):hover [data-label] {
-  color: #2b2b2b;
-}
-
-/* open state — always dark */
-.service.open {
-  border-color: #2b2b2b;
-}
-
-.service.open [data-label] {
-  color: #2b2b2b;
-}
-
-.service.open [data-chevron] svg {
-  stroke: #2b2b2b;
-}
-
-</style>
-
-<div id="about" class="  mt-0 md:mt-0" ></div>
-
- <section  class="max-web mx-auto w-full z-40
-         pt-[clamp(4px,3vw,200px)] pb-[clamp(4px,4vw,240px)]
- 
-
-         bg-[#F1F0EE] fade-in  "
+         bg-[#F1F0EE] fade-in px-5 xl:px-[clamp(4px,5.5vw,300px)]"
 >
-  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-6 items-start">
+  <div class="grid grid-cols-1 lg:grid-cols-2  gap-6 md:gap-6 items-start">
 
     <!-- LEFT COLUMN -->
     <div>
      <h2 class="  h3        fade-in"> 
-        <span>About me</span>
+        <span>Client feedback</span>
       </h2>  
     </div>
 
 <!-- RIGHT COLUMN -->
     <div>  
-    <div class="  text-[#2b2b2b] body-text-1   mr-0 md:mr-0 fade-in">
-        <p class="mb-8 ">
-          After starting out as a junior designer at a sports-tech collective, I completed a Diploma of Graphic Design and developed strong interests in packaging, branding, and website design. I now freelance across branding and digital projects and am looking to join a creative team where I can keep learning and contribute in a more collaborative environment.
+    <div class="  text-[#2b2b2b] body-text-1    fade-in">
+        <p class="mb-8">
+          "I worked with Jake for a few months, and it has was an absolute pleasure. His creativity, attention to detail, and ability to bring ideas to life consistently exceed my expectations. Whether it's a full branding package, product launch, or a quick turnaround design, Jake always delivers high-quality work. I would highly recommend him to anyone looking for a talented and reliable graphic designer"
 
       </div>
       
@@ -844,48 +774,65 @@ html {
 
   <!-- Avatar -->
   <img 
-    src="images/jake-image-square.avif"
+    src="images/blank-avatar.avif"
     alt="blank-avatar"
     class=" w-16 h-16   rounded-full object-cover "
   />
 
   <!-- Text -->
   <div class="leading-[0.5em] ">
-    <div class=" body-text-2     text-[#2b2b2b] ">
-      Jake Pearce
-    </div> 
-<div class="opacity-70 hover:opacity-30">
-   <a 
-    href="https://drive.google.com/file/d/1Lcd4sVruhtPZ70xnYxc61YSNb-Bfiqus/view?usp=sharing"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="md:hidden fade-in  items-center   w-full cursor-pointer 
-             transition-colors no-underline"
-  >
+    <div class=" body-text-2   text-[#2b2b2b] ">
+      Andrew Novaro
+    </div>
+     
+<div class="  body-text-1    opacity-70 ">
+   <div 
+      class="  fade-in  items-center   w-full "  >
     <span
-      class="body-text-1   mb-0 "
-      data-label
-    > View résumé (PDF)
-    </span>
+      class="  -mb-10 " 
+    > Renaissance Sports Group
+    </span> 
+  </a> 
+  </div> 
+</div></section>
+  
 
-  </a>
-  <a 
-    href="https://drive.google.com/file/d/1Lcd4sVruhtPZ70xnYxc61YSNb-Bfiqus/view?usp=sharing"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="hidden md:block fade-in  items-center   w-full cursor-pointer 
-             transition-colors no-underline"
+ <section  class="max-web mx-auto w-full z-40
+         py-16 md:py-[clamp(6px,6.5vw,340px)]  
+
+         bg-[#F1F0EE] fade-in px-5 xl:px-[clamp(4px,5.5vw,300px)]"
+>
+  <div class="  items-center">
+
+    <!-- LEFT COLUMN -->
+    <div>
+     <div class="text-center space-y-2 fade-in">
+
+  <!-- View all projects -->
+  <div 
+    class="body-text-small  "
   >
-    <span
-      class="body-text-1   mb-0 "
-      data-label
-    > View résumé (PDF)
-    </span>
+    Next project
+     </div>
 
-  </a>
+  <!-- Next project --> 
+    <div class="h2 inline-flex items-center justify-center ">
+       
+      <!-- Static project name -->
+      <a href="bmp-sports"
+    class="group block hover:opacity-60  ">
+        BMP Sports
+    </a>
+
+    </div>
   </div>
+
 </div>
-</div>
+
+    </div>
+ 
+
+ 
 
 
   
@@ -893,265 +840,8 @@ html {
 </section>
 
 
-<script>
-  
-document.addEventListener('DOMContentLoaded', function () {
-  const services = Array.from(document.querySelectorAll('#services-accordion [data-service]'));
-
-  function closeAll() {
-    services.forEach(svc => {
-      const btn = svc.querySelector('[data-toggle]');
-      const content = svc.querySelector('[data-content]');
-      const label = svc.querySelector('[data-label]');
-      const chev = svc.querySelector('[data-chevron]');
-      btn.setAttribute('aria-expanded', 'false');
-      content.style.maxHeight = '0px';
-      if (chev) {
-        chev.classList.remove('rotate-180');
-        chev.classList.remove('text-[#000000]');
-        chev.classList.add('text-[#000000]');
-      }
-      if (label) {
-        label.classList.remove('text-[#000000]');
-        label.classList.add('text-[#000000]');
-      }
-    });
-  }
-
-  function openService(svc) {
-    const btn = svc.querySelector('[data-toggle]');
-    const content = svc.querySelector('[data-content]');
-    const label = svc.querySelector('[data-label]');
-    const chev = svc.querySelector('[data-chevron]');
-    btn.setAttribute('aria-expanded', 'true');
-    content.style.maxHeight = content.scrollHeight + 'px';
-    if (chev) {
-      chev.classList.add('rotate-180');
-      chev.classList.remove('text-[#000000]');
-      chev.classList.add('text-[#000000]');
-    }
-    if (label) {
-      label.classList.remove('text-[#000000]');
-      label.classList.add('text-[#000000]');
-    }
-  }
-
-  // Attach click handlers
-  services.forEach(svc => {
-    const btn = svc.querySelector('[data-toggle]');
-    const content = svc.querySelector('[data-content]');
-
-    const setHeight = () => {
-      if (btn.getAttribute('aria-expanded') === 'true') {
-        content.style.maxHeight = content.scrollHeight + 'px';
-      }
-    };
-    window.addEventListener('resize', setHeight);
-
-    btn.addEventListener('click', () => {
-      const isOpen = btn.getAttribute('aria-expanded') === 'true';
-      closeAll();
-      if (!isOpen) openService(svc); // only one open at a time
-    });
-  });
-
-   
-});
-</script>
- 
- 
-
-
- 
-<div class=" lg:hidden border-b border-[#DCDCDA] mt-8 mb-2  "></div>
-
-<section  class=" max-web mx-auto w-full z-40
-         pt-[clamp(4px,3vw,200px)] 
-
-
-         bg-[#F1F0EE] fade-in  "
->
-
-  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-6 items-start">
-
-    <!-- LEFT COLUMN -->
-    <div>
-     <h2 class="  h3    mb-6 lg:mb-0  mt-0 md:mt-0  fade-in"> 
-        <span>Services</span>
-      </h2>  
-    </div>
-
-     <!-- RIGHT COLUMN (DESKTOP) -->
-<div class=" ">
-  
-
-  <!-- 01 Brand Identity -->
-  <div class="border-b border-[#2b2b2b]/10 fade-in grid grid-cols-[1fr,auto] py-6 -mt-4">
-    <div class="body-text-3 max-w-[2ch] md:max-w-[20ch] ">
-      Brand Identity
-    </div>
-    <ul class="body-text-1 space-y-[0px] justify-self-end mr-[60px]">
-      <li>Logo Design</li>
-      <li>Type systems</li>
-      <li>Brand assets</li>
-      <li>Guidelines</li> 
-    </ul>
-  </div>
-
-  <!-- 02 Content Design -->
-  <div class="border-b border-[#2b2b2b]/10 fade-in grid grid-cols-[1fr,auto] py-6">
-    <div class="body-text-3  max-w-[2ch] md:max-w-[20ch]">
-       Content Design
-    </div>
-    <ul class="body-text-1 space-y-[0px] justify-self-end mr-[20px]">
-      <li>Social posts</li>
-      <li>Ad creative</li>
-      <li>Campaign graphics</li>
-      <li>Video thumbnails</li>
-    </ul>
-  </div>
-
-  <!-- 03 Presentation & Decks -->
-  <div class="border-b border-[#2b2b2b]/10 fade-in grid grid-cols-[1fr,auto] py-6">
-    <div class="body-text-3  max-w-[8ch] md:max-w-[20ch]">
-     Presentation &amp; Decks
-    </div>
-    <ul class="body-text-1 space-y-[0px] justify-self-end mr-[23px]">
-      <li>Pitch decks</li>
-      <li>Tender documents</li>
-      <li>Internal reports</li> 
-      <li>Information design</li> 
-    </ul>
-  </div>
-
-  <!-- 04 Digital Design -->
-  <div class="border-b border-[#2b2b2b]/10 fade-in grid grid-cols-[1fr,auto] py-6">
-    <div class="body-text-3 max-w-[2ch] md:max-w-[20ch] ">
-      Digital Design
-    </div>
-    <ul class=" body-text-1 space-y-[0px] justify-self-end mr-[47px]">
-      <li>Web visuals</li>
-      <li>Landing pages</li>
-      <li>UI mockups</li>
-      <li>Layout systems</li>
-    </ul>
-  </div>
-
-</div > 
-
-
-
-
 </section>  
-
-
-
-   
-<div id="contact" class=" pt-12  md:pt-[clamp(2px,1.5vw,100px)]" ></div>
-<section
-  id="contact"
-  class="
-    max-web mx-auto w-full z-40
-    md:pt-[clamp(5px,4vw,230px)]
-    md:pb-[clamp(5px,6vw,280px)] 
-    pb-12
-    bg-[#F1F0EE]
-    fade-in
-  "
->
-  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-6 items-start">
-
-    <!-- LEFT COLUMN -->
-    <div>
-      <h2 class="h3 fade-in">
-        <span>Contact</span>
-      </h2>
-    </div>
-
-    <!-- RIGHT COLUMN -->
-   <div class="space-y-10 fade-in">
-
-  <p class="body-text-1 max-w-[44ch]">
-    I’m currently open to freelance projects, contract roles,
-    and in-house opportunities where thoughtful design and
-    collaboration are valued.
-  </p>
-
-  <div class="space-y-4">
-
-    <!-- EMAIL -->
-    <a
-  href="mailto:hello@jakepearce.com.au"
-  class="group flex items-center whitespace-nowrap body-text-3
-         transition-opacity hover:opacity-50"
->
-
-      <svg
-  xmlns="http://www.w3.org/2000/svg"
-  viewBox="0 0 24 24"
-  class="w-4 h-4 mr-1   group-hover:-translate-x-1.5 transition-transform"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2.75"
-  stroke-linecap="square"
-  stroke-linejoin="miter"
-  aria-hidden="true"
->
-  <!-- shaft -->
-  <line x1="4" y1="12" x2="18" y2="12" />
-  <!-- arrow head -->
-  <line x1="18" y1="12" x2="12" y2="6" />
-  <line x1="18" y1="12" x2="12" y2="18" />
-</svg>
-
-      <span
-        class="inline-block mr-1 transition-[margin] duration-200 ease-out
-               "
-      >
-        hello@jakepearce.com.au
-      </span>
-    </a>
-
-    <!-- PHONE -->
-    <a
-  href="sms:+614229117799"
-  class="group flex items-center whitespace-nowrap body-text-3
-         transition-opacity hover:opacity-50"
->
-
-      <svg
-  xmlns="http://www.w3.org/2000/svg"
-  viewBox="0 0 24 24"
-  class="w-4 h-4 mr-1   group-hover:-translate-x-1.5 transition-transform"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2.75"
-  stroke-linecap="square"
-  stroke-linejoin="miter"
-  aria-hidden="true"
->
-  <!-- shaft -->
-  <line x1="4" y1="12" x2="18" y2="12" />
-  <!-- arrow head -->
-  <line x1="18" y1="12" x2="12" y2="6" />
-  <line x1="18" y1="12" x2="12" y2="18" />
-</svg>
-
-
-      <span
-        class="inline-block mr-1 transition-[margin] duration-200 ease-out
-                "
-      >
-        +61 422 911 799
-      </span>
-    </a>
-
-  </div>
-</div>
-
-  </div>
-</section> 
-
+ 
 </main>
 <footer
   class="
@@ -1171,7 +861,7 @@ document.addEventListener('DOMContentLoaded', function () {
 <div class="bg-[#F9F9F8]   p-5 flex items-center justify-center mr-2"
 >
   <a 
-    href="#" 
+    href="/" 
     aria-label="Home"
     class="h-6 w-6 opacity-95   hover:opacity-50"
     style="background: url('images/logo-new-circle-03.svg') center / contain no-repeat;"
@@ -1219,9 +909,9 @@ I acknowledge the Wurundjeri Woi-wurrung and Bunurong / Boon Wurrung peoples of 
  <!-- LINKS PILL -->
     <div class="bg-[#F9F9F8]     px-6 py-4 flex  ">
       <div class="body-text-small flex flex-col [@media(min-width:1034px)]:flex-row items-start [@media(min-width:1034px)]:items-center gap-1 [@media(min-width:1034px)]:gap-4 text-[#2b2b2b] self-center ">
-        <a href="#projects" class="  hover:text-[#000000]/50 whitespace-nowrap">Projects</a>
-        <a href="#about" class=" hover:text-[#000000]/50 whitespace-nowrap">About</a>
-        <a href="#contact" class="  hover:text-[#000000]/50 whitespace-nowrap">Contact</a>
+        <a href="/#projects" class="  hover:text-[#000000]/50 whitespace-nowrap">Projects</a>
+        <a href="/#about" class=" hover:text-[#000000]/50 whitespace-nowrap">About</a>
+        <a href="/#contact" class="  hover:text-[#000000]/50 whitespace-nowrap">Contact</a>
         
       </div>
     </div> 
@@ -1232,10 +922,10 @@ I acknowledge the Wurundjeri Woi-wurrung and Bunurong / Boon Wurrung peoples of 
 
 <div class="" >
 <!-- 🔥 md and BELOW version (4-column mobile footer layout) -->
-<div class=" py-4 [@media(min-width:874px)]:hidden flex flex-col -mt-8 text-[#2b2b2b] body-text-1 space-y-10">
+<div class=" py-4 [@media(min-width:874px)]:hidden flex flex-col mt-12 text-[#2b2b2b] body-text-1 space-y-10">
 
  <div class="flex flex-col items-start h-full    mb-6  fade-in"> 
-        <img class="hidden md:block  [@media(min-width:874px)]:hidden max-h-[9em] mt-0 -ml-0.5" src="images/logo-new-circle-03.svg" alt="logo">
+        <img class="block [@media(min-width:874px)]:hidden max-h-[9em] mt-0 -ml-0.5" src="images/logo-new-circle-03.svg" alt="logo">
       
       </div>
 
@@ -1245,9 +935,9 @@ I acknowledge the Wurundjeri Woi-wurrung and Bunurong / Boon Wurrung peoples of 
       Links
     </h2>
     <nav class="flex flex-col space-y-1">
-      <a href="#" class="hover:text-[#000000]">Home</a>
-      <a href="#projects" class="hover:text-[#000000]">Projects</a> 
-      <a href="#about" class="hover:text-[#000000]">About</a>
+      <a href="/" class="hover:text-[#000000]">Home</a>
+      <a href="/#projects" class="hover:text-[#000000]">Projects</a> 
+      <a href="/#about" class="hover:text-[#000000]">About</a>
     </nav>
   </div>
 
@@ -1380,7 +1070,29 @@ document.addEventListener('DOMContentLoaded', () => {
   <script>
     
     
-     
+    
+    // Tooltip for project images
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.innerWidth <= 768) return; // Disable tooltip on mobile
+      const tooltip = document.createElement('div');
+      tooltip.id = 'project-tooltip';
+      document.body.appendChild(tooltip);
+      document.querySelectorAll(".project-image-container").forEach(container => {
+        container.addEventListener("mouseenter", () => {
+          const anchor = container.querySelector("a");
+          tooltip.textContent = anchor ? "View Project" : "Coming Soon";
+          tooltip.style.display = "block";
+        });
+        container.addEventListener("mousemove", e => {
+          tooltip.style.top = e.clientY + 15 + "px";
+          tooltip.style.left = e.clientX + 15 + "px";
+        });
+        container.addEventListener("mouseleave", () => {
+          tooltip.style.display = "none";
+        });
+      });
+    });
+    
     
     document.addEventListener('DOMContentLoaded', () => {
   const MOBILE_BREAKPOINT = 768;
@@ -1413,7 +1125,12 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('resize', swapImages);
 });
      
-       
+      // Initialize tooltip if it wasn't created above
+      if (!document.getElementById('project-tooltip')) {
+        const tooltip = document.createElement('div');
+        tooltip.id = 'project-tooltip';
+        document.body.appendChild(tooltip);
+      }
       btn.addEventListener('click', () => {
         isOpen = !isOpen;
         if (isOpen) {
@@ -1515,7 +1232,82 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
   </script>
-   
+  <script>
+document.addEventListener('DOMContentLoaded', () => {
+  // create floating copy-tooltip
+  const copyTip = document.createElement('div');
+  copyTip.id = 'copy-tooltip';
+  document.body.appendChild(copyTip);
+
+  document.querySelectorAll('.copy-target').forEach(link => {
+    link.addEventListener('mouseenter', () => {
+      copyTip.textContent = 'Click to copy';
+      copyTip.style.display = 'block';
+    });
+    link.addEventListener('mousemove', e => {
+      copyTip.style.top  = (e.clientY + 15) + 'px';
+      copyTip.style.left = (e.clientX + 15) + 'px';
+    });
+    link.addEventListener('mouseleave', () => {
+      copyTip.style.display = 'none';
+    });
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const text = link.getAttribute('data-copy');
+      navigator.clipboard.writeText(text).then(() => {
+        copyTip.textContent = 'Coppied ✓';
+      });
+    });
+  });
+});
+document.addEventListener('DOMContentLoaded', () => {
+  const services = document.querySelectorAll('[data-service]');
+
+  services.forEach(service => {
+    const btn = service.querySelector('[data-toggle]');
+    const content = service.querySelector('[data-content]');
+
+    btn.addEventListener('click', () => {
+      const isOpen = service.classList.contains('open');
+
+      // close all
+      services.forEach(s => {
+        s.classList.remove('open');
+        s.style.removeProperty('--content-h');
+        s.querySelector('[data-toggle]').setAttribute('aria-expanded', 'false');
+      });
+
+      // open clicked one
+      if (!isOpen) {
+        service.classList.add('open');
+        service.style.setProperty('--content-h', content.scrollHeight + 'px');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+});
+// Tooltip for project images
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.innerWidth <= 768) return; // Disable tooltip on mobile
+      const tooltip = document.createElement('div');
+      tooltip.id = 'project-tooltip';
+      document.body.appendChild(tooltip);
+      document.querySelectorAll(".project-image-container").forEach(container => {
+        container.addEventListener("mouseenter", () => {
+          const anchor = container.querySelector("a");
+          tooltip.textContent = anchor ? "View Project" : "Coming Soon";
+          tooltip.style.display = "block";
+        });
+        container.addEventListener("mousemove", e => {
+          tooltip.style.top = e.clientY + 15 + "px";
+          tooltip.style.left = e.clientX + 15 + "px";
+        });
+        container.addEventListener("mouseleave", () => {
+          tooltip.style.display = "none";
+        });
+      });
+    });
+</script>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const btn      = document.getElementById('mobileMenuBtn');
@@ -1550,7 +1342,31 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 </script>
- 
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const header = document.querySelector('header');
+  if (!header) return;
+
+  // 🔒 Mobile: header always visible
+  if (window.innerWidth <= 767) {
+    header.style.transform = 'translateY(0)';
+    return;
+  }
+
+  const headerHeight = header.offsetHeight;
+
+  function onScroll() {
+    const scrollY = window.scrollY;
+    const translateY = Math.min(0, scrollY - headerHeight);
+    header.style.transform = `translateY(${translateY}px)`;
+  }
+
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+});
+
+</script>
 
 
 <!-- Mobile Top Nav -->
@@ -1586,9 +1402,9 @@ ease-[cubic-bezier(.22,1,.36,1)]
 
     <!-- Pages -->
     <nav class="space-y-3 pt-6 mb-6">
-      <a href="#"    class="h1 block  ">Home</a>
-      <a href="#projects"    class="h1 block  ">Projects</a>
-      <a href="#about"   class="h1 block  ">About</a> 
+      <a href="/#"    class="h1 block  ">Home</a>
+      <a href="/#projects"    class="h1 block  ">Projects</a>
+      <a href="/#about"   class="h1 block  ">About</a> 
     </nav>
 
     <!-- Contact -->
