@@ -672,16 +672,17 @@ html {
       <div class="project-image-container  ">
         <a href="mmt" class="w-full h-full">
            <video
-      class="w-full h-full object-cover  "
-      loop
-      autoplay
-      muted
-      playsinline   
-      preload="metadata"  
-      poster="images/MMT 2025.avif"
-    >
-      <source src="videos/2026-motion.mp4" type="video/mp4"> 
-    </video>
+  class="w-full h-full object-cover"
+  autoplay
+  muted
+  loop
+  playsinline
+  preload="auto"
+  disablepictureinpicture
+  controlslist="nodownload nofullscreen noremoteplayback"
+>
+  <source src="videos/2026-motion.mp4" type="video/mp4">
+</video>
         </a>
       </div>
       <div class="mt-4 flex flex-col items-start">
@@ -702,42 +703,50 @@ html {
       <div class="aspect-[1/1] ">
         <div class="w-full h-full ">
    <img
-            src="images/half flip.avif"
+            src="images/new-ceres-all-green_result.jpg"
             alt="Renaissance Sports"
-            class="w-full h-full object-cover grayscale opacity-40   aspect-[1/1]" 
+            class="w-full h-full object-cover  grayscale opacity-40  aspect-[1/1]" 
           />
         </div>
       </div>
-      <div class="mt-4 flex flex-col items-start">
-        <div  class="block md:hidden [font-variation-settings:'wght'_510] body-text-2   ">
+     <div class="mt-4 flex flex-col items-start">
+         <p   class="block md:hidden [font-variation-settings:'wght'_510] body-text-2   ">
+          CERES Environment Park
+        </p>
+         <p   class="hidden md:block body-text-2   ">
+          CERES Environment Park
+        </p>
+        <p   class="text-[#686868]/80 body-text-1 mb-[2em]">
           Coming soon
-        </div>
-         <div   class="hidden md:block body-text-2   ">
-          Coming soon
-        </div> 
+        </p>
       </div>
     </div> 
 
-     <!-- Placeholder -->
+    <!-- Placeholder -->
     <div class=" flex flex-col fade-in order-2 md:order-1">
-      <div class=" aspect-[1/1]  ">
+      <div class="aspect-[1/1] ">
         <div class="w-full h-full ">
    <img
-            src="images/players-(Project-Thumbnails)-mobile.avif"
+            src="images/microdose-shirt.avif"
             alt="Renaissance Sports"
-            class="w-full h-full object-cover  grayscale opacity-40 aspect-[1/1]" 
+            class="w-full h-full object-cover  grayscale opacity-40   aspect-[1/1]" 
           />
         </div>
       </div>
-      <div class="mt-4 flex flex-col items-start">
-        <div  class="block md:hidden [font-variation-settings:'wght'_510] body-text-2   ">
+     <div class="mt-4 flex flex-col items-start">
+         <p   class="block md:hidden [font-variation-settings:'wght'_510] body-text-2   ">
+          Microdose
+        </p>
+         <p   class="hidden md:block body-text-2   ">
+          Microdose
+        </p>
+        <p   class="text-[#686868]/80 body-text-1 mb-[2em]">
           Coming soon
-        </div>
-         <div   class="hidden md:block body-text-2   ">
-          Coming soon
-        </div> 
+        </p>
       </div>
     </div> 
+
+      
 
 
 
@@ -1497,6 +1506,24 @@ document.addEventListener('DOMContentLoaded', () => {
       requestAnimationFrame(close);
     });
     
+  });
+});
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const vids = document.querySelectorAll('video');
+
+  vids.forEach(video => {
+    video.muted = true;
+    video.playsInline = true;
+
+    const playPromise = video.play();
+    if (playPromise !== undefined) {
+      playPromise.catch(() => {
+        // silently fail (iOS sometimes delays)
+      });
+    }
   });
 });
 </script>
