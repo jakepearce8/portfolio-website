@@ -673,7 +673,20 @@ The brief was to develop a clear and restrained identity for a crypto product us
   </div>
 </section>
 
-
+<script>
+document.querySelectorAll("video").forEach(v => {
+  v.muted = true;
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const videos = document.querySelectorAll("video");
+  videos.forEach(video => {
+    video.muted = true;
+    video.play().catch(()=>{});
+  });
+});
+</script>
  
 <section class="fade-in max-web mx-auto px-0 md:px-5 xl:px-[clamp(4px,5.5vw,300px)]   ">
 
@@ -691,8 +704,7 @@ The brief was to develop a clear and restrained identity for a crypto product us
         loop
         autoplay
         muted
-        playsinline
-        preload="metadata"
+        playsinline 
         poster="images/MMT 2026-01.avif"
       >
         <source src="videos/2026-motion.mp4" type="video/mp4">

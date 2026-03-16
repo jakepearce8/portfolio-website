@@ -594,7 +594,7 @@ html {
 
 
      <!-- Moss Fragrances -->
-    <div class="project flex flex-col fade-in order-2 md:order-1">
+    <div class="project flex flex-col  order-2 md:order-1">
       <div class="project-image-container  ">
         <a href="moss-fragrances" class="w-full h-full">
           <img
@@ -618,7 +618,7 @@ html {
     </div>
 
     <!-- Renaissance Sports -->
-    <div class="project flex flex-col fade-in order-2 md:order-1">
+    <div class="project flex flex-col   order-2 md:order-1">
       <div class="project-image-container  ">
         <a href="renaissance-sports" class="w-full h-full">
           <img
@@ -642,7 +642,7 @@ html {
     </div>
 
      <!-- BMP -->
-    <div class="project flex flex-col fade-in order-2 md:order-1">
+    <div class="project flex flex-col  order-2 md:order-1">
       <div class="project-image-container  ">
         <a href="bmp-sports" class="w-full h-full ">
     <img
@@ -665,10 +665,23 @@ html {
       </div>
     </div> 
 
-     
+     <script>
+document.querySelectorAll("video").forEach(v => {
+  v.muted = true;
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const videos = document.querySelectorAll("video");
+  videos.forEach(video => {
+    video.muted = true;
+    video.play().catch(()=>{});
+  });
+});
+</script>
      
      <!-- MMT -->
-    <div class="project flex flex-col fade-in order-2 md:order-1">
+    <div class="project flex flex-col   order-2 md:order-1">
       <div class="project-image-container  ">
         <a href="mmt" class="w-full h-full">
            <video
@@ -676,8 +689,7 @@ html {
   autoplay
   muted
   loop
-  playsinline
-  preload="auto"
+  playsinline 
   disablepictureinpicture
   controlslist="nodownload nofullscreen noremoteplayback"
 >
@@ -699,7 +711,7 @@ html {
     </div>
  
    <!-- Placeholder -->
-    <div class=" flex flex-col fade-in order-2 md:order-1">
+    <div class=" flex flex-col   order-2 md:order-1">
       <div class="aspect-[1/1] ">
         <div class="w-full h-full ">
    <img
@@ -723,7 +735,7 @@ html {
     </div> 
 
     <!-- Placeholder -->
-    <div class=" flex flex-col fade-in order-2 md:order-1">
+    <div class=" flex flex-col   order-2 md:order-1">
       <div class="aspect-[1/1] ">
         <div class="w-full h-full ">
    <img
