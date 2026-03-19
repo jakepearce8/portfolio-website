@@ -175,13 +175,7 @@ html {
 }
  
     
-/* override all project-image-container to square on small screens */
-.project-image-container {
-  aspect-ratio: 1 / 1;
-  width: 100%;
-  overflow: hidden;
-  border-radius: inherit;
-}
+ 
  
 
     .project-image-container:hover {
@@ -213,7 +207,7 @@ html {
       .projects-grid > .project:nth-child(5) {
         grid-column: 1; grid-row: 3;
       }
-      .projects-grid > .project:nth-child(63) {
+      .projects-grid > .project:nth-child(6) {
         grid-column: 2; grid-row: 3;
       }
     }
@@ -238,11 +232,13 @@ html {
       .projects-grid > .project:nth-child(5) {
         grid-column: 2; grid-row: 2;
       }
-      .projects-grid > .project:nth-child(63) {
+      .projects-grid > .project:nth-child(6) {
         grid-column: 3; grid-row: 2;
       }
     }
-      
+      .project {
+  min-width: 0;
+}
     
     .email-phone {
   /* default (mobile) */
@@ -368,12 +364,22 @@ footer {
   .autoplay-video { animation: none !important; }
 } 
  
-.project-image-container {
+ .project-image-container {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  position: relative;
   overflow: hidden;
+  border-radius: inherit;
 }
 
 .project-image-container img,
 .project-image-container video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
   transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
   will-change: transform;
 }
@@ -586,8 +592,7 @@ html {
    
 </h2>
   </div> 
- <section 
-  id="projects"
+ <section  
   class="max-web mx-auto z-40 fade-in pb-[clamp(2px,2.5vw,190px)] ">
   <div class="projects-grid">
 
@@ -595,12 +600,11 @@ html {
 
      <!-- Moss Fragrances -->
     <div class="project flex flex-col  order-2 md:order-1">
-      <div class="project-image-container  ">
-        <a href="moss-fragrances" class="w-full h-full">
+      
+        <a href="moss-fragrances">  <div class="project-image-container  ">
           <img
             src="images/bottles-7.jpg"
-            alt="MMT"
-            class="w-full h-full object-cover "
+            alt="MMT" 
           />
         </a>
       </div>
@@ -618,13 +622,11 @@ html {
     </div>
 
     <!-- Renaissance Sports -->
-    <div class="project flex flex-col   order-2 md:order-1">
-      <div class="project-image-container  ">
-        <a href="renaissance-sports" class="w-full h-full">
+    <div class="project flex flex-col   order-2 md:order-1"> 
+        <a href="renaissance-sports">  <div class="project-image-container  ">
           <img
             src="images/2026-erima-15.avif"
-            alt="Renaissance Sports"
-            class="w-full h-full object-cover "
+            alt="Renaissance Sports" 
           />
         </a>
       </div>
@@ -642,17 +644,13 @@ html {
     </div>
 
      <!-- BMP -->
-    <div class="project flex flex-col  order-2 md:order-1">
-      <div class="project-image-container  ">
-        <a href="bmp-sports" class="w-full h-full ">
-    <img
-            src="images/bmp-1.avif"
-            alt="Renaissance Sports"
-            class="w-full h-full object-cover "
-          />
+    <div class="project flex flex-col  order-2 md:order-1">  
+  <a href="bmp-sports">
+    <div class="project-image-container">
+      <img src="images/bmp-1.avif" alt="BMP Sports" />
+    </div>
   </a>
-      </div>
-      <div class="mt-4 flex flex-col items-start">
+  <div class="mt-4 flex flex-col items-start">
         <a href="bmp-sports" class="block md:hidden [font-variation-settings:'wght'_510] body-text-2   ">
           BMP Sports
         </a>
@@ -681,11 +679,10 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
      
      <!-- MMT -->
-    <div class="project flex flex-col   order-2 md:order-1">
-      <div class="project-image-container  ">
-        <a href="mmt" class="w-full h-full">
-           <video
-  class="w-full h-full object-cover"
+    <div class="project flex flex-col   order-2 md:order-1">  
+  <a href="mmt">
+    <div class="project-image-container">
+      <video 
   autoplay
   muted
   loop
@@ -694,10 +691,9 @@ document.addEventListener("DOMContentLoaded", () => {
   controlslist="nodownload nofullscreen noremoteplayback"
 >
   <source src="videos/Comp 1_7.mp4" type="video/mp4">
-</video>
-        </a>
-      </div>
-      <div class="mt-4 flex flex-col items-start">
+</video>    </div>
+  </a>
+  <div class="mt-4 flex flex-col items-start">
          <a href="mmt" class="block md:hidden [font-variation-settings:'wght'_510] body-text-2   ">
           Music Metaverse Token
         </a>
@@ -711,52 +707,48 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>
  
    <!-- Placeholder -->
-    <div class=" flex flex-col   order-2 md:order-1">
-      <div class="aspect-[1/1] ">
-        <div class="w-full h-full ">
-   <img
-            src="images/new-ceres-all-green_result.jpg"
-            alt="Renaissance Sports"
-            class="w-full h-full object-cover  grayscale opacity-40  aspect-[1/1]" 
-          />
-        </div>
-      </div>
-     <div class="mt-4 flex flex-col items-start">
-         <p   class="block md:hidden [font-variation-settings:'wght'_510] body-text-2   ">
-          CERES Environment Park
-        </p>
-         <p   class="hidden md:block body-text-2   ">
-          Ceres Envirmental Park
-        </p>
-        <p   class="text-[#686868]/80 body-text-1 mb-[2em]">
-          Coming soon
-        </p>
-      </div>
-    </div> 
+<div class="project flex flex-col order-2 md:order-1">
+  <div class="project-image-container">
+    <img
+      src="images/new-ceres-all-green_result.jpg"
+      alt="CERES Environment Park"
+      class="grayscale opacity-40"
+    />
+  </div>
+  <div class="mt-4 flex flex-col items-start">
+    <p class="block md:hidden [font-variation-settings:'wght'_510] body-text-2">
+      CERES Environment Park
+    </p>
+    <p class="hidden md:block body-text-2">
+      CERES Environmental Park
+    </p>
+    <p class="text-[#686868]/80 body-text-1 mb-[2em]">
+      Coming soon
+    </p>
+  </div>
+</div>
 
-    <!-- Placeholder -->
-    <div class=" flex flex-col   order-2 md:order-1">
-      <div class="aspect-[1/1] ">
-        <div class="w-full h-full ">
-   <img
-            src="images/microdose-shirt.avif"
-            alt="Renaissance Sports"
-            class="w-full h-full object-cover  grayscale opacity-40   aspect-[1/1]" 
-          />
-        </div>
-      </div>
-     <div class="mt-4 flex flex-col items-start">
-         <p   class="block md:hidden [font-variation-settings:'wght'_510] body-text-2   ">
-          Microdose
-        </p>
-         <p   class="hidden md:block body-text-2   ">
-          Microdose
-        </p>
-        <p   class="text-[#686868]/80 body-text-1 mb-[2em]">
-          Coming soon
-        </p>
-      </div>
-    </div> 
+<!-- Placeholder -->
+<div class="project flex flex-col order-2 md:order-1">
+  <div class="project-image-container">
+    <img
+      src="images/microdose-shirt.avif"
+      alt="Microdose"
+      class="grayscale opacity-40"
+    />
+  </div>
+  <div class="mt-4 flex flex-col items-start">
+    <p class="block md:hidden [font-variation-settings:'wght'_510] body-text-2">
+      Microdose
+    </p>
+    <p class="hidden md:block body-text-2">
+      Microdose
+    </p>
+    <p class="text-[#686868]/80 body-text-1 mb-[2em]">
+      Coming soon
+    </p>
+  </div>
+</div>
 
       
 
@@ -867,7 +859,7 @@ document.addEventListener("DOMContentLoaded", () => {
   <img 
     src="images/jake-image-square.avif"
     alt="blank-avatar"
-    class=" w-16 h-16   rounded-full object-cover "
+    class=" w-16 h-16   rounded-full   "
   />
 
   <!-- Text -->
