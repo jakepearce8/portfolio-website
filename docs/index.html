@@ -164,7 +164,7 @@ a:hover ~ #cursor,
     'wdth' var(--variation-setting-wdth, 200),
     'opsz' var(--variation-setting-opsz, 28);
   color: #2b2b2b;
-  letter-spacing: 0.016em;
+  letter-spacing: 0.014em;
   line-height: 1;
 
 }
@@ -181,6 +181,7 @@ a:hover ~ #cursor,
               --variation-setting-wdth 0.6s cubic-bezier(0.22, 1, 0.36, 1),
               --variation-setting-opsz 0.6s cubic-bezier(0.22, 1, 0.36, 1);
   color: #2b2b2b; 
+  text-transform: uppercase;
   letter-spacing: -0.03em;
   line-height: 0.88;
   max-width: 1000px;
@@ -189,8 +190,8 @@ a:hover ~ #cursor,
 
 .display-small {
   font-family: 'BricolageGrotesque', sans-serif;
-  --variation-setting-wght: 480;
-  --variation-setting-wdth: 100;
+  --variation-setting-wght: 620;
+  --variation-setting-wdth: 1;
   --variation-setting-opsz: 24;
   font-variation-settings:
     'wght' var(--variation-setting-wght, 400),
@@ -200,12 +201,13 @@ a:hover ~ #cursor,
               --variation-setting-wdth 0.6s cubic-bezier(0.22, 1, 0.36, 1),
               --variation-setting-opsz 0.6s cubic-bezier(0.22, 1, 0.36, 1);
   color: #2b2b2b;
+  text-transform: uppercase;
   letter-spacing: -0.025em;
-  line-height: 1.1;
+  line-height: 0.93;
 }
 .display-small:hover {
   --variation-setting-wght: 700;
-  --variation-setting-wdth: 112.5;
+  --variation-setting-wdth: 20;
 } 
 
 .h1 {
@@ -572,7 +574,7 @@ html {
   font-size: calc(var(--step-6) * 2.2);
 }
 .display-small {
-  font-size: var(--step-2);
+  font-size: calc(var(--step-1) * 1.5);
 }
 
 .nav-body {
@@ -814,15 +816,15 @@ window.addEventListener('scroll', () => {
   id="hero"
   class="hero-viewport max-web mx-auto w-full z-40 px-8 md:px-5 bg-[#F1F0EE]   "
 >
-  <div class="flex flex-col justify-end h-full pb-0">
+  <div class="flex flex-col justify-center  h-full pb-0">
 
     <div>
-      <h2 class="hidden lg:block display text-[#2B2B2B]    ">
+      <h2 class="hidden lg:block display text-[#2B2B2B]   text-center   ">
    <span class="text-[#2B2B2B]">Jake Pearce</span>
         is a graphic designer based in Naarm / Melbourne Australia.
 </h2>
 
-      <h2 class=" lg:hidden display !text-[52pt]  mb-2 text-center   md:max-w-[22ch]    ">
+      <h2 class=" lg:hidden display !text-[52pt]  mb-2 mt-6 text-center   md:max-w-[22ch]    ">
         <span class="text-[#2B2B2B]">Jake</span>
         is a Naarm / Melbourne based graphic designer.
       </h2>
