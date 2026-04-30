@@ -9,6 +9,7 @@
     "export": "next build && next export"
   },
   "dependencies": {
+    "@spencerwmiles/tailwind-font-variations": "^0.0.3",
     "motion": "^12.16.0",
     "motion-plus": "^1.1.4",
     "motion-v": "^1.2.0",

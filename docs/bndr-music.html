@@ -1,0 +1,1584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+  />
+  <title>BNDR Music Group — Jake Pearce</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font variation utilities (plain-CSS port of @spencerwmiles/tailwind-font-variations) -->
+  <link rel="stylesheet" href="font-variations.css" />
+
+  <link
+  rel="preload"
+  href="/Fonts/GoogleSansFlex.ttf"
+  as="font"
+  type="font/ttf"
+  crossorigin
+>
+  <style>
+/* hide default cursor */
+body {
+  cursor: none;
+}
+
+/* custom circle */
+#cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #2B2B2B;
+  pointer-events: none;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transform: translate(-50%, -50%);
+  transition: transform 0.15s ease, opacity 0.2s ease, background 0.6s ease,
+              width 0.45s cubic-bezier(0.22,1,0.36,1),
+              height 0.45s cubic-bezier(0.22,1,0.36,1),
+              border-radius 0.45s cubic-bezier(0.22,1,0.36,1);
+}
+
+#cursor-label {
+  font-family: 'BricolageGrotesque', sans-serif;
+  --variation-setting-wght: 350;
+  --variation-setting-wdth: 80;
+  --variation-setting-opsz: 20;
+  font-variation-settings:
+    'wght' var(--variation-setting-wght, 200),
+    'wdth' var(--variation-setting-wdth, 200),
+    'opsz' var(--variation-setting-opsz, 28);
+  color: #F1F0EE;
+  letter-spacing: 0.016em;
+  font-size: 10.3pt;
+  white-space: nowrap;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+  user-select: none;
+}
+
+#cursor.pill {
+  width: 122px;
+  height: 30px;
+  border-radius: 9999px;
+  padding: 0 6px;
+}
+
+#cursor.pill #cursor-label {
+  opacity: 1;
+}
+ 
+
+/* hover state (optional) */
+a:hover ~ #cursor,
+.project-image-container:hover ~ #cursor {
+  transform: translate(-50%, -50%) scale(1.6);
+}
+
+
+
+   /* ===== Font faces ===== */
+
+    @font-face {
+  font-family: 'SansFlex';
+  src: url('Fonts/GoogleSansFlex.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'SourceCodePro';
+  src: url('Fonts/SourceCodePro-VariableFont_wght.ttf') format('truetype');
+  font-weight: 200 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'BricolageGrotesque';
+  src: url('Fonts/BricolageGrotesque-VariableFont.ttf') format('truetype');
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+
+/* Register CSS custom properties as typed numbers so they can be transitioned */
+@property --variation-setting-wght {
+  syntax: '<number>';
+  initial-value: 400;
+  inherits: true;
+}
+@property --variation-setting-wdth {
+  syntax: '<number>';
+  initial-value: 100;
+  inherits: true;
+}
+@property --variation-setting-opsz {
+  syntax: '<number>';
+  initial-value: 16;
+  inherits: true;
+}
+
+* {
+  font-synthesis: none;
+}
+   /* ===== Global ===== */
+    body {
+      font-family: 'SansFlex', sans-serif;
+  --variation-setting-wght: 410;
+  font-variation-settings: 'wght' var(--variation-setting-wght, 380);
+  color: #2b2b2b;
+  letter-spacing: 0.00em;
+  line-height: 1.55;
+  font-display: swap;
+    }
+    /* ===== Typography & components ===== */
+
+.mono {
+  font-family: 'BricolageGrotesque', sans-serif;
+  --variation-setting-wght: 370;
+  --variation-setting-wdth: 85;
+  --variation-setting-opsz: 20;
+  font-variation-settings:
+    'wght' var(--variation-setting-wght, 200),
+    'wdth' var(--variation-setting-wdth, 200),
+    'opsz' var(--variation-setting-opsz, 28);
+  color: #2b2b2b;
+  letter-spacing: 0.016em;
+  line-height: 1;
+
+}
+.display {
+  font-family: 'BricolageGrotesque', sans-serif;
+  --variation-setting-wght: 500;
+  --variation-setting-wdth: 93;
+  --variation-setting-opsz: 42;
+  font-variation-settings:
+    'wght' var(--variation-setting-wght, 580),
+    'wdth' var(--variation-setting-wdth, 68),
+    'opsz' var(--variation-setting-opsz, 100);
+    transition: --variation-setting-wght 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+              --variation-setting-wdth 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+              --variation-setting-opsz 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  color: #2b2b2b; 
+  letter-spacing: -0.015em;
+  line-height: 0.99;
+  max-width: 1000px;
+}
+
+.display-small {
+  font-family: 'BricolageGrotesque', sans-serif;
+  --variation-setting-wght: 480;
+  --variation-setting-wdth: 100;
+  --variation-setting-opsz: 24;
+  font-variation-settings:
+    'wght' var(--variation-setting-wght, 400),
+    'wdth' var(--variation-setting-wdth, 100),
+    'opsz' var(--variation-setting-opsz, 24);
+  transition: --variation-setting-wght 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+              --variation-setting-wdth 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+              --variation-setting-opsz 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  color: #2b2b2b;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+}
+.display-small:hover {
+  --variation-setting-wght: 700;
+  --variation-setting-wdth: 112.5;
+}
+
+.h1 {
+  font-family: 'SansFlex', sans-serif;
+  --variation-setting-wght: 460;
+  font-variation-settings: 'wght' var(--variation-setting-wght, 460);
+  color: #2b2b2b;
+  letter-spacing: -0.022em;
+  line-height: 1.2;
+  font-display: swap;
+
+}
+.h2 {
+  font-family: 'SansFlex', sans-serif;
+  --variation-setting-wght: 460;
+  font-variation-settings: 'wght' var(--variation-setting-wght, 460);
+  color: #2b2b2b;
+  letter-spacing: -0.006em;
+  line-height: 1.3;
+  font-display: swap;
+}
+.h3 {
+  font-family: 'SansFlex', sans-serif;
+  --variation-setting-wght: 460;
+  font-variation-settings: 'wght' var(--variation-setting-wght, 460);
+  color: #2b2b2b;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+  font-display: swap;
+}
+.h4 {
+  font-family: 'SansFlex', sans-serif;
+  --variation-setting-wght: 460;
+  font-variation-settings: 'wght' var(--variation-setting-wght, 460);
+  color: #2b2b2b;
+  letter-spacing: -0.011em;
+  line-height: 1.1;
+  font-display: swap;
+
+}
+
+.body-text-1 {
+  font-family: 'SansFlex', sans-serif;
+  --variation-setting-wght: 320;
+  font-variation-settings: 'wght' var(--variation-setting-wght, 320);
+  color: #2b2b2b;
+  letter-spacing: 0.001em;
+  line-height: 1.5;
+  font-display: swap;
+}
+.body-text-small {
+  font-family: 'SourceCodePro', monospace;
+  --variation-setting-wght: 400;
+  font-variation-settings: 'wght' var(--variation-setting-wght, 400);
+  color: #2b2b2b;
+  letter-spacing: -0.016em;
+  line-height: 1.2;
+  font-display: swap;
+}
+
+.body-text-2 {
+  font-family: 'SansFlex', sans-serif;
+  --variation-setting-wght: 460;
+  font-variation-settings: 'wght' var(--variation-setting-wght, 460);
+  color: #2f2f2f;
+  letter-spacing: 0.001em;
+  line-height: 1.65;
+  font-display: swap;
+}
+.body-text-3 {
+  font-family: 'SansFlex', sans-serif;
+  --variation-setting-wght: 460;
+  font-variation-settings: 'wght' var(--variation-setting-wght, 460);
+  color: #2b2b2b;
+  letter-spacing: 0.0em;
+  line-height: 1.15;
+  font-display: swap;
+}
+.body-text-4 {
+  font-family: 'SansFlex', sans-serif;
+  --variation-setting-wght: 460;
+  font-variation-settings: 'wght' var(--variation-setting-wght, 460);
+  color: #2b2b2b;
+  letter-spacing: 0.0em;
+  line-height: 1.45;
+  font-display: swap;
+}
+
+/* ===== Header & Toggle ===== */
+header {
+  position: relative;
+  top: 0; left: 0; right: 0;
+  z-index: 50;
+  background-color: #F1F0EE;
+  display: flex;
+  justify-content: space-between;
+  padding: 0pt;
+  padding-top: 2pt;
+  padding-bottom: 4pt;
+}
+
+    /* your existing project tooltip */
+#project-tooltip {
+  position: fixed;
+  pointer-events: none;
+  background-color: #2B2B2D;
+  color: #F1F0EE;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 10pt;
+  z-index: 1000;
+  display: none;
+  white-space: nowrap;
+
+}
+
+/* the copy tooltip */
+#copy-tooltip {
+  position: fixed;
+  pointer-events: none;
+  background-color: #2B2B2D;
+  color: #F1F0EE;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 10pt;
+  z-index: 1000;
+  display: none;
+  white-space: nowrap;
+}
+
+html {
+  background-color: #F1F0EE; /* same as main */
+}
+
+main {
+  position: relative;
+  z-index: 2;
+  background: #F1F0EE;
+  margin-bottom: 0;
+}
+
+footer {
+  position: relative;
+  bottom: auto;
+  left: auto;
+  width: 100%;
+  max-height: none;
+  overflow: visible;
+  z-index: 10;
+}
+
+@media (max-width: 767px) {
+  footer {
+    position: relative !important;
+    max-height: none !important;
+    overflow: visible !important;
+    bottom: auto !important;
+  }
+  main {
+    margin-bottom: 0 !important;
+  }
+}
+
+/* desktop / tablet */
+#navContainer {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+/* mobile only */
+@media (max-width: 767px) {
+  #navContainer {
+    margin-top: 0.4rem;
+  margin-bottom: 0.4rem;
+  }
+}
+
+
+.external-link::after {
+  display: inline-block;
+  font-family: bootstrap-icons;
+  font-style: normal;
+  font-weight: 600;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: -.125em; 
+  margin-left: 0.5em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* 1) Always collapse every .service-content by default */
+.service .service-content {
+  max-height: 0;
+  overflow: hidden;
+}
+
+/* 2) If a service has the "open" class, expand its content */
+.service.open .service-content {
+  max-height: 256px;
+}
+
+@media (min-width: 768px) {
+  .service:hover {
+    border-color: #2b2b2b;
+  }
+}
+
+:root { --header-h: 0px; }
+
+/* Viewport-safe height minus fixed header */
+.hero-viewport {
+  height: 40dvh;
+}
+
+@supports (height: 100dvh) {
+  .hero-viewport {
+    height: 40dvh;
+  }
+}
+
+/* Only for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .autoplay-video { animation: none !important; }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+:root {
+  --step-0: clamp(1rem, 1vw + 0.7rem, 1rem);
+  --ratio: 1.2;
+  --step--1: calc(var(--step-0) / 1.25);
+  --step-1: calc(var(--step-0) * var(--ratio));
+  --step-2: calc(var(--step-1) * var(--ratio));
+  --step-3: calc(var(--step-2) * var(--ratio));
+  --step-4: calc(var(--step-3) * var(--ratio));
+  --step-5: calc(var(--step-4) * var(--ratio));
+  --step-6: calc(var(--step-5) * var(--ratio));
+  --step-7: calc(var(--step-6) * var(--ratio));
+}
+
+ 
+
+/* Type mappings */
+.body-text-1,
+.body-text-2 {
+  font-size: var(--step-0);
+}
+
+.body-text-3,
+.body-text-4 {
+  font-size: var(--step-1);
+}
+
+.body-text-small {
+  font-size: var(--step--1);
+}
+.mono {
+  font-size: calc(var(--step--1) * 1.06);
+}
+.display {
+  font-size: calc(var(--step-4) * 1.1);
+}
+.display-small {
+  font-size: var(--step-2);
+}
+
+.nav-body {
+  font-size: var(--step-0);
+}
+
+.nav-h2 {
+  font-size: var(--step-1);
+}
+.h4 { font-size: var(--step-4); }
+.h3 { font-size: var(--step-3); }
+.h2 { font-size: var(--step-2); }
+.h1 { font-size: var(--step-5); }
+
+#projects {
+  scroll-margin-top: 100px;
+}
+#about {
+  scroll-margin-top: 80px;
+}
+#contact {
+  scroll-margin-top: 60px;
+}
+
+
+@media (max-width: 767px) {
+  header {
+    transform: translateY(0) !important;
+  }
+}
+
+body {
+  cursor: none;
+}
+a,
+button,
+[role="button"],
+input,
+textarea {
+  cursor: none !important;
+}
+html, body {
+  cursor: none;
+}
+
+.is-scrolling,
+.is-scrolling * {
+  cursor: none !important;
+}
+
+/* ===== Page-specific styles ===== */
+.project-image-container {
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  overflow: hidden;
+  border-radius: inherit;
+}
+
+.project-image-container:hover {
+  cursor: default;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 36px;
+  column-gap: 20px;
+}
+@media (min-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+  }
+  .projects-grid > .project:nth-child(1) {
+    grid-column: 1; grid-row: 1;
+  }
+  .projects-grid > .project:nth-child(2) {
+    grid-column: 2; grid-row: 1;
+  }
+}
+@media (min-width: 767px) {
+  .desktop     { display: block !important; }
+  .desktop-flex{ display: flex  !important; }
+  .mobile      { display: none  !important; }
+}
+@media (max-width: 767px) {
+  .header-nav  { display: none !important; }
+}
+@media (min-width: 768px) {
+  .desktop     { display: block !important; }
+  .desktop-flex{ display: flex  !important; }
+  .mobile      { display: none  !important; }
+}
+
+#page-layout {
+  display: flex;
+  align-items: flex-start;
+}
+
+#case-sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 160px;
+  flex-shrink: 0;
+  background: #F1F0EE;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px 22px;
+  border-right: 1px solid rgba(43,43,43,0.1);
+}
+
+#page-layout > main {
+  flex: 1;
+  min-width: 0;
+}
+
+@media (max-width: 767px) {
+  #case-sidebar { display: none; }
+  #page-layout { display: block; }
+}
+
+.project-image-container {
+  overflow: hidden;
+}
+
+.project-image-container img,
+.project-image-container video {
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+.project-image-container:hover img,
+.project-image-container:hover video {
+  transform: scale(1.06);
+}
+
+/* ===== Hamburger → X animation ===== */
+.hamburger-bar {
+  display: block;
+  width: 100%;
+  height: 0.1em;
+  background: rgba(43,43,43,0.45);
+  transform-origin: center;
+  transition: transform 0.35s cubic-bezier(0.22,1,0.36,1),
+              opacity   0.25s cubic-bezier(0.22,1,0.36,1);
+}
+/* open state — applied to the .hamburger div */
+.hamburger.is-open .bar-1 { transform: translateY(4.25px) rotate(45deg); }
+.hamburger.is-open .bar-2 { opacity: 0; transform: scaleX(0); }
+.hamburger.is-open .bar-3 { transform: translateY(-4.25px) rotate(-45deg); }
+  </style>
+   
+</head>
+<body>
+  <div id="project-tooltip"></div>
+  <!-- ===== Header & Toggle ===== -->
+<div id="site-header" class="sticky top-0 z-50 md:relative">
+<header class="bg-[#F1F0EE]   top-0 left-0 right-0 z-50">
+<div
+  id="navContainer"
+  class="flex justify-between items-center w-full py-3 md:py-0 px-8 md:px-5"
+>
+  <a
+    href="/"
+    class="inline-flex items-center py-[3px]   mono uppercase text-[#2B2B2B]/45 hover:text-[#2B2B2B] transition-colors mt-[4.5px]"
+  >
+    Jake Pearce
+  </a>
+  <nav class="mono text-[#2B2B2B]/65 uppercase hidden md:flex" style="margin: 0pt;">
+    <ul class="flex space-x-5 -mr-[0.4em] md:-mr-[0em] mt-[4.5px] mb-0">
+      <li><a href="/#projects" class="text-[#2B2B2B]/45 hover:text-[#2B2B2B] transition-colors">Projects</a></li>
+      <li><a href="/#about" class="text-[#2B2B2B]/45 hover:text-[#2B2B2B] transition-colors">About</a></li>
+      <li><a href="/#contact" class="text-[#2B2B2B]/45 hover:text-[#2B2B2B] transition-colors">Contact</a></li>
+    </ul>
+  </nav>
+  <button
+    id="mobileMenuBtn"
+    class="md:hidden flex items-center justify-center w-8 h-8 -mr-2 "
+    aria-label="Open menu"
+  >
+    <div class="hamburger flex flex-col justify-between w-[15px] h-[10px]">
+      <span class="hamburger-bar bar-1"></span>
+      <span class="hamburger-bar bar-2"></span>
+      <span class="hamburger-bar bar-3"></span>
+    </div>
+  </button>
+</div>
+</header>
+
+<!-- Mobile dropdown nav -->
+<div
+  id="mobileNav"
+  aria-hidden="true"
+  class="md:hidden bg-[#F1F0EE] overflow-hidden"
+  style="max-height: 0; transition: max-height 0.45s cubic-bezier(0.22,1,0.36,1);"
+>
+  <div class="px-8 pb-8 flex flex-col gap-3 ">
+    <a href="/" class="mono uppercase text-[#2B2B2B]/45 hover:text-[#2B2B2B] transition-colors inline-block w-fit bg-[#ffffff]/85 hover:bg-[#ffffff]/25 px-[6px] py-[4px] leading-none"> ← Home</a>
+    <a href="/#projects" class="mono uppercase text-[#2B2B2B]/45 hover:text-[#2B2B2B] transition-colors block">Projects</a>
+    <a href="/#visual-feed" class="mono uppercase text-[#2B2B2B]/45 hover:text-[#2B2B2B] transition-colors block">Visual Feed</a>
+    <a href="/#about" class="mono uppercase text-[#2B2B2B]/45 hover:text-[#2B2B2B] transition-colors block">About</a>
+  </div>
+</div>
+  <div style="height: 1px; background: rgba(43,43,43,0.1);"></div>
+</div>
+
+<div id="page-layout">
+<nav id="case-sidebar">
+  <div class=" flex flex-col gap-3">
+    <a href="/" class="mono uppercase text-[#2B2B2B]/45 hover:text-[#2B2B2B] transition-colors inline-block w-fit bg-[#ffffff]/85 hover:bg-[#ffffff]/25 px-[6px] py-[4px] leading-none"> ← Home</a>
+    <a href="#overview" class="mono uppercase text-[#2B2B2B]/45 hover:text-[#2B2B2B] transition-colors block">Overview</a>
+    <a href="#brief" class="mono uppercase text-[#2B2B2B]/45 hover:text-[#2B2B2B] transition-colors block">Brief</a>
+    <a href="#logo" class="mono uppercase text-[#2B2B2B]/45 hover:text-[#2B2B2B] transition-colors block">Logo</a>
+  </div>
+  <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" class="mono uppercase text-[#2B2B2B]/45 hover:text-[#2B2B2B] transition-colors inline-block w-fit bg-[#ffffff]/85 hover:bg-[#ffffff]/25 px-[6px] py-[4px] leading-none block">↑ Back to Top</a>
+</nav>
+<main>
+
+<section
+  id="Project-images"
+  class="hidden md:block   mx-auto md:-mt-3"
+>
+  <div class="content-column md:space-y-2.5 space-y-2.5">
+  <section id="project-gallery" class=" ">
+  <div
+    class="
+      overflow-hidden
+      h-[65vh]
+      bg-[#2789ee]
+      flex
+      px-10
+      items-end
+      justify-center
+    "
+  >
+    <img
+      src="images/hero-mmt.webp"
+      alt="MMT Hero"
+      class="block w-full max-w-[900px]  h-auto object-contain"
+    />
+  </div>
+</section>
+  </div>
+</section>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const img = document.querySelector('.project-parallax');
+  if (!img) return;
+
+  const container = img.parentElement;
+  const strength = 0.12; // 👈 subtlety knob (0.05–0.12 sweet spot)
+
+  function update() {
+    const rect = container.getBoundingClientRect();
+    const viewH = window.innerHeight;
+
+    // progress: -1 (above) → 0 (centered) → 1 (below)
+    const progress = (rect.top + rect.height / 2 - viewH / 2) / viewH;
+
+    const translateY = -progress * rect.height * strength;
+
+    img.style.transform = `translateY(${translateY}px)`;
+  }
+
+  // initial
+  update();
+
+  window.addEventListener('scroll', () => {
+    requestAnimationFrame(update);
+  }, { passive: true });
+
+  window.addEventListener('resize', update);
+});
+</script>
+
+<section
+  id="overview"
+  class="  max-web mx-auto w-full z-40
+         px-8 md:px-14 py-14
+         bg-[#F1F0EE]   max-w-[1400px]"
+>
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-5 items-start">
+
+     <!-- LEFT COLUMN -->
+    <div>
+      <h3 class="mono text-[#2B2B2B]/75 uppercase tracking-[0.01em]  text-[#686868]/65   mb-5  ">
+      Music Metaverse Token </h3>
+      <h2 class="display      mr-[1em] xl:max-w-[28ch]  ">
+        Designing a visual identity for a music streaming utility token
+      </h2>
+
+
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div
+      class="
+        grid grid-cols-1 gap-y-8 gap-x-8
+           justify-between items-stretch
+      "
+    > 
+      <div class="flex flex-col items-start">
+        <span class="mono uppercase text-[#2B2B2B]/45  mb-1.5">Year</span>
+        <span class="body-text-1">2023</span>
+      </div>
+ 
+
+      <div class="flex flex-col">
+        <span class="mono uppercase text-[#2B2B2B]/45  mb-1.5">Team</span>
+        <ul class="body-text-1 ">
+          <li>Corban Keating — Art Director</li>
+          <li>Jake Pearce — Lead Designer</li> 
+        </ul>
+      </div> 
+
+      <div class="flex flex-col">
+        <span class="mono uppercase text-[#2B2B2B]/45  mb-1.5">Deliverables</span>
+        <ul class="body-text-1 ">
+          
+        <li>Art direction</li>
+        <li>Branding</li>
+        <li>Motion graphics</li>
+        </ul>
+      </div>  
+    </div>
+
+  </div>
+</section>
+<script>
+document.querySelectorAll("video").forEach(v => {
+  v.muted = true;
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const videos = document.querySelectorAll("video");
+  videos.forEach(video => {
+    video.muted = true;
+    video.play().catch(()=>{});
+  });
+});
+</script>
+<section class="md:hidden     max-web mx-auto px-8 md:px-10">
+  <div class="space-y-2 mt-0 mb-2.5">
+
+    <!-- Row 1 -->
+    <div class="flex flex-col xl:flex-row gap-2 md:gap-3">
+      <div class="flex-1">
+        <div
+  class="
+    overflow-hidden
+    aspect-[4/3]
+    bg-[#2789ee]
+    flex 
+    items-end
+    justify-center
+  "
+>
+  <img
+    src="images/hero-mmt.webp"
+    alt="MMT Hero"
+    class="block w-full max-w-[620px] mt-4 h-auto object-contain"
+  />
+</div>
+      </div>
+
+      
+ 
+    </div>
+
+  </div>
+</section>
+ 
+<section class="  max-web mx-auto px-8 md:px-14  max-w-[1400px]">
+
+<div class="space-y-2.5 md:space-y-2  ">
+
+    <!-- Row 1 -->
+    <div class="flex flex-row gap-2.5 md:gap-2">
+     <div class="flex-1">
+        <div class="aspect-[4/3] bg-[#2789ee] flex items-center justify-center">
+    <img
+      src="images/MMT-new-4.webp"
+      alt="Gallery Image 1"
+      class="block h-full py-6 md:py-16 xl:py-28   w-auto object-contain"
+    />
+  </div> 
+      </div>
+
+      
+
+      
+      <div class="flex-1">
+        <div class="aspect-[4/3] bg-[#2789ee] flex items-center justify-center">
+    <img
+      src="images/MMT-new-5.webp"
+      alt="Gallery Image 1"
+      class="block h-full py-6 md:py-16 xl:py-28  w-auto object-contain"
+    />
+  </div> 
+      </div>
+      </div>  
+
+      
+ 
+    </div> 
+      
+
+    <section
+  id="brief"
+  class="mt-0 md:mt-0 mb-2 md:mb-0 max-web mx-auto w-full z-40
+          py-14
+         bg-[#F1F0EE]   max-w-[1400px]"
+>
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-5 items-start">
+
+    <!-- LEFT COLUMN -->
+    <div> 
+      <h2 class="display   mr-[1em] xl:max-w-[24ch]">
+        Brief and approach
+      </h2>
+
+
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div
+      class="
+        grid grid-cols-1 gap-y-8 gap-x-8
+           justify-between items-stretch
+      "
+    > 
+      <div class="flex flex-col items-start">
+     
+
+      <div class="flex flex-col items-start max-w-[75ch]"> 
+        <span class="body-text-1">Music Metaverse Token (MMT) is a utility token operating within the Stream Live ecosystem.
+The brief was to develop a clear and restrained identity for a crypto product used to compensate concert promoters for driving audience engagement on live-streamed events. Earned tokens could then be redeemed by fans for discounted tickets and access to live music experiences.</span>
+      </div>
+
+  </div>
+</section>
+ <div class="flex mt-2  xl:flex-row gap-2.5 md:gap-2">
+      <div class="">
+        
+  <div class="  overflow-hidden   rounded-none">
+          <video autoplay muted loop playsinline>
+            <source src="videos/Comp 1_8.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div> 
+
+    </div>
+    <section
+  id="logo"
+  class="mt-0 md:mt-0 mb-2 md:mb-0 max-web mx-auto w-full z-40
+          py-14
+         bg-[#F1F0EE]   max-w-[1400px]"
+>
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-5 items-start">
+
+    <!-- LEFT COLUMN -->
+    <div> 
+      <h2 class="display   mr-[1em] xl:max-w-[24ch]">
+        Logo design
+      </h2>
+
+
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div
+      class="
+        grid grid-cols-1 gap-y-8 gap-x-8
+           justify-between items-stretch
+      "
+    > 
+      <div class="flex flex-col items-start">
+     
+
+      <div class="flex flex-col items-start max-w-[75ch]"> 
+        <span class="body-text-1">The logo for MMT, the native cryptocurrency powering the Stream Live app, draws on the established visual language. The concept is is two stylised ‘M’s through a rhythmic wave motif.</div>
+
+  </div>
+</section>
+    <!-- Row 2 -->
+    <div class="flex flex-row gap-2.5 md:gap-6 mt-2">
+      <div class="flex-1">
+        <div class="aspect-[16/9] bg-[#181818] flex items-center justify-center">
+    <img
+      src="images/MMT-new-logos-15.webp"
+      alt="Gallery Image 1"
+      class="block h-full py-8 md:py-16 xl:py-24  w-auto object-contain"
+    />
+  </div> 
+      </div>
+
+      
+
+      
+      <div class="flex-1">
+        <div class="aspect-[16/9] bg-[#0051FE] flex items-center justify-center">
+    <img
+      src="images/MMT-new-logos-14.webp"
+      alt="Gallery Image 1"
+      class="block h-full py-8 md:py-16 xl:py-24  w-auto object-contain"
+    />
+  </div> 
+      </div>
+    </div>
+     <section 
+  class="  max-web mx-auto w-full z-40
+          pt-6 pb-7
+         bg-[#F1F0EE]    "
+>
+
+  <div class="grid grid-cols-2 lg:grid-cols-2 gap-6 md:gap-6 items-start">
+
+    <!-- LEFT COLUMN -->
+    <div> 
+       <div class="flex flex-col items-center justify-center max-w-[75ch]"> 
+        <span class="mono uppercase text-[#2B2B2B]/45   ">
+      Stream Live Logo
+    </span>
+         </div>
+
+
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div
+      class="
+        grid grid-cols-1 gap-y-8 gap-x-8
+           justify-between items-stretch
+      "
+    > 
+      <div class="flex flex-col items-center justify-center">
+     
+
+      <div class="flex flex-col items-center justify-center max-w-[75ch]"> 
+        <span class="mono uppercase text-[#2B2B2B]/45    ">
+      Music Metaverse Logo
+    </span>
+         </div>
+
+  </div>
+</section>
+    <div class="flex mt-2  xl:flex-row gap-2.5 md:gap-2">
+      
+
+    </div>
+    <div class="flex-1 mt-2">
+        
+      </div>
+      <div class="flex-1 mt-2">
+  <div class="  flex items-center justify-center">
+    <img
+      src="images/MMT-new-1.webp"
+      alt="Gallery Image 1"
+      class="block w-full    h-auto object-contain"
+    />
+  </div>  
+  <div class="flex-1 mt-2"></div>
+  <div class="">
+        <div class="aspect-[6/4] bg-[#181818] flex items-center justify-center">
+    <img
+      src="images/MMT-new-2.webp"
+      alt="Gallery Image 1"
+      class="block w-full p-12 md:p-24 xl:p-48  h-auto object-contain"
+    />
+  </div> 
+         
+        
+      </div> 
+      <div class="flex-1 mt-2">
+       <div class="aspect-[16/9] bg-[#2789ee] flex items-center justify-center">
+    <img
+      src="images/mmt-socials.webp"
+      alt="Gallery Image 1"
+      class="block w-full p-12 md:p-24 xl:p-48   h-auto object-contain"
+    />
+  </div>
+</div>
+     
+   
+      
+
+ <section 
+  class="  max-web mx-auto w-full z-40 py-14
+           
+         bg-[#F1F0EE]   max-w-[1400px]"
+>
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-5 items-start">
+
+    <!-- LEFT COLUMN -->
+    <div> 
+      <h2 class="display   mr-[1em] xl:max-w-[24ch]">
+        Got something in the works?
+      </h2>
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div
+      class="
+        grid grid-cols-1 gap-y-6 gap-x-8
+          justify-between items-stretch
+      "
+    > 
+ 
+
+      <p class="body-text-1 max-w-[44ch]">
+    I’m currently open to freelance projects, contract roles, and in-house opportunities. Feel free to reach out if you have something in mind or just want to say hi!
+  </p>
+
+  <div class=" ">
+
+    <!-- EMAIL -->
+    <a
+  href="mailto:hello@jakepearce.com.au"
+  class="text-[#2B2B2B]  display-small    ">
+      Get in touch →
+    </a>
+
+  </div>
+</div>
+
+  </div>
+</section>
+  </div>
+  
+</section>
+
+
+  </section>
+  
+
+  
+
+
+</section>
+
+</main>
+</div>
+<footer class="bg-[#0C0C0C] px-8 md:px-10 pt-14 md:pt-12 pb-14">
+  <div class="max-web">
+    <div class="grid grid-cols-1 md:grid-cols-[repeat(3,max-content)] gap-x-[60px] w-fit">
+      <div class="col-span-1 md:col-span-3 mb-2">
+        <span class="mono uppercase text-[#f9f9f9]">Projects</span>
+      </div>
+      <div class="flex md:hidden flex-col gap-[12px] mb-14">
+        <a href="moss-fragrances" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">Moss Fragrances</a>
+        <a href="renaissance-sports" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">Renaissance Sports</a>
+        <a href="mmt" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">BNDR Music Group</a>
+        <a href="bmp-sports" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">BMP Sports</a> 
+      </div>
+      <div class="hidden md:flex flex-col gap-[12px] mb-20">
+        <a href="moss-fragrances" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">Moss Fragrances</a>
+        <a href="renaissance-sports" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">Renaissance Sports</a>
+      </div>
+      <div class="hidden md:flex flex-col gap-[12px] mb-20">
+        
+        <a href="mmt" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">BNDR Music Group</a>
+        <a href="bmp-sports" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">BMP Sports</a>
+      </div>
+     <div class="relative hidden md:flex flex-col gap-[12px] mb-20">
+ 
+
+  <p class="mono uppercase text-[#f9f9f9]/40">Ceres Environmental Park</p>
+  <p class="mono uppercase text-[#f9f9f9]/40">Jake Pearce Design</p>
+
+</div>
+      <div class="mb-14 md:mb-0">
+        <span class="mono uppercase text-[#f9f9f9] block mb-3">Say Hi</span>
+        <div class="flex flex-col gap-[12px]">
+          <a href="mailto:hello@jakepearce.com.au" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">Send a Message</a>
+          <a href="https://www.linkedin.com/in/jakepearcedesign/" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">LinkedIn</a>
+        </div>
+      </div>
+      <div class="mb-14 md:mb-0">
+        <span class="mono uppercase text-[#f9f9f9] block mb-3">About</span>
+        <div class="flex flex-col gap-[12px]">
+          <a href="/#about" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">About</a>
+          <a href="#" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">Resume</a>
+        </div>
+      </div>
+      <div>
+        <span class="mono uppercase text-[#f9f9f9] block mb-3">Work</span>
+        <div class="flex flex-col gap-[12px]">
+          <a href="/#projects" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">Projects</a>
+          <a href="#" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">Visual Feed</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  if (window.innerWidth <= 768) return;
+
+  function tryAltSrc(img, candidates) {
+    if (!candidates.length) return;
+    const next = candidates.shift();
+
+    const pre = new Image();
+    pre.onload = () => { img.src = next; };
+    pre.onerror = () => tryAltSrc(img, candidates);
+    pre.src = next;
+  }
+
+   });
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  if (window.innerWidth > 768) return;
+
+  // iOS Safari: prevent double-tap zoom
+  let lastTouchEnd = 0;
+  document.addEventListener('touchend', (e) => {
+    const now = Date.now();
+    if (now - lastTouchEnd <= 300) e.preventDefault();
+    lastTouchEnd = now;
+  }, { passive: false });
+
+  
+});
+</script> 
+ 
+<script> 
+</script>
+<script>
+(() => {
+  function initFadeIns() {
+    const els = Array.from(document.querySelectorAll('. '));
+    if (!els.length) return;
+
+    // Respect reduced motion
+    const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Ensure a consistent starting state (so it works even if CSS is missing)
+    els.forEach(el => {
+      el.style.willChange = 'opacity, transform';
+      el.style.transition = reduceMotion ? 'none' : 'opacity 700ms ease, transform 700ms ease';
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(14px)';
+    });
+
+    // Fallback if IntersectionObserver isn't available
+    if (!('IntersectionObserver' in window) || reduceMotion) {
+      els.forEach(el => {
+        el.style.opacity = '1';
+        el.style.transform = 'translateY(0)';
+      });
+      return;
+    }
+
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        el.style.opacity = '1';
+        el.style.transform = 'translateY(0)';
+        obs.unobserve(el);
+      });
+    }, {
+      root: null,
+      rootMargin: '0px 0px -1% 0px', // triggers a bit before fully in view
+      threshold: 0.01
+    });
+
+    els.forEach(el => observer.observe(el));
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initFadeIns, { once: true });
+  } else {
+    initFadeIns();
+  }
+})();
+</script> 
+ 
+
+   <script>
+    
+  
+
+   
+</script>
+  <script>
+    
+    
+    
+    // Tooltip for project images
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.innerWidth <= 768) return; // Disable tooltip on mobile
+      const tooltip = document.createElement('div');
+      tooltip.id = 'project-tooltip';
+      document.body.appendChild(tooltip);
+      document.querySelectorAll(".project-image-container").forEach(container => {
+        container.addEventListener("mouseenter", () => {
+          const anchor = container.querySelector("a");
+          tooltip.textContent = anchor ? "View Project" : "Coming Soon";
+          tooltip.style.display = "block";
+        });
+        container.addEventListener("mousemove", e => {
+          tooltip.style.top = e.clientY + 15 + "px";
+          tooltip.style.left = e.clientX + 15 + "px";
+        });
+        container.addEventListener("mouseleave", () => {
+          tooltip.style.display = "none";
+        });
+      });
+    });
+    
+    
+    document.addEventListener('DOMContentLoaded', () => {
+  const MOBILE_BREAKPOINT = 768;
+
+  function swapImages() {
+    const isMobile = window.innerWidth <= MOBILE_BREAKPOINT;
+    document.querySelectorAll('.project-image-container img').forEach(img => {
+      const src = img.getAttribute('src');
+      const dot = src.lastIndexOf('.');
+      if (dot === -1) return;
+
+      const base = src.slice(0, dot);
+      const ext  = src.slice(dot);
+      const mobileSrc = `${base}-mobile${ext}`;
+
+      // only swap if on mobile and not already swapped
+      if (isMobile && !src.endsWith(`-mobile${ext}`)) {
+        img.src = mobileSrc;
+      }
+      // optional: swap back on desktop
+      else if (!isMobile && src.endsWith(`-mobile${ext}`)) {
+        img.src = `${base.replace(/-mobile$/, '')}${ext}`;
+      }
+    });
+  }
+
+  // initial swap
+  swapImages();
+  // also update on resize
+  window.addEventListener('resize', swapImages);
+});
+     
+      // Initialize tooltip if it wasn't created above
+      if (!document.getElementById('project-tooltip')) {
+        const tooltip = document.createElement('div');
+        tooltip.id = 'project-tooltip';
+        document.body.appendChild(tooltip);
+      }
+      btn.addEventListener('click', () => {
+        isOpen = !isOpen;
+        if (isOpen) {
+          // Open menu
+          
+          
+        } else {
+          // Close menu
+          overlay.classList.remove('visible');
+          setTimeout(() => {
+            overlay.style.display = 'none';
+          }, 400); // Match transition duration
+          icon.classList.remove('open');
+          document.body.classList.remove('nav-open');
+        }
+      });  
+    const img = container.querySelector('img');
+    const video = container.querySelector('video');
+
+    let base, ext, original, altImg;
+
+    if (img) {
+      const src = img.src;
+      const dot = src.lastIndexOf('.');
+      if (dot === -1) return;
+      base = src.slice(0, dot);
+      ext = src.slice(dot);
+      original = img;
+    } else if (video && video.poster) {
+      const poster = video.poster;
+      const dot = poster.lastIndexOf('.');
+      if (dot === -1) return;
+      base = poster.slice(0, dot);
+      ext = poster.slice(dot);
+      original = video;
+    } else {
+      return;
+    }
+
+    const alts = (ext.match(/jpe?g/i) ? [base+'-alt.gif', base+'-alt.png', base+'-alt'+ext] : [base+'-alt'+ext]);
+
+    altImg = document.createElement('img');
+    altImg.alt = (original.alt || 'Project') + ' alt';
+    altImg.className = original.className;
+    Object.assign(altImg.style, {
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      width: '100%',
+      height: '100%',
+      objectFit: 'cover',
+      zIndex: 1
+    });
+
+    container.style.position = 'relative';
+    container.appendChild(altImg);
+    original.style.position = 'relative';
+    original.style.zIndex = 2;
+    original.style.transition = 'opacity 0.4s ease';
+
+    tryAltSrc(altImg, alts);
+
+    container.addEventListener('mouseenter', () => {
+      original.style.opacity = 0;
+    });
+    container.addEventListener('mouseleave', () => {
+      original.style.opacity = 1;
+    }); 
+
+    // Smooth-scroll for Work link
+    document.addEventListener("DOMContentLoaded", () => {
+      const workLink = document.querySelector('a.nav-button[href="/"]');
+      if (workLink && window.location.pathname.endsWith('/')) {
+        workLink.addEventListener('click', e => {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+    });
+    // smooth scroll for “Back to top”
+document.addEventListener('DOMContentLoaded', () => {
+  const back = document.getElementById('backToTop');
+  if (!back) return;
+  back.addEventListener('click', e => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+    document.addEventListener('DOMContentLoaded', () => {
+  if (window.innerWidth <= 768) {
+    const grid = document.querySelector('.projects-grid');
+    const bravesProject = grid.children[2]; // assuming Braves is 3rd project
+    if (grid && bravesProject) {
+      grid.insertBefore(bravesProject, grid.firstChild);
+    }
+    
+  }
+  
+});
+
+  </script>
+  <script>
+document.addEventListener('DOMContentLoaded', () => {
+  // create floating copy-tooltip
+  const copyTip = document.createElement('div');
+  copyTip.id = 'copy-tooltip';
+  document.body.appendChild(copyTip);
+
+  document.querySelectorAll('.copy-target').forEach(link => {
+    link.addEventListener('mouseenter', () => {
+      copyTip.textContent = 'Click to copy';
+      copyTip.style.display = 'block';
+    });
+    link.addEventListener('mousemove', e => {
+      copyTip.style.top  = (e.clientY + 15) + 'px';
+      copyTip.style.left = (e.clientX + 15) + 'px';
+    });
+    link.addEventListener('mouseleave', () => {
+      copyTip.style.display = 'none';
+    });
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const text = link.getAttribute('data-copy');
+      navigator.clipboard.writeText(text).then(() => {
+        copyTip.textContent = 'Coppied ✓';
+      });
+    });
+  });
+});
+document.addEventListener('DOMContentLoaded', () => {
+  const services = document.querySelectorAll('[data-service]');
+
+  services.forEach(service => {
+    const btn = service.querySelector('[data-toggle]');
+    const content = service.querySelector('[data-content]');
+
+    btn.addEventListener('click', () => {
+      const isOpen = service.classList.contains('open');
+
+      // close all
+      services.forEach(s => {
+        s.classList.remove('open');
+        s.style.removeProperty('--content-h');
+        s.querySelector('[data-toggle]').setAttribute('aria-expanded', 'false');
+      });
+
+      // open clicked one
+      if (!isOpen) {
+        service.classList.add('open');
+        service.style.setProperty('--content-h', content.scrollHeight + 'px');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+});
+// Tooltip for project images
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.innerWidth <= 768) return; // Disable tooltip on mobile
+      const tooltip = document.createElement('div');
+      tooltip.id = 'project-tooltip';
+      document.body.appendChild(tooltip);
+      document.querySelectorAll(".project-image-container").forEach(container => {
+        container.addEventListener("mouseenter", () => {
+          const anchor = container.querySelector("a");
+          tooltip.textContent = anchor ? "View Project" : "Coming Soon";
+          tooltip.style.display = "block";
+        });
+        container.addEventListener("mousemove", e => {
+          tooltip.style.top = e.clientY + 15 + "px";
+          tooltip.style.left = e.clientX + 15 + "px";
+        });
+        container.addEventListener("mouseleave", () => {
+          tooltip.style.display = "none";
+        });
+      });
+    });
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const btn       = document.getElementById('mobileMenuBtn');
+  const nav       = document.getElementById('mobileNav');
+  const hamburger = btn && btn.querySelector('.hamburger');
+  if (!btn || !nav) return;
+
+  let isOpen = false;
+
+  const open = () => {
+    isOpen = true;
+    nav.style.maxHeight = nav.scrollHeight + 'px';
+    nav.setAttribute('aria-hidden', 'false');
+    if (hamburger) hamburger.classList.add('is-open');
+    btn.setAttribute('aria-label', 'Close menu');
+  };
+
+  const close = () => {
+    isOpen = false;
+    nav.style.maxHeight = '0';
+    nav.setAttribute('aria-hidden', 'true');
+    if (hamburger) hamburger.classList.remove('is-open');
+    btn.setAttribute('aria-label', 'Open menu');
+  };
+
+  btn.addEventListener('click', () => isOpen ? close() : open());
+  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => requestAnimationFrame(close)));
+});
+</script>
+
+
+
+<div id="cursor"><span id="cursor-label"></span></div>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const cursor = document.getElementById('cursor');
+  let x = 0, y = 0, targetX = 0, targetY = 0;
+  document.addEventListener('mousemove', (e) => { targetX = e.clientX; targetY = e.clientY; });
+  function animate() {
+    x += (targetX - x) * 0.5;
+    y += (targetY - y) * 0.5;
+    cursor.style.left = x + 'px';
+    cursor.style.top = y + 'px';
+    requestAnimationFrame(animate);
+  }
+  animate();
+  const cursorLabel = document.getElementById('cursor-label');
+  let onProjectImage = false;
+  document.querySelectorAll('.project-image-container').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      onProjectImage = true;
+      cursor.classList.add('pill');
+      cursorLabel.textContent = 'View case study';
+      cursor.style.transform = 'translate(-50%, -50%)';
+    });
+    el.addEventListener('mouseleave', () => {
+      onProjectImage = false;
+      cursor.classList.remove('pill');
+      cursor.style.transform = 'translate(-50%, -50%)';
+    });
+  });
+  document.querySelectorAll('a').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      if (!onProjectImage) cursor.style.transform = 'translate(-50%, -50%) scale(1.6)';
+    });
+    el.addEventListener('mouseleave', () => {
+      if (!onProjectImage) cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+    });
+  });
+  const footer = document.querySelector('footer');
+  if (footer) {
+    footer.addEventListener('mouseenter', () => { cursor.style.background = '#F1F0EE'; });
+    footer.addEventListener('mouseleave', () => { cursor.style.background = '#2B2B2B'; });
+  }
+});
+</script>
+<script>
+let scrollTimeout;
+window.addEventListener('scroll', () => {
+  document.body.classList.add('is-scrolling');
+  clearTimeout(scrollTimeout);
+  scrollTimeout = setTimeout(() => { document.body.classList.remove('is-scrolling'); }, 120);
+});
+</script>
+</body>
+</html> 

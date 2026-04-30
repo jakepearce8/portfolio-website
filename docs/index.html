@@ -9,6 +9,8 @@
   <title>Jake Pearce</title>
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font variation utilities (plain-CSS port of @spencerwmiles/tailwind-font-variations) -->
+  <link rel="stylesheet" href="font-variations.css" />
 
   <link
   rel="preload"
@@ -18,21 +20,124 @@
   crossorigin
 >
   <style>
+/* hide default cursor */
+body {
+  cursor: none;
+}
 
+/* custom circle */
+#cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #2B2B2B;
+  pointer-events: none;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transform: translate(-50%, -50%);
+  transition: transform 0.15s ease, opacity 0.2s ease, background 0.6s ease,
+              width 0.45s cubic-bezier(0.22,1,0.36,1),
+              height 0.45s cubic-bezier(0.22,1,0.36,1),
+              border-radius 0.45s cubic-bezier(0.22,1,0.36,1);
+}
+
+#cursor-label {
+  font-family: 'BricolageGrotesque', sans-serif;
+  --variation-setting-wght: 350;
+  --variation-setting-wdth: 80;
+  --variation-setting-opsz: 20;
+  font-variation-settings:
+    'wght' var(--variation-setting-wght, 200),
+    'wdth' var(--variation-setting-wdth, 200),
+    'opsz' var(--variation-setting-opsz, 28);
+  color: #F1F0EE;
+  letter-spacing: 0.016em;
+  font-size: 10.3pt;
+  white-space: nowrap;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+  user-select: none;
+}
+
+#cursor.pill {
+  width: 122px;
+  height: 30px;
+  border-radius: 9999px;
+  padding: 0 6px;
+}
+
+#cursor.pill-sm {
+  width: 98px;
+  height: 30px;
+  border-radius: 9999px;
+  padding: 0 6px;
+}
+
+#cursor.pill #cursor-label,
+#cursor.pill-sm #cursor-label {
+  opacity: 1;
+}
+ 
+
+/* hover state (optional) */
+a:hover ~ #cursor,
+.project-image-container:hover ~ #cursor {
+  transform: translate(-50%, -50%) scale(1.6);
+}
 
 
 
    /* ===== Font faces ===== */
-    
+
     @font-face {
   font-family: 'SansFlex';
   src: url('Fonts/GoogleSansFlex.ttf') format('truetype');
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
-} 
+}
+@font-face {
+  font-family: 'SourceCodePro';
+  src: url('Fonts/SourceCodePro-VariableFont_wght.ttf') format('truetype');
+  font-weight: 200 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'BricolageGrotesque';
+  src: url('Fonts/BricolageGrotesque-VariableFont.ttf') format('truetype');
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+}
 
 
+
+
+/* Register CSS custom properties as typed numbers so they can be transitioned */
+@property --variation-setting-wght {
+  syntax: '<number>';
+  initial-value: 400;
+  inherits: true;
+}
+@property --variation-setting-wdth {
+  syntax: '<number>';
+  initial-value: 100;
+  inherits: true;
+}
+@property --variation-setting-opsz {
+  syntax: '<number>';
+  initial-value: 16;
+  inherits: true;
+}
 
 * {
   font-synthesis: none;
@@ -40,106 +145,168 @@
    /* ===== Global ===== */
     body {
       font-family: 'SansFlex', sans-serif;
-  font-variation-settings: 'wght' 340;
+  --variation-setting-wght: 410;
+  font-variation-settings: 'wght' var(--variation-setting-wght, 380);
   color: #2b2b2b;
-  letter-spacing: 0.00em; 
+  letter-spacing: 0.00em;
   line-height: 1.55;
   font-display: swap;
     }
     /* ===== Typography & components ===== */
-     
-   
+
+.mono {
+  font-family: 'BricolageGrotesque', sans-serif;
+  --variation-setting-wght: 370;
+  --variation-setting-wdth: 85;
+  --variation-setting-opsz: 20;
+  font-variation-settings:
+    'wght' var(--variation-setting-wght, 200),
+    'wdth' var(--variation-setting-wdth, 200),
+    'opsz' var(--variation-setting-opsz, 28);
+  color: #2b2b2b;
+  letter-spacing: 0.016em;
+  line-height: 1;
+
+}
+.display {
+  font-family: 'BricolageGrotesque', sans-serif;
+  --variation-setting-wght: 900;
+  --variation-setting-wdth: 1;
+  --variation-setting-opsz: 20;
+  font-variation-settings:
+    'wght' var(--variation-setting-wght, 580),
+    'wdth' var(--variation-setting-wdth, 68),
+    'opsz' var(--variation-setting-opsz, 100);
+    transition: --variation-setting-wght 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+              --variation-setting-wdth 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+              --variation-setting-opsz 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  color: #2b2b2b; 
+  letter-spacing: -0.03em;
+  line-height: 0.88;
+  max-width: 1000px;
+}
+
+
+.display-small {
+  font-family: 'BricolageGrotesque', sans-serif;
+  --variation-setting-wght: 480;
+  --variation-setting-wdth: 100;
+  --variation-setting-opsz: 24;
+  font-variation-settings:
+    'wght' var(--variation-setting-wght, 400),
+    'wdth' var(--variation-setting-wdth, 100),
+    'opsz' var(--variation-setting-opsz, 24); 
+    transition: --variation-setting-wght 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+              --variation-setting-wdth 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+              --variation-setting-opsz 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  color: #2b2b2b;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+}
+.display-small:hover {
+  --variation-setting-wght: 700;
+  --variation-setting-wdth: 112.5;
+} 
+
 .h1 {
   font-family: 'SansFlex', sans-serif;
-  font-variation-settings: 'wght' 460;
+  --variation-setting-wght: 460;
+  font-variation-settings: 'wght' var(--variation-setting-wght, 460);
   color: #2b2b2b;
-  letter-spacing: -0.018em; 
+  letter-spacing: -0.022em;
   line-height: 1.2;
   font-display: swap;
 
 }
 .h2 {
   font-family: 'SansFlex', sans-serif;
-  font-variation-settings: 'wght' 460;
+  --variation-setting-wght: 460;
+  font-variation-settings: 'wght' var(--variation-setting-wght, 460);
   color: #2b2b2b;
-  letter-spacing: -0.006em; 
+  letter-spacing: -0.006em;
   line-height: 1.3;
   font-display: swap;
 }
 .h3 {
   font-family: 'SansFlex', sans-serif;
-  font-variation-settings: 'wght' 460;
+  --variation-setting-wght: 460;
+  font-variation-settings: 'wght' var(--variation-setting-wght, 460);
   color: #2b2b2b;
-  letter-spacing: -0.01em; 
+  letter-spacing: -0.01em;
   line-height: 1.3;
   font-display: swap;
 }
 .h4 {
   font-family: 'SansFlex', sans-serif;
-  font-variation-settings: 'wght' 460;
+  --variation-setting-wght: 460;
+  font-variation-settings: 'wght' var(--variation-setting-wght, 460);
   color: #2b2b2b;
-  letter-spacing: -0.011em; 
+  letter-spacing: -0.011em;
   line-height: 1.1;
   font-display: swap;
 
 }
   
 .body-text-1 {
-  font-family: 'SansFlex', sans-serif;
-  font-variation-settings: 'wght' 380;
+  font-family: 'SansFlex', sans-serif; 
+  font-variation-settings: 'wght' var(--variation-setting-wght, 320);
   color: #2b2b2b;
-  letter-spacing: 0.001em; 
+  letter-spacing: 0.001em;
   line-height: 1.5;
   font-display: swap;
-} 
+}
 .body-text-small {
   font-family: 'SansFlex', sans-serif;
-  font-variation-settings: 'wght' 340;
+  --variation-setting-wght: 340;
+  font-variation-settings: 'wght' var(--variation-setting-wght, 340);
   color: #2b2b2b;
-  letter-spacing: 0.00em; 
+  letter-spacing: 0.00em;
   line-height: 1.65;
   font-display: swap;
-} 
+}
 
 .body-text-2 {
- font-family: 'SansFlex', sans-serif;
- font-variation-settings: 'wght' 460;
+  font-family: 'SansFlex', sans-serif;
+  --variation-setting-wght: 460;
+  font-variation-settings: 'wght' var(--variation-setting-wght, 460);
   color: #2f2f2f;
-  letter-spacing: 0.001em; 
+  letter-spacing: 0.001em;
   line-height: 1.65;
   font-display: swap;
- 
-} 
+}
 .body-text-3 {
   font-family: 'SansFlex', sans-serif;
-  font-variation-settings: 'wght' 460;
+  --variation-setting-wght: 460;
+  font-variation-settings: 'wght' var(--variation-setting-wght, 460);
   color: #2b2b2b;
-  letter-spacing: 0.0em; 
+  letter-spacing: 0.0em;
   line-height: 1.15;
   font-display: swap;
 }
 .body-text-4 {
   font-family: 'SansFlex', sans-serif;
-  font-variation-settings: 'wght' 460;
+  --variation-setting-wght: 460;
+  font-variation-settings: 'wght' var(--variation-setting-wght, 460);
   color: #2b2b2b;
-  letter-spacing: 0.0em; 
+  letter-spacing: 0.0em;
   line-height: 1.45;
   font-display: swap;
 } 
  
 /* ===== Header & Toggle ===== */
 header {
-  position: fixed;
-  top: 0; left: 0; right: 0;
+  position: relative; /* ← this is missing */
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 50;
   background-color: #F1F0EE;
   display: flex;
-  align-items: center;
   justify-content: space-between;
   padding: 0pt;
-  padding-top: 0pt;
-  padding-bottom: 0pt;
-} 
+  padding-top: 2pt;
+  padding-bottom: 4pt;
+}
     
     /* your existing project tooltip */
 #project-tooltip {
@@ -149,7 +316,7 @@ header {
   color: #F1F0EE;
   padding: 4px 8px;
   border-radius: 4px;
-  font-size: 11pt;
+  font-size: 10pt;
   z-index: 1000;
   display: none;
   white-space: nowrap;
@@ -164,7 +331,7 @@ header {
   color: #F1F0EE;
   padding: 4px 8px;
   border-radius: 4px;
-  font-size: 11pt;
+  font-size: 10pt;
   z-index: 1000;
   display: none;
   white-space: nowrap;
@@ -180,72 +347,32 @@ html {
 
      
     
-      .projects-grid {
-      display: grid; 
-      row-gap: 24px;
-      column-gap: 8px;
-    }
-    @media (min-width: 768px) {
-      .projects-grid {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto auto;
-      }
-      .projects-grid > .project:nth-child(1) {
-        grid-column: 1; grid-row: 1;
-      }
-      .projects-grid > .project:nth-child(2) {
-        grid-column: 2; grid-row: 1;
-      }
-      .projects-grid > .project:nth-child(3) {
-        grid-column: 1; grid-row: 2;
-      }
-      .projects-grid > .project:nth-child(6) {
-        grid-column: 2; grid-row: 2;
-      }
-      .projects-grid > .project:nth-child(5) {
-        grid-column: 1; grid-row: 3;
-      }
-      .projects-grid > .project:nth-child(4) {
-        grid-column: 2; grid-row: 3;
-      }
-    }
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px 18px;
+}
 
-     @media (min-width: 1280px) {
-      .projects-grid {
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: auto auto;
-      }
-      .projects-grid > .project:nth-child(1) {
-        grid-column: 1; grid-row: 1;
-      }
-      .projects-grid > .project:nth-child(2) {
-        grid-column: 2; grid-row: 1;
-      }
-      .projects-grid > .project:nth-child(3) {
-        grid-column: 3; grid-row: 1;
-      }
-      .projects-grid > .project:nth-child(4) {
-        grid-column: 1; grid-row: 2;
-      }
-      .projects-grid > .project:nth-child(5) {
-        grid-column: 2; grid-row: 2;
-      }
-      .projects-grid > .project:nth-child(6) {
-        grid-column: 3; grid-row: 2;
-      }
-    }
-      .project {
-  min-width: 0;
+@media (min-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+ 
+.project {
+  break-inside: avoid;
+  margin-bottom: 12px;
 }
     
     .email-phone {
   /* default (mobile) */
-  font-size: 20pt;
+  font-size: 18pt;
 }
 @media (min-width: 768px) {
   /* desktop (or whatever px you prefer) */
   .email-phone {
-    font-size: 38px;
+    font-size: 34px;
   }
 }
 main {
@@ -281,8 +408,8 @@ footer {
  
 /* desktop / tablet */
 #navContainer {
-  margin-top: 11px;
-  margin-bottom: 11px;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 /* mobile only */
@@ -340,21 +467,20 @@ footer {
     margin-bottom: 0 !important;
   }
 }
-
- header {
-  transform: translateY(-101%);
-  will-change: transform;
-}
+ 
 
  
 :root { --header-h: 0px; }
 
 /* Viewport-safe height minus fixed header */
 .hero-viewport {
-  min-height: calc(100svh - var(--header-h));
+  height: 72dvh;
 }
+
 @supports (height: 100dvh) {
-  .hero-viewport { min-height: calc(100dvh - var(--header-h)); }
+  .hero-viewport {
+    height: 72dvh;
+  }
 }
 
 /* Only for users who prefer reduced motion */
@@ -362,63 +488,68 @@ footer {
   .autoplay-video { animation: none !important; }
 } 
  
- .project-image-container {
+.project-image-container {
   width: 100%;
-  aspect-ratio: 1 / 1;
-  position: relative;
   overflow: hidden;
   border-radius: inherit;
 }
 
 .project-image-container img,
 .project-image-container video {
-  position: absolute;
-  inset: 0;
   width: 100%;
   height: 100%;
+  display: block;
   object-fit: cover;
 
   transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
   will-change: transform;
 }
 
-.project-image-container:hover img,
-.project-image-container:hover video {
-  transform: scale(1.06);
+.project-image-container {
+  position: relative;
+}
+
+.project-image-container::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0); /* start invisible */
+  transition: background 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+
+.project-image-container:hover::after {
+  background: rgba(255, 255, 255, 0.15); /* ← control opacity here */
+}
+.project.portrait .project-image-container {
+  aspect-ratio: 4 / 5;
+}
+
+.project.landscape .project-image-container {
+  aspect-ratio: 4 / 3;
+}
+
+.project.square .project-image-container {
+  aspect-ratio: 1 / 1;
 }
 
 html {
   scroll-behavior: smooth;
 }
 :root {
-  /* Base size (fluid) */
-  --step-0: clamp(0.95rem, 1vw + 0.6rem, 0.95rem);
-
-  /* Ratio */
-  --ratio: 1.3;
-
-  /* Smaller-than-body (negative step) */
---step--1: calc(var(--step-0) / 1.25);
-
-
-
-  /* Scale */
+  --step-0: clamp(1rem, 1vw + 0.7rem, 1rem);
+  --ratio: 1.2;
+  --step--1: calc(var(--step-0) / 1.25);
   --step-1: calc(var(--step-0) * var(--ratio));
   --step-2: calc(var(--step-1) * var(--ratio));
   --step-3: calc(var(--step-2) * var(--ratio));
   --step-4: calc(var(--step-3) * var(--ratio));
   --step-5: calc(var(--step-4) * var(--ratio));
   --step-6: calc(var(--step-5) * var(--ratio));
+  --step-7: calc(var(--step-6) * var(--ratio));
 }
 
-@media (max-width: 767px) {
-  :root {
-    --step-0: 0.9em;
-
-    /* Mobile ratio (tighter hierarchy) */
-    --ratio: 1.2;
-  }
-}
+ 
 
 /* Type mappings */
 .body-text-1,
@@ -431,9 +562,17 @@ html {
   font-size: var(--step-1);
 }
 
-/* NEW: smaller-than-body utility */
 .body-text-small {
   font-size: var(--step--1);
+}
+.mono {
+  font-size: calc(var(--step--1) * 1.06);
+}
+.display {
+  font-size: calc(var(--step-6) * 2.2);
+}
+.display-small {
+  font-size: var(--step-2);
 }
 
 .nav-body {
@@ -448,15 +587,7 @@ html {
 .h2 { font-size: var(--step-2); }
 .h1 { font-size: var(--step-5); }
 
-#projects {
-  scroll-margin-top: 100px;
-}
-#about {
-  scroll-margin-top: 80px;
-}
-#contact {
-  scroll-margin-top: 60px;
-}
+ 
 
 
 @media (max-width: 767px) {
@@ -465,117 +596,245 @@ html {
   }
 }
 
+.projects-columns {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
 
+@media (min-width: 768px) {
+  .projects-columns {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1801px) {
+  .projects-columns {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.projects-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ≤1780px → hide desktop-only stuff */
+@media (max-width: 1800px) {
+  .desktop-only {
+    display: none !important;
+  }
+}
+
+/* ≥1781px → hide tablet/2-col versions */
+@media (min-width: 1801px) {
+  .tablet-only {
+    display: none !important;
+  }
+}
+
+ 
+
+body {
+  cursor: none;
+}
+/* kill pointer cursor everywhere */
+a,
+button,
+[role="button"],
+input,
+textarea {
+  cursor: none !important;
+}
+/* default: no cursor */
+html, body {
+  cursor: none;
+}
+
+/* during scroll */
+.is-scrolling,
+.is-scrolling * {
+  cursor: none !important;
+}
+/* ===== Hamburger → X animation ===== */
+.hamburger-bar {
+  display: block;
+  width: 100%;
+  height: 0.1em;
+  background: rgba(43,43,43,0.45);
+  transform-origin: center;
+  transition: transform 0.35s cubic-bezier(0.22,1,0.36,1),
+              opacity   0.25s cubic-bezier(0.22,1,0.36,1);
+}
+/* open state — applied to the .hamburger div */
+.hamburger.is-open .bar-1 { transform: translateY(4.25px) rotate(45deg); }
+.hamburger.is-open .bar-2 { opacity: 0; transform: scaleX(0); }
+.hamburger.is-open .bar-3 { transform: translateY(-4.25px) rotate(-45deg); }
   </style>
+  <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const cursor = document.getElementById('cursor');
+
+  let x = 0, y = 0;
+  let targetX = 0, targetY = 0;
+
+  document.addEventListener('mousemove', (e) => {
+    targetX = e.clientX;
+    targetY = e.clientY;
+  });
+
+  function animate() {
+    x += (targetX - x) * 0.5;
+    y += (targetY - y) * 0.5;
+
+    cursor.style.left = x + 'px';
+    cursor.style.top = y + 'px';
+
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+
+  const cursorLabel = document.getElementById('cursor-label');
+  let onProjectImage = false;
+
+  // pill on project image containers
+  document.querySelectorAll('.project-image-container').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      onProjectImage = true;
+      const label = el.dataset.cursor || 'View case study';
+      cursorLabel.textContent = label;
+      cursor.classList.add(label === 'Coming soon' ? 'pill-sm' : 'pill');
+      cursor.style.transform = 'translate(-50%, -50%)';
+    });
+    el.addEventListener('mouseleave', () => {
+      onProjectImage = false;
+      cursor.classList.remove('pill', 'pill-sm');
+      cursor.style.transform = 'translate(-50%, -50%)';
+    });
+  });
+
+  // scale on links
+  document.querySelectorAll('a').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      if (!onProjectImage) cursor.style.transform = 'translate(-50%, -50%) scale(1.6)';
+    });
+    el.addEventListener('mouseleave', () => {
+      if (!onProjectImage) cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+    });
+  });
+
+  // swap cursor colour in dark footer
+  const footer = document.querySelector('footer');
+  if (footer) {
+    footer.addEventListener('mouseenter', () => {
+      cursor.style.background = '#F1F0EE';
+    });
+    footer.addEventListener('mouseleave', () => {
+      cursor.style.background = '#2B2B2B';
+    });
+  }
+});
+</script>
+<script>
+let scrollTimeout;
+
+window.addEventListener('scroll', () => {
+  document.body.classList.add('is-scrolling');
+
+  clearTimeout(scrollTimeout);
+  scrollTimeout = setTimeout(() => {
+    document.body.classList.remove('is-scrolling');
+  }, 120); // tweak delay if needed
+});
+</script>
   <link rel="icon" href="images/Layer 2-2.svg" type="image/svg+xml">
 </head>
 <body>
    <main> 
   <!-- ===== Header & Toggle ===== -->
- <header class="bg-[#F1F0EE] fade-in  top-0 left-0 right-0 z-50 ">
-
-
-
+<div id="site-header" class="sticky top-0 z-50 md:relative">
+<header class="bg-[#F1F0EE]   top-0 left-0 right-0 z-50">
 <div
-  id="navContainer" 
-  class="flex justify-between items-center w-full py-3  md:py-0
-          px-6 md:px-5 xl:px-[clamp(4px,5.5vw,300px)] "
+  id="navContainer"
+  class="flex justify-between items-center w-full py-3 md:py-0 px-8 md:px-5"
 >
-  <!-- Header Title -->
-<a
-  href="#"
-  class="inline-flex items-center -ml-[0.25em] "
->
-  <img
-    src="images/logo-new-circle-03.svg"
-    alt="Jake Pearce logo"
-    class="h-[1.8em] md:h-[1.5em] w-auto opacity-95 
-           hover:opacity-50  "
+  <a
+    href="/"
+    class="inline-flex items-center py-[3px]   mono uppercase text-[#2B2B2B]/45 hover:text-[#2B2B2B] transition-colors mt-[4.5px]"
   >
-</a>
+    Jake Pearce
+  </a>
+  <nav class="mono text-[#2B2B2B]/65 uppercase hidden md:flex" style="margin: 0pt;">
+    <ul class="flex space-x-5 -mr-[0.4em] md:-mr-[0em] mt-[4.5px] mb-0">
+      <li><a href="#projects" class="text-[#2B2B2B]/45 hover:text-[#2B2B2B] transition-colors">Projects</a></li>
+      <li><a href="about" class="text-[#2B2B2B]/45 hover:text-[#2B2B2B] transition-colors">About</a></li>
+      <li><a href="visual-feed" class="text-[#2B2B2B]/45 hover:text-[#2B2B2B] transition-colors">Visual Feed</a></li>
+    </ul>
+    
+  </nav>
+  <button
+    id="mobileMenuBtn"
+    class="md:hidden flex items-center justify-center w-8 h-8 -mr-2 "
+    aria-label="Open menu"
+  >
+    <div class="hamburger flex flex-col justify-between w-[15px] h-[10px]">
+      <span class="hamburger-bar bar-1"></span>
+      <span class="hamburger-bar bar-2"></span>
+      <span class="hamburger-bar bar-3"></span>
+    </div>
+  </button>
+</div>
+</header>
 
-
-
-  
-     <nav class="body-text-small hidden md:flex " style="margin: 0pt;">
-  <ul class="flex space-x-5 -mr-[0.4em] !text-[9.5pt] md:-mr-[0em] mt-0 mb-0 ">
-    <li><a href="#projects" class="  hover:opacity-50">Projects</a></li> 
-    <li><a href="#about" class=" hover:opacity-50">About</a></li>
-    <li><a href="#contact" class=" hover:opacity-50">Contact</a></li>
-  </ul>
-</nav>
-
-    <button
-  id="mobileMenuBtn"
-  class="md:hidden p-2 -mr-4"
-  aria-label="Open menu"
+<!-- Mobile dropdown nav -->
+<div
+  id="mobileNav"
+  aria-hidden="true"
+  class="md:hidden bg-[#F1F0EE] overflow-hidden"
+  style="max-height: 0; transition: max-height 0.45s cubic-bezier(0.22,1,0.36,1);"
 >
-  <div class="w-6 h-4 flex flex-col justify-between">
-    <span class="h-[2px] bg-[#2b2b2b]"></span>
-    <span class="h-[2px] bg-[#2b2b2b]"></span>
-    <span class="h-[2px] bg-[#2b2b2b]"></span>
+  <div class="px-8 pb-8 flex flex-col gap-3 ">
+    <a href="/" class="mono uppercase text-[#2B2B2B]/45 hover:text-[#2B2B2B] transition-colors inline-block w-fit bg-[#ffffff]/85 hover:bg-[#ffffff]/25 px-[6px] py-[4px] leading-none"> ← Home</a>
+    <a href="#projects" class="mono uppercase text-[#2B2B2B]/45 hover:text-[#2B2B2B] transition-colors block">Projects</a>
+    <a href="visual-feed" class="mono uppercase text-[#2B2B2B]/45 hover:text-[#2B2B2B] transition-colors block">Visual Feed</a>
+    <a href="about" class="mono uppercase text-[#2B2B2B]/45 hover:text-[#2B2B2B] transition-colors block">About</a>
   </div>
-</button>
-
-  </header>
+</div> 
+<div style="height: 1px; background: rgba(43,43,43,0.1);"></div>
+</div>
+ 
+<main>
   
   
  
 
 <section
   id="hero"
-  class="mt-10 md:mt-0 max-web mx-auto w-full z-40 mt-28
-          px-5 xl:px-[clamp(4px,5.5vw,300px)] 
-          md:pt-[clamp(5px,12vw,180px)] pb-[clamp(3px,7vw,100px)]
-         bg-[#F1F0EE] fade-in"
+  class="hero-viewport max-web mx-auto w-full z-40 px-8 md:px-5 bg-[#F1F0EE]   "
 >
-  <div class="grid grid-cols-1 lg:grid-cols-1 gap-6 md:gap-5 items-start">
+  <div class="flex flex-col justify-end h-full pb-0">
 
- 
-
-    <!-- LEFT COLUMN -->
     <div>
-      <h2 class="md:hidden lg:block h1    fade-in  mr-[0.5em] md:max-w-[22ch] mb-6">
-        Hi! I'm Jake. <br> A graphic designer based in Naarm / Melbourne Australia.
+      <h2 class="hidden lg:block display text-[#2B2B2B]    ">
+   <span class="text-[#2B2B2B]">Jake Pearce</span>
+        is a graphic designer based in Naarm / Melbourne Australia.
+</h2>
+
+      <h2 class=" lg:hidden display !text-[58pt]  mb-2  mr-[0.5em] md:max-w-[22ch]    ">
+        <span class="text-[#2B2B2B]">Jake Pearce</span>
+        is a graphic designer based in Naarm / Melbourne Australia.
       </h2>
-
-      <h2 class="hidden md:block lg:hidden h4     fade-in  mr-[0.5em] md:max-w-[22ch] mb-6">
-        Hi! I'm Jake. <br> A graphic designer based in Naarm / Melbourne Australia.
-      </h2>
- 
-      
- 
-
-    </div>
-
-    <!-- RIGHT COLUMN -->
-    <div
-      class="
-        grid grid-cols-1 gap-y-5 gap-x-8
-        fade-in justify-between items-stretch
-      "
-    > 
-      
     </div>
 
   </div>
 </section>
-
-
-<!-- SECTION HEADER -->
-<div id="projects" class="fade-in max-web mx-auto  px-5 xl:px-[clamp(4px,5.5vw,300px)] z-20 fade-in  "> 
-<div class="fade-in max-web mx-auto w-full grid grid-cols-[1fr_auto] items-end">
+ 
+<div id="projects" class="   max-web mx-auto  px-8 md:px-5 z-20     "> 
+<div class="   max-web mx-auto w-full grid grid-cols-[1fr_auto] items-end">
   <!-- LEFT: TITLE -->
-   
-   <p
-    class="
-       body-text-4 [font-variation-settings:'wght'_400] 
-      flex items-baseline
-    "
-  >
-    Selected projects
-  </p>
-
+    
    
 </div>
 
@@ -583,668 +842,322 @@ html {
 
   <!-- ===== Recent Projects ===== --> 
 
-<div class="max-web z-20 bg-[#F1F0EE] fade-in  ">  
+<div class="max-web z-20 bg-[#F1F0EE]     ">  
      
 
-    <h2 class="body-text-1 text-[11pt] md:text-[12pt] -mt-3 mb-8 md:mb-10 "> 
+    <h2 class="body-text-1 text-[10pt] md:text-[11pt] -mt-3 mb-8 md:mb-10 "> 
    
 </h2>
   </div> 
  <section  
-  class="max-web mx-auto z-40 fade-in pb-[clamp(2px,2.5vw,190px)] ">
-  <div class="projects-grid">
+  class="max-web mx-auto z-40    pb-[clamp(2px,2.5vw,190px)] ">
+<div id="projects" class="projects-columns">
 
+  <!-- 1st COLUMN -->
+  <div class="projects-col">
 
-
-     <!-- Moss Fragrances -->
-    <div class="project flex flex-col  order-2 md:order-1">
-      
-        <a href="moss-fragrances">  <div class="project-image-container  ">
-          <img
-            src="images/bottles-7.jpg"
-            alt="MMT" 
-          />
-        </a>
+    <!-- Moss -->
+<div class="project landscape flex flex-col">
+  <a href="moss-fragrances">
+    <div class="project-image-container rounded-sm">
+      <div class="absolute inset-0 bg-gradient-to-r from-[#A7CBD5] to-[#E6CEB4] flex items-center justify-center p-16">
+        <img
+          src="images/moss-hero.webp"
+          alt="Moss Fragrances Hero"
+          class="w-full h-auto object-contain"
+        />
       </div>
-      <div class="mt-4 flex flex-col items-start">
-         <a href="moss-fragrances" class="block md:hidden [font-variation-settings:'wght'_510] body-text-2   ">
-          Moss Fragrances
-        </a>
-         <a href="moss-fragrances" class="hidden md:block body-text-2   ">
-          Moss Fragrances
-        </a>
-        <a href="moss-fragrances" class="text-[#686868]/80 body-text-1 mb-[2em]">
-          Visual Identity / Labels
-        </a>
-      </div>
-    </div>
-
-    <!-- Renaissance Sports -->
-    <div class="project flex flex-col   order-2 md:order-1"> 
-        <a href="renaissance-sports">  <div class="project-image-container  ">
-          <img
-            src="images/2026-erima-15.avif"
-            alt="Renaissance Sports" 
-          />
-        </a>
-      </div>
-      <div class="mt-4 flex flex-col items-start">
-        <a href="renaissance-sports" class="block md:hidden [font-variation-settings:'wght'_510] body-text-2   ">
-          Renaissance Sports
-        </a>
-         <a href="renaissance-sports" class="hidden md:block body-text-2   ">
-          Renaissance Sports
-        </a>
-        <a href="renaissance-sports" class="text-[#686868]/80 body-text-1 mb-[2em]">
-          Ad Creative / Tender Documents
-        </a>
-      </div>
-    </div>
-
-     <!-- BMP -->
-    <div class="project flex flex-col  order-2 md:order-1">  
-  <a href="bmp-sports">
-    <div class="project-image-container">
-      <img src="images/bmp-1.avif" alt="BMP Sports" />
     </div>
   </a>
-  <div class="mt-4 flex flex-col items-start">
-        <a href="bmp-sports" class="block md:hidden [font-variation-settings:'wght'_510] body-text-2   ">
-          BMP Sports
-        </a>
-         <a href="bmp-sports" class="hidden md:block body-text-2   ">
-          BMP Sports
-        </a>
-        <a href="bmp-sports" class="text-[#686868]/80 body-text-1 mb-[2em]">
-          Visual Identity
-        </a>
-      </div>
-    </div> 
 
-     <script>
-document.querySelectorAll("video").forEach(v => {
-  v.muted = true;
-});
-</script>
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const videos = document.querySelectorAll("video");
-  videos.forEach(video => {
-    video.muted = true;
-    video.play().catch(()=>{});
-  });
-});
-</script>
+  <div class="mt-4 flex flex-col items-start">
+
+    <!-- NEW mono meta -->
+    <span class="mono  text-[#2B2B2B]/45 uppercase            ">
+      Moss Fragrances
+    </span>
+
+    <a href="moss-fragrances" class="text-[#2B2B2B]/85  display-small mb-[4pt] mt-[6.5pt]">
+      Product Labels and branding
+    </a>
+
+    <a href="moss-fragrances" class="text-[#2B2B2B]/45 body-text-1">
+      Transparency as a design principle for a natural fragrance brand
+    </a>
+
+  </div>
+</div>
+
+    
+    <!-- Ceres -->
+    <div class="project square flex-col tablet-only">
+      <div>
+        <div class="project-image-container rounded-sm" data-cursor="Coming soon">
+          <img src="images/new-ceres-all-green_result.jpg" alt="Renaissance Sports" />
+        </div>
+      </div>
+      <div class="mt-4 flex flex-col items-start">
+
+    <!-- NEW mono meta -->
+    <span class="mono text-[#2B2B2B]/45 uppercase          ">
+      Ceres Environmental Park
+    </span>
+
+    <span class="text-[#2B2B2B]/85  display-small mb-[4pt] mt-[6.5pt]">
+      Designing for Ceres Environmental Park
+    </span>
+
+    <span class="text-[#2B2B2B]/45 body-text-1">
+      Case study coming soon
+    </span>
+
+  </div>
+    </div>
      
-     <!-- MMT -->
-    <div class="project flex flex-col   order-2 md:order-1">  
-  <a href="mmt">
-    <div class="project-image-container">
-      <video 
-  autoplay
-  muted
-  loop
-  playsinline 
-  disablepictureinpicture
-  controlslist="nodownload nofullscreen noremoteplayback"
->
-  <source src="videos/Comp 1_8.mp4" type="video/mp4">
-</video>    </div>
-  </a>
-  <div class="mt-4 flex flex-col items-start">
-         <a href="mmt" class="block md:hidden [font-variation-settings:'wght'_510] body-text-2   ">
-          Music Metaverse Token
-        </a>
-         <a href="mmt" class="hidden md:block body-text-2   ">
-          Music Metaverse Token
-        </a>
-        <a href="mmt" class="text-[#686868]/80 body-text-1 mb-[2em]">
-          Visual Identity
-        </a>
-      </div>
+    
+
+    <!-- BMP -->
+    <div class="project portrait flex-col">
+      <a href="bmp-sports">
+        <div class="project-image-container rounded-sm ">
+          <img src="images/bmp-1.avif" alt="BMP Sports" />
+        </div>
+      </a>
+      <div class="mt-4 flex flex-col items-start">
+
+    <!-- NEW mono meta -->
+    <span class="mono text-[#2B2B2B]/45 uppercase             ">
+      BMP Sports
+    </span>
+
+    <a href="bmp-sports" class="text-[#2B2B2B]/85  display-small mb-[4pt] mt-[6.5pt]">
+      Rebranding BMP Sports
+    </a>
+
+    <a href="bmp-sports" class="text-[#2B2B2B]/45 body-text-1">
+      A visual identity built around confidence and momentum
+    </a>
+
+  </div>
     </div>
- 
-   <!-- Placeholder -->
-<div class="project flex flex-col order-2 md:order-1">
-  <div class="project-image-container">
-    <img
-      src="images/new-ceres-all-green_result.jpg"
-      alt="CERES Environment Park"
-      class="grayscale opacity-40"
-    />
+
   </div>
+
+  <!-- 2nd COLUMN -->
+  <div class="projects-col">
+
+    <!-- Renaissance -->
+    <div class="project portrait flex-col">
+      <a href="renaissance-sports">
+        <div class="project-image-container rounded-sm">
+          <div class="absolute inset-0 bg-gradient-to-b from-[#1E2824] to-[#1B6B43] flex items-center justify-center">
+            <img
+              src="images/erima-22.webp"
+              alt="Gallery Image 1"
+              class="w-full h-full object-contain"
+            />
+          </div>
+        </div>
+      </a>
+      <div class="mt-4 flex flex-col items-start">
+
+    <!-- NEW mono meta -->
+    <span class="mono text-[#2B2B2B]/45 uppercase        ">
+      Renaissance Sports
+    </span>
+
+    <a href="renaissance-sports" class="text-[#2B2B2B]/85  display-small mb-[4pt] mt-[6.5pt]">
+      Creative Directon for Australian Launch
+    </a>
+
+    <a href="renaissance-sports" class="text-[#2B2B2B]/45 body-text-1">
+      Introducing German sportswear heritage to Australian clubs
+    </a>
+
+  </div>
+    </div>
+
+       <!-- Personal Branding -->
+<div class="project square flex flex-col tablet-only">
+  <div class="project-image-container rounded-sm" data-cursor="Coming soon">
+          <div class="absolute inset-0 bg-[#FFEBA3]/80 flex items-center justify-center p-20">
+            <img
+  src="images/cards-new.webp"
+  alt="Gallery Image 1"
+  style="width: auto; height: auto; max-width: 100%; max-height: 100%; object-fit: contain;"
+/>
+          </div>
+        </div>
+
   <div class="mt-4 flex flex-col items-start">
-    <p class="block md:hidden [font-variation-settings:'wght'_510] body-text-2">
-      CERES Environment Park
-    </p>
-    <p class="hidden md:block body-text-2">
-      CERES Environmental Park
-    </p>
-    <p class="text-[#686868]/80 body-text-1 mb-[2em]">
-      Coming soon
-    </p>
+
+    <!-- NEW mono meta -->
+    <span class="mono   text-[#2B2B2B]/45 uppercase           ">
+      Jake Pearce Design
+    </span>
+
+    <span class="text-[#2B2B2B]/85  display-small mb-[4pt] mt-[6.5pt]">
+      Creating a Bold Personal Brand
+    </span>
+
+    <span class="text-[#2B2B2B]/45 body-text-1">
+      Case study coming soon
+    </span>
+
+  </div>
+</div>
+ <!-- MMT -->
+    <div class="project landscape flex-col">
+      <a href="bndr-music">
+        <div class="project-image-container rounded-sm">
+          <video autoplay muted loop playsinline>
+            <source src="videos/Comp 1_8.mp4" type="video/mp4">
+          </video>
+        </div>
+      </a>
+      <div class="mt-4 flex flex-col items-start">
+
+    <!-- NEW mono meta -->
+    <span class="mono text-[#2B2B2B]/45 uppercase           ">
+      BNDR Music Group
+    </span>
+
+    <a href="bndr-music" class="text-[#2B2B2B]/85  display-small mb-[4pt] mt-[6.5pt]">
+      Visual Identity for BNDR Music Group
+    </a>
+
+    <a href="bndr-music" class="text-[#2B2B2B]/45 body-text-1  ">
+      Designing a brand for a music-focused utility token
+    </a>
+
+  </div>
+    </div>
+
+     
+   
+  </div>
+
+   <!-- 3rd COLUMN -->
+  <div class="projects-col  desktop-only">
+
+    <!-- Ceres -->
+    <div class="project square flex-col ">
+      <div>
+        <div class="project-image-container rounded-sm" data-cursor="Coming soon">
+          <img src="images/new-ceres-all-green_result.jpg" alt="Renaissance Sports" />
+        </div>
+      </div>
+      <div class="mt-4 flex flex-col items-start">
+
+    <!-- NEW mono meta -->
+    <span class="mono text-[#2B2B2B]/45 uppercase          ">
+      Ceres Environmental Park
+    </span>
+
+    <span class="text-[#2B2B2B]/85  display-small mb-[4pt] mt-[6.5pt]">
+      Designing for Ceres Environmental Park
+    </span>
+
+    <span class="text-[#2B2B2B]/45 body-text-1">
+      Case study coming soon
+    </span>
+
+  </div>
+    </div>
+
+    <!-- Personal Branding -->
+<div class="project square flex flex-col ">
+   <div class="project-image-container rounded-sm" data-cursor="Coming soon">
+          <div class="absolute inset-0 bg-[#FFEBA3] flex items-center justify-center p-20">
+            <img
+  src="images/cards-new.webp"
+  alt="Gallery Image 1"
+  style="width: auto; height: auto; max-width: 100%; max-height: 100%; object-fit: contain;"
+/>
+          </div>
+        </div>
+
+  <div class="mt-4 flex flex-col items-start">
+
+    <!-- NEW mono meta -->
+    <span class="mono  text-[#2B2B2B]/45 uppercase          ">
+      Jake Pearce Design
+    </span>
+
+    <span class="text-[#2B2B2B]/85  display-small mb-[4pt] mt-[6.5pt]">
+      Creating a Bold Personal Brand
+    </span>
+
+    <span class="text-[#2B2B2B]/45 body-text-1">
+      Case study coming soon
+    </span>
+
   </div>
 </div>
 
-<!-- Placeholder -->
-<div class="project flex flex-col order-2 md:order-1">
-  <div class="project-image-container">
-    <img
-      src="images/microdose-shirt.avif"
-      alt="Microdose"
-      class="grayscale opacity-40"
-    />
   </div>
-  <div class="mt-4 flex flex-col items-start">
-    <p class="block md:hidden [font-variation-settings:'wght'_510] body-text-2">
-      Microdose
-    </p>
-    <p class="hidden md:block body-text-2">
-      Microdose
-    </p>
-    <p class="text-[#686868]/80 body-text-1 mb-[2em]">
-      Coming soon
-    </p>
-  </div>
+
 </div>
-
-      
-
-
-
+  
   </div> 
 
-</section   >
-
-   
- 
-
- 
-<style>
-  .service-content ul {
-    list-style-type: disc;       /* standard bullets */
-    margin-left: 1.5rem;         /* indent a bit */
-    padding-left: 0.5rem;
-     transition: color 0.2s ease;
-  }
-
-  .service-content li {
-    line-height: 1.6;
-    transition: color 0.2s ease;
-  }
-
-  .service-content li:hover {
-    color: rgb(0, 0, 0);         /* darken on hover */
-  }
-</style>
-<style>
-  /* Make service row hover affect chevron stroke colour */
-  .service:hover [data-chevron] svg {
-    stroke: #2b2b2b; /* hover colour */
-  }
-
-  /* Default colour */
-  [data-chevron] svg {
-    stroke: #2b2b2b; /* matches your text-[#2b2b2b]/55 */
-  }
-
-
-
-
-  /* default (closed) */
-.service {
-  border-color: #2b2b2b;
-}
-
-.service [data-label] {
-  color: #2b2b2b;
-  transition: color 0.3s ease;
-}
-
-/* hover — but only when NOT open */
-.service:not(.open):hover {
-  border-color: #2b2b2b;
-}
-
-.service:not(.open):hover [data-label] {
-  color: #2b2b2b;
-}
-
-/* open state — always dark */
-.service.open {
-  border-color: #2b2b2b;
-}
-
-.service.open [data-label] {
-  color: #2b2b2b;
-}
-
-.service.open [data-chevron] svg {
-  stroke: #2b2b2b;
-}
-
-</style>
-
-<div id="about" class="  mt-8 md:mt-0 " ></div>
-
- <section  class="max-web mx-auto w-full z-40 mb-12 md:mb-0
-         pt-[clamp(4px,3vw,200px)] pb-[clamp(4px,4vw,240px)]
- 
-
-         bg-[#F1F0EE] fade-in  "
->
-  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-6 items-start">
-
-    <!-- LEFT COLUMN -->
-    <div>
-     <h2 class="  h3        fade-in"> 
-        <span>About me</span>
-      </h2>  
-    </div>
-
-<!-- RIGHT COLUMN -->
-    <div>  
-    <div class="  text-[#2b2b2b] body-text-1   mr-0 md:mr-0 fade-in">
-        <p class="mb-8 ">
-          Hi! I’m Jake Pearce, a graphic designer based in Melbourne, Australia. I enjoy creating fun, energetic visuals grounded in thoughtful, considered design. While mostly self-taught, I completed a Diploma of Graphic Design at RMIT Brunswick in 2023, where I gained practical experience in print and pre-press production. I’m passionate about creativity and branding, and always looking for ways to bring fresh, exciting ideas to life. I’m currently seeking a full-time role within a creative team where I can keep learning and contribute in a more collaborative environment.
-
-      </div>
-      
-     
-<div class="flex items-center gap-4   fade-in">
-
-  <!-- Avatar -->
-  <img 
-    src="images/jake-image-square.avif"
-    alt="blank-avatar"
-    class=" w-16 h-16   rounded-full   "
-  />
-
-  <!-- Text -->
-  <div class="leading-[0.5em] ">
-    <div class=" body-text-2     text-[#2b2b2b] ">
-      Jake Pearce
-    </div> 
-<div class="opacity-70 hover:opacity-30">
-   <a 
-    href="https://drive.google.com/file/d/1w6B4FGnV9QwHBefrgyShvrh95oo5FM7D/view?usp=sharing"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="md:hidden fade-in  items-center   w-full cursor-pointer 
-             transition-colors no-underline"
-  >
-    <span
-      class="body-text-1   mb-0 "
-      data-label
-    > View résumé (PDF)
-    </span>
-
-  </a>
-  <a 
-    href="https://drive.google.com/file/d/1w6B4FGnV9QwHBefrgyShvrh95oo5FM7D/view?usp=sharing"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="hidden md:block fade-in  items-center   w-full cursor-pointer 
-             transition-colors no-underline"
-  >
-    <span
-      class="body-text-1   mb-0 "
-      data-label
-    > View résumé (PDF)
-    </span>
-
-  </a>
-  </div>
-</div>
-</div>
-
-
-  
-
-</section>
-
-
-<script>
-  
-document.addEventListener('DOMContentLoaded', function () {
-  const services = Array.from(document.querySelectorAll('#services-accordion [data-service]'));
-
-  function closeAll() {
-    services.forEach(svc => {
-      const btn = svc.querySelector('[data-toggle]');
-      const content = svc.querySelector('[data-content]');
-      const label = svc.querySelector('[data-label]');
-      const chev = svc.querySelector('[data-chevron]');
-      btn.setAttribute('aria-expanded', 'false');
-      content.style.maxHeight = '0px';
-      if (chev) {
-        chev.classList.remove('rotate-180');
-        chev.classList.remove('text-[#000000]');
-        chev.classList.add('text-[#000000]');
-      }
-      if (label) {
-        label.classList.remove('text-[#000000]');
-        label.classList.add('text-[#000000]');
-      }
-    });
-  }
-
-  
-
-  // Attach click handlers
-  services.forEach(svc => {
-    const btn = svc.querySelector('[data-toggle]');
-    const content = svc.querySelector('[data-content]');
-
-    const setHeight = () => {
-      if (btn.getAttribute('aria-expanded') === 'true') {
-        content.style.maxHeight = content.scrollHeight + 'px';
-      }
-    };
-    window.addEventListener('resize', setHeight);
-
-    btn.addEventListener('click', () => {
-      const isOpen = btn.getAttribute('aria-expanded') === 'true';
-      closeAll();
-      if (!isOpen) openService(svc); // only one open at a time
-    });
-  });
-
-   
-});
-</script>
  
  
-
-
- 
-<div class=" lg:hidden border-b border-[#DCDCDA] mt-8 mb-2  "></div>
-
-<section  class=" max-web mx-auto w-full z-40
-         pt-[clamp(4px,3vw,200px)] 
-
-
-         bg-[#F1F0EE] fade-in  "
->
-
-  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-6 items-start">
-
-    <!-- LEFT COLUMN -->
-    <div>
-     <h2 class="  h3    lg:mb-0  mb-10 md:mb-0  fade-in"> 
-        <span>Services</span>
-      </h2>  
-    </div>
-
-     <!-- RIGHT COLUMN (DESKTOP) -->
-<div class=" ">
-  
-
-  <!-- 01 Brand Identity -->
-  <div class="border-b border-[#2b2b2b]/10 fade-in grid grid-cols-[1fr,auto] py-6 -mt-4">
-    <div class="body-text-3 max-w-[2ch] md:max-w-[20ch] ">
-      Brand Identity
-    </div>
-    <ul class="body-text-1 space-y-[0px] justify-self-end mr-[60px]">
-      <li>Logo Design</li>
-      <li>Type systems</li>
-      <li>Brand assets</li>
-      <li>Guidelines</li> 
-    </ul>
-  </div>
-
-  <!-- 02 Content Design -->
-  <div class="border-b border-[#2b2b2b]/10 fade-in grid grid-cols-[1fr,auto] py-6">
-    <div class="body-text-3  max-w-[2ch] md:max-w-[20ch]">
-       Content Design
-    </div>
-    <ul class="body-text-1 space-y-[0px] justify-self-end mr-[20px]">
-      <li>Social posts</li>
-      <li>Ad creative</li>
-      <li>Campaign graphics</li>
-      <li>Video thumbnails</li>
-    </ul>
-  </div>
-
-  <!-- 03 Presentation & Decks -->
-  <div class="border-b border-[#2b2b2b]/10 fade-in grid grid-cols-[1fr,auto] py-6">
-    <div class="body-text-3  max-w-[8ch] md:max-w-[20ch]">
-     Presentation &amp; Decks
-    </div>
-    <ul class="body-text-1 space-y-[0px] justify-self-end mr-[23px]">
-      <li>Pitch decks</li>
-      <li>Tender documents</li>
-      <li>Internal reports</li> 
-      <li>Information design</li> 
-    </ul>
-  </div>
-
-  <!-- 04 Digital Design -->
-  <div class="border-b border-[#2b2b2b]/10 fade-in grid grid-cols-[1fr,auto] py-6">
-    <div class="body-text-3 max-w-[2ch] md:max-w-[20ch] ">
-      Digital Design
-    </div>
-    <ul class=" body-text-1 space-y-[0px] justify-self-end mr-[47px]">
-      <li>Web visuals</li>
-      <li>Landing pages</li>
-      <li>UI mockups</li>
-      <li>Layout systems</li>
-    </ul>
-  </div>
-
-</div > 
-
-
-
-
-</section>  
-
-
-
-   
-<div id="contact" class="mb-8 md:mb-0 pt-8  md:pt-[clamp(2px,1.5vw,100px)]" ></div>
-<section
-  id="contact"
-  class=" mb-8 md:mb-0
-    max-web mx-auto w-full z-40
-    md:pt-[clamp(5px,4vw,230px)]
-    md:pb-[clamp(5px,6vw,280px)] 
-    pb-12
-    bg-[#F1F0EE]
-    fade-in 
-  "
->
-  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-6 items-start">
-
-    <!-- LEFT COLUMN -->
-    <div>
-      <h2 class="h3 fade-in">
-        <span>Contact</span>
-      </h2>
-    </div>
-
-    <!-- RIGHT COLUMN -->
-   <div class="space-y-8 fade-in">
-
-  <p class="body-text-1 max-w-[44ch]">
-    I’m currently open to freelance projects, contract roles,
-    and in-house opportunities where thoughtful design and
-    collaboration are valued.
-  </p>
-
-  <div class="space-y-3.5">
-
-    <!-- EMAIL -->
-    <a
-  href="mailto:hello@jakepearce.com.au"
-  class="group flex items-center whitespace-nowrap body-text-3
-         transition-opacity hover:opacity-50"
->
-
-      <svg
-  xmlns="http://www.w3.org/2000/svg"
-  viewBox="0 0 24 24"
-  class="w-4 h-4 mr-1   group-hover:-translate-x-1.5 transition-transform"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2.75"
-  stroke-linecap="square"
-  stroke-linejoin="miter"
-  aria-hidden="true"
->
-  <!-- shaft -->
-  <line x1="4" y1="12" x2="18" y2="12" />
-  <!-- arrow head -->
-  <line x1="18" y1="12" x2="12" y2="6" />
-  <line x1="18" y1="12" x2="12" y2="18" />
-</svg>
-
-      <span
-        class="inline-block mr-1 transition-[margin] duration-200 ease-out
-               "
-      >
-        hello@jakepearce.com.au
-      </span>
-    </a> 
-
-  </div>
-</div>
-
-  </div>
-</section> 
 
 </main>
-<footer
-  class="
-    relative w-full bg-[#E8E7E6]
-    [@media(min-width:874px)]:bg-[#F1F0EE]
-    
-    text-[#2b2b2b]  px-5 xl:px-[clamp(4px,5.5vw,300px)] 
-  "
-> 
-  <div class=" mx-auto w-full  mb-5  ">
 
-     
-<!-- ACKNOWLEDGEMENT + SOCIALS ROW -->
-<div class="  hidden [@media(min-width:874px)]:grid w-full grid-cols-[auto_1fr_auto_auto] items-stretch">
-
-<!-- SVG LOGO PILL -->
-<div class="bg-[#F9F9F8]   p-5 flex items-center justify-center mr-2"
->
-  <a 
-    href="#" 
-    aria-label="Home"
-    class="h-6 w-6 opacity-95   hover:opacity-50"
-    style="background: url('images/logo-new-circle-03.svg') center / contain no-repeat;"
-  ></a>
-</div>
-
-
-
-
- <!-- ACKNOWLEDGEMENT PILL -->
-<div class="bg-[#F9F9F8]     px-5 py-4 flex flex-1  ">
-  <p
-    class="
-      body-text-small xl:leading-snug text-[#2b2b2b] self-center  
-
-    "
-  >
-I acknowledge the Wurundjeri Woi-wurrung and Bunurong / Boon Wurrung peoples of the Kulin Nation as the Traditional Owners of the lands on which I work, and I pay my respect to Elders past, present and emerging.  </p>
-</div>
-
-  <!-- RIGHT SIDE GROUP -->
-  <div class="flex items-stretch  ml-auto">
-
-    <!-- SOCIALS PILL -->
-    <div class="bg-[#F9F9F8]     px-5 py-4 flex mx-2 ">
-      <div class="body-text-1 flex flex-col [@media(min-width:1034px)]:flex-row items-start [@media(min-width:1034px)]:items-center gap-2.5 [@media(min-width:1034px)]:gap-2.5 text-[#2b2b2b] self-center">
-        <!-- icons -->
-    <!-- Instagram -->
-    <a href="https://instagram.com/jake.r.pearce" class="hover:text-[#000000]/50" aria-label="Instagram">
-      <svg viewBox="0 0 256 256" class="[@media(min-width:100px)_and_(max-width:838px)]:w-6 [@media(min-width:100px)_and_(max-width:838px)]:h-6   w-6 h-6 fill-current">
-        <path d="M176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24ZM128,176a48,48,0,1,1,48-48A48.05,48.05,0,0,1,128,176Zm60-96a12,12,0,1,1,12-12A12,12,0,0,1,188,80Zm-28,48a32,32,0,1,1-32-32A32,32,0,0,1,160,128Z"></path>
-      </svg>
-    </a>
-
-    <!-- LinkedIn -->
-    <a href="https://www.linkedin.com/in/jake-pearce-076b772b5/" class="hover:text-[#000000]/50" aria-label="LinkedIn">
-      <svg viewBox="0 0 256 256" class="[@media(min-width:100px)_and_(max-width:838px)]:w-6 [@media(min-width:100px)_and_(max-width:838px)]:h-6   w-6 h-6 fill-current">
-        <path d="M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24ZM96,176a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0ZM88,96a12,12,0,1,1,12-12A12,12,0,0,1,88,96Zm96,80a8,8,0,0,1-16,0V140a20,20,0,0,0-40,0v36a8,8,0,0,1-16,0V112a8,8,0,0,1,15.79-1.78A36,36,0,0,1,184,140Z"></path>
-      </svg>
-    </a>
-
-  </div>
-</div>
-  
- <!-- LINKS PILL -->
-    <div class="bg-[#F9F9F8]     px-6 py-4 flex  ">
-      <div class="body-text-small flex flex-col [@media(min-width:1034px)]:flex-row items-start [@media(min-width:1034px)]:items-center gap-1 [@media(min-width:1034px)]:gap-4 text-[#2b2b2b] self-center ">
-        <a href="#projects" class="  hover:text-[#000000]/50 whitespace-nowrap">Projects</a>
-        <a href="#about" class=" hover:text-[#000000]/50 whitespace-nowrap">About</a>
-        <a href="#contact" class="  hover:text-[#000000]/50 whitespace-nowrap">Contact</a>
+<footer class="bg-[#0C0C0C] px-8 md:px-10 pt-14 md:pt-12 pb-14">
+  <div class="max-web">
+    <div class="grid grid-cols-1 md:grid-cols-[repeat(3,max-content)] gap-x-[60px] w-fit">
+      <div class="col-span-1 md:col-span-3 mb-2">
+        <span class="mono uppercase text-[#f9f9f9]">Projects</span>
+      </div>
+      <div class="flex md:hidden flex-col gap-[12px] mb-14">
+        <a href="moss-fragrances" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">Moss Fragrances</a>
+        <a href="renaissance-sports" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">Renaissance Sports</a>
+        <a href="mmt" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">BNDR Music Group</a>
+        <a href="bmp-sports" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">BMP Sports</a> 
+      </div>
+      <div class="hidden md:flex flex-col gap-[12px] mb-20">
+        <a href="moss-fragrances" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">Moss Fragrances</a>
+        <a href="renaissance-sports" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">Renaissance Sports</a>
+      </div>
+      <div class="hidden md:flex flex-col gap-[12px] mb-20">
         
+        <a href="mmt" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">BNDR Music Group</a>
+        <a href="bmp-sports" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">BMP Sports</a>
       </div>
-    </div> 
-  </div> 
+     <div class="relative hidden md:flex flex-col gap-[12px] mb-20">
+ 
 
-  
-</div> 
-
-<div class="" >
-<!-- 🔥 md and BELOW version (4-column mobile footer layout) -->
-<div class=" pt-12 pb-8 [@media(min-width:874px)]:hidden flex flex-col -mt-8 text-[#2b2b2b]  space-y-10">
-
- <div class="flex flex-col items-start h-full    mb-6  fade-in"> 
-        <img class="hidden md:block  [@media(min-width:874px)]:hidden max-h-[9em] mt-0 -ml-0.5" src="images/logo-new-circle-03.svg" alt="logo">
-      
-      </div>
-
-  <!-- Links -->
-  <div>
-    <h2 class="mb-2  body-text-1 [font-variation-settings:'wght'_520]  ">
-      Links
-    </h2>
-    <nav class="body-text-1 flex flex-col space-y-1">
-      <a href="#" class="hover:text-[#000000]">Home</a>
-      <a href="#projects" class="hover:text-[#000000]">Projects</a> 
-      <a href="#about" class="hover:text-[#000000]">About</a>
-      <a href="#contact" class="hover:text-[#000000]">Contact</a>
-    </nav>
-  </div>
-
-  <!-- Socials -->
-  <div>
-    <h2 class="mb-2   body-text-1 [font-variation-settings:'wght'_520] ">
-      Socials
-    </h2>
-    <nav class="body-text-1 flex flex-col space-y-1">
-      <a href="https://instagram.com/jake.r.pearce" class="hover:text-[#000000]">Instagram</a>
-      <a href="https://www.linkedin.com/in/jake-pearce-076b772b5/" class="hover:text-[#000000]">LinkedIn</a>
-    </nav>
-  </div>
-
-  <!-- Acknowledgement -->
-  <div>
-    <h2 class="mb-2  body-text-1  [font-variation-settings:'wght'_520] ">
-      Acknowledgement of Country
-    </h2>
-    <p class=" body-text-1 leading-relaxed">
-      I acknowledge Aboriginal and Torres Strait Islander peoples as the Traditional Owners of the lands I work on. I pay respect to elders past, present and emerging, and honour their enduring connection to country.
-    </p>
-  </div>
-
-  <!-- Copyright -->
-  <div >
-    <span class=" body-text-1 [font-variation-settings:'wght'_520] ">
-      © Jake Pearce 2026
-    </span>
-  </div>
+  <p class="mono uppercase text-[#f9f9f9]/40">Ceres Environmental Park</p>
+  <p class="mono uppercase text-[#f9f9f9]/40">Jake Pearce Design</p>
 
 </div>
-
+      <div class="mb-14 md:mb-0">
+        <span class="mono uppercase text-[#f9f9f9] block mb-3">Say Hi</span>
+        <div class="flex flex-col gap-[12px]">
+          <a href="mailto:hello@jakepearce.com.au" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">Send a Message</a>
+          <a href="https://www.linkedin.com/in/jakepearcedesign/" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">LinkedIn</a>
+        </div>
+      </div>
+      <div class="mb-14 md:mb-0">
+        <span class="mono uppercase text-[#f9f9f9] block mb-3">About</span>
+        <div class="flex flex-col gap-[12px]">
+          <a href="/#about" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">About</a>
+          <a href="#" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">Resume</a>
+        </div>
+      </div>
+      <div>
+        <span class="mono uppercase text-[#f9f9f9] block mb-3">Work</span>
+        <div class="flex flex-col gap-[12px]">
+          <a href="/#projects" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">Projects</a>
+          <a href="#" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">Visual Feed</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </footer>
-
 
 
 <script>
@@ -1285,7 +1198,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <script>
 (() => {
   function initFadeIns() {
-    const els = Array.from(document.querySelectorAll('.fade-in'));
+    const els = Array.from(document.querySelectorAll('.  '));
     if (!els.length) return;
 
     // Respect reduced motion
@@ -1540,8 +1453,76 @@ gsap.from(".hero-line", {
   stagger: 0.12
 });
 </script>
- 
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const btn       = document.getElementById('mobileMenuBtn');
+  const nav       = document.getElementById('mobileNav');
+  const hamburger = btn && btn.querySelector('.hamburger');
+  if (!btn || !nav) return;
 
+  let isOpen = false;
+
+  const open = () => {
+    isOpen = true;
+    nav.style.maxHeight = nav.scrollHeight + 'px';
+    nav.setAttribute('aria-hidden', 'false');
+    if (hamburger) hamburger.classList.add('is-open');
+    btn.setAttribute('aria-label', 'Close menu');
+  };
+
+  const close = () => {
+    isOpen = false;
+    nav.style.maxHeight = '0';
+    nav.setAttribute('aria-hidden', 'true');
+    if (hamburger) hamburger.classList.remove('is-open');
+    btn.setAttribute('aria-label', 'Open menu');
+  };
+
+  btn.addEventListener('click', () => isOpen ? close() : open());
+  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => requestAnimationFrame(close)));
+});
+</script>
+ <script>
+const btn = document.getElementById('mobileMenuBtn');
+const nav = document.getElementById('mobileNav');
+const hamburger = btn.querySelector('.hamburger');
+const header = document.getElementById('site-header');
+
+ 
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const btn = document.getElementById('mobileMenuBtn');
+  const nav = document.getElementById('mobileNav');
+  const closeBtn = document.getElementById('mobileNavClose');
+  const hamburger = btn.querySelector('.hamburger');
+  const header = document.getElementById('site-header');
+
+  if (!btn || !nav) return;
+
+  const open = () => {
+    nav.classList.remove('-translate-y-full'); 
+    hamburger.classList.add('is-open');
+    header.classList.add('menu-open');
+  };
+
+  const close = () => {
+    nav.classList.add('-translate-y-full'); 
+    hamburger.classList.remove('is-open');
+    header.classList.remove('menu-open');
+  };
+
+  btn.addEventListener('click', () => {
+    nav.classList.contains('-translate-y-full') ? open() : close();
+  });
+
+  closeBtn?.addEventListener('click', close);
+
+  nav.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => requestAnimationFrame(close));
+  });
+});
+</script>
 
 <!-- Mobile Top Nav -->
 <div
@@ -1592,6 +1573,6 @@ ease-[cubic-bezier(.22,1,.36,1)]
 </div>
 
 
-
+<div id="cursor"><span id="cursor-label"></span></div>
 </body>
 </html> 

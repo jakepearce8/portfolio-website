@@ -9,6 +9,8 @@
   <title>Renaissance Sports — Jake Pearce</title>
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font variation utilities (plain-CSS port of @spencerwmiles/tailwind-font-variations) -->
+  <link rel="stylesheet" href="font-variations.css" />
 
   <link
   rel="preload"
@@ -18,21 +20,115 @@
   crossorigin
 >
   <style>
+/* hide default cursor */
+body {
+  cursor: none;
+}
 
+/* custom circle */
+#cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #2B2B2B;
+  pointer-events: none;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transform: translate(-50%, -50%);
+  transition: transform 0.15s ease, opacity 0.2s ease, background 0.6s ease,
+              width 0.45s cubic-bezier(0.22,1,0.36,1),
+              height 0.45s cubic-bezier(0.22,1,0.36,1),
+              border-radius 0.45s cubic-bezier(0.22,1,0.36,1);
+}
+
+#cursor-label {
+  font-family: 'BricolageGrotesque', sans-serif;
+  --variation-setting-wght: 350;
+  --variation-setting-wdth: 80;
+  --variation-setting-opsz: 20;
+  font-variation-settings:
+    'wght' var(--variation-setting-wght, 200),
+    'wdth' var(--variation-setting-wdth, 200),
+    'opsz' var(--variation-setting-opsz, 28);
+  color: #F1F0EE;
+  letter-spacing: 0.016em;
+  font-size: 10.3pt;
+  white-space: nowrap;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+  user-select: none;
+}
+
+#cursor.pill {
+  width: 122px;
+  height: 30px;
+  border-radius: 9999px;
+  padding: 0 6px;
+}
+
+#cursor.pill #cursor-label {
+  opacity: 1;
+}
+ 
+
+/* hover state (optional) */
+a:hover ~ #cursor,
+.project-image-container:hover ~ #cursor {
+  transform: translate(-50%, -50%) scale(1.6);
+}
 
 
 
    /* ===== Font faces ===== */
-    
+
     @font-face {
   font-family: 'SansFlex';
   src: url('Fonts/GoogleSansFlex.ttf') format('truetype');
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
-} 
+}
+@font-face {
+  font-family: 'SourceCodePro';
+  src: url('Fonts/SourceCodePro-VariableFont_wght.ttf') format('truetype');
+  font-weight: 200 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'BricolageGrotesque';
+  src: url('Fonts/BricolageGrotesque-VariableFont.ttf') format('truetype');
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+}
 
 
+
+/* Register CSS custom properties as typed numbers so they can be transitioned */
+@property --variation-setting-wght {
+  syntax: '<number>';
+  initial-value: 400;
+  inherits: true;
+}
+@property --variation-setting-wdth {
+  syntax: '<number>';
+  initial-value: 100;
+  inherits: true;
+}
+@property --variation-setting-opsz {
+  syntax: '<number>';
+  initial-value: 16;
+  inherits: true;
+}
 
 * {
   font-synthesis: none;
@@ -40,109 +136,168 @@
    /* ===== Global ===== */
     body {
       font-family: 'SansFlex', sans-serif;
-  font-variation-settings: 'wght' 340;
+  --variation-setting-wght: 410;
+  font-variation-settings: 'wght' var(--variation-setting-wght, 380);
   color: #2b2b2b;
-  letter-spacing: 0.00em; 
+  letter-spacing: 0.00em;
   line-height: 1.55;
   font-display: swap;
     }
     /* ===== Typography & components ===== */
-     
-   
+
+.mono {
+  font-family: 'BricolageGrotesque', sans-serif;
+  --variation-setting-wght: 370;
+  --variation-setting-wdth: 85;
+  --variation-setting-opsz: 20;
+  font-variation-settings:
+    'wght' var(--variation-setting-wght, 200),
+    'wdth' var(--variation-setting-wdth, 200),
+    'opsz' var(--variation-setting-opsz, 28);
+  color: #2b2b2b;
+  letter-spacing: 0.016em;
+  line-height: 1;
+
+}
+.display {
+  font-family: 'BricolageGrotesque', sans-serif;
+  --variation-setting-wght: 500;
+  --variation-setting-wdth: 93;
+  --variation-setting-opsz: 42;
+  font-variation-settings:
+    'wght' var(--variation-setting-wght, 580),
+    'wdth' var(--variation-setting-wdth, 68),
+    'opsz' var(--variation-setting-opsz, 100);
+    transition: --variation-setting-wght 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+              --variation-setting-wdth 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+              --variation-setting-opsz 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  color: #2b2b2b; 
+  letter-spacing: -0.015em;
+  line-height: 0.99;
+  max-width: 1000px;
+}
+
+.display-small {
+  font-family: 'BricolageGrotesque', sans-serif;
+  --variation-setting-wght: 480;
+  --variation-setting-wdth: 100;
+  --variation-setting-opsz: 24;
+  font-variation-settings:
+    'wght' var(--variation-setting-wght, 400),
+    'wdth' var(--variation-setting-wdth, 100),
+    'opsz' var(--variation-setting-opsz, 24);
+  transition: --variation-setting-wght 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+              --variation-setting-wdth 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+              --variation-setting-opsz 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  color: #2b2b2b;
+  letter-spacing: -0.025em;
+  
+  line-height: 1.1;
+}
+.display-small:hover {
+  --variation-setting-wght: 700;
+  --variation-setting-wdth: 112.5;
+}
+
 .h1 {
   font-family: 'SansFlex', sans-serif;
-  font-variation-settings: 'wght' 460;
+  --variation-setting-wght: 460;
+  font-variation-settings: 'wght' var(--variation-setting-wght, 460);
   color: #2b2b2b;
-  letter-spacing: -0.018em; 
+  letter-spacing: -0.022em;
   line-height: 1.2;
   font-display: swap;
 
 }
 .h2 {
   font-family: 'SansFlex', sans-serif;
-  font-variation-settings: 'wght' 460;
+  --variation-setting-wght: 460;
+  font-variation-settings: 'wght' var(--variation-setting-wght, 460);
   color: #2b2b2b;
-  letter-spacing: -0.006em; 
+  letter-spacing: -0.006em;
   line-height: 1.3;
   font-display: swap;
 }
 .h3 {
   font-family: 'SansFlex', sans-serif;
-  font-variation-settings: 'wght' 460;
+  --variation-setting-wght: 460;
+  font-variation-settings: 'wght' var(--variation-setting-wght, 460);
   color: #2b2b2b;
-  letter-spacing: -0.01em; 
+  letter-spacing: -0.01em;
   line-height: 1.3;
   font-display: swap;
 }
 .h4 {
   font-family: 'SansFlex', sans-serif;
-  font-variation-settings: 'wght' 460;
+  --variation-setting-wght: 460;
+  font-variation-settings: 'wght' var(--variation-setting-wght, 460);
   color: #2b2b2b;
-  letter-spacing: -0.011em; 
+  letter-spacing: -0.011em;
   line-height: 1.1;
   font-display: swap;
 
 }
-  
+
 .body-text-1 {
   font-family: 'SansFlex', sans-serif;
-  font-variation-settings: 'wght' 380;
+  --variation-setting-wght: 320;
+  font-variation-settings: 'wght' var(--variation-setting-wght, 320);
   color: #2b2b2b;
-  letter-spacing: 0.001em; 
+  letter-spacing: 0.001em;
   line-height: 1.5;
   font-display: swap;
-} 
+}
 .body-text-small {
-  font-family: 'SansFlex', sans-serif;
-  font-variation-settings: 'wght' 340;
+  font-family: 'SourceCodePro', monospace;
+  --variation-setting-wght: 400;
+  font-variation-settings: 'wght' var(--variation-setting-wght, 400);
   color: #2b2b2b;
-  letter-spacing: 0.00em; 
-  line-height: 1.65;
+  letter-spacing: -0.016em;
+  line-height: 1.2;
   font-display: swap;
-} 
+}
 
 .body-text-2 {
- font-family: 'SansFlex', sans-serif;
- font-variation-settings: 'wght' 460;
+  font-family: 'SansFlex', sans-serif;
+  --variation-setting-wght: 460;
+  font-variation-settings: 'wght' var(--variation-setting-wght, 460);
   color: #2f2f2f;
-  letter-spacing: 0.001em; 
+  letter-spacing: 0.001em;
   line-height: 1.65;
   font-display: swap;
- 
-} 
+}
 .body-text-3 {
   font-family: 'SansFlex', sans-serif;
-  font-variation-settings: 'wght' 460;
+  --variation-setting-wght: 460;
+  font-variation-settings: 'wght' var(--variation-setting-wght, 460);
   color: #2b2b2b;
-  letter-spacing: 0.0em; 
+  letter-spacing: 0.0em;
   line-height: 1.15;
   font-display: swap;
 }
 .body-text-4 {
   font-family: 'SansFlex', sans-serif;
-  font-variation-settings: 'wght' 460;
+  --variation-setting-wght: 460;
+  font-variation-settings: 'wght' var(--variation-setting-wght, 460);
   color: #2b2b2b;
-  letter-spacing: 0.0em; 
+  letter-spacing: 0.0em;
   line-height: 1.45;
   font-display: swap;
-} 
+}
 
-
- 
 /* ===== Header & Toggle ===== */
 header {
-  position: fixed;
+  position: relative;
   top: 0; left: 0; right: 0;
   z-index: 50;
   background-color: #F1F0EE;
   display: flex;
-  align-items: center;
   justify-content: space-between;
   padding: 0pt;
-  padding-top: pt;
-  padding-bottom: 0pt;
-} 
-    
+  padding-top: 2pt;
+  padding-bottom: 4pt;
+}
+
     /* your existing project tooltip */
 #project-tooltip {
   position: fixed;
@@ -151,11 +306,11 @@ header {
   color: #F1F0EE;
   padding: 4px 8px;
   border-radius: 4px;
-  font-size: 11pt;
+  font-size: 10pt;
   z-index: 1000;
   display: none;
   white-space: nowrap;
-  
+
 }
 
 /* the copy tooltip */
@@ -166,81 +321,21 @@ header {
   color: #F1F0EE;
   padding: 4px 8px;
   border-radius: 4px;
-  font-size: 11pt;
+  font-size: 10pt;
   z-index: 1000;
   display: none;
   white-space: nowrap;
 }
-  
+
 html {
   background-color: #F1F0EE; /* same as main */
 }
- 
-    
-/* override all project-image-container to square on small screens */
-.project-image-container {
-  aspect-ratio: 1 / 1;
-  width: 100%;
-  overflow: hidden;
-  border-radius: inherit;
-}
- 
 
-    .project-image-container:hover {
-      cursor: default;
-}
-    
-     .projects-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      row-gap: 36px;
-      column-gap: 20px;
-    }
-    @media (min-width: 768px) {
-      .projects-grid {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto auto;
-      }
-      .projects-grid > .project:nth-child(1) {
-        grid-column: 1; grid-row: 1;
-      }
-      .projects-grid > .project:nth-child(2) {
-        grid-column: 2; grid-row: 1;
-      }
-    
-    }
-    @media (min-width: 767px) {
-      .desktop     { display: block !important; }
-      .desktop-flex{ display: flex  !important; }
-      .mobile      { display: none  !important; }
-    }
-    @media (max-width: 767px) {
-      .header-nav  { display: none !important; }
-      }
-    @media (min-width: 768px) {
-      .desktop     { display: block !important; }
-      .desktop-flex{ display: flex  !important; }
-      .mobile      { display: none  !important; }
-    }
-    @media (max-width: 767px) {
-      .header-nav  { display: none !important; }
-      }
-    
-    .email-phone {
-  /* default (mobile) */
-  font-size: 20pt;
-}
-@media (min-width: 768px) {
-  /* desktop (or whatever px you prefer) */
-  .email-phone {
-    font-size: 38px;
-  }
-}
 main {
   position: relative;
   z-index: 2;
   background: #F1F0EE;
-  margin-bottom: 0; 
+  margin-bottom: 0;
 }
 
 footer {
@@ -250,30 +345,25 @@ footer {
   width: 100%;
   max-height: none;
   overflow: visible;
+  z-index: 10;
 }
 
-/* 3) For mobile, use shorter footer */
-@media (max-width: 767px) {
-  main {
-    margin-bottom: 450px;
-  }
-  
-}
-footer button[aria-label="Scroll to top"] {
-  font-family: Geist;
-} 
 @media (max-width: 767px) {
   footer {
-    /* ensure footer is flex-column */
-    display: flex;
-    flex-direction: column;
-  } 
-}  
- 
+    position: relative !important;
+    max-height: none !important;
+    overflow: visible !important;
+    bottom: auto !important;
+  }
+  main {
+    margin-bottom: 0 !important;
+  }
+}
+
 /* desktop / tablet */
 #navContainer {
-  margin-top: 11px;
-  margin-bottom: 11px;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 /* mobile only */
@@ -283,18 +373,17 @@ footer button[aria-label="Scroll to top"] {
   margin-bottom: 0.4rem;
   }
 }
-    
-    
+
+
 .external-link::after {
   display: inline-block;
-  font-family: bootstrap-icons !important;
+  font-family: bootstrap-icons;
   font-style: normal;
-  font-weight: 600 !important;
+  font-weight: 600;
   font-variant: normal;
   text-transform: none;
   line-height: 1;
-  vertical-align: -.125em;
-  content: "\f1c5";
+  vertical-align: -.125em; 
   margin-left: 0.5em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -304,12 +393,12 @@ footer button[aria-label="Scroll to top"] {
 /* 1) Always collapse every .service-content by default */
 .service .service-content {
   max-height: 0;
-  overflow: hidden; /* make sure hidden */
+  overflow: hidden;
 }
 
-/* 2) If a service has the “open” class, expand its content */
+/* 2) If a service has the "open" class, expand its content */
 .service.open .service-content {
-  max-height: 256px; /* adjust if you need more or less vertical space */
+  max-height: 256px;
 }
 
 @media (min-width: 768px) {
@@ -318,88 +407,41 @@ footer button[aria-label="Scroll to top"] {
   }
 }
 
-@media (max-width: 767px) {
-  footer {
-    /* ditch the fixed-height, internal-scrolling */
-    position: relative !important;
-    max-height: none !important;
-    overflow: visible !important;
-    bottom: auto !important;
-  }
-  main {
-    /* you no longer need all that bottom-margin hack */
-    margin-bottom: 0 !important;
-  }
-}
-
- header {
-  transform: translateY(-101%);
-  will-change: transform;
-}
-
- 
 :root { --header-h: 0px; }
 
 /* Viewport-safe height minus fixed header */
 .hero-viewport {
-  min-height: calc(100svh - var(--header-h));
+  height: 40dvh;
 }
+
 @supports (height: 100dvh) {
-  .hero-viewport { min-height: calc(100dvh - var(--header-h)); }
+  .hero-viewport {
+    height: 40dvh;
+  }
 }
 
 /* Only for users who prefer reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .autoplay-video { animation: none !important; }
-} 
- 
-.project-image-container {
-  overflow: hidden;
-}
-
-.project-image-container img,
-.project-image-container video {
-  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
-  will-change: transform;
-}
-
-.project-image-container:hover img,
-.project-image-container:hover video {
-  transform: scale(1.06);
 }
 
 html {
   scroll-behavior: smooth;
 }
 :root {
-  /* Base size (fluid) */
-  --step-0: clamp(0.95rem, 1vw + 0.6rem, 0.95rem);
-
-  /* Ratio */
-  --ratio: 1.3;
-
-  /* Smaller-than-body (negative step) */
---step--1: calc(var(--step-0) / 1.25);
-
-
-
-  /* Scale */
+  --step-0: clamp(1rem, 1vw + 0.7rem, 1rem);
+  --ratio: 1.2;
+  --step--1: calc(var(--step-0) / 1.25);
   --step-1: calc(var(--step-0) * var(--ratio));
   --step-2: calc(var(--step-1) * var(--ratio));
   --step-3: calc(var(--step-2) * var(--ratio));
   --step-4: calc(var(--step-3) * var(--ratio));
   --step-5: calc(var(--step-4) * var(--ratio));
   --step-6: calc(var(--step-5) * var(--ratio));
+  --step-7: calc(var(--step-6) * var(--ratio));
 }
 
-@media (max-width: 767px) {
-  :root {
-    --step-0: 0.9em;
-
-    /* Mobile ratio (tighter hierarchy) */
-    --ratio: 1.2;
-  }
-}
+ 
 
 /* Type mappings */
 .body-text-1,
@@ -412,9 +454,17 @@ html {
   font-size: var(--step-1);
 }
 
-/* NEW: smaller-than-body utility */
 .body-text-small {
   font-size: var(--step--1);
+}
+.mono {
+  font-size: calc(var(--step--1) * 1.06);
+}
+.display {
+  font-size: calc(var(--step-4) * 1.1);
+}
+.display-small {
+  font-size: var(--step-2);
 }
 
 .nav-body {
@@ -433,7 +483,10 @@ html {
   scroll-margin-top: 100px;
 }
 #about {
-  scroll-margin-top: 30px;
+  scroll-margin-top: 80px;
+}
+#contact {
+  scroll-margin-top: 60px;
 }
 
 
@@ -443,84 +496,218 @@ html {
   }
 }
 
+body {
+  cursor: none;
+}
+a,
+button,
+[role="button"],
+input,
+textarea {
+  cursor: none !important;
+}
+html, body {
+  cursor: none;
+}
 
+.is-scrolling,
+.is-scrolling * {
+  cursor: none !important;
+}
+
+/* ===== Page-specific styles ===== */
+.project-image-container {
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  overflow: hidden;
+  border-radius: inherit;
+}
+
+.project-image-container:hover {
+  cursor: default;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 36px;
+  column-gap: 20px;
+}
+@media (min-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+  }
+  .projects-grid > .project:nth-child(1) {
+    grid-column: 1; grid-row: 1;
+  }
+  .projects-grid > .project:nth-child(2) {
+    grid-column: 2; grid-row: 1;
+  }
+}
+@media (min-width: 767px) {
+  .desktop     { display: block !important; }
+  .desktop-flex{ display: flex  !important; }
+  .mobile      { display: none  !important; }
+}
+@media (max-width: 767px) {
+  .header-nav  { display: none !important; }
+}
+@media (min-width: 768px) {
+  .desktop     { display: block !important; }
+  .desktop-flex{ display: flex  !important; }
+  .mobile      { display: none  !important; }
+}
+
+#page-layout {
+  display: flex;
+  align-items: flex-start;
+}
+
+#case-sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 160px;
+  flex-shrink: 0;
+  background: #F1F0EE;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px 22px;
+  border-right: 1px solid rgba(43,43,43,0.1);
+}
+
+#page-layout > main {
+  flex: 1;
+  min-width: 0;
+}
+
+@media (max-width: 767px) {
+  #case-sidebar { display: none; }
+  #page-layout { display: block; }
+}
+
+.project-image-container {
+  overflow: hidden;
+}
+
+.project-image-container img,
+.project-image-container video {
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+.project-image-container:hover img,
+.project-image-container:hover video {
+  transform: scale(1.06);
+}
+
+/* ===== Hamburger → X animation ===== */
+.hamburger-bar {
+  display: block;
+  width: 100%;
+  height: 0.1em;
+  background: rgba(43,43,43,0.45);
+  transform-origin: center;
+  transition: transform 0.35s cubic-bezier(0.22,1,0.36,1),
+              opacity   0.25s cubic-bezier(0.22,1,0.36,1);
+}
+/* open state — applied to the .hamburger div */
+.hamburger.is-open .bar-1 { transform: translateY(4.25px) rotate(45deg); }
+.hamburger.is-open .bar-2 { opacity: 0; transform: scaleX(0); }
+.hamburger.is-open .bar-3 { transform: translateY(-4.25px) rotate(-45deg); }
   </style>
-  <link rel="icon" href="images/logo-new-circle-02.svg" type="image/svg+xml">
+   
 </head>
 <body>
-   <main>
-  <!-- Project tooltip -->
   <div id="project-tooltip"></div>
   <!-- ===== Header & Toggle ===== -->
-   <header class="bg-[#F1F0EE] fade-in fixed top-0 left-0 right-0 z-50 fixed">
-
-
-
+<div id="site-header" class="sticky top-0 z-50 md:relative">
+<header class="bg-[#F1F0EE]   top-0 left-0 right-0 z-50">
 <div
-  id="navContainer" 
-  class="flex justify-between items-center w-full py-3  md:py-0
-          px-6 md:px-5 xl:px-[clamp(4px,5.5vw,300px)] "
+  id="navContainer"
+  class="flex justify-between items-center w-full py-3 md:py-0 px-8 md:px-5"
 >
-  <!-- Header Title -->
-<a
-  href="/"
-  class="inline-flex items-center -ml-[0.25em] "
->
-  <img
-    src="images/logo-new-circle-03.svg"
-    alt="Jake Pearce logo"
-    class="h-[1.8em] md:h-[1.5em] w-auto opacity-95 
-           hover:opacity-50  "
+  <a
+    href="/"
+    class="inline-flex items-center py-[3px]   mono uppercase text-[#2B2B2B]/45 hover:text-[#2B2B2B] transition-colors mt-[4.5px]"
   >
-</a>
+    Jake Pearce
+  </a>
+  <nav class="mono text-[#2B2B2B]/65 uppercase hidden md:flex" style="margin: 0pt;">
+    <ul class="flex space-x-5 -mr-[0.4em] md:-mr-[0em] mt-[4.5px] mb-0">
+      <li><a href="/#projects" class="text-[#2B2B2B]/45 hover:text-[#2B2B2B] transition-colors">Projects</a></li>
+      <li><a href="/#about" class="text-[#2B2B2B]/45 hover:text-[#2B2B2B] transition-colors">About</a></li>
+      <li><a href="/#contact" class="text-[#2B2B2B]/45 hover:text-[#2B2B2B] transition-colors">Contact</a></li>
+    </ul>
+  </nav>
+  <button
+    id="mobileMenuBtn"
+    class="md:hidden flex items-center justify-center w-8 h-8 -mr-2 "
+    aria-label="Open menu"
+  >
+    <div class="hamburger flex flex-col justify-between w-[15px] h-[10px]">
+      <span class="hamburger-bar bar-1"></span>
+      <span class="hamburger-bar bar-2"></span>
+      <span class="hamburger-bar bar-3"></span>
+    </div>
+  </button>
+</div>
+</header>
 
-
-
-  
-     <nav class="body-text-small hidden md:flex " style="margin: 0pt;">
-  <ul class="flex space-x-5 -mr-[0.4em] !text-[9.5pt] md:-mr-[0em] mt-0 mb-0 ">
-    <li><a href="/#projects" class="  hover:opacity-50">Projects</a></li> 
-    <li><a href="/#about" class=" hover:opacity-50">About</a></li>
-    <li><a href="/#contact" class=" hover:opacity-50">Contact</a></li>
-  </ul>
-</nav>
-
-    <button
-  id="mobileMenuBtn"
-  class="md:hidden p-2 -mr-4"
-  aria-label="Open menu"
+<!-- Mobile dropdown nav -->
+<div
+  id="mobileNav"
+  aria-hidden="true"
+  class="md:hidden bg-[#F1F0EE] overflow-hidden"
+  style="max-height: 0; transition: max-height 0.45s cubic-bezier(0.22,1,0.36,1);"
 >
-  <div class="w-6 h-4 flex flex-col justify-between">
-    <span class="h-[2px] bg-[#2b2b2b]"></span>
-    <span class="h-[2px] bg-[#2b2b2b]"></span>
-    <span class="h-[2px] bg-[#2b2b2b]"></span>
+  <div class="px-8 pb-8 flex flex-col gap-3 ">
+    <a href="/" class="mono uppercase text-[#2B2B2B]/45 hover:text-[#2B2B2B] transition-colors inline-block w-fit bg-[#ffffff]/85 hover:bg-[#ffffff]/25 px-[6px] py-[4px] leading-none"> ← Home</a>
+    <a href="/#projects" class="mono uppercase text-[#2B2B2B]/45 hover:text-[#2B2B2B] transition-colors block">Projects</a>
+    <a href="/#visual-feed" class="mono uppercase text-[#2B2B2B]/45 hover:text-[#2B2B2B] transition-colors block">Visual Feed</a>
+    <a href="/#about" class="mono uppercase text-[#2B2B2B]/45 hover:text-[#2B2B2B] transition-colors block">About</a>
   </div>
-</button>
+</div>
+  <div style="height: 1px; background: rgba(43,43,43,0.1);"></div>
+</div>
 
-  </header>
-  
-  
+<div id="page-layout">
+<nav id="case-sidebar">
+  <div class=" flex flex-col gap-3">
+    <a href="/" class="mono uppercase text-[#2B2B2B]/45 hover:text-[#2B2B2B] transition-colors inline-block w-fit bg-[#ffffff]/85 hover:bg-[#ffffff]/25 px-[6px] py-[4px] leading-none"> ← Home</a>
+    <a href="#overview" class="mono uppercase text-[#2B2B2B]/45 hover:text-[#2B2B2B] transition-colors block">Overview</a>
+    <a href="#brief" class="mono uppercase text-[#2B2B2B]/45 hover:text-[#2B2B2B] transition-colors block">Brief</a>
+    <a href="#testimonial" class="mono uppercase text-[#2B2B2B]/45 hover:text-[#2B2B2B] transition-colors block">Testimonial</a>
+  </div>
+  <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" class="mono uppercase text-[#2B2B2B]/45 hover:text-[#2B2B2B] transition-colors inline-block w-fit bg-[#ffffff]/85 hover:bg-[#ffffff]/25 px-[6px] py-[4px] leading-none block">↑ Back to Top</a>
+</nav>
+<main>
+
 <section
   id="Project-images"
-  class=" hidden md:block fade-in   mx-auto md:-mt-3"
+  class="hidden md:block   mx-auto md:-mt-3"
 >
   <div class="content-column md:space-y-2.5 space-y-2.5">
-    <section id="project-gallery" class="fade-in ">
-      <div
-        class="
-          overflow-hidden
-          h-[clamp(440px,5vh+60vw,102vh)]
-
-        "
-      >
-        <img
-  src="images/2026-erima-9.avif"
-  alt="Gallery Image 4"
-  class="project-parallax w-full h-full object-cover  "
-/>
-
-      </div>
-    </section>
+  <section id="project-gallery" class=" ">
+  <div
+    class="
+      overflow-hidden
+      h-[65vh]
+      bg-[#61AD30] 
+      px-10
+      flex 
+      justify-center
+    "
+  >
+    <img
+      src="images/2026-erima-new.webp"
+      alt="MMT Hero"
+      class="block w-full max-w-[760px]  h-auto object-contain"
+    />
+  </div>
+</section>
   </div>
 </section>
 <script>
@@ -555,90 +742,20 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 
 <section
-  id="hero"
-  class="mt-10 md:mt-0 mb-2 md:mb-0 max-web mx-auto w-full z-40
-         px-5 xl:px-[clamp(4px,5.5vw,300px)] 
-          py-[clamp(4px,9vw,120px)]
-         bg-[#F1F0EE] fade-in"
+  id="overview"
+  class="  max-web mx-auto w-full z-40
+         px-8 md:px-14 py-14
+         bg-[#F1F0EE]   max-w-[1400px]"
 >
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-5 items-start">
 
-<div class="lg:hidden flex items-start">
-  <a
-  href="/"
-  class="flex lg:hidden inline-flex items-center whitespace-nowrap  mb-4 fade-in
-         bg-white/60 !text-[10pt] text-[#2b2b2b]
-         px-2.5 py-2
-         hover:bg-[#2b2b2b]/10
-         transition-colors duration-0  "
->
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 24 24"
-    class="w-4 h-4 mr-1 -ml-[5px]"
-    fill="none"
-    stroke="currentColor"
-    stroke-width="1.5"
-    stroke-linecap="square"
-    stroke-linejoin="miter"
-    aria-hidden="true"
-  >
-    <!-- shaft -->
-    <line x1="20" y1="12" x2="6" y2="12" />
-    <!-- arrow head -->
-    <line x1="6" y1="12" x2="12" y2="6" />
-    <line x1="6" y1="12" x2="12" y2="18" />
-  </svg>
-  <span>Back</span>
-</a>
-
-
-  </div>
-
-    <!-- LEFT COLUMN -->
+     <!-- LEFT COLUMN -->
     <div>
-      <h2 class="h4 leading-tight md:leading-snug   fade-in  mr-[1em] xl:max-w-[24ch] mb-6">
-         Introducing German sportswear heritage to Australian clubs
+     <h3 class="mono text-[#686868]/75 uppercase tracking-[0.01em] text-[#686868]/65 mb-5">Renaissance Sports</h3>
+      <h2 class=" display   mr-[1em] xl:max-w-[28ch]">
+         A visual identity built around confidence and momentum
       </h2>
-      
 
-    <div class="flex items-start">
-   <a
-  href="/"
-  class="hidden lg:block body-text-1 inline-flex items-center 
-         bg-white/60 text-[#2b2b2b] whitespace-nowrap
-         px-3 py-2 mt-[2em]
-         hover:bg-[#2b2b2b]/5
-         transition-colors duration-0  e
-         group"
->
-  <span
-    class="inline-block mr-0.5 transition-[margin] duration-200 ease-out
-           group-hover:mr-1.5"
-  >
-    <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 24 24"
-    class="w-4 h-4 mr-1 -ml-[2px] -mb-[2px] "
-    fill="none"
-    stroke="currentColor"
-    stroke-width="1.8"
-    stroke-linecap="square"
-    stroke-linejoin="miter"
-    aria-hidden="true"
-  >
-    <!-- shaft -->
-    <line x1="20" y1="12" x2="6" y2="12" />
-    <!-- arrow head -->
-    <line x1="6" y1="12" x2="12" y2="6" />
-    <line x1="6" y1="12" x2="12" y2="18" />
-  </svg>
-  </span>
-  Back
-</a>
-
-
-  </div>
 
     </div>
 
@@ -646,56 +763,69 @@ document.addEventListener('DOMContentLoaded', () => {
     <div
       class="
         grid grid-cols-1 gap-y-5 gap-x-8
-        fade-in justify-between items-stretch
+          justify-between items-stretch
       "
     > 
       <div class="flex flex-col items-start">
-        <span class="body-text-small   [font-variation-settings:'wght'_520]  mb-1.5">Client</span>
-        <span class="body-text-1">Renaissance Sports Group</span>
-      </div>
-
-      <div class="flex flex-col items-start">
-        <span class="body-text-small   [font-variation-settings:'wght'_520]  mb-1.5">Year</span>
+        <span class="mono uppercase text-[#2B2B2B]/45 mb-1.5">Year</span>
         <span class="body-text-1">2025</span>
       </div>
+ 
 
-      <div class="flex flex-col items-start max-w-[75ch]">
-        <span class="body-text-small   [font-variation-settings:'wght'_520]  mb-1.5">Brief</span>
-        <span class="body-text-1">Renaissance Sports Group engaged me to support the introduction of Erima to the Australian market. Working within Erima’s established German brand identity, I developed social and promotional assets designed to resonate with local clubs, build early traction, and translate the brand’s performance-driven heritage for a new audience.</span>
+      <div class="flex flex-col">
+        <span class="mono uppercase text-[#2B2B2B]/45 mb-1.5">Team</span>
+        <ul class="body-text-1 ">
+          <li>Just me</li> 
+        </ul>
       </div>
 
       <div class="flex flex-col">
-        <span class="body-text-small   [font-variation-settings:'wght'_520]  mb-1.5">Deliverables</span>
+        <span class="mono uppercase text-[#2B2B2B]/45 mb-1.5">Deliverables</span>
         <ul class="body-text-1 ">
-          <li>Social posts</li>
-          <li>Digital assets</li>
           <li>Tender documents</li>
+          <li>Social posts</li> 
         </ul>
       </div>
     </div>
 
   </div>
 </section>
-
-
- 
-<section class="fade-in max-web mx-auto px-0 md:px-5 xl:px-[clamp(4px,5.5vw,300px)]   ">
-
-
-  <!-- Image Column (2x rows, single section) -->
-<section class="md:hidden fade-in">
+<script>
+document.querySelectorAll("video").forEach(v => {
+  v.muted = true;
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const videos = document.querySelectorAll("video");
+  videos.forEach(video => {
+    video.muted = true;
+    video.play().catch(()=>{});
+  });
+});
+</script>
+<section class="md:hidden     max-web mx-auto px-8 md:px-14 ">
   <div class="space-y-2 mt-0 mb-2.5">
 
     <!-- Row 1 -->
     <div class="flex flex-col xl:flex-row gap-2 md:gap-3">
       <div class="flex-1">
-        <div class="aspect-[4/3] overflow-hidden md:rounded-[0.6em] rounded-none">
-          <img
-            src="images/2026-erima-9.avif"
-            alt="Gallery Image 1"
-            class="w-full h-full object-cover"
-          />
-        </div>
+        <div
+  class="
+    overflow-hidden
+    aspect-[4/3]
+    bg-[#61AD30]
+    flex 
+    items-center
+    justify-center
+  "
+>
+  <img
+    src="images/2026-erima-new.webp"
+    alt="MMT Hero"
+    class="block px-10 w-full max-w-[620px]  object-contain"
+  />
+</div>
       </div>
 
       
@@ -704,94 +834,116 @@ document.addEventListener('DOMContentLoaded', () => {
 
   </div>
 </section>
+ 
 
-        
+<section class="  max-web mx-auto px-8 md:px-14   max-w-[1400px]">
 
-    <!-- Image Column (2x rows, single section) -->
-<section class="fade-in">
+ 
+         
+<section class=" ">
   <div class="space-y-2.5 md:space-y-2  ">
 
     <!-- Row 1 -->
     <div class="flex flex-col xl:flex-row gap-2.5 md:gap-2">
       <div class="flex-1">
-        <div class="aspect-[4/3] overflow-hidden   rounded-none">
-          <img
-            src="images/2026-erima-10.avif"
-            alt="Gallery Image 1"
-            class="w-full h-full object-cover"
-          />
-        </div>
-      </div>
+  <div class="aspect-[2/1] bg-[#61AD30] flex items-center justify-center">
+    <img
+      src="images/2026-erima-18.webp"
+      alt="Gallery Image 1"
+      class="block px-0 xl:px-16    h-auto object-contain"
+    />
+  </div>
+</div>
+
 
       
 
-      <div class="flex-1">
-        <div class="aspect-[4/3] overflow-hidden   rounded-none">
-          <img
-            src="images/2026-erima-15.avif"
-            alt="Gallery Image 2"
-            class="w-full h-full object-cover"
-          />
-        </div>
-      </div>
-    </div>
-
-    <!-- Row 2 -->
-    <div class="flex flex-col xl:flex-row gap-2.5 md:gap-2">
-      <div class="flex-1">
-        <div class="aspect-[4/3] overflow-hidden   rounded-none">
-          <img
-            src="images/2026-erima-12.avif"
-            alt="Gallery Image 3"
-            class="w-full h-full object-cover"
-          />
-        </div>
-      </div>
-
-      <div class="flex-1">
-        <div class="aspect-[4/3] overflow-hidden  rounded-none">
-          <img
-            src="images/2026-erima-13.avif"
-            alt="Gallery Image 4"
-            class="w-full h-full object-cover"
-          />
-        </div>
-      </div>
-    </div>
-
-  </div>
 </section>
+      
 
-  </section>
-  
-      <section  class="mt-4 md:mt-0  max-web mx-auto w-full z-40
-         py-[clamp(4px,5.5vw,300px)]  
-
-         bg-[#F1F0EE] fade-in px-5 xl:px-[clamp(4px,5.5vw,300px)]"
+    <section
+  id="brief"
+  class="mt-0 md:mt-0 mb-2 md:mb-0 max-web mx-auto w-full z-40
+          py-14
+         bg-[#F1F0EE]   max-w-[1400px]"
 >
-  <div class="grid grid-cols-1 lg:grid-cols-2  gap-6 md:gap-6 items-start">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-5 items-start">
+
+     <!-- LEFT COLUMN -->
+    <div> 
+      <h2 class=" display   mr-[1em] xl:max-w-[28ch]">
+         Brief and approach
+      </h2>
+
+
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div
+      class="
+        grid grid-cols-1 gap-y-5 gap-x-8
+          justify-between items-stretch
+      "
+    > 
+      <div class="flex flex-col items-start max-w-[75ch]"> 
+        <span class="body-text-1">Renaissance Sports Group engaged me to promote the launch of the Erima range, targeting club tenders across Australia. Working within Erima’s established German brand identity, I developed social and promotional assets to engage local clubs, build early traction and support the tender process, using a clear and repeatable system that highlighted product features and drove action.</span>
+      </div>
+ 
+    </div>
+</section>
+  <!-- Row 2 -->
+    <div class="flex flex-col xl:flex-row gap-2.5 md:gap-2">
+     
+      <div class="flex-1">
+  <div class="aspect-[16/9] bg-gradient-to-b from-[#1E2824] to-[#1B6B43] flex items-center justify-center ">
+    <img
+      src="images/erima-13.webp"
+      alt="Gallery Image 1"
+      class="block px-6 md:px-16 xl:px-32    h-auto object-contain"
+    />
+  </div>
+</div>
+    </div>
+<div class="flex flex-col xl:flex-row mt-6">
+     
+       <div class="flex-1">
+  <div class="aspect-[16/9] bg-gradient-to-b from-[#1E2824] to-[#1B6B43] flex items-center justify-center ">
+    <img 
+  src="images/erima-22.webp"
+  alt="Gallery Image 1"
+  class="w-full h-full object-contain"
+/>
+  </div>
+</div>
+    </div>
+    <div id="testimonial" ></div>
+     <section 
+  
+  class="  max-web mx-auto w-full z-40  mt-14 bg-[#F1F0EE]   max-w-[1400px]"
+>
+  <div  class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-5 items-start">
 
     <!-- LEFT COLUMN -->
-    <div>
-     <h2 class="  h3        fade-in"> 
-        <span>Client testimonial</span>
-      </h2>  
+    <div> 
+      <h2 class=" display   mr-[1em] xl:max-w-[28ch]">
+         Client testimonial
+      </h2>
+
+
     </div>
 
-<!-- RIGHT COLUMN -->
-    <div>  
+    <!-- RIGHT COLUMN -->
     <div class="  text-[#2b2b2b] body-text-1    fade-in">
         <p class="mb-8">
           "I worked with Jake for a few months, and it was an absolute pleasure. His creativity, attention to detail, and ability to bring ideas to life consistently exceeded my expectations. Whether it's a full branding package, product launch, or a quick turnaround design, Jake always delivers high-quality work. I would highly recommend him to anyone looking for a talented and reliable graphic designer."
-
-      </div>
+ 
       
      
-<div class="flex items-center gap-4   fade-in">
+<div class="flex items-center gap-4 fade-in">
 
   <!-- Avatar -->
   <img 
-    src="images/blank-avatar.avif"
+    src="images/andrew.jpg"
     alt="blank-avatar"
     class=" w-16 h-16   rounded-full object-cover "
   />
@@ -811,184 +963,133 @@ document.addEventListener('DOMContentLoaded', () => {
     </span> 
   </a> 
   </div> 
-</div></section>
-  
-
- <section  class="max-web mx-auto w-full z-40
-         py-16 md:py-[clamp(6px,6.5vw,340px)]  
-
-         bg-[#F1F0EE] fade-in px-5 xl:px-[clamp(4px,5.5vw,300px)]"
->
-  <div class="  items-center">
-
-    <!-- LEFT COLUMN -->
-    <div>
-     <div class="text-center space-y-1.5 fade-in">
-
-  <!-- View all projects -->
-  <div 
-    class="body-text-small  "
-  >
-    Next project
-     </div>
-
-  <!-- Next project --> 
-    <div class="h3 inline-flex items-center justify-center ">
-       
-      <!-- Static project name -->
-      <a href="bmp-sports"
-    class="group block hover:opacity-60  ">
-        BMP Sports
-    </a>
-
-    </div>
-  </div>
-
 </div>
 
+  </div>
+</section>
+  <!-- Row 2 -->
+    <div class="flex flex-col xl:flex-row mt-14">
+      <div class="flex-1">
+        <div class="flex-1">
+  <div class="aspect-[16/9] bg-gradient-to-b from-[#1E2824] to-[#1B6B43] flex items-center justify-center ">
+    <img
+      src="images/erima-new-2.webp"
+      alt="Gallery Image 1"
+      class="block px-6 md:px-16 xl:px-32    h-auto object-contain"
+    />
+  </div>
+</div>
+      
+
+ <section 
+  class="  max-web mx-auto w-full z-40 py-14
+           
+         bg-[#F1F0EE]   max-w-[1400px]"
+>
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-5 items-start">
+
+    <!-- LEFT COLUMN -->
+    <div> 
+      <h2 class="display   mr-[1em] xl:max-w-[24ch]">
+        Got something in the works?
+      </h2>
     </div>
+
+    <!-- RIGHT COLUMN -->
+    <div
+      class="
+        grid grid-cols-1 gap-y-6 gap-x-8
+          justify-between items-stretch
+      "
+    > 
  
 
- 
+      <p class="body-text-1 max-w-[44ch]">
+    I’m currently open to freelance projects, contract roles, and in-house opportunities. Feel free to reach out if you have something in mind or just want to say hi!
+  </p>
 
+  <div class=" ">
 
+    <!-- EMAIL -->
+    <a
+  href="mailto:hello@jakepearce.com.au"
+  class="text-[#2B2B2B]  display-small    ">
+      Get in touch →
+    </a>
+
+  </div>
+</div>
+
+  </div>
+</section>
+  </div>
   
-
 </section>
 
 
-</section>  
- 
+  </section>
+  
+
+  
+
+
+</section>
+
 </main>
-<footer
-  class="
-    relative w-full bg-[#E8E7E6]
-    [@media(min-width:874px)]:bg-[#F1F0EE]
-    
-    text-[#2b2b2b]  px-5 xl:px-[clamp(4px,5.5vw,300px)] 
-  "
-> 
-  <div class=" mx-auto w-full  mb-5  ">
-
-     
-<!-- ACKNOWLEDGEMENT + SOCIALS ROW -->
-<div class="  hidden [@media(min-width:874px)]:grid w-full grid-cols-[auto_1fr_auto_auto] items-stretch">
-
-<!-- SVG LOGO PILL -->
-<div class="bg-[#F9F9F8]   p-5 flex items-center justify-center mr-2"
->
-  <a 
-    href="/" 
-    aria-label="Home"
-    class="h-6 w-6 opacity-95   hover:opacity-50"
-    style="background: url('images/logo-new-circle-03.svg') center / contain no-repeat;"
-  ></a>
 </div>
-
-
-
-
- <!-- ACKNOWLEDGEMENT PILL -->
-<div class="bg-[#F9F9F8]     px-5 py-4 flex flex-1  ">
-  <p
-    class="
-      body-text-small xl:leading-snug text-[#2b2b2b] self-center  
-
-    "
-  >
-I acknowledge the Wurundjeri Woi-wurrung and Bunurong / Boon Wurrung peoples of the Kulin Nation as the Traditional Owners of the lands on which I work, and I pay my respect to Elders past, present and emerging.  </p>
-</div>
-
-  <!-- RIGHT SIDE GROUP -->
-  <div class="flex items-stretch  ml-auto">
-
-    <!-- SOCIALS PILL -->
-    <div class="bg-[#F9F9F8]     px-5 py-4 flex mx-2 ">
-      <div class="body-text-1 flex flex-col [@media(min-width:1034px)]:flex-row items-start [@media(min-width:1034px)]:items-center gap-2.5 [@media(min-width:1034px)]:gap-2.5 text-[#2b2b2b] self-center">
-        <!-- icons -->
-    <!-- Instagram -->
-    <a href="https://instagram.com/jake.r.pearce" class="hover:text-[#000000]/50" aria-label="Instagram">
-      <svg viewBox="0 0 256 256" class="[@media(min-width:100px)_and_(max-width:838px)]:w-6 [@media(min-width:100px)_and_(max-width:838px)]:h-6   w-6 h-6 fill-current">
-        <path d="M176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24ZM128,176a48,48,0,1,1,48-48A48.05,48.05,0,0,1,128,176Zm60-96a12,12,0,1,1,12-12A12,12,0,0,1,188,80Zm-28,48a32,32,0,1,1-32-32A32,32,0,0,1,160,128Z"></path>
-      </svg>
-    </a>
-
-    <!-- LinkedIn -->
-    <a href="https://www.linkedin.com/in/jake-pearce-076b772b5/" class="hover:text-[#000000]/50" aria-label="LinkedIn">
-      <svg viewBox="0 0 256 256" class="[@media(min-width:100px)_and_(max-width:838px)]:w-6 [@media(min-width:100px)_and_(max-width:838px)]:h-6   w-6 h-6 fill-current">
-        <path d="M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24ZM96,176a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0ZM88,96a12,12,0,1,1,12-12A12,12,0,0,1,88,96Zm96,80a8,8,0,0,1-16,0V140a20,20,0,0,0-40,0v36a8,8,0,0,1-16,0V112a8,8,0,0,1,15.79-1.78A36,36,0,0,1,184,140Z"></path>
-      </svg>
-    </a>
-
-  </div>
-</div>
-  
- <!-- LINKS PILL -->
-    <div class="bg-[#F9F9F8]     px-6 py-4 flex  ">
-      <div class="body-text-small flex flex-col [@media(min-width:1034px)]:flex-row items-start [@media(min-width:1034px)]:items-center gap-1 [@media(min-width:1034px)]:gap-4 text-[#2b2b2b] self-center ">
-        <a href="/#projects" class="  hover:text-[#000000]/50 whitespace-nowrap">Projects</a>
-        <a href="/#about" class=" hover:text-[#000000]/50 whitespace-nowrap">About</a>
-        <a href="/#contact" class="  hover:text-[#000000]/50 whitespace-nowrap">Contact</a>
+<footer class="bg-[#0C0C0C] px-8 md:px-10 pt-14 md:pt-12 pb-14">
+  <div class="max-web">
+    <div class="grid grid-cols-1 md:grid-cols-[repeat(3,max-content)] gap-x-[60px] w-fit">
+      <div class="col-span-1 md:col-span-3 mb-2">
+        <span class="mono uppercase text-[#f9f9f9]">Projects</span>
+      </div>
+      <div class="flex md:hidden flex-col gap-[12px] mb-14">
+        <a href="moss-fragrances" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">Moss Fragrances</a>
+        <a href="renaissance-sports" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">Renaissance Sports</a>
+        <a href="mmt" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">BNDR Music Group</a>
+        <a href="bmp-sports" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">BMP Sports</a> 
+      </div>
+      <div class="hidden md:flex flex-col gap-[12px] mb-20">
+        <a href="moss-fragrances" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">Moss Fragrances</a>
+        <a href="renaissance-sports" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">Renaissance Sports</a>
+      </div>
+      <div class="hidden md:flex flex-col gap-[12px] mb-20">
         
+        <a href="mmt" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">BNDR Music Group</a>
+        <a href="bmp-sports" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">BMP Sports</a>
       </div>
-    </div> 
-  </div> 
+     <div class="relative hidden md:flex flex-col gap-[12px] mb-20">
+ 
 
-  
-</div> 
-
-<div class="" >
-<!-- 🔥 md and BELOW version (4-column mobile footer layout) -->
-<div class=" pt-12 pb-8 [@media(min-width:874px)]:hidden flex flex-col -mt-8 text-[#2b2b2b]  space-y-10">
-
- <div class="flex flex-col items-start h-full    mb-6  fade-in"> 
-         
-      </div>
-
-  <!-- Links -->
-  <div>
-    <h2 class="mb-2  body-text-1 [font-variation-settings:'wght'_520]  ">
-      Links
-    </h2>
-    <nav class="body-text-1 flex flex-col space-y-1">
-      <a href="/" class="hover:text-[#000000]">Home</a>
-      <a href="/#projects" class="hover:text-[#000000]">Projects</a> 
-      <a href="/#about" class="hover:text-[#000000]">About</a>
-      <a href="/#contact" class="hover:text-[#000000]">Contact</a>
-    </nav>
-  </div>
-
-  <!-- Socials -->
-  <div>
-    <h2 class="mb-2   body-text-1 [font-variation-settings:'wght'_520] ">
-      Socials
-    </h2>
-    <nav class="body-text-1 flex flex-col space-y-1">
-      <a href="https://instagram.com/jake.r.pearce" class="hover:text-[#000000]">Instagram</a>
-      <a href="https://www.linkedin.com/in/jake-pearce-076b772b5/" class="hover:text-[#000000]">LinkedIn</a>
-    </nav>
-  </div>
-
-  <!-- Acknowledgement -->
-  <div>
-    <h2 class="mb-2  body-text-1  [font-variation-settings:'wght'_520] ">
-      Acknowledgement of Country
-    </h2>
-    <p class=" body-text-1 leading-relaxed">
-      I acknowledge Aboriginal and Torres Strait Islander peoples as the Traditional Owners of the lands I work on. I pay respect to elders past, present and emerging, and honour their enduring connection to country.
-    </p>
-  </div>
-
-  <!-- Copyright -->
-  <div >
-    <span class=" body-text-1 [font-variation-settings:'wght'_520] ">
-      © Jake Pearce 2026
-    </span>
-  </div>
+  <p class="mono uppercase text-[#f9f9f9]/40">Ceres Environmental Park</p>
+  <p class="mono uppercase text-[#f9f9f9]/40">Jake Pearce Design</p>
 
 </div>
-
+      <div class="mb-14 md:mb-0">
+        <span class="mono uppercase text-[#f9f9f9] block mb-3">Say Hi</span>
+        <div class="flex flex-col gap-[12px]">
+          <a href="mailto:hello@jakepearce.com.au" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">Send a Message</a>
+          <a href="https://www.linkedin.com/in/jakepearcedesign/" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">LinkedIn</a>
+        </div>
+      </div>
+      <div class="mb-14 md:mb-0">
+        <span class="mono uppercase text-[#f9f9f9] block mb-3">About</span>
+        <div class="flex flex-col gap-[12px]">
+          <a href="/#about" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">About</a>
+          <a href="#" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">Resume</a>
+        </div>
+      </div>
+      <div>
+        <span class="mono uppercase text-[#f9f9f9] block mb-3">Work</span>
+        <div class="flex flex-col gap-[12px]">
+          <a href="/#projects" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">Projects</a>
+          <a href="#" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">Visual Feed</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </footer>
+
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   if (window.innerWidth <= 768) return;
@@ -1018,7 +1119,7 @@ document.addEventListener('DOMContentLoaded', () => {
     lastTouchEnd = now;
   }, { passive: false });
 
- 
+  
 });
 </script> 
  
@@ -1027,7 +1128,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <script>
 (() => {
   function initFadeIns() {
-    const els = Array.from(document.querySelectorAll('.fade-in'));
+    const els = Array.from(document.querySelectorAll('. '));
     if (!els.length) return;
 
     // Respect reduced motion
@@ -1325,115 +1426,87 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-  const btn      = document.getElementById('mobileMenuBtn');
-  const nav      = document.getElementById('mobileNav');
-  const closeBtn = document.getElementById('mobileNavClose');
-
+  const btn       = document.getElementById('mobileMenuBtn');
+  const nav       = document.getElementById('mobileNav');
+  const hamburger = btn && btn.querySelector('.hamburger');
   if (!btn || !nav) return;
 
+  let isOpen = false;
+
   const open = () => {
-    nav.classList.remove('-translate-y-full');
-    nav.classList.add('shadow-[0_6px_12px_rgba(0,0,0,0.06)]');
+    isOpen = true;
+    nav.style.maxHeight = nav.scrollHeight + 'px';
     nav.setAttribute('aria-hidden', 'false');
+    if (hamburger) hamburger.classList.add('is-open');
+    btn.setAttribute('aria-label', 'Close menu');
   };
 
   const close = () => {
-    nav.classList.add('-translate-y-full');
-    nav.classList.remove('shadow-[0_6px_12px_rgba(0,0,0,0.06)]');
+    isOpen = false;
+    nav.style.maxHeight = '0';
     nav.setAttribute('aria-hidden', 'true');
+    if (hamburger) hamburger.classList.remove('is-open');
+    btn.setAttribute('aria-label', 'Open menu');
   };
 
-  btn.addEventListener('click', () => {
-    nav.classList.contains('-translate-y-full') ? open() : close();
-  });
-
-  closeBtn?.addEventListener('click', close);
-
-  nav.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => {
-      requestAnimationFrame(close);
-    });
-    
-  });
+  btn.addEventListener('click', () => isOpen ? close() : open());
+  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => requestAnimationFrame(close)));
 });
 </script>
 
+
+
+<div id="cursor"><span id="cursor-label"></span></div>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-  const header = document.querySelector('header');
-  if (!header) return;
-
-  // 🔒 Mobile: header always visible
-  if (window.innerWidth <= 767) {
-    header.style.transform = 'translateY(0)';
-    return;
+  const cursor = document.getElementById('cursor');
+  let x = 0, y = 0, targetX = 0, targetY = 0;
+  document.addEventListener('mousemove', (e) => { targetX = e.clientX; targetY = e.clientY; });
+  function animate() {
+    x += (targetX - x) * 0.5;
+    y += (targetY - y) * 0.5;
+    cursor.style.left = x + 'px';
+    cursor.style.top = y + 'px';
+    requestAnimationFrame(animate);
   }
-
-  const headerHeight = header.offsetHeight;
-
-  function onScroll() {
-    const scrollY = window.scrollY;
-    const translateY = Math.min(0, scrollY - headerHeight);
-    header.style.transform = `translateY(${translateY}px)`;
+  animate();
+  const cursorLabel = document.getElementById('cursor-label');
+  let onProjectImage = false;
+  document.querySelectorAll('.project-image-container').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      onProjectImage = true;
+      cursor.classList.add('pill');
+      cursorLabel.textContent = 'View case study';
+      cursor.style.transform = 'translate(-50%, -50%)';
+    });
+    el.addEventListener('mouseleave', () => {
+      onProjectImage = false;
+      cursor.classList.remove('pill');
+      cursor.style.transform = 'translate(-50%, -50%)';
+    });
+  });
+  document.querySelectorAll('a').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      if (!onProjectImage) cursor.style.transform = 'translate(-50%, -50%) scale(1.6)';
+    });
+    el.addEventListener('mouseleave', () => {
+      if (!onProjectImage) cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+    });
+  });
+  const footer = document.querySelector('footer');
+  if (footer) {
+    footer.addEventListener('mouseenter', () => { cursor.style.background = '#F1F0EE'; });
+    footer.addEventListener('mouseleave', () => { cursor.style.background = '#2B2B2B'; });
   }
-
-  onScroll();
-  window.addEventListener('scroll', onScroll, { passive: true });
 });
-
 </script>
-
-
-<!-- Mobile Top Nav -->
-<div
-  id="mobileNav"
-  class="fixed inset-x-0 top-0 z-40 bg-[#F1F0EE]
-         -translate-y-full
-         transition-transform duration-500
-         ease-[cubic-bezier(.22,1,.36,1)] transition-[transform,box-shadow] duration-500
-ease-[cubic-bezier(.22,1,.36,1)]
-         md:hidden
-         max-h-[70svh] overflow-y-auto  "
->
-
-
-  <div class="relative h-full px-6 pt-6 pb-5 flex flex-col justify-between">
-
-    <!-- Close button (same footprint as hamburger) -->
-    <button
-      id="mobileNavClose"
-      aria-label="Close menu"
-      class="absolute top-[0.88rem] right-[0.45rem] w-[40px] h-[40px]
-             flex items-center justify-center"
-    >
-      <span class="sr-only">Close</span>
-      <div class="relative w-[24px] h-[24px]">
-        <span class="absolute left-0 top-1/2 w-full h-[2px] bg-[#2b2b2b]
-                     rotate-45"></span>
-        <span class="absolute left-0 top-1/2 w-full h-[2px] bg-[#2b2b2b]
-                     -rotate-45"></span>
-      </div>
-    </button>
-
-    <!-- Pages -->
-    <nav class="space-y-3 pt-6 mb-6">
-      <a href="/#"    class="h1 block  ">Home</a>
-      <a href="/#projects"    class="h1 block  ">Projects</a>
-      <a href="/#about"   class="h1 block  ">About</a> 
-    </nav>
-
-    <!-- Contact -->
-    <div class="pt-6 mb-2 border-t border-[#2b2b2b]/10 body-text-1 space-y-1">
-      <a href="mailto:hello@jakepearce.com.au" class="block">
-        hello@jakepearce.com.au
-      </a>
-       
-    </div>
-
-  </div>
-</div>
-
-
-
+<script>
+let scrollTimeout;
+window.addEventListener('scroll', () => {
+  document.body.classList.add('is-scrolling');
+  clearTimeout(scrollTimeout);
+  scrollTimeout = setTimeout(() => { document.body.classList.remove('is-scrolling'); }, 120);
+});
+</script>
 </body>
 </html> 
