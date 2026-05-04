@@ -19,11 +19,7 @@
   type="font/ttf"
   crossorigin
 >
-  <style>
-/* hide default cursor */
-body {
-  cursor: none;
-}
+  <style> 
 
 /* custom circle */
 #cursor {
@@ -56,7 +52,7 @@ body {
     'wght' var(--variation-setting-wght, 200),
     'wdth' var(--variation-setting-wdth, 200),
     'opsz' var(--variation-setting-opsz, 28);
-  color: #F1F0EE;
+  color: #FAF9F7;
   letter-spacing: 0.016em;
   font-size: 10.3pt;
   white-space: nowrap;
@@ -117,9 +113,14 @@ a:hover ~ #cursor,
   font-weight: 200 800;
   font-style: normal;
   font-display: swap;
-}
-
-
+} 
+@font-face {
+  font-family: 'ClimateCrisis';
+  src: url('Fonts/ClimateCrisis.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+} 
 
 
 /* Register CSS custom properties as typed numbers so they can be transitioned */
@@ -145,7 +146,7 @@ a:hover ~ #cursor,
    /* ===== Global ===== */
     body {
       font-family: 'SansFlex', sans-serif;
-  --variation-setting-wght: 410;
+  --variation-setting-wght: 300;
   font-variation-settings: 'wght' var(--variation-setting-wght, 380);
   color: #2b2b2b;
   letter-spacing: 0.00em;
@@ -156,34 +157,33 @@ a:hover ~ #cursor,
 
 .mono {
   font-family: 'BricolageGrotesque', sans-serif;
-  --variation-setting-wght: 370;
-  --variation-setting-wdth: 85;
+  --variation-setting-wght: 360;
+  --variation-setting-wdth: 89;
   --variation-setting-opsz: 20;
   font-variation-settings:
     'wght' var(--variation-setting-wght, 200),
     'wdth' var(--variation-setting-wdth, 200),
     'opsz' var(--variation-setting-opsz, 28);
   color: #2b2b2b;
-  letter-spacing: 0.016em;
+  letter-spacing: 0.028em;
   line-height: 1;
 
 }
 .display {
   font-family: 'BricolageGrotesque', sans-serif;
   --variation-setting-wght: 800;
-  --variation-setting-wdth: 1;
-  --variation-setting-opsz: 20;
+  --variation-setting-wdth: 200;
+  --variation-setting-opsz: 80;
   font-variation-settings:
-    'wght' var(--variation-setting-wght, 580),
-    'wdth' var(--variation-setting-wdth, 68),
-    'opsz' var(--variation-setting-opsz, 100);
+    'wght' var(--variation-setting-wght, 800),
+    'wdth' var(--variation-setting-wdth, 200),
+    'opsz' var(--variation-setting-opsz, 80);
     transition: --variation-setting-wght 0.6s cubic-bezier(0.22, 1, 0.36, 1),
               --variation-setting-wdth 0.6s cubic-bezier(0.22, 1, 0.36, 1),
               --variation-setting-opsz 0.6s cubic-bezier(0.22, 1, 0.36, 1);
   color: #2b2b2b; 
-  letter-spacing: -0.03em;
-  line-height: 0.88;
-  max-width: 1000px;
+  letter-spacing: -0.025em;
+  line-height: 0.91; 
 }
 
 
@@ -202,10 +202,36 @@ a:hover ~ #cursor,
   color: #2b2b2b;
   letter-spacing: -0.03em;
   line-height: 1.1;
-}
-.display-small:hover {
-  --variation-setting-wght: 700;
-  --variation-setting-wdth: 112.5;
+  margin-bottom: 0.2em;
+  margin-top: 0.2em;
+} 
+
+@media (max-width: 768px) {
+.display-small {
+  font-family: 'BricolageGrotesque', sans-serif;
+  --variation-setting-wght: 420;
+  --variation-setting-wdth: 100;
+  --variation-setting-opsz: 24;
+  font-variation-settings:
+    'wght' var(--variation-setting-wght, 420),
+    'wdth' var(--variation-setting-wdth, 100),
+    'opsz' var(--variation-setting-opsz, 24); 
+    transition: --variation-setting-wght 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+              --variation-setting-wdth 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+              --variation-setting-opsz 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  color: #2b2b2b;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 0.20em;
+  margin-top: 0.45em;
+} } 
+
+@media (hover: hover) and (pointer: fine) {
+  .display-small:hover {
+    --variation-setting-wght: 660;
+    --variation-setting-wdth: 200;
+    --variation-setting-opsz: 20;
+  }
 } 
 
 .h1 {
@@ -249,16 +275,16 @@ a:hover ~ #cursor,
   
 .body-text-1 {
   font-family: 'SansFlex', sans-serif; 
-  font-variation-settings: 'wght' var(--variation-setting-wght, 320);
+  font-variation-settings: 'wght' var(--variation-setting-wght, 300);
   color: #2b2b2b;
   letter-spacing: 0.001em;
-  line-height: 1.5;
+  line-height: 1.55;
   font-display: swap;
 }
 .body-text-small {
   font-family: 'SansFlex', sans-serif;
-  --variation-setting-wght: 340;
-  font-variation-settings: 'wght' var(--variation-setting-wght, 340);
+  --variation-setting-wght: 350;
+  font-variation-settings: 'wght' var(--variation-setting-wght, 350);
   color: #2b2b2b;
   letter-spacing: 0.00em;
   line-height: 1.65;
@@ -300,7 +326,7 @@ header {
   left: 0;
   right: 0;
   z-index: 50;
-  background-color: #F1F0EE;
+  background-color: #FAF9F7;
   display: flex;
   justify-content: space-between;
   padding: 0pt;
@@ -313,7 +339,7 @@ header {
   position: fixed;
   pointer-events: none;
   background-color: #2B2B2D;
-  color: #F1F0EE;
+  color: #FAF9F7;
   padding: 4px 8px;
   border-radius: 4px;
   font-size: 10pt;
@@ -328,7 +354,7 @@ header {
   position: fixed;
   pointer-events: none;
   background-color: #2B2B2D;
-  color: #F1F0EE;
+  color: #FAF9F7;
   padding: 4px 8px;
   border-radius: 4px;
   font-size: 10pt;
@@ -338,7 +364,7 @@ header {
 }
   
 html {
-  background-color: #F1F0EE; /* same as main */
+  background-color: #FAF9F7; /* same as main */
 }
  
     
@@ -363,12 +389,7 @@ html {
 .project {
   break-inside: avoid;
   margin-bottom: 12px;
-}
-    
-    .email-phone {
-  /* default (mobile) */
-  font-size: 18pt;
-}
+} 
 @media (min-width: 768px) {
   /* desktop (or whatever px you prefer) */
   .email-phone {
@@ -378,7 +399,7 @@ html {
 main {
   position: relative;
   z-index: 2;
-  background: #F1F0EE;
+  background: #FAF9F7;
   margin-bottom: 0; 
 }
 
@@ -470,18 +491,6 @@ footer {
  
 
  
-:root { --header-h: 0px; }
-
-/* Viewport-safe height minus fixed header */
-.hero-viewport {
-  height: 58dvh;
-}
-
-@supports (height: 100dvh) {
-  .hero-viewport {
-    height: 58dvh;
-  }
-}
 
 /* Only for users who prefer reduced motion */
 @media (prefers-reduced-motion: reduce) {
@@ -505,13 +514,17 @@ footer {
   will-change: transform;
 }
 
+
+
 .project-image-container {
+
+  
   position: relative;
 }
 
 .project-image-container::after {
   content: "";
-  position: absolute;
+  position: absolute; 
   inset: 0;
   background: rgba(255, 255, 255, 0); /* start invisible */
   transition: background 0.4s cubic-bezier(0.22, 1, 0.36, 1);
@@ -537,7 +550,7 @@ html {
   scroll-behavior: smooth;
 }
 :root {
-  --step-0: clamp(1rem, 1vw + 0.7rem, 1rem);
+  --step-0: clamp(1rem, 1vw + 1rem, 1rem);
   --ratio: 1.2;
   --step--1: calc(var(--step-0) / 1.25);
   --step-1: calc(var(--step-0) * var(--ratio));
@@ -554,7 +567,7 @@ html {
 /* Type mappings */
 .body-text-1,
 .body-text-2 {
-  font-size: var(--step-0);
+  font-size: calc(var(--step-0) * 1.01);
 }
 
 .body-text-3,
@@ -566,13 +579,13 @@ html {
   font-size: var(--step--1);
 }
 .mono {
-  font-size: calc(var(--step--1) * 1.06);
+  font-size: calc(var(--step--1) * 1.1);
 }
 .display {
-  font-size: calc(var(--step-6) * 2.2);
+  font-size: calc(var(--step-5) * 2.35);
 }
 .display-small {
-  font-size: var(--step-2);
+  font-size: calc(var(--step-2) * 1);
 }
 
 .nav-body {
@@ -587,8 +600,31 @@ html {
 .h2 { font-size: var(--step-2); }
 .h1 { font-size: var(--step-5); }
 
- 
+@media (max-width: 767px) {
+  :root {
+    /* smaller base size */
+    --step-0: clamp(0.92rem, 1.2vw , 0.92rem);
 
+    /* tighter ratio (less dramatic scaling) */
+    --ratio: 1.14;
+
+    /* recalc the scale */
+    --step--1: calc(var(--step-0) / 1.2);
+    --step-1: calc(var(--step-0) * var(--ratio));
+    --step-2: calc(var(--step-1) * var(--ratio));
+    --step-3: calc(var(--step-2) * var(--ratio));
+    --step-4: calc(var(--step-3) * var(--ratio));
+    --step-5: calc(var(--step-4) * var(--ratio));
+    --step-6: calc(var(--step-5) * var(--ratio));
+    --step-7: calc(var(--step-6) * var(--ratio));
+  }
+} 
+@media (max-width: 1024px) {
+  .display {
+    font-size: calc(var(--step-6) * 1.6);
+  }
+}
+ 
 
 @media (max-width: 767px) {
   header {
@@ -599,7 +635,7 @@ html {
 .projects-columns {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 20px;
+  gap: 23px;
 }
 
 @media (min-width: 768px) {
@@ -634,12 +670,9 @@ html {
   }
 }
 
- 
 
-body {
-  cursor: none;
-}
 /* kill pointer cursor everywhere */
+@media (min-width: 1024px) {
 a,
 button,
 [role="button"],
@@ -657,6 +690,7 @@ html, body {
 .is-scrolling * {
   cursor: none !important;
 }
+}
 /* ===== Hamburger → X animation ===== */
 .hamburger-bar {
   display: block;
@@ -670,7 +704,36 @@ html, body {
 /* open state — applied to the .hamburger div */
 .hamburger.is-open .bar-1 { transform: translateY(4.25px) rotate(45deg); }
 .hamburger.is-open .bar-2 { opacity: 0; transform: scaleX(0); }
-.hamburger.is-open .bar-3 { transform: translateY(-4.25px) rotate(-45deg); }
+.hamburger.is-open .bar-3 { transform: translateY(-4.25px) rotate(-45deg); } 
+
+
+/* touch devices */
+@media (hover: none) and (pointer: coarse) {
+  html, body {
+    cursor: auto !important;
+  }
+  #cursor {
+    display: none !important;
+  }
+}
+
+/* tablet fallback */
+@media (max-width: 1024px) {
+  #cursor {
+    display: none !important;
+  }
+}
+
+#projects {
+  scroll-margin-top: 10px;
+} 
+@media (max-width: 768px) {
+  #projects {
+    scroll-margin-top: 210px;
+  }
+}
+
+
   </style>
   <script>
 document.addEventListener('DOMContentLoaded', () => {
@@ -729,7 +792,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const footer = document.querySelector('footer');
   if (footer) {
     footer.addEventListener('mouseenter', () => {
-      cursor.style.background = '#F1F0EE';
+      cursor.style.background = '#FAF9F7';
     });
     footer.addEventListener('mouseleave', () => {
       cursor.style.background = '#2B2B2B';
@@ -755,10 +818,10 @@ window.addEventListener('scroll', () => {
    <main> 
   <!-- ===== Header & Toggle ===== -->
 <div id="site-header" class="sticky top-0 z-50 md:relative">
-<header class="bg-[#F1F0EE]   top-0 left-0 right-0 z-50">
+<header class="bg-[#FAF9F7]   top-0 left-0 right-0 z-50">
 <div
   id="navContainer"
-  class="flex justify-between items-center w-full py-3 md:py-0 px-8 md:px-5"
+  class="flex justify-between items-center w-full py-2 md:py-0 px-6  "
 >
   <a
     href="/"
@@ -769,12 +832,12 @@ window.addEventListener('scroll', () => {
   <nav class="mono text-[#2B2B2B]/65 uppercase hidden md:flex" style="margin: 0pt;">
     <ul class="flex space-x-5 -mr-[0.4em] md:-mr-[0em] mt-[4.5px] mb-0">
       <li><a href="#projects" class="text-[#2B2B2B]/50 hover:text-[#2B2B2B] transition-colors">Projects</a></li>
-      <li><a href="about" class="text-[#2B2B2B]/50 hover:text-[#2B2B2B] transition-colors">About</a></li>
-      <li><a href="visual-feed" class="text-[#2B2B2B]/50 hover:text-[#2B2B2B] transition-colors">Visual Feed</a></li>
+      <li><a href="/" class="text-[#2B2B2B]/50 hover:text-[#2B2B2B] transition-colors">About</a></li>
+      <li><a href="/" class="text-[#2B2B2B]/50 hover:text-[#2B2B2B] transition-colors">Visual Feed</a></li>
     </ul>
     
   </nav>
-  <button
+ <button
     id="mobileMenuBtn"
     class="md:hidden flex items-center justify-center w-8 h-8 -mr-2 "
     aria-label="Open menu"
@@ -792,50 +855,62 @@ window.addEventListener('scroll', () => {
 <div
   id="mobileNav"
   aria-hidden="true"
-  class="md:hidden bg-[#F1F0EE] overflow-hidden"
+  class="md:hidden bg-[#FAF9F7] overflow-hidden"
   style="max-height: 0; transition: max-height 0.45s cubic-bezier(0.22,1,0.36,1);"
 >
-  <div class="px-8 pb-8 flex flex-col gap-3 ">
-    <a href="/" class="mono uppercase text-[#2B2B2B]/50 hover:text-[#2B2B2B] transition-colors inline-block w-fit bg-[#ffffff]/85 hover:bg-[#ffffff]/25 px-[6px] py-[4px] leading-none"> ← Home</a>
+  <div class="px-6 pb-6 flex flex-col gap-3 ">
+    
     <a href="#projects" class="mono uppercase text-[#2B2B2B]/50 hover:text-[#2B2B2B] transition-colors block">Projects</a>
-    <a href="visual-feed" class="mono uppercase text-[#2B2B2B]/50 hover:text-[#2B2B2B] transition-colors block">Visual Feed</a>
-    <a href="about" class="mono uppercase text-[#2B2B2B]/50 hover:text-[#2B2B2B] transition-colors block">About</a>
+    <a href="/" class="mono uppercase text-[#2B2B2B]/50 hover:text-[#2B2B2B] transition-colors block">Visual Feed</a>
+    <a href="/" class="mono uppercase text-[#2B2B2B]/50 hover:text-[#2B2B2B] transition-colors block">About</a>
   </div>
-</div> 
-<div style="height: 1px; background: rgba(43,43,43,0.1);"></div>
+</div>
+  <div style="height: 1px; background: rgba(43,43,43,0.1);"></div>
 </div>
  
 <main>
-  
   
  
 
 <section
   id="hero"
-  class="hero-viewport max-web mx-auto w-full z-40 px-8 md:px-5 bg-[#F1F0EE]   "
+  class="hidden md:block hero-viewport max-web mx-auto w-full z-40 px-6 md:px-6 bg-[#FAF9F7]   "
+>
+  <div class="flex flex-col justify-center md:justify-end h-full pb-4">
+
+    <div>
+      <h2 class=" text-[#2B2B2B]   display  max-w-[22ch] pt-64"> Jake is a Brand Designer <br> based in Melbourne / <br>Naarm Australia.
+</h2>
+ 
+    </div> 
+    <div> 
+ 
+    </div>
+
+  </div>
+</section>
+
+<section
+  id="hero"
+  class=" md:hidden hero-viewport max-web mx-auto w-full z-40 px-6 md:px-6 bg-[#FAF9F7]   "
 >
   <div class="flex flex-col justify-center md:justify-end h-full pb-0">
 
     <div>
-      <h2 class="hidden lg:block display text-[#2B2B2B]    ">
-   <span class="text-[#2B2B2B]">Jake Pearce</span>
-        is a graphic designer based in Naarm / Melbourne Australia.
+      <h2 class=" text-[#2B2B2B]   display !text-[38pt] pt-6 pb-40"> Jake is a Brand Designer based in Naarm / Melbourne Australia.
 </h2>
-
-      <h2 class=" hidden md:block lg:hidden display !text-[46pt]  mb-2    md:max-w-[22ch]    ">
-        <span class="text-[#2B2B2B]">Jake Pearce</span>
-        is a Naarm / Melbourne based graphic designer.
-      </h2>
-      <h2 class=" md:hidden display !text-[44pt]  mb-2 text-center   md:max-w-[22ch]    ">
-        <span class="text-[#2B2B2B]">Jake </span>
-        is a Naarm / Melbourne based graphic designer.
-      </h2>
+ 
+    </div> 
+     <h1  class=" text-[#2B2B2B]/50  mono uppercase   pt-6  mb-5 "> Selected work
+</h1>
+    <div> 
+ 
     </div>
 
   </div>
 </section>
  
-<div id="projects" class="   max-web mx-auto  px-8 md:px-5 z-20     "> 
+<div id="projects" class="   max-web mx-auto  px-6 md:px-6 z-20     "> 
 <div class="   max-web mx-auto w-full grid grid-cols-[1fr_auto] items-end">
   <!-- LEFT: TITLE -->
     
@@ -846,16 +921,13 @@ window.addEventListener('scroll', () => {
 
   <!-- ===== Recent Projects ===== --> 
 
-<div class="max-web z-20 bg-[#F1F0EE]     ">  
+<div class="max-web z-20 bg-[#FAF9F7]     ">  
      
-
-    <h2 class="body-text-1 text-[10pt] md:text-[11pt] -mt-3 mb-8 md:mb-10 "> 
-   
-</h2>
+ 
   </div> 
  <section  
-  class="max-web mx-auto z-40    pb-[clamp(2px,2.5vw,190px)] ">
-<div id="projects" class="projects-columns">
+  class="max-web mx-auto z-40    md:pb-4 pb-8 ">
+<div  class="projects-columns">
 
   <!-- 1st COLUMN -->
   <div class="projects-col">
@@ -864,7 +936,7 @@ window.addEventListener('scroll', () => {
 <div class="project landscape flex flex-col">
   <a href="moss-fragrances">
     <div class="project-image-container rounded-sm">
-      <div class="absolute inset-0 bg-gradient-to-r from-[#A7CBD5] to-[#E6CEB4] flex items-center justify-center p-16">
+      <div class="absolute inset-0 bg-gradient-to-r from-[#B3DCE0] to-[#E6CEB4] flex items-center justify-center p-8 md:p-12 lg:p-16">
         <img
           src="images/moss-hero.webp"
           alt="Moss Fragrances Hero"
@@ -874,15 +946,15 @@ window.addEventListener('scroll', () => {
     </div>
   </a>
 
-  <div class="mt-4 flex flex-col items-start">
+  <div class="mt-4 flex flex-col items-start mb-1">
 
     <!-- NEW mono meta -->
     <span class="mono  text-[#2B2B2B]/50 uppercase            ">
-      Moss Fragrances
+      Moss Fragrances — 2026
     </span>
 
-    <a href="moss-fragrances" class="text-[#2B2B2B]/85  display-small mb-[4pt] mt-[6.5pt]">
-      Product Labels and branding
+    <a href="moss-fragrances" class="text-[#2B2B2B]/85  display-small  ">
+      Fragrance Packaging
     </a>
 
     <a href="moss-fragrances" class="text-[#2B2B2B]/50 body-text-1">
@@ -900,15 +972,15 @@ window.addEventListener('scroll', () => {
           <img src="images/new-ceres-all-green_result.jpg" alt="Renaissance Sports" />
         </div>
       </div>
-      <div class="mt-4 flex flex-col items-start">
+      <div class="mt-4 flex flex-col items-start mb-1">
 
     <!-- NEW mono meta -->
     <span class="mono text-[#2B2B2B]/50 uppercase          ">
-      Ceres Environmental Park
+      Ceres Environmental Park — 2026
     </span>
 
-    <span class="text-[#2B2B2B]/85  display-small mb-[4pt] mt-[6.5pt]">
-      Designing for Ceres Environmental Park
+    <span class="text-[#2B2B2B]/85  display-small  ">
+      Ceres Environmental Park Illustrations
     </span>
 
     <span class="text-[#2B2B2B]/50 body-text-1">
@@ -927,15 +999,15 @@ window.addEventListener('scroll', () => {
           <img src="images/bmp-1.avif" alt="BMP Sports" />
         </div>
       </a>
-      <div class="mt-4 flex flex-col items-start">
+      <div class="mt-4 flex flex-col items-start mb-1">
 
     <!-- NEW mono meta -->
     <span class="mono text-[#2B2B2B]/50 uppercase             ">
-      BMP Sports
+      BMP Sports — 2024
     </span>
 
-    <a href="bmp-sports" class="text-[#2B2B2B]/85  display-small mb-[4pt] mt-[6.5pt]">
-      Rebranding BMP Sports
+    <a href="bmp-sports" class="text-[#2B2B2B]/85  display-small  ">
+      Visual Identity for BMP Sports
     </a>
 
     <a href="bmp-sports" class="text-[#2B2B2B]/50 body-text-1">
@@ -963,14 +1035,14 @@ window.addEventListener('scroll', () => {
           </div>
         </div>
       </a>
-      <div class="mt-4 flex flex-col items-start">
+      <div class="mt-4 flex flex-col items-start mb-1">
 
     <!-- NEW mono meta -->
     <span class="mono text-[#2B2B2B]/50 uppercase        ">
-      Renaissance Sports
+      Renaissance Sports — 2025
     </span>
 
-    <a href="renaissance-sports" class="text-[#2B2B2B]/85  display-small mb-[4pt] mt-[6.5pt]">
+    <a href="renaissance-sports" class="text-[#2B2B2B]/85  display-small  ">
       Creative Directon for Australian Launch
     </a>
 
@@ -984,7 +1056,7 @@ window.addEventListener('scroll', () => {
        <!-- Personal Branding -->
 <div class="project square flex flex-col tablet-only">
   <div class="project-image-container rounded-sm" data-cursor="Coming soon">
-          <div class="absolute inset-0 bg-[#FFEBA3]/80 flex items-center justify-center p-20">
+          <div class="absolute inset-0 bg-[#FFEBA3]/80 flex items-center justify-center p-10 md:p-14 lg:p-20">
             <img
   src="images/cards-new.webp"
   alt="Gallery Image 1"
@@ -993,14 +1065,14 @@ window.addEventListener('scroll', () => {
           </div>
         </div>
 
-  <div class="mt-4 flex flex-col items-start">
+  <div class="mt-4 flex flex-col items-start mb-1">
 
     <!-- NEW mono meta -->
     <span class="mono   text-[#2B2B2B]/50 uppercase           ">
-      Jake Pearce Design
+      Jake Pearce Design — 2026
     </span>
 
-    <span class="text-[#2B2B2B]/85  display-small mb-[4pt] mt-[6.5pt]">
+    <span class="text-[#2B2B2B]/85  display-small  ">
       Creating a Bold Personal Brand
     </span>
 
@@ -1010,7 +1082,7 @@ window.addEventListener('scroll', () => {
 
   </div>
 </div>
- <!-- MMT -->
+ <!-- bndr-music -->
     <div class="project landscape flex-col">
       <a href="bndr-music">
         <div class="project-image-container rounded-sm">
@@ -1019,15 +1091,15 @@ window.addEventListener('scroll', () => {
           </video>
         </div>
       </a>
-      <div class="mt-4 flex flex-col items-start">
+      <div class="mt-4 flex flex-col items-start mb-1">
 
     <!-- NEW mono meta -->
     <span class="mono text-[#2B2B2B]/50 uppercase           ">
-      BNDR Music Group
+      BNDR Music Group — 2024
     </span>
 
-    <a href="bndr-music" class="text-[#2B2B2B]/85  display-small mb-[4pt] mt-[6.5pt]">
-      Visual Identity for BNDR Music Group
+    <a href="bndr-music" class="text-[#2B2B2B]/85  display-small  ">
+      Visual Identity for a Music Utility Token
     </a>
 
     <a href="bndr-music" class="text-[#2B2B2B]/50 body-text-1  ">
@@ -1051,15 +1123,15 @@ window.addEventListener('scroll', () => {
           <img src="images/new-ceres-all-green_result.jpg" alt="Renaissance Sports" />
         </div>
       </div>
-      <div class="mt-4 flex flex-col items-start">
+      <div class="mt-4 flex flex-col items-start mb-1">
 
     <!-- NEW mono meta -->
     <span class="mono text-[#2B2B2B]/50 uppercase          ">
-      Ceres Environmental Park
+      Ceres Environmental Park — 2026
     </span>
 
-    <span class="text-[#2B2B2B]/85  display-small mb-[4pt] mt-[6.5pt]">
-      Designing for Ceres Environmental Park
+    <span class="text-[#2B2B2B]/85  display-small  ">
+      Ceres Environmental Park Illustrations
     </span>
 
     <span class="text-[#2B2B2B]/50 body-text-1">
@@ -1081,14 +1153,14 @@ window.addEventListener('scroll', () => {
           </div>
         </div>
 
-  <div class="mt-4 flex flex-col items-start">
+  <div class="mt-4 flex flex-col items-start mb-1">
 
     <!-- NEW mono meta -->
     <span class="mono  text-[#2B2B2B]/50 uppercase          ">
-      Jake Pearce Design
+      Jake Pearce Design — 2026
     </span>
 
-    <span class="text-[#2B2B2B]/85  display-small mb-[4pt] mt-[6.5pt]">
+    <span class="text-[#2B2B2B]/85  display-small  ">
       Creating a Bold Personal Brand
     </span>
 
@@ -1110,60 +1182,71 @@ window.addEventListener('scroll', () => {
 
 </main>
 
-<footer class="bg-[#0C0C0C] px-8 md:px-10 pt-14 md:pt-12 pb-14">
+<footer class="bg-[#0C0C0C] px-6 md:px-10 pt-7 md:pt-9 pb-28 md:pb-14">
   <div class="max-web">
     <div class="grid grid-cols-1 md:grid-cols-[repeat(3,max-content)] gap-x-[60px] w-fit">
-      <div class="col-span-1 md:col-span-3 mb-2">
+      <div class="col-span-1 md:col-span-3 mb-2 -m">
         <span class="mono uppercase text-[#f9f9f9]">Projects</span>
       </div>
-      <div class="flex md:hidden flex-col gap-[12px] mb-14">
+      <div class="flex md:hidden flex-col gap-[12px] mb-9">
         <a href="moss-fragrances" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">Moss Fragrances</a>
         <a href="renaissance-sports" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">Renaissance Sports</a>
-        <a href="mmt" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">BNDR Music Group</a>
+        <a href="bndr-music" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">BNDR Music Group</a>
         <a href="bmp-sports" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">BMP Sports</a> 
       </div>
-      <div class="hidden md:flex flex-col gap-[12px] mb-20">
+      <div class="hidden md:flex flex-col gap-[12px] mb-16">
         <a href="moss-fragrances" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">Moss Fragrances</a>
         <a href="renaissance-sports" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">Renaissance Sports</a>
       </div>
-      <div class="hidden md:flex flex-col gap-[12px] mb-20">
+      <div class="hidden md:flex flex-col gap-[12px] mb-16">
         
-        <a href="mmt" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">BNDR Music Group</a>
+        <a href="bndr-music" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">BNDR Music Group</a>
         <a href="bmp-sports" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">BMP Sports</a>
       </div>
-     <div class="relative hidden md:flex flex-col gap-[12px] mb-20">
+     <div class="relative hidden md:flex flex-col gap-[12px] mb-16">
  
 
   <p class="mono uppercase text-[#f9f9f9]/40">Ceres Environmental Park</p>
   <p class="mono uppercase text-[#f9f9f9]/40">Jake Pearce Design</p>
 
 </div>
-      <div class="mb-14 md:mb-0">
+      <div class="mb-9 md:mb-0">
         <span class="mono uppercase text-[#f9f9f9] block mb-3">Say Hi</span>
         <div class="flex flex-col gap-[12px]">
           <a href="mailto:hello@jakepearce.com.au" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">Send a Message</a>
-          <a href="https://www.linkedin.com/in/jakepearcedesign/" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">LinkedIn</a>
+          <a href="linkedin.com/in/jake-pearce-076b772b5" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">LinkedIn</a>
         </div>
       </div>
-      <div class="mb-14 md:mb-0">
+      <div class="mb-9 md:mb-0">
         <span class="mono uppercase text-[#f9f9f9] block mb-3">About</span>
         <div class="flex flex-col gap-[12px]">
-          <a href="/#about" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">About</a>
-          <a href="#" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">Resume</a>
+          <a href="/" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">About</a>
+          <a href="https://drive.google.com/file/d/1w6B4FGnV9QwHBefrgyShvrh95oo5FM7D/view?usp=share_link" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">Resumé</a>
         </div>
       </div>
       <div>
         <span class="mono uppercase text-[#f9f9f9] block mb-3">Work</span>
         <div class="flex flex-col gap-[12px]">
           <a href="/#projects" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">Projects</a>
-          <a href="#" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">Visual Feed</a>
+          <a href="/" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">Visual Feed</a>
         </div>
       </div>
     </div>
   </div>
 </footer>
+<footer class="bg-[#0C0C0C] md:hidden
+<div class="max-web">
+    <div class="grid grid-cols-1 md:grid-cols-[repeat(3,max-content)] gap-x-[60px] w-fit">
+      <div class="col-span-1 md:col-span-3 mb-2  px-6 mb-6"> 
+     
+      
+        <p   class="mono uppercase text-[#f9f9f9]/40  transition-colors">© Jake Pearce 2026</p> 
+      </div> 
+    </div>
+  </div>
+</footer>
 
-
+      
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   if (window.innerWidth <= 768) return;
@@ -1395,41 +1478,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
   </script>
-   
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const btn      = document.getElementById('mobileMenuBtn');
-  const nav      = document.getElementById('mobileNav');
-  const closeBtn = document.getElementById('mobileNavClose');
-
-  if (!btn || !nav) return;
-
-  const open = () => {
-    nav.classList.remove('-translate-y-full');
-    nav.classList.add('shadow-[0_6px_12px_rgba(0,0,0,0.06)]');
-    nav.setAttribute('aria-hidden', 'false');
-  };
-
-  const close = () => {
-    nav.classList.add('-translate-y-full');
-    nav.classList.remove('shadow-[0_6px_12px_rgba(0,0,0,0.06)]');
-    nav.setAttribute('aria-hidden', 'true');
-  };
-
-  btn.addEventListener('click', () => {
-    nav.classList.contains('-translate-y-full') ? open() : close();
-  });
-
-  closeBtn?.addEventListener('click', close);
-
-  nav.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => {
-      requestAnimationFrame(close);
-    });
     
-  });
-});
-</script>
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
@@ -1485,53 +1534,13 @@ document.addEventListener('DOMContentLoaded', () => {
   btn.addEventListener('click', () => isOpen ? close() : open());
   nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => requestAnimationFrame(close)));
 });
-</script>
- <script>
-const btn = document.getElementById('mobileMenuBtn');
-const nav = document.getElementById('mobileNav');
-const hamburger = btn.querySelector('.hamburger');
-const header = document.getElementById('site-header');
-
- 
-</script>
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const btn = document.getElementById('mobileMenuBtn');
-  const nav = document.getElementById('mobileNav');
-  const closeBtn = document.getElementById('mobileNavClose');
-  const hamburger = btn.querySelector('.hamburger');
-  const header = document.getElementById('site-header');
-
-  if (!btn || !nav) return;
-
-  const open = () => {
-    nav.classList.remove('-translate-y-full'); 
-    hamburger.classList.add('is-open');
-    header.classList.add('menu-open');
-  };
-
-  const close = () => {
-    nav.classList.add('-translate-y-full'); 
-    hamburger.classList.remove('is-open');
-    header.classList.remove('menu-open');
-  };
-
-  btn.addEventListener('click', () => {
-    nav.classList.contains('-translate-y-full') ? open() : close();
-  });
-
-  closeBtn?.addEventListener('click', close);
-
-  nav.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => requestAnimationFrame(close));
-  });
-});
-</script>
+</script> 
+  
 
 <!-- Mobile Top Nav -->
 <div
   id="mobileNav"
-  class="fixed inset-x-0 top-0 z-40 bg-[#F1F0EE]
+  class="fixed inset-x-0 top-0 z-40 bg-[#FAF9F7]
          -translate-y-full
          transition-transform duration-500
          ease-[cubic-bezier(.22,1,.36,1)] transition-[transform,box-shadow] duration-500

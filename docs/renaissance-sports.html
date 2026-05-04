@@ -56,7 +56,7 @@ body {
     'wght' var(--variation-setting-wght, 200),
     'wdth' var(--variation-setting-wdth, 200),
     'opsz' var(--variation-setting-opsz, 28);
-  color: #F1F0EE;
+  color: #FAF9F7;
   letter-spacing: 0.016em;
   font-size: 10.3pt;
   white-space: nowrap;
@@ -133,10 +133,10 @@ a:hover ~ #cursor,
 * {
   font-synthesis: none;
 }
-   /* ===== Global ===== */
+     /* ===== Global ===== */
     body {
       font-family: 'SansFlex', sans-serif;
-  --variation-setting-wght: 410;
+  --variation-setting-wght: 300;
   font-variation-settings: 'wght' var(--variation-setting-wght, 380);
   color: #2b2b2b;
   letter-spacing: 0.00em;
@@ -147,35 +147,37 @@ a:hover ~ #cursor,
 
 .mono {
   font-family: 'BricolageGrotesque', sans-serif;
-  --variation-setting-wght: 370;
-  --variation-setting-wdth: 85;
+  --variation-setting-wght: 360;
+  --variation-setting-wdth: 89;
   --variation-setting-opsz: 20;
   font-variation-settings:
     'wght' var(--variation-setting-wght, 200),
     'wdth' var(--variation-setting-wdth, 200),
     'opsz' var(--variation-setting-opsz, 28);
   color: #2b2b2b;
-  letter-spacing: 0.016em;
+  letter-spacing: 0.028em;
   line-height: 1;
 
 }
-.display {
+ .display {
   font-family: 'BricolageGrotesque', sans-serif;
-  --variation-setting-wght: 560;
-  --variation-setting-wdth: 93;
-  --variation-setting-opsz: 32;
+ --variation-setting-wght: 500;
+  --variation-setting-wdth: 100;
+  --variation-setting-opsz: 24;
   font-variation-settings:
-    'wght' var(--variation-setting-wght, 580),
-    'wdth' var(--variation-setting-wdth, 68),
-    'opsz' var(--variation-setting-opsz, 100);
+    'wght' var(--variation-setting-wght, 400),
+    'wdth' var(--variation-setting-wdth, 100),
+    'opsz' var(--variation-setting-opsz, 24); 
     transition: --variation-setting-wght 0.6s cubic-bezier(0.22, 1, 0.36, 1),
               --variation-setting-wdth 0.6s cubic-bezier(0.22, 1, 0.36, 1),
               --variation-setting-opsz 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-  color: #2b2b2b; 
-  letter-spacing: -0.035em;
-  line-height: 0.99;
-  max-width: 1000px;
+  color: #2b2b2b;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 0.2em;
+  margin-top: 0.2em;
 }
+
 
 .display-small {
   font-family: 'BricolageGrotesque', sans-serif;
@@ -192,10 +194,36 @@ a:hover ~ #cursor,
   color: #2b2b2b;
   letter-spacing: -0.03em;
   line-height: 1.1;
-}
-.display-small:hover {
-  --variation-setting-wght: 700;
-  --variation-setting-wdth: 112.5;
+  margin-bottom: 0.2em;
+  margin-top: 0.2em;
+} 
+
+@media (max-width: 768px) {
+.display-small {
+  font-family: 'BricolageGrotesque', sans-serif;
+  --variation-setting-wght: 420;
+  --variation-setting-wdth: 100;
+  --variation-setting-opsz: 24;
+  font-variation-settings:
+    'wght' var(--variation-setting-wght, 400),
+    'wdth' var(--variation-setting-wdth, 100),
+    'opsz' var(--variation-setting-opsz, 24); 
+    transition: --variation-setting-wght 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+              --variation-setting-wdth 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+              --variation-setting-opsz 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  color: #2b2b2b;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 0.25em;
+  margin-top: 0.35em;
+} } 
+
+@media (hover: hover) and (pointer: fine) {
+  .display-small:hover {
+    --variation-setting-wght: 660;
+    --variation-setting-wdth: 200;
+    --variation-setting-opsz: 20;
+  }
 } 
 
 .h1 {
@@ -236,23 +264,22 @@ a:hover ~ #cursor,
   font-display: swap;
 
 }
-
+  
 .body-text-1 {
-  font-family: 'SansFlex', sans-serif;
-  --variation-setting-wght: 320;
-  font-variation-settings: 'wght' var(--variation-setting-wght, 320);
+  font-family: 'SansFlex', sans-serif; 
+  font-variation-settings: 'wght' var(--variation-setting-wght, 300);
   color: #2b2b2b;
   letter-spacing: 0.001em;
-  line-height: 1.5;
+  line-height: 1.55;
   font-display: swap;
 }
 .body-text-small {
-  font-family: 'SourceCodePro', monospace;
-  --variation-setting-wght: 400;
-  font-variation-settings: 'wght' var(--variation-setting-wght, 400);
+  font-family: 'SansFlex', sans-serif;
+  --variation-setting-wght: 350;
+  font-variation-settings: 'wght' var(--variation-setting-wght, 350);
   color: #2b2b2b;
-  letter-spacing: -0.016em;
-  line-height: 1.2;
+  letter-spacing: 0.00em;
+  line-height: 1.65;
   font-display: swap;
 }
 
@@ -282,14 +309,14 @@ a:hover ~ #cursor,
   letter-spacing: 0.0em;
   line-height: 1.45;
   font-display: swap;
-}
+} 
 
 /* ===== Header & Toggle ===== */
 header {
   position: relative;
   top: 0; left: 0; right: 0;
   z-index: 50;
-  background-color: #F1F0EE;
+  background-color: #FAF9F7;
   display: flex;
   justify-content: space-between;
   padding: 0pt;
@@ -302,7 +329,7 @@ header {
   position: fixed;
   pointer-events: none;
   background-color: #2B2B2D;
-  color: #F1F0EE;
+  color: #FAF9F7;
   padding: 4px 8px;
   border-radius: 4px;
   font-size: 10pt;
@@ -317,7 +344,7 @@ header {
   position: fixed;
   pointer-events: none;
   background-color: #2B2B2D;
-  color: #F1F0EE;
+  color: #FAF9F7;
   padding: 4px 8px;
   border-radius: 4px;
   font-size: 10pt;
@@ -327,13 +354,13 @@ header {
 }
 
 html {
-  background-color: #F1F0EE; /* same as main */
+  background-color: #FAF9F7; /* same as main */
 }
 
 main {
   position: relative;
   z-index: 2;
-  background: #F1F0EE;
+  background: #FAF9F7;
   margin-bottom: 0;
 }
 
@@ -428,7 +455,7 @@ html {
   scroll-behavior: smooth;
 }
 :root {
-  --step-0: clamp(1rem, 1vw + 0.7rem, 1rem);
+  --step-0: clamp(1rem, 1vw + 1rem, 1rem);
   --ratio: 1.2;
   --step--1: calc(var(--step-0) / 1.25);
   --step-1: calc(var(--step-0) * var(--ratio));
@@ -445,7 +472,7 @@ html {
 /* Type mappings */
 .body-text-1,
 .body-text-2 {
-  font-size: var(--step-0);
+  font-size: calc(var(--step-0) * 1.01);
 }
 
 .body-text-3,
@@ -457,13 +484,13 @@ html {
   font-size: var(--step--1);
 }
 .mono {
-  font-size: calc(var(--step--1) * 1.06);
+  font-size: calc(var(--step--1) * 1.1);
 }
 .display {
-  font-size: calc(var(--step-4) * 1.1);
+  font-size: calc(var(--step-2) * 1.35);
 }
 .display-small {
-  font-size: var(--step-2);
+  font-size: calc(var(--step-2) * 1);
 }
 
 .nav-body {
@@ -477,6 +504,27 @@ html {
 .h3 { font-size: var(--step-3); }
 .h2 { font-size: var(--step-2); }
 .h1 { font-size: var(--step-5); }
+
+@media (max-width: 767px) {
+  :root {
+    /* smaller base size */
+    --step-0: clamp(0.92rem, 1.2vw , 0.92rem);
+
+    /* tighter ratio (less dramatic scaling) */
+    --ratio: 1.14;
+
+    /* recalc the scale */
+    --step--1: calc(var(--step-0) / 1.2);
+    --step-1: calc(var(--step-0) * var(--ratio));
+    --step-2: calc(var(--step-1) * var(--ratio));
+    --step-3: calc(var(--step-2) * var(--ratio));
+    --step-4: calc(var(--step-3) * var(--ratio));
+    --step-5: calc(var(--step-4) * var(--ratio));
+    --step-6: calc(var(--step-5) * var(--ratio));
+    --step-7: calc(var(--step-6) * var(--ratio));
+  }
+} 
+  
 
 #projects {
   scroll-margin-top: 100px;
@@ -526,6 +574,33 @@ html, body {
   cursor: default;
 }
 
+/* kill pointer cursor everywhere */
+@media (min-width: 1024px) {
+a,
+button,
+[role="button"],
+input,
+textarea {
+  cursor: none !important;
+}
+/* default: no cursor */
+html, body {
+  cursor: none;
+}
+
+/* during scroll */
+.is-scrolling,
+.is-scrolling * {
+  cursor: none !important;
+}
+}
+/* tablet fallback */
+@media (max-width: 1024px) {
+  #cursor {
+    display: none !important;
+  }
+}
+
 .projects-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -569,7 +644,7 @@ html, body {
   height: 100vh;
   width: 160px;
   flex-shrink: 0;
-  background: #F1F0EE;
+  background: #FAF9F7;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -623,10 +698,10 @@ html, body {
   <div id="project-tooltip"></div>
   <!-- ===== Header & Toggle ===== -->
 <div id="site-header" class="sticky top-0 z-50 md:relative">
-<header class="bg-[#F1F0EE]   top-0 left-0 right-0 z-50">
+  <header class="bg-[#FAF9F7]   top-0 left-0 right-0 z-50">
 <div
   id="navContainer"
-  class="flex justify-between items-center w-full py-3 md:py-0 px-8 md:px-5"
+  class="flex justify-between items-center w-full py-2 md:py-0 px-6 md:px-6"
 >
   <a
     href="/"
@@ -634,14 +709,15 @@ html, body {
   >
     Jake Pearce
   </a>
-  <nav class="mono text-[#2B2B2B]/65 uppercase hidden md:flex" style="margin: 0pt;">
+  <nav class="mono   uppercase hidden md:flex" style="margin: 0pt;">
     <ul class="flex space-x-5 -mr-[0.4em] md:-mr-[0em] mt-[4.5px] mb-0">
-      <li><a href="/#projects" class="text-[#2B2B2B]/50 hover:text-[#2B2B2B] transition-colors">Projects</a></li>
-      <li><a href="/#about" class="text-[#2B2B2B]/50 hover:text-[#2B2B2B] transition-colors">About</a></li>
-      <li><a href="/#contact" class="text-[#2B2B2B]/50 hover:text-[#2B2B2B] transition-colors">Contact</a></li>
+      <li><a href="/" class="text-[#2B2B2B]/50 hover:text-[#2B2B2B] transition-colors">Projects</a></li>
+      <li><a href="/" class="text-[#2B2B2B]/50 hover:text-[#2B2B2B] transition-colors">About</a></li>
+      <li><a href="/" class="text-[#2B2B2B]/50 hover:text-[#2B2B2B] transition-colors">Visual Feed</a></li>
     </ul>
+    
   </nav>
-  <button
+ <button
     id="mobileMenuBtn"
     class="md:hidden flex items-center justify-center w-8 h-8 -mr-2 "
     aria-label="Open menu"
@@ -659,14 +735,14 @@ html, body {
 <div
   id="mobileNav"
   aria-hidden="true"
-  class="md:hidden bg-[#F1F0EE] overflow-hidden"
+  class="md:hidden bg-[#FAF9F7] overflow-hidden"
   style="max-height: 0; transition: max-height 0.45s cubic-bezier(0.22,1,0.36,1);"
 >
-  <div class="px-8 pb-8 flex flex-col gap-3 ">
-    <a href="/" class="mono uppercase text-[#2B2B2B]/50 hover:text-[#2B2B2B] transition-colors inline-block w-fit bg-[#ffffff]/85 hover:bg-[#ffffff]/25 px-[6px] py-[4px] leading-none"> ← Home</a>
-    <a href="/#projects" class="mono uppercase text-[#2B2B2B]/50 hover:text-[#2B2B2B] transition-colors block">Projects</a>
-    <a href="/#visual-feed" class="mono uppercase text-[#2B2B2B]/50 hover:text-[#2B2B2B] transition-colors block">Visual Feed</a>
-    <a href="/#about" class="mono uppercase text-[#2B2B2B]/50 hover:text-[#2B2B2B] transition-colors block">About</a>
+  <div class="px-6 pb-8 flex flex-col gap-3 ">
+    <a href="/" class="mono uppercase text-[#2B2B2B]/50 hover:text-[#2B2B2B] transition-colors inline-block w-fit bg-[#ffffff] hover:bg-[#2B2B2B]/0 px-[6px] py-[4px] leading-none"> ← Home</a>
+    <a href="/" class="mono uppercase text-[#2B2B2B]/50 hover:text-[#2B2B2B] transition-colors block">Projects</a>
+    <a href="/" class="mono uppercase text-[#2B2B2B]/50 hover:text-[#2B2B2B] transition-colors block">Visual Feed</a>
+    <a href="/" class="mono uppercase text-[#2B2B2B]/50 hover:text-[#2B2B2B] transition-colors block">About</a>
   </div>
 </div>
   <div style="height: 1px; background: rgba(43,43,43,0.1);"></div>
@@ -675,12 +751,12 @@ html, body {
 <div id="page-layout">
 <nav id="case-sidebar">
   <div class=" flex flex-col gap-3">
-    <a href="/" class="mono uppercase text-[#2B2B2B]/50 hover:text-[#2B2B2B] transition-colors inline-block w-fit bg-[#ffffff]/85 hover:bg-[#ffffff]/25 px-[6px] py-[4px] leading-none"> ← Home</a>
+    <a href="/" class="mono uppercase text-[#2B2B2B]/50 hover:text-[#2B2B2B] transition-colors inline-block w-fit bg-[#ffffff] hover:bg-[#2B2B2B]/0 px-[6px] py-[4px] leading-none"> ← Home</a>
     <a href="#overview" class="mono uppercase text-[#2B2B2B]/50 hover:text-[#2B2B2B] transition-colors block">Overview</a>
     <a href="#brief" class="mono uppercase text-[#2B2B2B]/50 hover:text-[#2B2B2B] transition-colors block">Brief</a>
     <a href="#testimonial" class="mono uppercase text-[#2B2B2B]/50 hover:text-[#2B2B2B] transition-colors block">Testimonial</a>
   </div>
-  <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" class="mono uppercase text-[#2B2B2B]/50 hover:text-[#2B2B2B] transition-colors inline-block w-fit bg-[#ffffff]/85 hover:bg-[#ffffff]/25 px-[6px] py-[4px] leading-none block">↑ Back to Top</a>
+  <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" class="mono uppercase text-[#2B2B2B]/50 hover:text-[#2B2B2B] transition-colors inline-block w-fit bg-[#ffffff] hover:bg-[#2B2B2B]/0 px-[6px] py-[4px] leading-none block">↑ Back to Top</a>
 </nav>
 <main>
 
@@ -702,7 +778,7 @@ html, body {
   >
     <img
       src="images/2026-erima-new.webp"
-      alt="MMT Hero"
+      alt="bndr-music Hero"
       class="block w-full max-w-[760px]  h-auto object-contain"
     />
   </div>
@@ -743,16 +819,17 @@ document.addEventListener('DOMContentLoaded', () => {
 <section
   id="overview"
   class="  max-web mx-auto w-full z-40
-         px-8 md:px-14 py-14
-         bg-[#F1F0EE]   max-w-[1400px]"
+         px-6 md:px-14 py-14
+         bg-[#FAF9F7]   max-w-[1400px]"
 >
-  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-5 items-start">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-6 items-start">
 
      <!-- LEFT COLUMN -->
     <div>
-     <h3 class="mono text-[#686868]/75 uppercase tracking-[0.01em] text-[#686868]/65 mb-5">Renaissance Sports</h3>
-      <h2 class=" display   mr-[1em] xl:max-w-[28ch]">
-         A visual identity built around confidence and momentum
+      <h3 class="mono text-[#2B2B2B]/75 uppercase  text-[#686868]/65   mb-5  ">
+      Renaissance Sports </h3>
+      <h2 class="display      mr-[1em] xl:max-w-[28ch]  ">
+        Introducing German sportswear heritage to Australian clubs
       </h2>
 
 
@@ -761,30 +838,31 @@ document.addEventListener('DOMContentLoaded', () => {
     <!-- RIGHT COLUMN -->
     <div
       class="
-        grid grid-cols-1 gap-y-5 gap-x-8
-          justify-between items-stretch
+        grid grid-cols-1 md:gap-y-6 gap-y-6 gap-x-8
+           justify-between items-stretch
       "
     > 
       <div class="flex flex-col items-start">
-        <span class="mono uppercase text-[#2B2B2B]/50 mb-1.5">Year</span>
+        <span class="mono uppercase text-[#2B2B2B]/50  mb-1.5">Year</span>
         <span class="body-text-1">2025</span>
       </div>
  
 
       <div class="flex flex-col">
-        <span class="mono uppercase text-[#2B2B2B]/50 mb-1.5">Team</span>
+        <span class="mono uppercase text-[#2B2B2B]/50  mb-1.5">Team</span>
         <ul class="body-text-1 ">
           <li>Just me</li> 
         </ul>
-      </div>
+      </div> 
 
       <div class="flex flex-col">
-        <span class="mono uppercase text-[#2B2B2B]/50 mb-1.5">Deliverables</span>
+        <span class="mono uppercase text-[#2B2B2B]/50  mb-1.5">Deliverables</span>
         <ul class="body-text-1 ">
-          <li>Tender documents</li>
-          <li>Social posts</li> 
+          
+        <li>Tender documents</li>
+        <li>Social posts</li> 
         </ul>
-      </div>
+      </div>  
     </div>
 
   </div>
@@ -803,7 +881,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 </script>
-<section class="md:hidden     max-web mx-auto px-8 md:px-14 ">
+<section class="md:hidden     max-web mx-auto px-6 md:px-14 ">
   <div class="space-y-2 mt-0 mb-2.5">
 
     <!-- Row 1 -->
@@ -821,7 +899,7 @@ document.addEventListener("DOMContentLoaded", () => {
 >
   <img
     src="images/2026-erima-new.webp"
-    alt="MMT Hero"
+    alt="bndr-music Hero"
     class="block px-10 w-full max-w-[620px]  object-contain"
   />
 </div>
@@ -835,7 +913,7 @@ document.addEventListener("DOMContentLoaded", () => {
 </section>
  
 
-<section class="  max-web mx-auto px-8 md:px-14   max-w-[1400px]">
+<section class="  max-web mx-auto px-6 md:px-14   max-w-[1400px]">
 
  
          
@@ -864,9 +942,9 @@ document.addEventListener("DOMContentLoaded", () => {
   id="brief"
   class="mt-0 md:mt-0 mb-2 md:mb-0 max-web mx-auto w-full z-40
           py-14
-         bg-[#F1F0EE]   max-w-[1400px]"
+         bg-[#FAF9F7]   max-w-[1400px]"
 >
-  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-5 items-start">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-5 items-start">
 
      <!-- LEFT COLUMN -->
     <div> 
@@ -918,9 +996,9 @@ document.addEventListener("DOMContentLoaded", () => {
     <div id="testimonial" ></div>
      <section 
   
-  class="  max-web mx-auto w-full z-40  mt-14 bg-[#F1F0EE]   max-w-[1400px]"
+  class="  max-web mx-auto w-full z-40  mt-14 bg-[#FAF9F7]   max-w-[1400px]"
 >
-  <div  class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-5 items-start">
+  <div  class="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-5 items-start">
 
     <!-- LEFT COLUMN -->
     <div> 
@@ -932,13 +1010,13 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>
 
     <!-- RIGHT COLUMN -->
-    <div class="  text-[#2b2b2b] body-text-1    fade-in">
+    <div class="  text-[#2b2b2b] body-text-1     ">
         <p class="mb-8">
           "I worked with Jake for a few months, and it was an absolute pleasure. His creativity, attention to detail, and ability to bring ideas to life consistently exceeded my expectations. Whether it's a full branding package, product launch, or a quick turnaround design, Jake always delivers high-quality work. I would highly recommend him to anyone looking for a talented and reliable graphic designer."
  
       
      
-<div class="flex items-center gap-4 fade-in">
+<div class="flex items-center gap-4  ">
 
   <!-- Avatar -->
   <img 
@@ -955,7 +1033,7 @@ document.addEventListener("DOMContentLoaded", () => {
      
 <div class="  body-text-1    opacity-70 ">
    <div 
-      class="  fade-in  items-center   w-full "  >
+      class="     items-center   w-full "  >
     <span
       class="  -mb-10 " 
     > Renaissance Sports Group
@@ -983,9 +1061,9 @@ document.addEventListener("DOMContentLoaded", () => {
  <section 
   class="  max-web mx-auto w-full z-40 py-14
            
-         bg-[#F1F0EE]   max-w-[1400px]"
+         bg-[#FAF9F7]   max-w-[1400px]"
 >
-  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-5 items-start">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-5 items-start">
 
     <!-- LEFT COLUMN -->
     <div> 
@@ -997,7 +1075,7 @@ document.addEventListener("DOMContentLoaded", () => {
     <!-- RIGHT COLUMN -->
     <div
       class="
-        grid grid-cols-1 gap-y-6 gap-x-8
+        grid grid-cols-1 gap-y-4 gap-x-8
           justify-between items-stretch
       "
     > 
@@ -1036,55 +1114,66 @@ document.addEventListener("DOMContentLoaded", () => {
 
 </main>
 </div>
-<footer class="bg-[#0C0C0C] px-8 md:px-10 pt-14 md:pt-12 pb-14">
+<footer class="bg-[#0C0C0C] px-6 md:px-10 pt-7 md:pt-9 pb-28 md:pb-14">
   <div class="max-web">
     <div class="grid grid-cols-1 md:grid-cols-[repeat(3,max-content)] gap-x-[60px] w-fit">
-      <div class="col-span-1 md:col-span-3 mb-2">
+      <div class="col-span-1 md:col-span-3 mb-2 -m">
         <span class="mono uppercase text-[#f9f9f9]">Projects</span>
       </div>
-      <div class="flex md:hidden flex-col gap-[12px] mb-14">
+      <div class="flex md:hidden flex-col gap-[12px] mb-9">
         <a href="moss-fragrances" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">Moss Fragrances</a>
         <a href="renaissance-sports" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">Renaissance Sports</a>
-        <a href="mmt" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">BNDR Music Group</a>
+        <a href="bndr-music" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">BNDR Music Group</a>
         <a href="bmp-sports" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">BMP Sports</a> 
       </div>
-      <div class="hidden md:flex flex-col gap-[12px] mb-20">
+      <div class="hidden md:flex flex-col gap-[12px] mb-16">
         <a href="moss-fragrances" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">Moss Fragrances</a>
         <a href="renaissance-sports" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">Renaissance Sports</a>
       </div>
-      <div class="hidden md:flex flex-col gap-[12px] mb-20">
+      <div class="hidden md:flex flex-col gap-[12px] mb-16">
         
-        <a href="mmt" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">BNDR Music Group</a>
+        <a href="bndr-music" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">BNDR Music Group</a>
         <a href="bmp-sports" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">BMP Sports</a>
       </div>
-     <div class="relative hidden md:flex flex-col gap-[12px] mb-20">
+     <div class="relative hidden md:flex flex-col gap-[12px] mb-16">
  
 
   <p class="mono uppercase text-[#f9f9f9]/40">Ceres Environmental Park</p>
   <p class="mono uppercase text-[#f9f9f9]/40">Jake Pearce Design</p>
 
 </div>
-      <div class="mb-14 md:mb-0">
+      <div class="mb-9 md:mb-0">
         <span class="mono uppercase text-[#f9f9f9] block mb-3">Say Hi</span>
         <div class="flex flex-col gap-[12px]">
           <a href="mailto:hello@jakepearce.com.au" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">Send a Message</a>
-          <a href="https://www.linkedin.com/in/jakepearcedesign/" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">LinkedIn</a>
+          <a href="linkedin.com/in/jake-pearce-076b772b5" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">LinkedIn</a>
         </div>
       </div>
-      <div class="mb-14 md:mb-0">
+      <div class="mb-9 md:mb-0">
         <span class="mono uppercase text-[#f9f9f9] block mb-3">About</span>
         <div class="flex flex-col gap-[12px]">
-          <a href="/#about" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">About</a>
-          <a href="#" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">Resume</a>
+          <a href="/" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">About</a>
+          <a href="https://drive.google.com/file/d/1w6B4FGnV9QwHBefrgyShvrh95oo5FM7D/view?usp=share_link" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">Resumé</a>
         </div>
       </div>
       <div>
         <span class="mono uppercase text-[#f9f9f9] block mb-3">Work</span>
         <div class="flex flex-col gap-[12px]">
-          <a href="/#projects" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">Projects</a>
-          <a href="#" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">Visual Feed</a>
+          <a href="/" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">Projects</a>
+          <a href="/" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">Visual Feed</a>
         </div>
       </div>
+    </div>
+  </div>
+</footer>
+<footer class="bg-[#0C0C0C] md:hidden
+<div class="max-web">
+    <div class="grid grid-cols-1 md:grid-cols-[repeat(3,max-content)] gap-x-[60px] w-fit">
+      <div class="col-span-1 md:col-span-3 mb-2  px-6 mb-6"> 
+     
+      
+        <p   class="mono uppercase text-[#f9f9f9]/40  transition-colors">© Jake Pearce 2026</p> 
+      </div> 
     </div>
   </div>
 </footer>
@@ -1494,7 +1583,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   const footer = document.querySelector('footer');
   if (footer) {
-    footer.addEventListener('mouseenter', () => { cursor.style.background = '#F1F0EE'; });
+    footer.addEventListener('mouseenter', () => { cursor.style.background = '#FAF9F7'; });
     footer.addEventListener('mouseleave', () => { cursor.style.background = '#2B2B2B'; });
   }
 });
