@@ -6,7 +6,7 @@
     name="viewport"
     content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
   />
-  <title>Moss Fragrances — Jake Pearce</title>
+  <title>About — Jake Pearce</title>
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Font variation utilities (plain-CSS port of @spencerwmiles/tailwind-font-variations) -->
@@ -87,8 +87,6 @@ a:hover ~ #cursor,
 
 
 
-
-
    /* ===== Font faces ===== */
 
     @font-face {
@@ -115,7 +113,6 @@ a:hover ~ #cursor,
 
 
 
-
 /* Register CSS custom properties as typed numbers so they can be transitioned */
 @property --variation-setting-wght {
   syntax: '<number>';
@@ -136,7 +133,7 @@ a:hover ~ #cursor,
 * {
   font-synthesis: none;
 }
-      /* ===== Global ===== */
+     /* ===== Global ===== */
     body {
       font-family: 'SansFlex', sans-serif;
   --variation-setting-wght: 380;
@@ -176,7 +173,7 @@ a:hover ~ #cursor,
               --variation-setting-opsz 0.6s cubic-bezier(0.22, 1, 0.36, 1);
   color: #2b2b2b;
   letter-spacing: -0.03em;
-  line-height: 1.1;
+  line-height: 1.19;
   margin-bottom: 0.2em;
   margin-top: 0.2em;
 }
@@ -230,22 +227,31 @@ a:hover ~ #cursor,
 } 
 
 .h1 {
-  font-family: 'SansFlex', sans-serif;
-  --variation-setting-wght: 460;
-  font-variation-settings: 'wght' var(--variation-setting-wght, 460);
+  font-family: 'BricolageGrotesque', sans-serif;
+ --variation-setting-wght: 540;
+  --variation-setting-wdth: 100;
+  --variation-setting-opsz: 24;
+  font-variation-settings:
+    'wght' var(--variation-setting-wght, 400),
+    'wdth' var(--variation-setting-wdth, 100),
+    'opsz' var(--variation-setting-opsz, 24); 
+    transition: --variation-setting-wght 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+              --variation-setting-wdth 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+              --variation-setting-opsz 0.6s cubic-bezier(0.22, 1, 0.36, 1);
   color: #2b2b2b;
-  letter-spacing: -0.022em;
-  line-height: 1.2;
-  font-display: swap;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 0.2em;
+  margin-top: 0.2em;
 
 }
 .h2 {
   font-family: 'SansFlex', sans-serif;
-  --variation-setting-wght: 460;
-  font-variation-settings: 'wght' var(--variation-setting-wght, 460);
+  --variation-setting-wght: 380;
+  font-variation-settings: 'wght' var(--variation-setting-wght, 380);
   color: #2b2b2b;
-  letter-spacing: -0.006em;
-  line-height: 1.3;
+  letter-spacing: 0.00em;
+  line-height: 1.55;
   font-display: swap;
 }
 .h3 {
@@ -278,8 +284,8 @@ a:hover ~ #cursor,
 }
 .body-text-small {
   font-family: 'SansFlex', sans-serif;
-  --variation-setting-wght: 350;
-  font-variation-settings: 'wght' var(--variation-setting-wght, 350);
+  --variation-setting-wght: 380;
+  font-variation-settings: 'wght' var(--variation-setting-wght, 380);
   color: #2b2b2b;
   letter-spacing: 0.00em;
   line-height: 1.65;
@@ -496,7 +502,6 @@ html {
   font-size: calc(var(--step-2) * 1);
 }
 
-
 .nav-body {
   font-size: var(--step-0);
 }
@@ -507,7 +512,7 @@ html {
 .h4 { font-size: var(--step-4); }
 .h3 { font-size: var(--step-3); }
 .h2 { font-size: var(--step-2); }
-.h1 { font-size: var(--step-5); }
+.h1 { font-size: calc(var(--step-5) * 1); }
 
 @media (max-width: 767px) {
   :root {
@@ -527,7 +532,10 @@ html {
     --step-6: calc(var(--step-5) * var(--ratio));
     --step-7: calc(var(--step-6) * var(--ratio));
   }
-}  
+} 
+  
+
+
 
 #projects {
   scroll-margin-top: 100px;
@@ -565,6 +573,18 @@ html, body {
   cursor: none !important;
 }
 
+/* ===== Page-specific styles ===== */
+.project-image-container {
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  overflow: hidden;
+  border-radius: inherit;
+}
+
+.project-image-container:hover {
+  cursor: default;
+}
+
 /* kill pointer cursor everywhere */
 @media (min-width: 1024px) {
 a,
@@ -590,18 +610,6 @@ html, body {
   #cursor {
     display: none !important;
   }
-}
-
-/* ===== Page-specific styles ===== */
-.project-image-container {
-  aspect-ratio: 1 / 1;
-  width: 100%;
-  overflow: hidden;
-  border-radius: inherit;
-}
-
-.project-image-container:hover {
-  cursor: default;
 }
 
 .projects-grid {
@@ -640,20 +648,7 @@ html, body {
   display: flex;
   align-items: flex-start;
 }
-
-#case-sidebar {
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  width: 160px;
-  flex-shrink: 0;
-  background: #FAF9F7;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 20px 22px;
-  border-right: 1px solid rgba(43,43,43,0.1);
-}
+ 
 
 #page-layout > main {
   flex: 1;
@@ -701,7 +696,7 @@ html, body {
   <div id="project-tooltip"></div>
   <!-- ===== Header & Toggle ===== -->
 <div id="site-header" class="sticky top-0 z-50 md:relative">
-<header class="bg-[#FAF9F7]   top-0 left-0 right-0 z-50">
+  <header class="bg-[#FAF9F7]   top-0 left-0 right-0 z-50">
 <div
   id="navContainer"
   class="flex justify-between items-center w-full py-2 md:py-0 px-6 md:px-6"
@@ -751,43 +746,9 @@ html, body {
   <div style="height: 1px; background: rgba(43,43,43,0.1);"></div>
 </div>
 
-<div id="page-layout">
-<nav id="case-sidebar">
-  <div class=" flex flex-col gap-3">
-    <a href="/" class="mono uppercase text-[#2B2B2B]/50 hover:text-[#2B2B2B] transition-colors inline-block w-fit bg-[#ffffff] hover:bg-[#2B2B2B]/0 px-[6px] py-[4px] leading-none"> ← Home</a>
-    <a href="#overview" class="mono uppercase text-[#2B2B2B]/50 hover:text-[#2B2B2B] transition-colors block">Overview</a>
-    <a href="#brief" class="mono uppercase text-[#2B2B2B]/50 hover:text-[#2B2B2B] transition-colors block">Brief</a>
-    <a href="#outcome" class="mono uppercase text-[#2B2B2B]/50 hover:text-[#2B2B2B] transition-colors block">Outcome</a>
-  </div>
-  <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" class="mono uppercase text-[#2B2B2B]/50 hover:text-[#2B2B2B] transition-colors inline-block w-fit bg-[#ffffff] hover:bg-[#2B2B2B]/0 px-[6px] py-[4px] leading-none block">↑ Back to Top</a>
-</nav>
+<div id="page-layout"> 
 <main>
-
-<section
-  id="Project-images"
-  class="hidden md:block   mx-auto md:-mt-3"
->
-  <div class="content-column md:space-y-2.5 space-y-2.5">
-  <section id="project-gallery" class=" ">
-  <div
-    class="
-      overflow-hidden
-      h-[65vh]
-      bg-gradient-to-r from-[#B3DCE0] to-[#E6CEB4]
-      px-10
-      flex 
-      justify-center
-    "
-  >
-    <img
-      src="images/moss-hero.webp"
-      alt="Moss Fragrances Hero"
-      class="block w-full max-w-[620px] h-auto object-contain"
-    />
-  </div>
-</section>
-  </div>
-</section>
+ 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const img = document.querySelector('.project-parallax');
@@ -818,319 +779,110 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('resize', update);
 });
 </script>
-
-<section
-  id="overview"
-  class="  max-web mx-auto w-full z-40
-         px-6 md:px-14 py-14
-         bg-[#FAF9F7]   max-w-[1400px]"
->
-  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-6 items-start">
-
-     <!-- LEFT COLUMN -->
-    <div>
-      <h3 class="mono text-[#2B2B2B]/75 uppercase  text-[#686868]/65   mb-5  ">
-      MOSS FRAGRANCE </h3>
-      <h2 class="display      mr-[1em] xl:max-w-[28ch]  ">
-        Transparency as a design principle for a natural fragrance brand
-      </h2>
-
-
-    </div>
-
-    <!-- RIGHT COLUMN -->
-    <div
-      class="
-        grid grid-cols-1 md:gap-y-6 gap-y-6 gap-x-8
-           justify-between items-stretch
-      "
-    > 
-      <div class="flex flex-col items-start">
-        <span class="mono uppercase text-[#2B2B2B]/50  mb-1.5">Year</span>
-        <span class="body-text-1">2026</span>
-      </div>
  
-
-      <div class="flex flex-col">
-        <span class="mono uppercase text-[#2B2B2B]/50  mb-1.5">Team</span>
-        <ul class="body-text-1 ">
-          <li>Just me</li> 
-        </ul>
-      </div> 
-
-      <div class="flex flex-col">
-        <span class="mono uppercase text-[#2B2B2B]/50  mb-1.5">Deliverables</span>
-        <ul class="body-text-1 ">
-          
-        <li>Labels</li>
-        <li>Brochure</li>
-        <li>Social Posts</li>
-        </ul>
-      </div>  
-    </div>
-
-  </div>
-</section>
-
-
- 
-<section class="  max-web mx-auto px-6 md:px-14   max-w-[1400px]">
-
-
-  <!-- Image Column (2x rows, single section) -->
-<section class="md:hidden   ">
-  <div class="space-y-2 mt-0 mb-2.5">
-
-    <!-- Row 1 -->
-    <div class="flex flex-col xl:flex-row gap-2 md:gap-3">
-      <div class="flex-1">
-        <div
-  class="
-    overflow-hidden
-    aspect-[5/4]
-    bg-gradient-to-r from-[#A7CBD5] to-[#E6CEB4]
-    flex 
-    items-center
-    justify-center
-  "
->
-  <img
-    src="images/moss-hero.webp"
-    alt="Moss Fragrances Hero"
-    class="block w-full max-w-[620px] p-14 h-auto object-contain"
+<script>
+document.querySelectorAll("video").forEach(v => {
+  v.muted = true;
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const videos = document.querySelectorAll("video");
+  videos.forEach(video => {
+    video.muted = true;
+    video.play().catch(()=>{});
+  });
+});
+</script> 
+ <div class="lg:hidden max-web mx-auto    max-w-[1400px]">
+      <img
+    src="images/jake-image01.webp"
+    alt="Jake Pearce"
+    class="w-full max-h-[500px] aspect-square object-cover object-[50%_30%]"
   />
-</div>
-      </div>
-
-      
- 
     </div>
 
+<section class="max-web mx-auto px-6 md:px-10 md:py-10 max-w-[1400px]">
+  <!-- Standalone heading — hidden at xl and above -->
+  <div class="lg:hidden   items-center flex">
+    <div class="display md:mb-10 py-10">
+      As a brand designer, I balance clarity, creativity, and strategy
+      to create thoughtful visual identities that drive business growth.
+    </div>
   </div>
-</section>
 
-        
-
-    <!-- Image Column (2x rows, single section) -->
-<section class=" ">
-  <div class="space-y-2.5 md:space-y-2  ">
-
-    <!-- Row 1 -->
-    <div class="flex flex-col xl:flex-row gap-2.5 mt-6 md:gap-2">
-     
-      
-
-      <div class="flex-1">
-        <div class="  overflow-hidden   rounded-none">
-          <img
-            src="images/moss-new-5.webp"
-            alt="Gallery Image 2"
-            class="w-full h-full object-cover"
-          />
+  <div class="flex flex-col lg:flex-row lg:items-stretch !gap-x-16 ">
+    <!-- LEFT COLUMN -->
+    <div class="grid md:gap-y-10 gap-y-6 w-full lg:w-1/2  ">
+      <!-- Heading copy inside left column — visible only at xl and above -->
+      <div class="hidden lg:block mb-0">
+        <div class="display">
+          As a brand designer, I balance clarity, creativity, and strategy
+          to create thoughtful visual identities that drive business growth.
         </div>
       </div>
-      <div ></div>
-    </div>
-</section>
 
-    <section id="brief"
-  
-  class="mt-0 md:mt-0 mb-2 md:mb-0 max-web mx-auto w-full z-40
-          py-14
-         bg-[#FAF9F7]   max-w-[1400px]"
->
-  <div  class="grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-5 items-start">
+      <div class="flex flex-col items-start">
+        <span class="mono uppercase text-[#2B2B2B]/50 mb-1.5">About</span>
+        <span class="body-text-1">I'm based in Naarm/Melbourne and currently freelance across brand identity, print and digital assets, and motion design. Through freelance work and my time at BNDR Music, I've developed an approach to design that balances creativity with clarity and purpose. I enjoy shaping ideas through research, refinement, and thoughtful craft, with a strong focus on creating work that not only feels considered visually, but connects clearly with the right audience and supports each client's goals.</span>
+      </div>
 
-    <!-- LEFT COLUMN -->
-    <div> 
-      <h2 class="display   mr-[1em] xl:max-w-[24ch]">
-        Brief and approach
-      </h2>
+      <div class="flex flex-col">
+        <span class="mono uppercase text-[#2B2B2B]/50 mb-1.5">Outside of design I'm:</span>
+        <ul class="body-text-1">
+          <li>Doodling in my sketchbook</li>
+          <li>Jamming in Ableton</li>
+          <li>Hiking in the Dandenong Ranges</li>
+        </ul>
+      </div>
+
+      <div class="flex flex-col">
+        <span class="mono uppercase text-[#2B2B2B]/50 mb-1.5">Expertise</span>
+        <ul class="body-text-1">
+          <p>Brand Identity</p>
+          <p>Packaging Design</p>
+          <p>Web Design</p>
+          <p>Presentation Design</p>
+        </ul>
+      </div>
+
+      <div class="flex flex-col mb-10 lg:mb-0">
+        <span class="mono uppercase text-[#2B2B2B]/50 mb-1.5 flex items-center gap-2 before:content-[''] before:w-2 before:h-2 before:rounded-full before:bg-green-500 before:-translate-y-[1px]">
+          Open for Projects
+        </span>
+        <p class="body-text-1">
+          Say hello on
+          <a href="https://www.linkedin.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-block underline underline-offset-2 transition-colors duration-200 hover:text-[#2B2B2B]/50"
+          >
+            LinkedIn
+          </a>,
+          or drop me a line at
+          <a href="mailto:hello@jakepearce.com.au"
+            class="inline-block underline underline-offset-2 transition-colors duration-200 hover:text-[#2B2B2B]/50"
+          >
+            hello@jakepearce.com.au
+          </a>.
+        </p>
+      </div>
     </div>
 
     <!-- RIGHT COLUMN -->
-    <div
-      class="
-        grid grid-cols-1 gap-y-8 gap-x-8
-          justify-between items-stretch
-      "
-    > 
- 
-
-      <div class="flex flex-col items-start max-w-[75ch]"> 
-        <span class="body-text-1">Moss Fragrances is a small-batch perfume brand producing oil-based scents made from essential oils.
-          Guided by a naturopathic philosophy and a commitment to transparency, each fragrance features a full ingredient list printed directly on the bottle. The project required the development of a label system that reflected this transparency and plant-based foundation.</span>
-      </div> 
-
+    <div class="hidden lg:block lg:w-1/2">
+      <div class="relative w-full h-full overflow-hidden">
+        <img
+          src="images/jake-image01.webp"
+          alt="Jake Pearce"
+          class="absolute inset-0 w-full h-full object-cover object-[50%_30%]   "
+        />
+      </div>
+    </div>
   </div>
 </section>
-
-    
-<!-- Row 2 -->
-    <div class="flex   xl:flex-row  ">
-      <div class="">
-        <div class=" overflow-hidden   rounded-none">
-          <img
-            src="images/bottles-8.webp"
-            alt="Gallery Image 3"
-            class="w-full h-full object-cover"
-          />
-        </div>
-      </div>
-      
- 
-    </div>
-
-<!-- Row 2 -->
-    <div class="flex   xl:flex-row mt-6  >
-      <div class="">
-        <div class=" overflow-hidden   rounded-none">
-          <img
-            src="images/moss-new-3.webp"
-            alt="Gallery Image 3"
-            class="w-full h-full object-cover"
-          />
-        </div>
-      </div>
-      
-       
-
-   <!-- Row 2 -->
-    <div class="flex   xl:flex-row mt-6  >
-      <div class="">
-        <div class=" overflow-hidden   rounded-none">
-          <img
-            src="images/moss-brochure-new-1.webp"
-            alt="Gallery Image 1"
-            class="w-full h-full object-cover"
-          />
-        </div>
-      </div>
-       <section
-  id="outcome"
-  class="mt-0 md:mt-0 mb-2 md:mb-0 max-web mx-auto w-full z-40
-          py-14
-         bg-[#FAF9F7]   max-w-[1400px]"
->
-  <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-5 items-start">
-
-    <!-- LEFT COLUMN -->
-    <div> 
-      <h2 class="display   mr-[1em] xl:max-w-[24ch]">
-        Outcome
-      </h2>
-    </div>
-
-    <!-- RIGHT COLUMN -->
-    <div
-      class="
-        grid grid-cols-1 gap-y-8 gap-x-8
-          justify-between items-stretch
-      "
-    > 
- 
-
-      <div class="flex flex-col items-start max-w-[75ch]"> 
-  <span class="body-text-1">
-    Moss Fragrances has established itself as a trusted natural perfume supplier, with steady sales through Terra Madre stores across Melbourne’s north. The brand continues to grow, with plans to expand the range into sprays and additional blends.
-  </span>
-
-  <div class="mt-7 px-6 py-4 bg-[#B3DCE0]/10 border border-[#5EB5BE]  rounded-sm">
-    <span class="mono uppercase text-[#449FA9]  ">
-      Production Note
-    </span>
-    <p class="body-text-1 text-[#449FA9]  mt-2">
-      Supply chain constraints prompted a move from brown glass to clear bottles, which, as it turned out, better reflected the brand's commitment to transparency.
-    </p>
-  </div>
-</div>
-
-  </div>
-</section>
- 
-
-<div class="space-y-2.5 md:space-y-2  ">
-
-    <!-- Row 1 -->
-    <div class="flex flex-row gap-2.5 md:gap-2">
-     <div class="flex-1">
-        <div class="  flex items-center justify-center">
-    <img
-      src="images/moss-photography-4.webp"
-      alt="Gallery Image 1"
-      class=" aspect-[1/1] w-full h-full object-cover"
-    />
-  </div> 
-      </div>
-
-      
-
-      
-      <div class="flex-1">
-        <div class="  flex items-center justify-center">
-    <img
-      src="images/moss-photography-3.webp"
-      alt="Gallery Image 1"
-      class=" aspect-[1/1] w-full h-full object-cover"
-    />
-  </div> 
-      </div>
-      </div>  
-
-      
- 
-    </div> 
-      
-
- <section 
-  class="  max-web mx-auto w-full z-40 py-14
-           
-         bg-[#FAF9F7]   max-w-[1400px]"
->
-  <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-5 items-start">
-
-    <!-- LEFT COLUMN -->
-    <div> 
-      <h2 class="display   mr-[1em] xl:max-w-[24ch]">
-        Got something in the works?
-      </h2>
-    </div>
-
-    <!-- RIGHT COLUMN -->
-    <div
-      class="
-        grid grid-cols-1 gap-y-4 gap-x-8
-          justify-between items-stretch
-      "
-    > 
- 
-
-      <p class="body-text-1 max-w-[44ch]">
-    I’m currently open to freelance projects, contract roles, and in-house opportunities. Feel free to reach out if you have something in mind or just want to say hi!
-  </p>
-
-  <div class=" ">
-
-    <!-- EMAIL -->
-    <a
-  href="mailto:hello@jakepearce.com.au"
-  class="text-[#2B2B2B]  display-small    ">
-      Get in touch →
-    </a>
-
-  </div>
-</div>
-
-  </div>
-</section>
-  </div>
   
-</section>
-
-
-  </section>
-  
-
+ 
   
 
 
@@ -1138,7 +890,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 </main>
 </div>
-<footer class="bg-[#0C0C0C] px-6 md:px-10 pt-7 md:pt-9 pb-28 md:pb-14">
+<footer class="bg-[#0C0C0C] min-h-[45vh] px-6 md:px-10 pt-7 md:pt-9 pb-28 md:pb-14">
   <div class="max-web">
     <div class="grid grid-cols-1 md:grid-cols-[repeat(3,max-content)] gap-x-[60px] w-fit">
       <div class="col-span-1 md:col-span-3 mb-2 -m">
@@ -1201,7 +953,9 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>
   </div>
 </footer>
+
 <script>
+  
 document.addEventListener("DOMContentLoaded", () => {
   if (window.innerWidth <= 768) return;
 
@@ -1619,5 +1373,6 @@ window.addEventListener('scroll', () => {
   scrollTimeout = setTimeout(() => { document.body.classList.remove('is-scrolling'); }, 120);
 });
 </script>
+
 </body>
 </html> 
