@@ -868,139 +868,107 @@ window.addEventListener('scroll', () => {
 </div>
  
 <main>
-  <section class="hidden xl:block max-web mx-auto w-full p-3">
+  <style>
+    @keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
 
-  <!-- Rounded Card -->
-  <div
-    id="welcome-card"
-    class="relative bg-[#FAE76C] rounded-[2rem] p-6 md:p-12 overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] origin-top"
-  >
+.animate-spin-slow {
+  animation: spin-slow 18s linear infinite;
+}
+#welcome-card {
+  position: absolute;
+  overflow: hidden; /* important so shine stays inside circle */
+}
 
-    <!-- Desktop XL Layout -->
-    <div class="xl:grid xl:grid-cols-[1fr_1.1fr] xl:gap-12 xl:items-center">
+.shine {
+  position: absolute;
+  inset: -40%;
+  background: linear-gradient(
+    115deg,
+    transparent 35%,
+    rgba(255,255,255,0.0) 42%,
+    rgba(255,255,255,0.65) 50%,
+    rgba(255,255,255,0.0) 58%,
+    transparent 65%
+  );
+  
+  transform: translateX(-160%) rotate(12deg);
+  animation: shine-wipe 6s ease-in-out infinite;
+  pointer-events: none;
+}
 
-      <!-- LEFT COLUMN -->
-      <div class="flex flex-col h-full justify-between">
+@keyframes shine-wipe {
+  0% {
+    transform: translateX(-160%) rotate(12deg);
+  }
 
-        <!-- Hero -->
-        <section
-          id="hero"
-          class="relative z-40 w-full"
-        >
-          <div class="flex flex-col items-start">
-            
-            <h2 class="display inline-block text-[#000000] bg-[#FAF9F7] px-2 py-1">
-              Hi Heidi,
-            </h2>
+  35% {
+    transform: translateX(160%) rotate(12deg);
+  }
 
-            <h1 class="display inline-block text-[#000000] px-2 py-1 mb-16 leading-[0.92]">
-              It's a pleasure to meet you.
-            </h1>
-
-          </div>
-        </section>
-
-        <!-- Supporting Copy -->
-        <div class="pt-10 xl:pt-16">
-          <h1 class="hidden md:block text-[#000000] body-text-1 max-w-[43ch] body-text-1 text-xl ">
-            I hope you enjoy exploring these projects as much as I enjoyed creating them.
-          </h1>
-
-          <h1 class="md:hidden text-[#000000] body-text-1 max-w-[32ch] pt-8 mb-0">
-            I hope you enjoy exploring these projects as much as I enjoyed creating them.
-          </h1>
-        </div>
-
-      </div>
-
-      <!-- RIGHT COLUMN -->
-      <section
-        id="art"
-        class="relative z-20 mt-10 xl:mt-0 handshake mx-auto w-full overflow-visible fade-in flex flex-col"
-      >
-        <div class="px-16 flex justify-center">
-          <img
-            src="images/handshake-4.gif"
-            alt="Handshake"
-            class="object-contain w-full max-w-[900px] xl:scale-110"
-          />
-        </div>
-      </section>
-
-    </div>
-
-  </div>
-
-</section>
-<section class="xl:hidden max-web mx-auto w-full p-3">
-
-  <!-- Rounded Card -->
-  <div
-  id="welcome-card"
-  class="relative bg-[#FAE76C] rounded-[2rem] p-6 md:p-12 overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] origin-top"
->
-
-   
-
-    <!-- Hero -->
-    <section
-      id="hero"
-      class="relative z-40 w-full"
-    >
-      <div class="grid md:gap-12 gap-6 items-start">
-        <div>
-          <div class="flex flex-col items-start">
-  <h2 class="display inline-block text-[#000000] bg-[#FAF9F7] px-2 py-1">
-    Hi Heidi,
-  </h2>
-
-  <h1 class="display inline-block text-[#000000] px-2 py-1">
-    It's a pleasure to meet you.
-  </h1>
- 
-</div>
-        </div>
-
-        <div>
-          
-        </div>
-      </div>
-    </section>
-
-    <!-- Art -->
-    <section
-      id="art"
-      class="relative z-20 mt-0 mb-0 md:mb-4 handshake mx-auto w-full overflow-visible fade-in flex flex-col  "
-    >
-      <div class="  flex justify-center">
-        <img
-          src="images/handshake-4.gif"
-          alt="Handshake"
-          class="object-contain w-full max-w-[1300px]"
-        />
-      </div>
-    </section>
-
-    <h1 class="hidden md:block text-[#000000] body-text-1  text-2xl pt-0 -mb-1  ">
-      I hope you enjoy exploring these projects as much as I enjoyed creating them.</span>
-    </h1>
-    <h1 class="md:hidden  text-[#000000] body-text-1 max-w-[32ch]  pt-8 mb-0 ">
-      I hope you enjoy exploring these projects as much as I enjoyed creating them.</span>
-    </h1>
-
-  </div>
-
-</section>
+  100% {
+    transform: translateX(160%) rotate(12deg);
+  }
+}
+  </style> 
  
 <section
   id="hero"
   class="hidden md:block hero-viewport max-web mx-auto w-full z-40 px-6 md:px-6 bg-[#FAF9F7] "
 >
+
+<div
+    id="welcome-card"
+    class="absolute  w-[228px] h-[228px] mt-6  rounded-full bg-[#FAE76C] flex items-center justify-center"
+  ><div class="shine"></div>
+    <!-- Circular text -->
+    <svg
+      class="absolute inset-0 w-full h-full animate-spin-slow"
+      viewBox="0 0 320 320"
+    >
+      <defs>
+        <path
+          id="circlePath"
+          d="M 160,160
+             m -125,0
+             a 125,125 0 1,1 250,0
+             a 125,125 0 1,1 -250,0"
+        />
+      </defs>
+
+      <text
+        fill="#000"
+        font-size="18"
+        font-family="mono, sans-serif"
+        letter-spacing="3"
+      >
+        <textPath href="#circlePath" startOffset="0%">
+          NICE TO MEET YOU • KEEP LEFT • NICE TO MEET YOU • KEEP LEFT •
+        </textPath>
+      </text>
+    </svg>
+
+    <!-- Inner gif -->
+    <div class="w-[146px] h-[146px] rounded-full overflow-hidden flex items-center justify-center">
+      <img
+        src="images/handshake-4.gif"
+        alt="Handshake"
+        class="object-contain w-full h-full"
+      />
+    </div>
+  </div>
   <div class="flex flex-col justify-center md:justify-end h-full pb-4">
 
-    <div>
-      <h2 class=" text-[#2B2B2B]   display  max-w-[22ch] pt-64"> Jake is a Brand Designer <br> based in Melbourne / <br>Naarm Australia.
-</h2>
+     <div class="relative inline-block pt-72">
+  <h2 class="text-[#2B2B2B] display max-w-[22ch]">
+    Jake is a Brand Designer <br>
+    based in Melbourne / <br>
+    Naarm Australia.
+  </h2>
+
+
  
     </div> 
     <div> 
@@ -1168,36 +1136,36 @@ window.addEventListener('scroll', () => {
   </div>
     </div>
 
-       <!-- Personal Branding -->
-<div class="project square flex flex-col tablet-only">
-  <div class="project-image-container rounded-sm" data-cursor="Coming soon">
-          <div class="absolute inset-0 bg-[#FFEBA3]/80 flex items-center justify-center p-10 md:p-14 lg:p-20">
+       <!-- T-Shirt Graphics -->
+<div class="tablet-only project square flex-col">
+      <a href="merch">
+        <div class="project-image-container rounded-sm">
+          <div class="absolute inset-0 bg-[#93B4DF] flex items-center justify-center p-10 md:p-14 lg:p-20">
             <img
-  src="images/cards-new.webp"
+  src="images/rack.webp"
   alt="Gallery Image 1"
   style="width: auto; height: auto; max-width: 100%; max-height: 100%; object-fit: contain;"
 />
           </div>
         </div>
 
-  <div class="mt-4 flex flex-col items-start mb-1">
+  <div class=" mt-2 flex flex-col items-start mb-1">
 
     <!-- NEW mono meta -->
-    <span class="mono   text-[#2B2B2B]/50 uppercase           ">
-      Jake Pearce Design — 2026
+    <span class="mono   text-[#2B2B2B]/50 uppercase      ">
+      2019 — 2026
     </span>
 
-    <span class="text-[#2B2B2B]/85  display-small  ">
-      Creating a Bold Personal Brand
-    </span>
+    <a href="merch" class="text-[#2B2B2B]/85  display-small  ">
+      Selected T-Shirt Graphics
+    </a>
 
-    <span class="text-[#2B2B2B]/50 body-text-1">
-      Case study coming soon
-    </span>
+    <a href="merch" class="text-[#2B2B2B]/50 body-text-1">
+      Various merchandise work for clients
+    </a>
 
   </div>
 </div>
- 
 
     <!-- Moss -->
 <div class="project landscape flex flex-col">
@@ -1263,32 +1231,33 @@ window.addEventListener('scroll', () => {
   </div>
     </div>
 
-    <!-- Personal Branding -->
-<div class="project square flex flex-col ">
-   <div class="project-image-container rounded-sm" data-cursor="Coming soon">
-          <div class="absolute inset-0 bg-[#FFEBA3] flex items-center justify-center p-20">
+    <!-- T-Shirt Graphics -->
+<div class="project square flex-col">
+      <a href="merch">
+        <div class="project-image-container rounded-sm">
+          <div class="absolute inset-0 bg-[#93B4DF] flex items-center justify-center p-10 md:p-14 lg:p-20">
             <img
-  src="images/cards-new.webp"
+  src="images/rack.webp"
   alt="Gallery Image 1"
   style="width: auto; height: auto; max-width: 100%; max-height: 100%; object-fit: contain;"
 />
           </div>
         </div>
 
-  <div class="mt-4 flex flex-col items-start mb-1">
+  <div class=" mt-2 flex flex-col items-start mb-1">
 
     <!-- NEW mono meta -->
-    <span class="mono  text-[#2B2B2B]/50 uppercase          ">
-      Jake Pearce Design — 2026
+    <span class="mono   text-[#2B2B2B]/50 uppercase      ">
+      2019 — 2026
     </span>
 
-    <span class="text-[#2B2B2B]/85  display-small  ">
-      Creating a Bold Personal Brand
-    </span>
+    <a href="merch" class="text-[#2B2B2B]/85  display-small  ">
+      Selected T-Shirt Graphics
+    </a>
 
-    <span class="text-[#2B2B2B]/50 body-text-1">
-      Case study coming soon
-    </span>
+    <a href="merch" class="text-[#2B2B2B]/50 body-text-1">
+      Various merchandise work for clients
+    </a>
 
   </div>
 </div>
@@ -1314,7 +1283,8 @@ window.addEventListener('scroll', () => {
         <a href="moss-fragrances" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">Moss Fragrances</a>
         <a href="renaissance-sports" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">Renaissance Sports</a>
         <a href="bndr-music" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">BNDR Music Group</a>
-        <a href="bmp-sports" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">BMP Sports</a> 
+        <a href="bmp-sports" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">BMP Sports</a>
+        <a href="merch" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">T-Shirt Graphics</a> 
       </div>
       <div class="hidden md:flex flex-col gap-[12px] mb-16">
         <a href="moss-fragrances" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">Moss Fragrances</a>
@@ -1325,12 +1295,14 @@ window.addEventListener('scroll', () => {
         <a href="bndr-music" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">BNDR Music Group</a>
         <a href="bmp-sports" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">BMP Sports</a>
       </div>
-     <div class="relative hidden md:flex flex-col gap-[12px] mb-16">
+
+      
+     <div class="relative hidden md:flex flex-col gap-[12px] ">
  
-
-  <p class="mono uppercase text-[#f9f9f9]/40">Ceres Environmental Park</p>
-  <p class="mono uppercase text-[#f9f9f9]/40">Jake Pearce Design</p>
-
+ <div class="hidden md:flex flex-col gap-[12px] mb-16">
+        <a href="shirts" class="mono uppercase text-[#f9f9f9]/40 hover:text-[#f9f9f9] transition-colors">t-shirt graphics</a> 
+         <p class="mono uppercase text-[#f9f9f9]/40">Ceres Environmental Park</p>
+      </div> 
 </div>
       <div class="mb-9 md:mb-0">
         <span class="mono uppercase text-[#f9f9f9] block mb-3">Say Hi</span>
@@ -1367,7 +1339,6 @@ window.addEventListener('scroll', () => {
     </div>
   </div>
 </footer>
-
       
 <script>
 document.addEventListener("DOMContentLoaded", () => {
