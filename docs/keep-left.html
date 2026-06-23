@@ -882,6 +882,7 @@ window.addEventListener('scroll', () => {
   overflow: hidden; /* important so shine stays inside circle */
 }
 
+
 .shine {
   position: absolute;
   inset: -40%;
@@ -912,6 +913,7 @@ window.addEventListener('scroll', () => {
     transform: translateX(160%) rotate(12deg);
   }
 }
+
   </style> 
  
 <section
@@ -921,7 +923,7 @@ window.addEventListener('scroll', () => {
 
 <div
     id="welcome-card"
-    class="absolute  w-[228px] h-[228px] mt-6  rounded-full bg-[#FAE76C] flex items-center justify-center"
+    class="absolute  w-[228px] h-[228px] mt-6   rounded-full bg-[#FAE76C] flex items-center justify-center"
   ><div class="shine"></div>
     <!-- Circular text -->
     <svg
@@ -1019,33 +1021,38 @@ window.addEventListener('scroll', () => {
 
   <!-- 1st COLUMN -->
   <div class="projects-col">
+ <!-- Moss -->
+<div class="project landscape flex flex-col">
+  <a href="moss-fragrances">
+    <div class="project-image-container rounded-sm">
+      <div class="absolute inset-0 bg-[#f1ecdd] flex items-center justify-center px-8 md:px-12 lg:px-16">
+        <img
+          src="images/moss-hero.webp"
+          alt="Moss Fragrances Hero"
+          class="w-full h-auto object-contain"
+        />
+      </div>
+    </div>
+  </a>
 
-    <!-- bndr-music -->
-    <div class="project landscape flex-col">
-      <a href="bndr-music">
-        <div class="project-image-container rounded-sm">
-          <video autoplay muted loop playsinline>
-            <source src="videos/Comp 1_8.mp4" type="video/mp4">
-          </video>
-        </div>
-      </a>
-      <div class="mt-4 flex flex-col items-start mb-1">
+  <div class="mt-4 flex flex-col items-start mb-1">
 
     <!-- NEW mono meta -->
-    <span class="mono text-[#2B2B2B]/50 uppercase           ">
-      BNDR Music Group — 2024
+    <span class="mono  text-[#2B2B2B]/50 uppercase            ">
+      Moss Fragrances — 2026
     </span>
 
-    <a href="bndr-music" class="text-[#2B2B2B]/85  display-small  ">
-      Visual Identity for a Music Utility Token
+    <a href="moss-fragrances" class="text-[#2B2B2B]/85  display-small  ">
+      Fragrance Packaging
     </a>
 
-    <a href="bndr-music" class="text-[#2B2B2B]/50 body-text-1  ">
-      Designing a brand for a music-focused utility token
+    <a href="moss-fragrances" class="text-[#2B2B2B]/50 body-text-1">
+      Transparency as a design principle for a natural fragrance brand
     </a>
 
   </div>
-    </div>
+</div>
+   
 
     
     <!-- Ceres -->
@@ -1166,38 +1173,33 @@ window.addEventListener('scroll', () => {
 
   </div>
 </div>
-
-    <!-- Moss -->
-<div class="project landscape flex flex-col">
-  <a href="moss-fragrances">
-    <div class="project-image-container rounded-sm">
-      <div class="absolute inset-0 bg-gradient-to-r from-[#B3DCE0] to-[#E6CEB4] flex items-center justify-center p-8 md:p-12 lg:p-16">
-        <img
-          src="images/moss-hero.webp"
-          alt="Moss Fragrances Hero"
-          class="w-full h-auto object-contain"
-        />
-      </div>
-    </div>
-  </a>
-
-  <div class="mt-4 flex flex-col items-start mb-1">
+ <!-- bndr-music -->
+    <div class="project landscape flex-col">
+      <a href="bndr-music">
+        <div class="project-image-container rounded-sm">
+          <video autoplay muted loop playsinline>
+            <source src="videos/Comp 1_8.mp4" type="video/mp4">
+          </video>
+        </div>
+      </a>
+      <div class="mt-4 flex flex-col items-start mb-1">
 
     <!-- NEW mono meta -->
-    <span class="mono  text-[#2B2B2B]/50 uppercase            ">
-      Moss Fragrances — 2026
+    <span class="mono text-[#2B2B2B]/50 uppercase           ">
+      BNDR Music Group — 2024
     </span>
 
-    <a href="moss-fragrances" class="text-[#2B2B2B]/85  display-small  ">
-      Fragrance Packaging
+    <a href="bndr-music" class="text-[#2B2B2B]/85  display-small  ">
+      Visual Identity for a Music Utility Token
     </a>
 
-    <a href="moss-fragrances" class="text-[#2B2B2B]/50 body-text-1">
-      Transparency as a design principle for a natural fragrance brand
+    <a href="bndr-music" class="text-[#2B2B2B]/50 body-text-1  ">
+      Designing a brand for a music-focused utility token
     </a>
 
   </div>
-</div>
+    </div>
+   
 
      
    
