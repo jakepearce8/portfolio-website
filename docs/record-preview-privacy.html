@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Privacy policy for the Record Preview Chrome extension.">
+  <title>Privacy Policy — Record Preview</title>
+  <style>
+    :root{color-scheme:light;--ink:#252525;--muted:#666;--paper:#faf9f7;--accent:#684bc4;--line:#dedbd5}
+    *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    main{width:min(820px,calc(100% - 40px));margin:0 auto;padding:36px 0 88px}
+    header{display:flex;justify-content:space-between;align-items:center;gap:18px;padding-bottom:18px;border-bottom:1px solid var(--line);font-size:13px;letter-spacing:.08em;text-transform:uppercase}
+    a{color:var(--accent)}header a{color:inherit;text-decoration:none}.eyebrow{margin:72px 0 12px;color:var(--muted);font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+    h1{margin:0 0 12px;font-size:clamp(44px,9vw,76px);line-height:1;letter-spacing:-.06em;font-weight:650}
+    .updated{color:var(--muted);font-size:14px;margin-bottom:42px}h2{margin:40px 0 8px;font-size:24px;letter-spacing:-.03em;line-height:1.25}
+    p,li{color:#414141}ul{padding-left:22px}li{margin:8px 0}.notice{margin:28px 0;padding:18px 20px;border:1px solid var(--line);border-radius:12px;background:#fff}
+    footer{margin-top:70px;padding-top:18px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+    @media(max-width:640px){main{width:min(100% - 32px,820px);padding-top:22px}.eyebrow{margin-top:54px}}
+  </style>
+</head>
+<body>
+  <main>
+    <header><a href="/record-preview">Record Preview</a><a href="/">Jake Pearce</a></header>
+    <p class="eyebrow">Privacy</p>
+    <h1>Privacy policy</h1>
+    <p class="updated">Effective date: 22 October 2026</p>
+    <p>This policy explains how the Record Preview Chrome extension handles information. Record Preview is an independent project by Jake Pearce. It helps you find and play music previews for record listings on supported websites.</p>
+
+    <h2>Information the extension reads</h2>
+    <p>When Record Preview is enabled on a supported shop, it reads listing details needed to identify a release, such as artist, album or track title, product text, and artwork shown on the page. This processing happens in your browser to create a preview search and display the result. The extension does not need your shopping account credentials or payment details.</p>
+
+    <h2>Information sent to other services</h2>
+    <ul>
+      <li><strong>YouTube Data API:</strong> When a preview search is made, the extension sends the artist and release or track search terms, the API key being used, and the API request to Google’s YouTube Data API. Google returns candidate video information such as titles, channel names, thumbnails, and video IDs.</li>
+      <li><strong>YouTube embedded player:</strong> When a preview is shown or played, the extension loads YouTube’s embedded player. Google may receive technical information such as your IP address, browser/device information, and player interactions. Google’s own privacy terms and settings apply to that service.</li>
+      <li><strong>Discogs:</strong> On Discogs pages, the extension may request release metadata from Discogs’ API using the relevant Discogs release, master, or listing identifier so it can display the release tracklist and related details.</li>
+    </ul>
+    <p>Record Preview does not send browsing history to a server operated by the project author. Search requests are made to the services above to provide the preview features.</p>
+
+    <h2>Searches and preferences</h2>
+    <p>Record Preview uses the YouTube Data API credential configured for the extension. You do not need to create or enter an API key. When a preview search is made, Google receives the search terms and the extension’s API credential to return candidate videos. Searches use the quota assigned to the extension’s Google Cloud project.</p>
+    <p>If you are updating from an earlier version that let you enter a personal API key, that saved key is removed from local extension storage when the updated extension runs.</p>
+    <p>Your excluded search terms, preview enable/disable preference, and cached preview results are stored locally by Chrome. The preview cache expires after a limited period to reduce repeated searches.</p>
+
+    <h2>Retention and controls</h2>
+    <p>Settings and cached preview data remain in your browser until you change or clear them, the cache expires, or you remove the extension. You can change excluded search terms, turn previews off from the extension popup, clear Chrome extension data, or uninstall the extension.</p>
+
+    <h2>Third-party policies</h2>
+    <ul>
+      <li><a href="https://policies.google.com/privacy" rel="noopener">Google Privacy Policy</a></li>
+      <li><a href="https://www.youtube.com/t/terms" rel="noopener">YouTube Terms of Service</a></li>
+      <li><a href="https://developers.google.com/youtube/terms/api-services-terms-of-service" rel="noopener">YouTube API Services Terms of Service</a></li>
+      <li><a href="https://www.discogs.com/about/privacy" rel="noopener">Discogs Privacy Policy</a></li>
+    </ul>
+
+    <h2>Children’s privacy</h2>
+    <p>Record Preview is a shopping companion for people browsing music listings and is not designed to collect information from children.</p>
+
+    <h2>Changes to this policy</h2>
+    <p>This policy may be updated when the extension’s features or data practices change. The effective date above will be revised when an update is made.</p>
+
+    <h2>Contact</h2>
+    <p>Questions about this policy can be sent to <a href="mailto:hello@jakepearce.com.au">hello@jakepearce.com.au</a>.</p>
+    <div class="notice"><strong>About this page</strong><br>This page describes the current intended behavior of Record Preview. It is not legal advice. Please review it against the exact extension build and your distribution plans before submitting it as part of a third-party compliance review.</div>
+    <footer><a href="/record-preview">Record Preview project page</a> · <a href="/">Jake Pearce</a></footer>
+  </main>
+</body>
+</html>
