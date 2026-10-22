@@ -40,10 +40,10 @@
     <h2>Searches and preferences</h2>
     <p>Record Preview uses the YouTube Data API credential configured for the extension. You do not need to create or enter an API key. When a preview search is made, Google receives the search terms and the extension’s API credential to return candidate videos. Searches use the quota assigned to the extension’s Google Cloud project.</p>
     <p>If you are updating from an earlier version that let you enter a personal API key, that saved key is removed from local extension storage when the updated extension runs.</p>
-    <p>Your excluded search terms, preview enable/disable preference, and cached preview results are stored locally by Chrome. The preview cache expires after a limited period to reduce repeated searches.</p>
+    <p>Your excluded search terms, preview enable/disable preference, and cached YouTube search results and preview matches are stored locally in Chrome on your device. Cached YouTube data is automatically deleted after five days and is not sent to a server operated by the project author. The cache is used to avoid repeating the same YouTube search and reduce API quota use.</p>
 
     <h2>Retention and controls</h2>
-    <p>Settings and cached preview data remain in your browser until you change or clear them, the cache expires, or you remove the extension. You can change excluded search terms, turn previews off from the extension popup, clear Chrome extension data, or uninstall the extension.</p>
+    <p>Settings remain in your browser until you change or clear them or remove the extension. You can clear cached YouTube data at any time using <strong>Clear YouTube cache</strong> under <strong>Show options → Developer tools</strong> in the extension popup, or from the extension’s Options page. Cached YouTube data is automatically deleted after five days. You can also clear all Record Preview data through Chrome’s extension settings or uninstall the extension.</p>
 
     <h2>Third-party policies</h2>
     <ul>
